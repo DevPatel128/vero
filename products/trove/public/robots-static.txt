@@ -1,0 +1,25 @@
+# Fallback robots.txt (Next.js generates the live one via src/app/robots.ts)
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /dashboard
+Disallow: /settings
+Disallow: /onboarding
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+Disallow: /api
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin
+Disallow: /api
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+Disallow: /api
+
+Sitemap: https://trove.vroelabs.com/sitemap.xml

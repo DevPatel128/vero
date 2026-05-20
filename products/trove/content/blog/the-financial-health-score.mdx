@@ -1,0 +1,53 @@
+---
+title: The Financial Health Score — what it is and what it isn't
+description: A simple number, designed to be honest. Here's how we compute it, why we picked these inputs, and what we deliberately left out.
+date: 2026-05-08
+author: Dev Patel
+authorRole: Founder, Vroe Labs
+category: Money
+tags: scoring, methodology, philosophy
+---
+
+Most financial apps either don't grade you, or they grade you on something useless. We landed on a single number — the Financial Health Score — that tries to be honest.
+
+## What it measures
+
+Two ratios, blended:
+
+- **Savings Efficiency** — what fraction of your spending goes toward growth (investments, education, health) versus consumption.
+- **Growth vs. Consumption** — your growth spend divided by your consumption spend, capped at 1.
+
+The formula:
+
+```
+score = (savings_efficiency × 0.6) + (min(growth_ratio, 1) × 40)
+```
+
+Then we clamp to 0–100.
+
+## What it doesn't measure
+
+- Net worth (which often reflects luck or inheritance more than behavior).
+- Income (income inequality is real; we don't reward it twice).
+- Investment returns (we're a tracker, not an advisor).
+
+## The bands
+
+| Band     | Range  | Color  |
+|----------|--------|--------|
+| At risk  | 0–15   | red    |
+| Building | 16–30  | amber  |
+| Healthy  | 31–50  | green  |
+| Elite    | 51+    | gold   |
+
+A 60 means you're spending 60% of your money on things that compound. That's elite.
+
+## Why this score, and not a different one
+
+We considered nine alternatives. They all failed one of three tests:
+
+1. **Honest** — does it reward behavior or accident?
+2. **Actionable** — can you move it by Tuesday?
+3. **Stable** — does it bounce around for no reason?
+
+This one passes. It's not the only number that matters. But it's the one we keep on the dashboard.

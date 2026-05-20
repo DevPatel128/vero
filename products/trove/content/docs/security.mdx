@@ -1,0 +1,29 @@
+---
+title: Security & privacy
+description: What we encrypt, what we never store, and how to delete everything.
+date: 2026-05-14
+author: Trove Team
+category: Concepts
+tags: security, privacy
+---
+
+## Encryption
+
+- TLS 1.3 in transit.
+- AES-256 at rest (Postgres + storage).
+- Row-level security on every table.
+- Service-role keys server-only, rotated quarterly.
+
+## What we never store
+
+- Bank login credentials. Plaid handles auth; we receive read-only tokens.
+- Credit card numbers. Stripe handles billing.
+- Full payment account numbers. Only last-4 masks.
+
+## Deleting your data
+
+`/settings` → Delete account. Within 30 days, all data — including backups — is purged. We email a confirmation.
+
+## Reporting a vulnerability
+
+`security@trove.vroelabs.com`. We respond within 24 hours and credit researchers publicly.

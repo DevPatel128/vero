@@ -1,0 +1,131 @@
+{
+  "app": {
+    "name": "RIE",
+    "tagline": "The Discipline App",
+    "description": "Prove your consistency. Build your legacy."
+  },
+  "nav": {
+    "home": "Home",
+    "submit": "Submit",
+    "rankings": "Rankings",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "greeting": {
+    "morning": "Good Morning, {{name}}",
+    "afternoon": "Good Afternoon, {{name}}",
+    "evening": "Good Evening, {{name}}"
+  },
+  "score": {
+    "disciplineScore": "Discipline Score",
+    "trustScore": "Trust Score",
+    "consistency": "Consistency",
+    "effort": "Effort & Difficulty",
+    "improvement": "Improvement",
+    "proofReliability": "Proof Quality",
+    "scoreBreakdown": "Score Breakdown",
+    "scoreHistory": "Score History",
+    "past90Days": "Past 90 days",
+    "overall": "Overall"
+  },
+  "tier": {
+    "unranked": "Unranked",
+    "bronze": "Bronze",
+    "silver": "Silver",
+    "gold": "Gold",
+    "platinum": "Platinum",
+    "diamond": "Diamond",
+    "master": "Master"
+  },
+  "streak": {
+    "label": "Streak",
+    "days": "{{count}} day",
+    "days_plural": "{{count}} days",
+    "graceDay": "Grace Day",
+    "graceDaysRemaining": "{{count}} grace day remaining",
+    "graceDaysRemaining_plural": "{{count}} grace days remaining"
+  },
+  "level": {
+    "label": "Level",
+    "xpToNext": "{{xp}} XP to next level"
+  },
+  "domains": {
+    "title": "Domains",
+    "fitness": "Fitness",
+    "content": "Content Creation",
+    "gaming": "Gaming",
+    "activeDomains": "Active Domains"
+  },
+  "submit": {
+    "title": "Submit Proof",
+    "activityType": "Activity Type",
+    "captureOrUpload": "Capture or upload proof",
+    "acceptedFormats": "Photo · Video · Device Sync",
+    "duration": "Duration",
+    "intensity": "Intensity",
+    "notes": "Notes (optional)",
+    "submitForVerification": "Submit for Verification",
+    "verificationTime": "Verified in ~3 seconds",
+    "submissionSuccess": "Proof submitted successfully",
+    "submissionPending": "Verification in progress"
+  },
+  "rankings": {
+    "title": "Rankings",
+    "global": "Global",
+    "national": "National",
+    "state": "State",
+    "city": "City",
+    "all": "All",
+    "you": "You",
+    "rankList": "Rank List"
+  },
+  "profile": {
+    "editProfile": "Edit Profile",
+    "shareProfile": "Share Profile",
+    "achievements": "Achievements",
+    "viewAll": "View All",
+    "dayStreak": "Day Streak",
+    "verified": "Verified",
+    "advanced": "Advanced",
+    "intermediate": "Intermediate",
+    "beginner": "Beginner",
+    "expert": "Expert",
+    "master": "Master"
+  },
+  "today": {
+    "title": "Today",
+    "completeWorkout": "Complete workout",
+    "publishContent": "Publish content",
+    "practiceSession": "Practice session"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "createAccount": "Create Account",
+    "orContinueWith": "or continue with",
+    "appleSignIn": "Continue with Apple",
+    "googleSignIn": "Continue with Google"
+  },
+  "settings": {
+    "title": "Settings",
+    "privacy": "Privacy",
+    "security": "Security",
+    "notifications": "Notifications",
+    "language": "Language",
+    "linkedAccounts": "Linked Accounts",
+    "subscription": "Subscription",
+    "dataExport": "Export Data",
+    "deleteAccount": "Delete Account"
+  },
+  "status": {
+    "online": "Online",
+    "offline": "You're offline. Progress will sync when you're back online.",
+    "syncing": "Syncing...",
+    "synced": "Synced",
+    "error": "Something went wrong"
+  }
+}

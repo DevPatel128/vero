@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "supabase.supabase",
+    "ms-playwright.playwright",
+    "unifiedjs.vscode-mdx"
+  ]
+}

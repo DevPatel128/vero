@@ -1,0 +1,33 @@
+---
+title: V2.0 — the rebuild
+description: Full rewrite on Next.js, new design system, new admin, new everything.
+date: 2026-05-14
+author: Dev Patel
+category: Product
+tags: release
+---
+
+Today we shipped Trove V2. It is, in most respects, an entirely new product.
+
+## Why a rewrite
+
+V1 served 200+ users and proved the thesis. V2 is what the product wanted to be all along — built on a stack we can scale on for years, designed end-to-end with the same eye we'd give a finished product, and shipped with the rigor of a funded company. Trove is still a one-person studio. The output is what matters.
+
+## What's new
+
+- Next.js 15 App Router. Faster, lighter, edge-aware.
+- New design system: FT × Apple. Cream, gold, Georgia serif.
+- Supabase SSR auth + RLS on every table.
+- Stripe billing wired end-to-end.
+- AI insights moved to a Gemini proxy with prompt sanitization.
+- Full marketing site, docs, blog with MDX + RSS + structured data.
+- Admin panel for users, billing, feature flags, analytics.
+- Tests + CI: Vitest, Playwright, axe a11y, CodeQL, Lighthouse.
+
+## What we removed
+
+- Plausible (replaced by PostHog).
+- In-memory rate limiting (replaced by Upstash sliding window).
+- The "lab" page (it served its purpose; the dashboard now does that work).
+
+— Dev

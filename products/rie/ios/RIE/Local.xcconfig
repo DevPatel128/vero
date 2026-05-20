@@ -1,0 +1,17 @@
+// RIE local developer config.
+// Fill DEVELOPMENT_TEAM with your 10-character Apple Developer Team ID.
+// Find it: Xcode → Settings → Accounts → pick your Apple ID → right pane shows Team + Team ID.
+//          Or: https://developer.apple.com/account → Membership → Team ID.
+
+DEVELOPMENT_TEAM = REPLACE_WITH_TEAM_ID
+
+CODE_SIGN_STYLE = Automatic
+CODE_SIGN_IDENTITY = Apple Development
+PROVISIONING_PROFILE_SPECIFIER =
+
+// Notes:
+// - Free "Personal Team" works for Game Center + Keychain but NOT HealthKit on device.
+//   If you're on Personal Team and don't need Health sync on physical iPhone, open the
+//   target's Signing & Capabilities tab and remove the HealthKit capability. It will
+//   still build/run — fitness sync will just report "Health data unavailable".
+// - Paid Apple Developer Program ($99/yr) enables HealthKit on device with no changes.

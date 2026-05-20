@@ -1,0 +1,11 @@
+{
+  "common": { "appName": "RIE", "tagline": "L'application de la discipline", "loading": "Chargement...", "error": "Erreur", "retry": "Réessayer", "save": "Enregistrer", "cancel": "Annuler", "delete": "Supprimer", "edit": "Modifier", "submit": "Soumettre", "back": "Retour", "next": "Suivant", "done": "Terminé", "search": "Rechercher", "settings": "Paramètres", "signOut": "Se déconnecter" },
+  "auth": { "signIn": "Se connecter", "signUp": "S'inscrire", "email": "Adresse e-mail", "password": "Mot de passe", "forgotPassword": "Mot de passe oublié ?", "createAccount": "Créer un compte", "username": "Nom d'utilisateur", "mfa": "Authentification à deux facteurs" },
+  "dashboard": { "greeting": { "morning": "Bonjour", "afternoon": "Bon après-midi", "evening": "Bonsoir" }, "disciplineScore": "Score de Discipline", "today": "Aujourd'hui", "recentActivity": "Activité récente", "yourDomains": "Vos domaines", "viewAll": "Voir tout" },
+  "domains": { "fitness": "Fitness", "content": "Création de contenu", "gaming": "Gaming", "chooseYourPath": "Choisissez votre voie", "activities": "activités", "deviceVerified": "Vérifié par appareil", "apiVerified": "Vérifié par API", "rankTracked": "Rang suivi" },
+  "score": { "score": "Score", "consistency": "Constance", "effort": "Effort et difficulté", "improvement": "Amélioration", "proofQuality": "Qualité de preuve", "trend90": "Tendance 90 jours", "trust": "Confiance", "streak": "Série", "level": "Niveau" },
+  "submit": { "submit": "Soumettre", "activityType": "Type d'activité", "selectActivity": "Sélectionner une activité...", "proof": "Preuve", "captureUpload": "Capturer ou télécharger une preuve", "duration": "Durée", "intensity": "Intensité", "notes": "Notes", "submitVerification": "Soumettre pour vérification", "verified": "Vérifié en ~3 secondes", "encrypted": "Chiffré de bout en bout" },
+  "rankings": { "rankings": "Classements", "global": "Mondial", "national": "National", "city": "Ville", "you": "Vous" },
+  "profile": { "profile": "Profil", "achievements": "Réalisations", "domains": "Domaines" },
+  "tiers": { "unranked": "Non classé", "bronze": "Bronze", "silver": "Argent", "gold": "Or", "platinum": "Platine", "diamond": "Diamant", "master": "Maître" }
+}

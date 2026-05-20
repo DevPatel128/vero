@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Infrastructure (PostgreSQL + Redis + MinIO)",
+      "runtimeExecutable": "/usr/local/bin/docker",
+      "runtimeArgs": ["compose", "up", "-d"],
+      "port": 5432
+    },
+    {
+      "name": "API (Express)",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "PATH=/opt/homebrew/bin:$PATH npm run dev --prefix apps/api"],
+      "port": 3001
+    },
+    {
+      "name": "Mobile (iOS — Expo)",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "cd apps/mobile && PATH=/opt/homebrew/bin:$PATH npx expo start --web --clear"],
+      "port": 8081
+    },
+    {
+      "name": "Website (Next.js)",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "PATH=/opt/homebrew/bin:$PATH npm run dev --prefix apps/website"],
+      "port": 3000
+    }
+  ]
+}

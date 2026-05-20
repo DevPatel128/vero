@@ -1,0 +1,11 @@
+{
+  "common": { "appName": "RIE", "tagline": "Приложение дисциплины", "loading": "Загрузка...", "error": "Ошибка", "retry": "Повторить", "save": "Сохранить", "cancel": "Отмена", "delete": "Удалить", "edit": "Редактировать", "submit": "Отправить", "back": "Назад", "next": "Далее", "done": "Готово", "search": "Поиск", "settings": "Настройки", "signOut": "Выйти" },
+  "auth": { "signIn": "Войти", "signUp": "Регистрация", "email": "Эл. почта", "password": "Пароль", "forgotPassword": "Забыли пароль?", "createAccount": "Создать аккаунт", "username": "Имя пользователя", "mfa": "Двухфакторная аутентификация" },
+  "dashboard": { "greeting": { "morning": "Доброе утро", "afternoon": "Добрый день", "evening": "Добрый вечер" }, "disciplineScore": "Оценка дисциплины", "today": "Сегодня", "recentActivity": "Недавняя активность", "yourDomains": "Ваши домены", "viewAll": "Показать все" },
+  "domains": { "fitness": "Фитнес", "content": "Создание контента", "gaming": "Игры", "chooseYourPath": "Выберите свой путь", "activities": "активности", "deviceVerified": "Подтверждено устройством", "apiVerified": "Подтверждено через API", "rankTracked": "Отслеживание ранга" },
+  "score": { "score": "Очки", "consistency": "Последовательность", "effort": "Усилие и сложность", "improvement": "Улучшение", "proofQuality": "Качество доказательств", "trend90": "90-дневный тренд", "trust": "Доверие", "streak": "Серия", "level": "Уровень" },
+  "submit": { "submit": "Отправить", "activityType": "Тип активности", "selectActivity": "Выбрать активность...", "proof": "Доказательство", "captureUpload": "Снять или загрузить доказательство", "duration": "Длительность", "intensity": "Интенсивность", "notes": "Заметки", "submitVerification": "Отправить на проверку", "verified": "Проверено за ~3 секунды", "encrypted": "Сквозное шифрование" },
+  "rankings": { "rankings": "Рейтинг", "global": "Мировой", "national": "Национальный", "city": "Город", "you": "Вы" },
+  "profile": { "profile": "Профиль", "achievements": "Достижения", "domains": "Домены" },
+  "tiers": { "unranked": "Без ранга", "bronze": "Бронза", "silver": "Серебро", "gold": "Золото", "platinum": "Платина", "diamond": "Бриллиант", "master": "Мастер" }
+}

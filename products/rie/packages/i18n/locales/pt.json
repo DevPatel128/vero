@@ -1,0 +1,11 @@
+{
+  "common": { "appName": "RIE", "tagline": "A App de Disciplina", "loading": "Carregando...", "error": "Erro", "retry": "Tentar novamente", "save": "Salvar", "cancel": "Cancelar", "delete": "Excluir", "edit": "Editar", "submit": "Enviar", "back": "Voltar", "next": "Próximo", "done": "Concluído", "search": "Buscar", "settings": "Configurações", "signOut": "Sair" },
+  "auth": { "signIn": "Entrar", "signUp": "Cadastrar", "email": "E-mail", "password": "Senha", "forgotPassword": "Esqueceu a senha?", "createAccount": "Criar conta", "username": "Nome de usuário", "mfa": "Autenticação de dois fatores" },
+  "dashboard": { "greeting": { "morning": "Bom dia", "afternoon": "Boa tarde", "evening": "Boa noite" }, "disciplineScore": "Pontuação de Disciplina", "today": "Hoje", "recentActivity": "Atividade recente", "yourDomains": "Seus domínios", "viewAll": "Ver tudo" },
+  "domains": { "fitness": "Fitness", "content": "Criação de conteúdo", "gaming": "Gaming", "chooseYourPath": "Escolha seu caminho", "activities": "atividades", "deviceVerified": "Verificado por dispositivo", "apiVerified": "Verificado por API", "rankTracked": "Rank rastreado" },
+  "score": { "score": "Pontuação", "consistency": "Consistência", "effort": "Esforço e dificuldade", "improvement": "Melhoria", "proofQuality": "Qualidade da prova", "trend90": "Tendência 90 dias", "trust": "Confiança", "streak": "Sequência", "level": "Nível" },
+  "submit": { "submit": "Enviar", "activityType": "Tipo de atividade", "selectActivity": "Selecionar atividade...", "proof": "Prova", "captureUpload": "Capturar ou enviar prova", "duration": "Duração", "intensity": "Intensidade", "notes": "Notas", "submitVerification": "Enviar para verificação", "verified": "Verificado em ~3 segundos", "encrypted": "Criptografia ponta a ponta" },
+  "rankings": { "rankings": "Classificações", "global": "Global", "national": "Nacional", "city": "Cidade", "you": "Você" },
+  "profile": { "profile": "Perfil", "achievements": "Conquistas", "domains": "Domínios" },
+  "tiers": { "unranked": "Sem classificação", "bronze": "Bronze", "silver": "Prata", "gold": "Ouro", "platinum": "Platina", "diamond": "Diamante", "master": "Mestre" }
+}

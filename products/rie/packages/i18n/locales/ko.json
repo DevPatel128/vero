@@ -1,0 +1,11 @@
+{
+  "common": { "appName": "RIE", "tagline": "규율 앱", "loading": "로딩 중...", "error": "오류", "retry": "재시도", "save": "저장", "cancel": "취소", "delete": "삭제", "edit": "수정", "submit": "제출", "back": "뒤로", "next": "다음", "done": "완료", "search": "검색", "settings": "설정", "signOut": "로그아웃" },
+  "auth": { "signIn": "로그인", "signUp": "회원가입", "email": "이메일", "password": "비밀번호", "forgotPassword": "비밀번호 찾기", "createAccount": "계정 만들기", "username": "사용자명", "mfa": "2단계 인증" },
+  "dashboard": { "greeting": { "morning": "좋은 아침", "afternoon": "좋은 오후", "evening": "좋은 저녁" }, "disciplineScore": "규율 점수", "today": "오늘", "recentActivity": "최근 활동", "yourDomains": "내 도메인", "viewAll": "전체 보기" },
+  "domains": { "fitness": "피트니스", "content": "콘텐츠 제작", "gaming": "게이밍", "chooseYourPath": "경로를 선택하세요", "activities": "활동", "deviceVerified": "기기 인증", "apiVerified": "API 인증", "rankTracked": "랭크 추적" },
+  "score": { "score": "점수", "consistency": "일관성", "effort": "노력과 난이도", "improvement": "향상", "proofQuality": "증명 품질", "trend90": "90일 추세", "trust": "신뢰", "streak": "연속", "level": "레벨" },
+  "submit": { "submit": "제출", "activityType": "활동 유형", "selectActivity": "활동 선택...", "proof": "증명", "captureUpload": "증명을 촬영 또는 업로드", "duration": "시간", "intensity": "강도", "notes": "메모", "submitVerification": "인증 제출", "verified": "약 3초 내 인증", "encrypted": "종단간 암호화" },
+  "rankings": { "rankings": "랭킹", "global": "글로벌", "national": "국내", "city": "도시", "you": "나" },
+  "profile": { "profile": "프로필", "achievements": "업적", "domains": "도메인" },
+  "tiers": { "unranked": "비랭크", "bronze": "브론즈", "silver": "실버", "gold": "골드", "platinum": "플래티넘", "diamond": "다이아몬드", "master": "마스터" }
+}

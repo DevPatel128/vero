@@ -1,0 +1,11 @@
+{
+  "common": { "appName": "RIE", "tagline": "Die Disziplin-App", "loading": "Lädt...", "error": "Fehler", "retry": "Erneut versuchen", "save": "Speichern", "cancel": "Abbrechen", "delete": "Löschen", "edit": "Bearbeiten", "submit": "Einreichen", "back": "Zurück", "next": "Weiter", "done": "Fertig", "search": "Suchen", "settings": "Einstellungen", "signOut": "Abmelden" },
+  "auth": { "signIn": "Anmelden", "signUp": "Registrieren", "email": "E-Mail", "password": "Passwort", "forgotPassword": "Passwort vergessen?", "createAccount": "Konto erstellen", "username": "Benutzername", "mfa": "Zwei-Faktor-Authentifizierung" },
+  "dashboard": { "greeting": { "morning": "Guten Morgen", "afternoon": "Guten Tag", "evening": "Guten Abend" }, "disciplineScore": "Disziplin-Punktzahl", "today": "Heute", "recentActivity": "Letzte Aktivität", "yourDomains": "Deine Bereiche", "viewAll": "Alle anzeigen" },
+  "domains": { "fitness": "Fitness", "content": "Content-Erstellung", "gaming": "Gaming", "chooseYourPath": "Wähle deinen Weg", "activities": "Aktivitäten", "deviceVerified": "Gerätebestätigt", "apiVerified": "API-bestätigt", "rankTracked": "Rang verfolgt" },
+  "score": { "score": "Punktzahl", "consistency": "Beständigkeit", "effort": "Aufwand und Schwierigkeit", "improvement": "Verbesserung", "proofQuality": "Nachweisqualität", "trend90": "90-Tage-Trend", "trust": "Vertrauen", "streak": "Serie", "level": "Level" },
+  "submit": { "submit": "Einreichen", "activityType": "Aktivitätstyp", "selectActivity": "Aktivität auswählen...", "proof": "Nachweis", "captureUpload": "Nachweis aufnehmen oder hochladen", "duration": "Dauer", "intensity": "Intensität", "notes": "Notizen", "submitVerification": "Zur Verifizierung einreichen", "verified": "Verifiziert in ~3 Sekunden", "encrypted": "Ende-zu-Ende-verschlüsselt" },
+  "rankings": { "rankings": "Rangliste", "global": "Global", "national": "National", "city": "Stadt", "you": "Du" },
+  "profile": { "profile": "Profil", "achievements": "Erfolge", "domains": "Bereiche" },
+  "tiers": { "unranked": "Uneingestuft", "bronze": "Bronze", "silver": "Silber", "gold": "Gold", "platinum": "Platin", "diamond": "Diamant", "master": "Meister" }
+}

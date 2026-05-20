@@ -1,0 +1,37 @@
+name: Bug report
+description: Something broke. Tell us what and how to reproduce.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      placeholder: Describe the bug clearly.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Click '...'
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / version
+      placeholder: e.g. Chrome 122, Safari 17
+  - type: textarea
+    id: extras
+    attributes:
+      label: Extras (logs, screenshots)

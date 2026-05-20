@@ -1,0 +1,277 @@
+// ─────────────────────────────────────────────────────────
+// RIE Database Schema — Prisma
+// All PII fields encrypted at application layer (AES-256-GCM)
+// ─────────────────────────────────────────────────────────
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ── Users ───────────────────────────────────────────────
+
+model User {
+  id              String   @id @default(cuid())
+  email           String   @unique                    // Encrypted at app layer
+  emailHash       String   @unique                    // SHA-256 for lookups
+  name            String                              // Encrypted at app layer
+  username        String   @unique
+  passwordHash    String                              // Argon2id
+  locale          String   @default("en")
+  timezone        String   @default("UTC")
+  mfaEnabled      Boolean  @default(false)
+  mfaSecret       String?                             // Encrypted at app layer
+  masterKeyEnc    String                              // User master key, encrypted with KMS
+  subscriptionTier String  @default("free")
+  country         String?
+  state           String?
+  city            String?
+  avatarUrl       String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  devices         UserDevice[]
+  domains         UserDomain[]
+  submissions     Submission[]
+  scores          Score[]
+  trustScore      TrustScore?
+  penalties       Penalty[]
+  badges          UserBadge[]
+  graceDays       GraceDay[]
+  sessions        Session[]
+  integrations    Integration[]
+  auditLogs       AuditLog[]      @relation("AuditTarget")
+  actionsPerformed AuditLog[]     @relation("AuditActor")
+
+  @@index([emailHash])
+  @@index([username])
+  @@index([subscriptionTier])
+}
+
+model UserDevice {
+  id           String   @id @default(cuid())
+  userId       String
+  publicKey    String?                                 // ECDSA P-256 public key (PEM)
+  deviceName   String?
+  platform     String                                  // ios, android, web
+  pushToken    String?                                 // FCM/APNs token
+  trusted      Boolean  @default(false)                // Device trust status
+  lastUsedAt   DateTime @default(now())
+  registeredAt DateTime @default(now())
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([pushToken])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       String
+  refreshToken String   @unique                       // Hashed
+  deviceId     String?
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([refreshToken])
+}
+
+// ── Domains ─────────────────────────────────────────────
+
+model UserDomain {
+  id              String   @id @default(cuid())
+  userId          String
+  domainId        String                              // fitness, content, gaming
+  level           Int      @default(1)
+  xp              Int      @default(0)
+  currentStreak   Int      @default(0)
+  bestStreak      Int      @default(0)
+  baselineData    Json?                               // 7-day baseline
+  baselineSetAt   DateTime?
+  lastActivityAt  DateTime?
+  activatedAt     DateTime @default(now())
+
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, domainId])
+  @@index([userId])
+  @@index([domainId])
+}
+
+// ── Submissions ─────────────────────────────────────────
+
+model Submission {
+  id                 String   @id @default(cuid())
+  userId             String
+  domainId           String
+  proofType          String                           // api, device, video, image_metadata, etc.
+  activityType       String                           // e.g., hiit, running, video_publish
+  mediaRef           String?                          // S3 key
+  contentHash        String                           // SHA-256 of proof content
+  userSignature      String                           // ECDSA signature from device
+  serverSignature    String?                          // Server-side signature after verification
+  verificationStatus String   @default("pending")     // pending, verified, rejected, disputed
+  riskScore          Float    @default(0)             // 0.0–1.0
+  qualityScore       Float?                           // Domain-specific quality assessment
+  effortScore        Float?                           // Effort/difficulty rating
+  metadata           Json?                            // Activity-specific metadata
+  rejectionReason    String?
+  createdAt          DateTime @default(now())
+  verifiedAt         DateTime?
+
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, domainId])
+  @@index([userId, createdAt])
+  @@index([verificationStatus])
+  @@index([contentHash])
+}
+
+// ── Scores ──────────────────────────────────────────────
+
+model Score {
+  id              String   @id @default(cuid())
+  userId          String
+  domainId        String                              // or "overall"
+  rawScore        Int      @default(0)                // 0–1000
+  effectiveScore  Int      @default(0)                // raw × trust modifier
+  tier            String   @default("unranked")
+  consistency     Float    @default(0)                // 0–100
+  effort          Float    @default(0)
+  improvement     Float    @default(0)
+  proofReliability Float   @default(0)
+  periodStart     DateTime
+  periodEnd       DateTime
+  calculatedAt    DateTime @default(now())
+
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, domainId, periodStart])
+  @@index([userId, domainId])
+  @@index([effectiveScore])
+  @@index([tier])
+}
+
+model TrustScore {
+  id                    String   @id @default(cuid())
+  userId                String   @unique
+  overall               Float    @default(0.7)        // Start neutral
+  proofAuthenticity     Float    @default(0.7)
+  behavioralConsistency Float    @default(0.7)
+  accountMaturity       Float    @default(0.5)        // Low at start
+  fraudSignals          Float    @default(1.0)        // No flags = 1.0
+  updatedAt             DateTime @updatedAt
+
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ── Penalties ───────────────────────────────────────────
+
+model Penalty {
+  id            String    @id @default(cuid())
+  userId        String
+  level         String                                // warning, minor, major, severe, ban
+  reason        String
+  scoreImpact   Float                                 // Percentage reduction
+  submissionId  String?                               // Linked submission if applicable
+  expiresAt     DateTime?
+  appealed      Boolean   @default(false)
+  appealResult  String?                               // pending, upheld, overturned
+  appealedAt    DateTime?
+  resolvedAt    DateTime?
+  createdAt     DateTime  @default(now())
+
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([level])
+}
+
+// ── Badges ──────────────────────────────────────────────
+
+model Badge {
+  id          String      @id @default(cuid())
+  name        String      @unique
+  category    String                                  // streak, milestone, mastery, community, special
+  domainId    String?
+  icon        String
+  description String
+  criteria    Json                                    // Machine-readable unlock criteria
+
+  users       UserBadge[]
+}
+
+model UserBadge {
+  id       String   @id @default(cuid())
+  userId   String
+  badgeId  String
+  earnedAt DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge    Badge    @relation(fields: [badgeId], references: [id])
+
+  @@unique([userId, badgeId])
+  @@index([userId])
+}
+
+// ── Grace Days ──────────────────────────────────────────
+
+model GraceDay {
+  id            String   @id @default(cuid())
+  userId        String
+  domainId      String
+  usedAt        DateTime @default(now())
+  autoTriggered Boolean  @default(false)              // API outage, device failure
+
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, domainId])
+  @@index([usedAt])
+}
+
+// ── Integrations ────────────────────────────────────────
+
+model Integration {
+  id             String    @id @default(cuid())
+  userId         String
+  provider       String                              // strava, github, chess, youtube, steam, riot
+  encryptedToken String                              // AES-256-GCM encrypted access token
+  refreshToken   String?                             // Encrypted refresh token if applicable
+  expiresAt      DateTime?
+  scope          String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, provider])
+  @@index([userId])
+}
+
+// ── Audit Log ───────────────────────────────────────────
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  actorId     String                                  // Who performed the action
+  action      String                                  // e.g., "user.login", "score.recalculate"
+  targetType  String                                  // e.g., "user", "submission"
+  targetId    String
+  metadata    Json?                                   // Additional context
+  ipAddress   String?
+  createdAt   DateTime @default(now())
+
+  actor       User     @relation("AuditActor", fields: [actorId], references: [id])
+  target      User?    @relation("AuditTarget", fields: [targetId], references: [id])
+
+  @@index([actorId])
+  @@index([targetType, targetId])
+  @@index([createdAt])
+}

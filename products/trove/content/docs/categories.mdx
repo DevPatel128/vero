@@ -1,0 +1,30 @@
+---
+title: Smart categorization
+description: How Trove classifies your transactions, and how to teach it.
+date: 2026-05-14
+author: Trove Team
+category: Concepts
+tags: categorization, ai
+---
+
+## Default categories
+
+Trove ships with 14 default categories: Food, Leisure, Travel, Utilities, Housing, Transport, Health, Education, Investments, Subscriptions, Shopping, Personal, Gifts, Other.
+
+## How matching works
+
+Regex rules match merchant + description against a curated rulebook. Examples:
+
+- `uber|lyft|metro|gas` → Transport
+- `netflix|spotify|hulu` → Subscriptions
+- `whole foods|trader joe` → Food
+
+Unmatched transactions default to **Other**. You can re-categorize, and Trove learns from your corrections.
+
+## Custom categories (Pro)
+
+Create unlimited custom categories: Side Hustle, Therapy, Pet, etc. Set a color and emoji. They appear everywhere — analytics, budgets, reports.
+
+## Why this approach
+
+We considered a fully ML-based classifier. It would have been more accurate by 1–2 points and harder to explain by 100. Regex you can read; vectors you cannot.

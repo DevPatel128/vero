@@ -1,0 +1,48 @@
+name: RIE
+options:
+  bundleIdPrefix: app.rie
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    "CODE_SIGN_IDENTITY[sdk=iphonesimulator*]": ""
+    "CODE_SIGNING_REQUIRED[sdk=iphonesimulator*]": NO
+    "CODE_SIGNING_ALLOWED[sdk=iphonesimulator*]": NO
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+targets:
+  RIE:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: RIE
+    info:
+      path: RIE/Info.plist
+      properties:
+        CFBundleDisplayName: RIE
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen:
+          UIColorName: ""
+        UIRequiredDeviceCapabilities:
+          - arm64
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        NSCameraUsageDescription: "RIE needs camera access to capture proof photos and videos for your submissions."
+        NSPhotoLibraryUsageDescription: "RIE needs photo library access so you can attach existing media as proof."
+        NSPhotoLibraryAddUsageDescription: "RIE saves processed proof media to your library when you choose to export."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.rie.RIE
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        SWIFT_EMIT_LOC_STRINGS: YES
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: RIE/Info.plist

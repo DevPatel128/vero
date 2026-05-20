@@ -1,0 +1,85 @@
+---
+title: API reference
+description: REST API for transactions, accounts, subscriptions, budgets, goals, and webhooks.
+date: 2026-05-14
+author: Trove Team
+category: Developer
+tags: api, reference
+---
+
+## Authentication
+
+All API requests require an API key in the `Authorization` header:
+
+```http
+Authorization: Bearer trove_live_sk_...
+```
+
+Generate keys at `/settings/api-keys`. Pro and Team plans only.
+
+## Base URL
+
+```
+https://trove.vroelabs.com/api/v1
+```
+
+## Endpoints
+
+### Transactions
+
+```http
+GET    /transactions              List transactions (paginated)
+POST   /transactions              Create a transaction
+GET    /transactions/:id          Get one
+PATCH  /transactions/:id          Update
+DELETE /transactions/:id          Delete
+```
+
+### Accounts
+
+```http
+GET    /accounts                  List accounts
+POST   /accounts                  Create
+PATCH  /accounts/:id              Update
+DELETE /accounts/:id              Soft delete
+```
+
+### Subscriptions
+
+```http
+GET    /subscriptions             List detected subscriptions
+PATCH  /subscriptions/:id         Pause / resume / cancel
+```
+
+### Insights (Pro only)
+
+```http
+POST   /insights/generate         Trigger an insight (rate-limited 20/min)
+GET    /insights                  Last 10 cached insights
+```
+
+### Webhooks
+
+```http
+POST   /webhooks                  Register a webhook
+GET    /webhooks                  List webhooks
+DELETE /webhooks/:id              Remove
+```
+
+Events: `transaction.created`, `subscription.detected`, `budget.exceeded`, `goal.achieved`.
+
+## Rate limits
+
+- Free: not available.
+- Pro: 60 req/min.
+- Team: 600 req/min.
+
+Limits are sliding-window, returned in headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`.
+
+## Errors
+
+Standard HTTP status codes. JSON body:
+
+```json
+{ "error": { "code": "validation_error", "message": "amount must be positive" } }
+```

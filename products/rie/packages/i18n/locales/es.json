@@ -1,0 +1,11 @@
+{
+  "common": { "appName": "RIE", "tagline": "La Aplicación de Disciplina", "loading": "Cargando...", "error": "Error", "retry": "Reintentar", "save": "Guardar", "cancel": "Cancelar", "delete": "Eliminar", "edit": "Editar", "submit": "Enviar", "back": "Volver", "next": "Siguiente", "done": "Listo", "search": "Buscar", "settings": "Configuración", "signOut": "Cerrar sesión" },
+  "auth": { "signIn": "Iniciar sesión", "signUp": "Registrarse", "email": "Correo electrónico", "password": "Contraseña", "forgotPassword": "¿Olvidaste tu contraseña?", "createAccount": "Crear cuenta", "username": "Nombre de usuario", "mfa": "Autenticación de dos factores" },
+  "dashboard": { "greeting": { "morning": "Buenos días", "afternoon": "Buenas tardes", "evening": "Buenas noches" }, "disciplineScore": "Puntuación de Disciplina", "today": "Hoy", "recentActivity": "Actividad reciente", "yourDomains": "Tus dominios", "viewAll": "Ver todo" },
+  "domains": { "fitness": "Fitness", "content": "Creación de contenido", "gaming": "Gaming", "chooseYourPath": "Elige tu camino", "activities": "actividades", "deviceVerified": "Verificado por dispositivo", "apiVerified": "Verificado por API", "rankTracked": "Rango rastreado" },
+  "score": { "score": "Puntuación", "consistency": "Consistencia", "effort": "Esfuerzo y Dificultad", "improvement": "Mejora", "proofQuality": "Calidad de prueba", "trend90": "Tendencia 90 días", "trust": "Confianza", "streak": "Racha", "level": "Nivel" },
+  "submit": { "submit": "Enviar", "activityType": "Tipo de actividad", "selectActivity": "Seleccionar actividad...", "proof": "Prueba", "captureUpload": "Capturar o subir prueba", "duration": "Duración", "intensity": "Intensidad", "notes": "Notas", "submitVerification": "Enviar para verificación", "verified": "Verificado en ~3 segundos", "encrypted": "Cifrado de extremo a extremo" },
+  "rankings": { "rankings": "Clasificaciones", "global": "Global", "national": "Nacional", "city": "Ciudad", "you": "Tú" },
+  "profile": { "profile": "Perfil", "achievements": "Logros", "domains": "Dominios" },
+  "tiers": { "unranked": "Sin clasificar", "bronze": "Bronce", "silver": "Plata", "gold": "Oro", "platinum": "Platino", "diamond": "Diamante", "master": "Maestro" }
+}

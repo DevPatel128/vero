@@ -1,0 +1,1 @@
+- [RIE Mobile App Context](project_rie_mobile.md) — Expo RN mobile constraints: no SecureStore/AsyncStorage/ImagePicker, @rie/shared not installed, lucide icons

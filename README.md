@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VROE Labs — Unified Trust Platform
 
-## Getting Started
+Three proof-of-X products built on shared ALVED protocol.
 
-First, run the development server:
+## Products
+
+- **Vero:** Proof-of-Work identity (Turborepo monorepo)
+- **RIE:** Proof-of-Discipline (Express API + Expo mobile)
+- **Trove:** Proof-of-Provenance (data tracking)
+- **Website:** Marketing + landing
+
+## Quick Start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Navigate to specific product
+cd products/vero        # Turborepo
+cd products/rie         # Express+Expo
+cd products/trove       # Supabase app
+cd website              # Next.js site
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Navigation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Non-technical?** Read `/content/GUIDE.md`
+- **Technical?** Start with `/INDEX.md`
+- **Documentation?** `/docs/` (context pack 00-20)
+- **Shared code?** `/shared/` (crypto, types, ALVED protocol)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Key Files
 
-## Learn More
+| File | Purpose |
+|------|---------|
+| `/INDEX.md` | Technical overview |
+| `/content/GUIDE.md` | Non-tech product guide |
+| `/docs/README.md` | How to load context pack |
+| `/docs/context-pack/` | 00-20 strategy → implementation |
+| `/shared/README.md` | Cross-product libs |
 
-To learn more about Next.js, take a look at the following resources:
+## Principles
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **ALVED protocol:** Single trust graph across all products
+2. **Crypto reuse:** No reimplementation (@rie/crypto)
+3. **India-first:** DPDP Act compliance mandatory
+4. **Public spec:** ALVED published before ship
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `/INDEX.md` for full details.
