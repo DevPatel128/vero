@@ -15,11 +15,13 @@ import { ScaleIn } from "@/components/motion/ScaleIn";
 import { TiltCard } from "@/components/motion/TiltCard";
 import { Spotlight } from "@/components/motion/Spotlight";
 import { Parallax } from "@/components/motion/Parallax";
-import { SignatureFlow } from "@/components/illustrations/SignatureFlow";
 import { RecordChain } from "@/components/illustrations/RecordChain";
 import { StandingDial } from "@/components/illustrations/StandingDial";
 import { BengaluruMap } from "@/components/illustrations/BengaluruMap";
 import { HashRibbon } from "@/components/illustrations/HashRibbon";
+import { ResumeVsRecord } from "@/components/illustrations/ResumeVsRecord";
+import { DualSignatureFlow } from "@/components/illustrations/DualSignatureFlow";
+import { GlassEscrowVault } from "@/components/illustrations/GlassEscrowVault";
 
 export const metadata: Metadata = {
   title: `${site.name} - ${site.tagline}`,
@@ -63,6 +65,24 @@ export default function HomePage() {
       <div className="bg-paper-warm/40 py-6">
         <HashRibbon />
       </div>
+
+      {/* Resume vs Record Visual Storytelling Hook */}
+      <Section className="!py-20 overflow-hidden">
+        <div className="mb-16 text-center md:mx-auto md:max-w-3xl">
+          <Reveal>
+            <Eyebrow>The Old Way vs. Vero</Eyebrow>
+          </Reveal>
+          <h2 className="mt-4 font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
+            <WordReveal text="Resumes are claims. Records are proof." />
+          </h2>
+          <BlurIn delay={0.2}>
+            <SectionLead className="mx-auto mt-4">
+              A PDF can say anything. A Vero record is cryptographically signed by the client who paid you. The proof is built in.
+            </SectionLead>
+          </BlurIn>
+        </div>
+        <ResumeVsRecord />
+      </Section>
 
       {/* Problem strip - FlipIn cards */}
       <Section tone="warm" className="!py-20">
@@ -108,8 +128,8 @@ export default function HomePage() {
           </SectionLead>
         </BlurIn>
 
-        <MaskReveal delay={0.3} from="up" className="mt-12">
-          <SignatureFlow className="mx-auto max-w-3xl" />
+        <MaskReveal delay={0.3} from="up" className="mt-12 w-full overflow-hidden">
+          <DualSignatureFlow />
         </MaskReveal>
 
         <Stagger
@@ -171,6 +191,10 @@ export default function HomePage() {
               When a job starts, the client funds it up front. We hold it safely in escrow. When you finish, both sides sign, and the money drops. We take a flat 5% fee.
             </SectionLead>
           </Reveal>
+        </div>
+
+        <div className="my-16">
+          <GlassEscrowVault />
         </div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
