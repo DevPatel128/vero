@@ -15,9 +15,13 @@ export function HashRibbon({
   count?: number;
 }) {
   const reduce = useReducedMotion() ?? false;
-  const hashes = Array.from({ length: count }, (_, i) =>
-    `#${(0x1a000 + i * 0x57).toString(16).padStart(5, "0")}`,
-  );
+  const baseNames = [
+    "Arjun M.", "Priya K.", "Rahul S.", "Neha T.", "Vikram D.",
+    "Sneha R.", "Karan V.", "Anjali P.", "Rohit M.", "Pooja B.",
+    "Amit C.", "Riya N.", "Sanjay K.", "Divya S.", "Manish R.",
+    "Deepak L.", "Kavita G.", "Ravi T.", "Suman P.", "Vivek N."
+  ];
+  const items = Array.from({ length: count }, (_, i) => baseNames[i % baseNames.length]);
 
   return (
     <div className={cn("relative w-full overflow-hidden", className)}>
@@ -26,13 +30,13 @@ export function HashRibbon({
         animate={reduce ? undefined : { x: ["0%", "-50%"] }}
         transition={{ duration: 60, ease: "linear", repeat: Infinity }}
       >
-        {[...hashes, ...hashes].map((h, i) => (
+        {[...items, ...items].map((name, i) => (
           <span
             key={i}
             className="inline-flex items-center gap-2 whitespace-nowrap"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-trust/60" />
-            {h}
+            {name}
             <span className="text-ink-300">·</span>
             <span className="text-ink-400">signed</span>
             <span className="text-ink-300">·</span>

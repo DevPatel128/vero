@@ -52,7 +52,7 @@ export function Hero() {
   const reduce = useReducedMotion() ?? false;
 
   return (
-    <section className="relative overflow-hidden pt-16 md:pt-24">
+    <section className="relative overflow-hidden pt-8 md:pt-12">
       <AmbientBackdrop />
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-12">
