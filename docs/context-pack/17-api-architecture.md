@@ -86,3 +86,4 @@ Admin APIs should be isolated, logged, and protected. They should never be mixed
 
 ## API outcome
 The result should be an API system that is easy to maintain, test, and expand without confusion.
+

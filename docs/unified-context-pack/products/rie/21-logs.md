@@ -21,3 +21,4 @@ Record RIE-specific edit history.
 
 ## Rule
 If RIE changes, the log should explain what changed and why.
+

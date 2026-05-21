@@ -18,3 +18,4 @@ The free experience should help users trust the system. Paid tiers should unlock
 - Hiding the real value behind paywalls
 - Pricing that feels punitive for normal users
 - Confusing consumer and institutional tiers
+

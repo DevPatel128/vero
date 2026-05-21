@@ -19,3 +19,4 @@ What matters should stay trustworthy.
 - Treating Trove like a generic storage app
 - Overexposing private value records
 - Making provenance feel abstract instead of useful
+

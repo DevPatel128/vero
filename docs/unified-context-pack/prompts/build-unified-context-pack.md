@@ -102,3 +102,4 @@ If a founder, investor, engineer, or AI agent can read the pack and understand w
 
 ## Expansion rule
 If research reveals missing materials, create them rather than forcing unrelated topics into existing files. The goal is to make the context pack better every time, not merely to fill a template.
+

@@ -19,3 +19,4 @@ The visual system should make the product feel disciplined and legible.
 - One-off visuals that break consistency
 - Fitness styling without restraint
 - Accessibility pushed to the end
+

@@ -18,3 +18,4 @@ Trust degrades when the product feels slow or fragile.
 - Slow record browsing
 - Heavy screens without need
 - Performance goals without owners
+

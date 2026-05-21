@@ -18,3 +18,4 @@ Plain-Markdown copy per page. Engineer pulls into `apps/marketing/src/app/trove/
 | `faq.md`              | `/trove/faq`                |
 
 Trove copy goes through the strictest review — inheritance and zero-knowledge language has compliance consequences. See [`../CLAUDE.md`](../CLAUDE.md).
+

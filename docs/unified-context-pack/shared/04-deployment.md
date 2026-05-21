@@ -12,3 +12,4 @@ Define shared deployment and release conventions.
 
 ## Rule
 Shared deployment standards should keep every product recoverable.
+

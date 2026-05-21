@@ -24,3 +24,4 @@ Document how each product makes money now and how it can make money later.
 - Monetization ideas without a product-owner rationale
 - Assuming enterprise pricing without enterprise value
 - Calling everything freemium without specificity
+

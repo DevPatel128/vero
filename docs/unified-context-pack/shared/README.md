@@ -12,3 +12,4 @@ This folder will hold the cross-product rules and assets that apply to all produ
 
 ## Rule
 Shared content should live here once and be referenced from each product folder instead of being duplicated.
+

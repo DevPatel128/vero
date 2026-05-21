@@ -26,3 +26,4 @@ RIE should reward discipline that is real, repeatable, and verifiable. The produ
 - Turning discipline into entertainment only
 - Building around vanity rankings
 - Making the product feel louder than it is useful
+

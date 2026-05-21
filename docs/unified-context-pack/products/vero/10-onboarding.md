@@ -20,3 +20,4 @@ Make first use obvious and low-friction for workers and businesses.
 - A long abstract setup process
 - Forcing unnecessary steps before value appears
 - Onboarding that feels different by device without reason
+

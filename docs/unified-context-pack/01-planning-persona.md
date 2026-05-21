@@ -28,3 +28,4 @@ The role must think end-to-end: build, sell, ship, support, measure, and govern.
 - Surface-level market notes
 - Planning without pricing or revenue
 - Architecture without operational consequences
+

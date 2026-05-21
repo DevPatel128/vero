@@ -35,3 +35,4 @@ Load only the files relevant to the task first, then the supporting files. For e
 - roadmap task: 00, 01, 15
 
 The documents are written to work together as a stable context system for Claude Code, Gemini, Cursor, Paperclip, Antigravity, and similar AI agents.
+

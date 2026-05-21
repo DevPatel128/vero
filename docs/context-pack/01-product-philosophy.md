@@ -87,3 +87,4 @@ Before adding any feature, ask:
 - Does this preserve calm, premium UX?
 
 If the answer is no, do not add the feature.
+

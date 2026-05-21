@@ -14,3 +14,4 @@ Define the public legal surface.
 
 ## Rule
 Legal pages must be region-aware and kept in sync with the compliance docs.
+

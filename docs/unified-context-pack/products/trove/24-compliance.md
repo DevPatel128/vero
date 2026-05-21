@@ -17,3 +17,4 @@ Public claims must match the actual privacy and security controls.
 - Vague legal language
 - Compliance treated as decoration
 - Claims that overstate the product's protections
+

@@ -22,3 +22,4 @@ Define the main data structures and relationships.
 - Data without a trust reason
 - Unclear ownership boundaries
 - Tables that encourage overexposure
+

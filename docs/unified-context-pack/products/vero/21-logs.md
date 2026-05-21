@@ -21,3 +21,4 @@ Record Vero-specific edit history and product changes.
 
 ## Rule
 If the pack changes, the log should reflect it. If the log changes, the reason should be clear.
+

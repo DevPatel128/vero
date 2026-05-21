@@ -17,3 +17,4 @@ Trove should feel calm, useful, and trustworthy at launch.
 - Broad vague launch promises
 - Privacy language that overreaches
 - Launch copy that sounds like generic storage
+

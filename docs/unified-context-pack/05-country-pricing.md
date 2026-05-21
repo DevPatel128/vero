@@ -30,3 +30,4 @@ Localize pricing by country without breaking margin discipline or trust.
 - Undocumented regional exceptions
 - Pricing that ignores taxes or payment friction
 - A local price that looks arbitrary to users
+

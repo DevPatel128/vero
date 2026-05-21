@@ -95,3 +95,4 @@ If the context files already define a system, do not reinvent it. Refine it. Ext
 
 ## Agent outcome
 The AI system should behave like a coordinated product team with a shared memory, not a set of random prompt responses.
+

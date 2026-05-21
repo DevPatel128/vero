@@ -18,3 +18,4 @@ Admin should help protect authenticity without making the product feel opaque.
 - Undocumented admin powers
 - Hidden proof edits
 - No audit trail for sensitive actions
+

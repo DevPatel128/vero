@@ -20,3 +20,4 @@ Describe how Trove grows by earning trust, not by chasing attention.
 - Viral tricks that harm trust
 - Growth copy that sounds loud or generic
 - Attention-first positioning
+

@@ -97,3 +97,4 @@ By the end of onboarding, the user should have:
 
 ## Best practice
 The first experience should feel like momentum, not paperwork.
+

@@ -32,3 +32,4 @@ Product-specific context for Trove, maintained inside the unified pack.
 
 ## Notes
 Keep provenance, privacy, and value-led pricing consistent with the umbrella pack.
+

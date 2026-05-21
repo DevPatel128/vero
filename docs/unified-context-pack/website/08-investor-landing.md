@@ -22,3 +22,4 @@ This page should show that the company is disciplined, understandable, and desig
 
 ## Rule
 Investors should be able to understand the business in under a minute, then drill deeper without hitting vague language.
+

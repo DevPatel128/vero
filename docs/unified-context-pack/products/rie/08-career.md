@@ -19,3 +19,4 @@ Describe progression through discipline, not hierarchy.
 - Career ladders that do not map to real effort
 - Progress systems without verification
 - Gamified language that overwhelms the product
+

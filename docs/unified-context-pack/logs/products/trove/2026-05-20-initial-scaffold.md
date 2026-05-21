@@ -8,3 +8,4 @@
 - Reason: Provide a complete Trove planning surface inside the umbrella pack.
 - Context-pack section: products/trove
 - Verification status: validated on disk, no file errors reported
+

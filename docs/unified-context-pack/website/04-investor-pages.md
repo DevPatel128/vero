@@ -17,3 +17,4 @@ Investor pages should be concise, credible, and grounded in the actual product s
 
 ## Landing rule
 The investor landing page should answer what the company is, why it matters, how it makes money, and why the research budget is intentional.
+

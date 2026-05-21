@@ -18,3 +18,4 @@ Define the page families for the website.
 
 ## Rule
 Each page should answer one job clearly.
+

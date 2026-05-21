@@ -32,3 +32,4 @@ Product-specific context for RIE, maintained inside the unified pack.
 
 ## Notes
 Keep the discipline narrative, region-aware pricing, and theme lock consistent with the umbrella pack.
+

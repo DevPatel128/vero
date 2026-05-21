@@ -18,3 +18,4 @@ Copy for VROE Labs umbrella pages, ALVED protocol explainer, careers, press, inv
 | `faq.md`              | `/faq`                 |
 
 Legal pages live in `../legal/`. See [`../README.md`](../README.md) and [`../CLAUDE.md`](../CLAUDE.md).
+

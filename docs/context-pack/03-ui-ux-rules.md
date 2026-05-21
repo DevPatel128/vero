@@ -111,3 +111,4 @@ The copy, layout, and interaction patterns must support each other. Premium copy
 
 ## Final rule
 If a design choice does not improve clarity, trust, or usability, remove it.
+

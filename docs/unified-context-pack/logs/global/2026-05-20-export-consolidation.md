@@ -8,3 +8,4 @@
 - Reason: The user requested a single HTML file instead of having to run multiple pages one by one.
 - Context-pack section: exports layer, audience navigation, and single-file preview
 - Verification status: validated on disk, no file errors reported
+

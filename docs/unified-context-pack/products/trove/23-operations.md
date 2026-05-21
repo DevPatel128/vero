@@ -18,3 +18,4 @@ If a user loses trust in the product, the operating model must explain how the i
 - No owner for sensitive cases
 - Support that cannot resolve privacy issues
 - Invisible operations
+

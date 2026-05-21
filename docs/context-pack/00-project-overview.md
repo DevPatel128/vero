@@ -65,3 +65,4 @@ VERO should grow into a system where:
 
 ## Long-term vision
 VERO should become the place where practical career identity is built through real-world contribution. The platform should remain human, local, trustworthy, and scalable. Every feature should strengthen the same core narrative: real work builds real credibility.
+

@@ -78,3 +78,4 @@ Performance should be checked regularly through:
 
 ## Performance outcome
 The product should feel efficient and calm. The user should never feel that the system is wasting their time or device resources.
+

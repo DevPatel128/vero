@@ -47,3 +47,4 @@ It also includes a visual HTML preview so the whole pack can be explained and na
 
 ## Maintenance rule
 If an AI changes any repository file, the pack should be updated according to this context pack in the same change set whenever feasible. If not feasible, the edit must be logged immediately and queued for follow-up.
+

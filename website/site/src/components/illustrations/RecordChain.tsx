@@ -139,3 +139,4 @@ export function RecordChain({ className }: { className?: string }) {
     </div>
   );
 }
+

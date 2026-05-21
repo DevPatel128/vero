@@ -18,3 +18,4 @@ The free layer should be enough to establish proof. Paid features should deepen 
 - Paywalling the core proof experience
 - Confusing free versus paid capabilities
 - Pricing that feels like a tax on discipline
+

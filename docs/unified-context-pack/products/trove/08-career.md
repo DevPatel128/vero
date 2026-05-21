@@ -19,3 +19,4 @@ For Trove, this file maps household or record-life progression rather than a tra
 - Pretending every product needs a career ladder
 - Making growth feel like gamification
 - Expanding storage without increasing trust
+

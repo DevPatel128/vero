@@ -19,3 +19,4 @@ The visual system should make the product feel secure and legible.
 - Decorative clutter
 - Inconsistent component behavior
 - Accessibility as an afterthought
+

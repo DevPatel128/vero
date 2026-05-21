@@ -8,3 +8,4 @@
 - Reason: Provide a complete Vero planning surface inside the umbrella pack.
 - Context-pack section: products/vero
 - Verification status: validated on disk, no file errors reported
+

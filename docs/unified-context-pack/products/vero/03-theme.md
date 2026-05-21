@@ -26,3 +26,4 @@ Keep Vero visually consistent across product, marketing, and exported HTML so th
 - Different pages feeling like different companies
 - Changing too many visual variables at once
 - Letting investor-facing pages and product pages look unrelated
+

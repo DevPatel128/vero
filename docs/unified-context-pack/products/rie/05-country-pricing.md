@@ -20,3 +20,4 @@ Adapt RIE pricing to local markets while preserving the value of the free core a
 - Local pricing that breaks the freemium promise
 - Pricing only by exchange rate
 - Treating all regions as identical
+

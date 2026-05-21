@@ -11,3 +11,4 @@ Define the shared trust protocol language used across products.
 
 ## Rule
 Shared trust logic must live here once and be referenced from each product pack.
+

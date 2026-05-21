@@ -28,3 +28,4 @@ Vero should reward real execution, repeat trust, and portable proof. Anything th
 - Building around hype instead of utility
 - Adding features that do not strengthen trust
 - Designing for vanity metrics instead of real work
+

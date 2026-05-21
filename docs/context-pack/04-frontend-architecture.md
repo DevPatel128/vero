@@ -112,3 +112,4 @@ The frontend should be built so that the same design language can later power th
 
 ## Quality standard
 The frontend should feel like a polished product from day one. It should not look like a prototype with placeholders. Even if the backend is static or serverless, the interface should feel intentional and finished.
+

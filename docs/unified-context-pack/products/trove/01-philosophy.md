@@ -25,3 +25,4 @@ Trove should protect what matters, preserve provenance, and avoid making private
 - Treating the product like generic cloud storage
 - Adding noise instead of trust
 - Making the user feel watched
+

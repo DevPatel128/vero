@@ -11,3 +11,4 @@ Define the voice across the public website.
 
 ## Rule
 Public copy must be clear enough for non-technical readers and accurate enough for technical readers.
+

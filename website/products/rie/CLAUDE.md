@@ -43,3 +43,4 @@ In addition to base checks:
 - The page is honest about what RIE _doesn't_ do (e.g., "RIE is not a coaching app").
 - For sensitive-data pages (fitness, health-adjacent), the privacy posture is stated in plain words.
 - Persona-specific pages address one persona well. Don't try to address three on one page.
+

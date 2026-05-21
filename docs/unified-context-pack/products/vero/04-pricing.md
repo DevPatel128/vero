@@ -26,3 +26,4 @@ Vero monetizes the side that benefits most from trust and verification: business
 - Ambiguous subscription promises
 - Pricing that undercuts trust
 - Copy that makes the product sound cheaper or more expensive than it is
+

@@ -8,3 +8,4 @@
 - Reason: Make the website easier to sell and navigate for different audiences while keeping future planning disciplined and visible.
 - Context-pack section: website pages, exports, future scopes, and AI-agent guidance
 - Verification status: validated on disk, no file errors reported
+

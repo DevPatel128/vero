@@ -85,3 +85,4 @@ See [`/docs/COMPLIANCE.md`](../../docs/COMPLIANCE.md) for the full matrix.
 ## Voice
 
 VROE Labs umbrella copy is **the most quiet** voice in the system. The umbrella sells confidence in the team and the thesis, not any individual product. Read the manifesto draft for calibration.
+

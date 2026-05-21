@@ -19,3 +19,4 @@ Discipline should be visible, portable, and hard to fake.
 - Turning the product into hype
 - Treating discipline like a social feed
 - Adding claims the system cannot verify
+

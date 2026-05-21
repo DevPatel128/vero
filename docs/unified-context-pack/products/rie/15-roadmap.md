@@ -18,3 +18,4 @@ Each phase should deepen proof without weakening discipline authenticity.
 - Expanding before validation
 - Roadmap items that depend on unsupported trust models
 - Feature sprawl that outruns the core
+

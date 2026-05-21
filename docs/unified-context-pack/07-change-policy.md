@@ -21,3 +21,4 @@ Any AI-driven repo change should trigger a context-pack update according to this
 - Silent AI edits
 - Untracked drift between code and documentation
 - Leaving the pack outdated after a product change
+

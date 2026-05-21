@@ -18,3 +18,4 @@ Security should be the product, not just a feature.
 - Weak handling of private records
 - Generic security claims without controls
 - Hidden access patterns
+

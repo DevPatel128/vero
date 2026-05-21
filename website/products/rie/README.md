@@ -82,3 +82,4 @@ Same as Vero — edit Markdown, open PR, run checks, ship.
 ## Engineering handoff
 
 Engineer pulls into `apps/marketing/src/app/rie/<route>/page.tsx`.
+

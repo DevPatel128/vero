@@ -12,3 +12,4 @@ Define how pricing is presented publicly.
 
 ## Rule
 Pricing pages must match the actual pricing model in the product pack.
+

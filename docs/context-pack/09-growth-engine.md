@@ -84,3 +84,4 @@ Never let growth mechanics become manipulative. The system should encourage heal
 
 ## Product outcome
 The growth engine should make VERO feel like a living trust network where real work is seen and valued.
+

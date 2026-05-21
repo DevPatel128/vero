@@ -27,3 +27,4 @@ Trove should feel careful, calm, private, and trustworthy. It should read like a
 - Flashy consumer storage language
 - Overpromising security
 - Visual noise that undermines trust
+

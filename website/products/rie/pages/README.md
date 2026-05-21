@@ -20,3 +20,4 @@ Plain-Markdown copy per page. Engineer pulls into `apps/marketing/src/app/rie/<r
 | `faq.md`              | `/rie/faq`             |
 
 Rules in [`../README.md`](../README.md) and [`../CLAUDE.md`](../CLAUDE.md).
+

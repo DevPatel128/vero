@@ -27,3 +27,4 @@ Define how pricing is decided, constrained, reviewed, and localized.
 - Discounting without guardrails
 - Revenue assumptions hidden in product copy
 - Prices that cannot be defended to investors or operators
+

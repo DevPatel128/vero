@@ -130,3 +130,4 @@ export function AnnouncementCalendar({ className }: { className?: string }) {
     </div>
   );
 }
+

@@ -22,3 +22,4 @@ This page should make the products feel useful, trustworthy, and easy to approac
 
 ## Rule
 Avoid jargon unless it is immediately explained in plain language.
+

@@ -25,3 +25,4 @@ Keep Trove visually aligned with the shared system while making the privacy and 
 - Making the product feel decorative
 - Using visual language that hides what the product does
 - Diverging from the family system without reason
+

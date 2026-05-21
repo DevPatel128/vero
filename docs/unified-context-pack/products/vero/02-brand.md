@@ -36,3 +36,4 @@ Vero should feel calm, premium, local, and credible. It is not loud, playful, or
 - Over-selling before the user understands the product
 - Mixing too many tones in one experience
 - Letting marketing drift away from product truth
+

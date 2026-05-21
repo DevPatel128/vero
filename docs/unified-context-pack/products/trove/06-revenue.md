@@ -18,3 +18,4 @@ Trove uses freemium plus premium tiers and selective institutional pricing.
 - Monetizing the core trust promise too early
 - Hiding institutional pricing logic
 - Turning provenance into a generic upsell machine
+

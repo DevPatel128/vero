@@ -106,3 +106,4 @@ Engineers wiring this into pages should also read:
 - [`/apps/marketing/README.md`](../apps/marketing/README.md) — The actual Next.js app
 - [`/docs/ARCHITECTURE.md`](../docs/ARCHITECTURE.md) — System architecture
 - [`/docs/COMPLIANCE.md`](../docs/COMPLIANCE.md) — Country-by-country compliance matrix
+

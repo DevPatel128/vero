@@ -14,3 +14,4 @@ It includes one self-contained HTML file that covers home, investor, user, compa
 - Markdown remains the source of truth.
 - HTML is the reading/export layer.
 - The export layer should stay consolidated into one HTML file unless a new requirement explicitly reintroduces split pages.
+

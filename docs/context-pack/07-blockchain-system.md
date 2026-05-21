@@ -98,3 +98,4 @@ The website should explain blockchain as trust infrastructure, not as a speculat
 
 ## Product outcome
 The blockchain layer should make VERO feel more credible, more scalable, and more globally useful without making the product harder to use.
+

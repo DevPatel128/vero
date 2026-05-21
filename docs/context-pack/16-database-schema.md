@@ -103,3 +103,4 @@ Do not expose private fields broadly. Use role-aware access rules. Sensitive ver
 
 ## Schema outcome
 The schema should support a product that is trustworthy, scalable, and explainable.
+

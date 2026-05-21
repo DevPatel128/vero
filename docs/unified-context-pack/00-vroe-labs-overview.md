@@ -25,3 +25,4 @@ VROE Labs builds a family of proof-based products that share trust infrastructur
 - Treating the company like a generic startup shell
 - Hiding product differences behind vague umbrella language
 - Forcing readers to jump across too many files before they understand the system
+

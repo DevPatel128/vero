@@ -28,3 +28,4 @@ RIE should feel focused, calm, athletic, and honest. It should communicate disci
 - Shouty fitness marketing
 - Buzzword-driven creator language
 - Making the brand feel like a game first
+

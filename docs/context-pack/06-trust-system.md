@@ -100,3 +100,4 @@ The user should always know:
 
 ## Long-term value
 The trust system should eventually support portable proof-of-work identity, credibility graphs, and verified career history that can be reused beyond VERO.
+

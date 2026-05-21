@@ -85,3 +85,4 @@ Use names consistently. Do not let the website or app drift into inconsistent na
 
 ## Brand promise
 VERO helps people move from uncertainty to verified capability. It gives them a way to build a future that is visible, trusted, and earned.
+

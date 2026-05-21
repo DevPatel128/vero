@@ -22,3 +22,4 @@ This pack is enterprise-grade and future-proof, but it must stay anchored to Ver
 - Abstract enterprise language that no product actually uses
 - Overengineering for hypothetical future products
 - Pretending all products need the same feature set
+

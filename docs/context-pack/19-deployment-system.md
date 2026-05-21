@@ -69,3 +69,4 @@ Make sure metadata, routes, canonical logic, and social previews are verified be
 
 ## Final goal
 The website should deploy reliably and feel production-grade even while still in pre-launch mode.
+

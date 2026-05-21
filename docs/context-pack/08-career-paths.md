@@ -117,3 +117,4 @@ The career path system should support future additions. New categories should fi
 
 ## Product outcome
 The user should feel that VERO contains practical, respected, and expandable ways to grow through real work.
+

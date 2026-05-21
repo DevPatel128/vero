@@ -74,3 +74,4 @@ A phase is ready to advance when:
 
 ## Roadmap outcome
 The roadmap should help the team stay disciplined. VERO should grow like infrastructure, not like hype.
+

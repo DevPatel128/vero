@@ -18,3 +18,4 @@ If proof can be disputed, the operating model must explain the response path.
 - No owner for edge cases
 - Support that cannot explain validation failures
 - Invisible operations
+

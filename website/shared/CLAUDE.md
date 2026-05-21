@@ -28,3 +28,4 @@ For legal: read **the corresponding section** of `/docs/COMPLIANCE.md` plus the 
 - The ALVED page has a link to the actual spec at `/packages/types/src/alved.ts` (or its published mirror).
 - The careers page lists only real, open roles, with apply-to addresses.
 - The press page lists boilerplate + a real media contact email.
+

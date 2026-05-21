@@ -95,3 +95,4 @@ Check the product's `README.md` → `CLAUDE.md` in this order:
 3. `/products/<product>/README.md`
 
 Then escalate to Slack `#marketing-copy` or the product owner.
+

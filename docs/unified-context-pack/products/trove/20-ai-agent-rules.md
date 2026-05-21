@@ -14,3 +14,4 @@ Any AI agent editing Trove must load the relevant product context first.
 - Drift from the context pack
 - Guess at compliance or privacy details
 - Change the theme without documentation
+

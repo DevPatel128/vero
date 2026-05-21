@@ -91,3 +91,4 @@ Give each role and process only the access it needs. This reduces damage if some
 
 ## Security outcome
 The system should feel safe enough for users to trust with identity, reputation, and work history.
+

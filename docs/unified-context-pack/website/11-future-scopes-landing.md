@@ -22,3 +22,4 @@ This page should make future growth feel intentional and budgeted, not improvise
 
 ## Rule
 Future scope content must stay anchored to current product reality and current operating priorities.
+

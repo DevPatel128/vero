@@ -12,3 +12,4 @@ Define shared compliance patterns across regions and products.
 
 ## Rule
 Regional legal requirements override global convenience.
+

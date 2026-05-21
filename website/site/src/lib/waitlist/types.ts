@@ -38,3 +38,4 @@ export interface WaitlistStore {
   findByCode(code: string): Promise<WaitlistEntry | null>;
   stats(): Promise<WaitlistStats>;
 }
+

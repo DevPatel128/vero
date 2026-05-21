@@ -122,3 +122,4 @@ Escrow holds the money. Bad clients lose access. The trust graph cuts off repeat
 - [Trust](/vero/trust) — how the trust graph works
 - [Security](/vero/security) — crypto, escrow, DPDP compliance
 - [ALVED](/alved) — the protocol
+

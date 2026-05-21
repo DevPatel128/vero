@@ -17,3 +17,4 @@ RIE should feel precise and disciplined at launch, not broad or noisy.
 - Announcing more categories than the product can support
 - Overpromising proof sources
 - Launch copy that sounds generic
+

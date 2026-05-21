@@ -23,3 +23,4 @@ export function ScrollProgress({ className }: { className?: string }) {
     />
   );
 }
+

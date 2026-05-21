@@ -13,3 +13,4 @@ Provide a formal NDA surface for sensitive discussions, reviews, and partner con
 
 ## Rule
 This page should exist as part of the public website/legal system whenever the company needs a standard NDA reference.
+

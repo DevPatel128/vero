@@ -13,3 +13,4 @@ Define the public-facing company and product surface.
 
 ## Rule
 The website should help a stranger understand the company quickly and accurately.
+

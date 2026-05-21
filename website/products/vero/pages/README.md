@@ -19,3 +19,4 @@ Plain-Markdown copy for each page of the Vero marketing site. Edit the words. En
 Each file is Markdown with frontmatter (slug, title, description, schema, keywords, AEO question + answer, status).
 
 See the parent [`../README.md`](../README.md) and [`../CLAUDE.md`](../CLAUDE.md) for rules.
+

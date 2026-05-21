@@ -89,3 +89,4 @@ export function CategoryCubes({ className }: { className?: string }) {
     </div>
   );
 }
+

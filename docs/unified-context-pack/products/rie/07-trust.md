@@ -20,3 +20,4 @@ Make discipline proof credible and difficult to fake.
 - Fake streak mechanics
 - Hidden validation rules
 - Trust language that users cannot explain back
+

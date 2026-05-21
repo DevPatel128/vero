@@ -17,3 +17,4 @@ Each phase should strengthen trust before it broadens scope.
 - Expanding before the trust story is clear
 - Roadmap items that weaken privacy
 - Feature sprawl that outruns the core
+

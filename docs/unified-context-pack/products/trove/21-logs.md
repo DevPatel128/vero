@@ -21,3 +21,4 @@ Record Trove-specific edit history.
 
 ## Rule
 If Trove changes, the log should explain what changed and why.
+

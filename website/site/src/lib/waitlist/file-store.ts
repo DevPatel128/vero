@@ -133,3 +133,4 @@ export const fileStore: WaitlistStore = {
     return { total: shape.entries.length, workers, businesses };
   },
 };
+

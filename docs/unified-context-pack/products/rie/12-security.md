@@ -18,3 +18,4 @@ Security should support trustworthy proof without turning the product into a sur
 - Hidden data collection
 - Weak validation for proof inputs
 - Security language that the product cannot support
+

@@ -114,3 +114,4 @@ export function BengaluruMap({ className }: { className?: string }) {
     </div>
   );
 }
+

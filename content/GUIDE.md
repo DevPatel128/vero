@@ -78,3 +78,4 @@ Vero (worker proof) ← → RIE (discipline proof) ← → Trove (data provenanc
 3. **Don't ship without compliance check.** India-first = DPDP Act 2023 mandatory.
 4. **Don't create separate trust graph.** Use ALVED protocol everywhere.
 5. **Don't ignore design system.** Brand consistency matters at launch.
+

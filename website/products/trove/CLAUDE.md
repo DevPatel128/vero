@@ -42,3 +42,4 @@ No:
 - **No legal-will claim** — the page distinguishes between Trove records and a legal will.
 - **Heir privacy** — copy preserves that heirs do not see the vault while the owner is alive.
 - **The word _dignity_ is fine on this product** — Trove is about taking care of what matters. Other products would feel weird here. Trove can.
+

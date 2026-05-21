@@ -17,3 +17,4 @@ Admin should reduce risk without making the product feel invasive.
 - Hidden admin access
 - Silent record modifications
 - No audit trail for sensitive actions
+

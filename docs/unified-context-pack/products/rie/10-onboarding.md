@@ -18,3 +18,4 @@ Make first use fast and understandable for athletes, creators, and gamers.
 - Long setup without value
 - Over-asking before proof appears
 - Device pairing that feels opaque
+

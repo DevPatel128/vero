@@ -16,3 +16,4 @@ Any agent editing the repo must follow the context pack, the root project instru
 - Invent product behavior not supported by the pack
 - Drift away from current product reality
 - Skip logs when an AI made the change
+

@@ -17,3 +17,4 @@ Public claims must match what the system can truly verify.
 - Vague privacy language
 - Compliance treated as an afterthought
 - Claims that overstate what proof means
+

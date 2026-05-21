@@ -123,3 +123,4 @@ A piece of copy is done when:
 ## Last line
 
 You are writing for a serious, calm, premium brand that competes with Stripe, Linear, Patagonia, Notion. Read every sentence twice before shipping. If anything feels noisy, it probably is — cut it.
+

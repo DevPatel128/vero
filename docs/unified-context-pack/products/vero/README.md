@@ -32,3 +32,4 @@ Product-specific context for Vero, maintained inside the unified pack.
 
 ## Notes
 This folder is intentionally readable on its own, but it still inherits the umbrella rules.
+

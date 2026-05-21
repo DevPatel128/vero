@@ -18,3 +18,4 @@ RIE uses a freemium model with paid pro features.
 - Charging before trust is built
 - Weak feature gating
 - Adding monetization that damages the discipline narrative
+

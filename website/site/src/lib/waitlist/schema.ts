@@ -24,3 +24,4 @@ export const joinSchema = z.object({
 });
 
 export type JoinInput = z.infer<typeof joinSchema>;
+
