@@ -32,16 +32,16 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/waitlist"
-            className="hidden rounded-full bg-ink-900 px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-accent sm:inline-block"
+            className="hidden rounded-full bg-ink-900 px-4 py-2 text-sm font-medium text-paper transition-all hover:bg-accent hover:shadow-md sm:inline-block"
           >
-            Join the waitlist
+            Reserve Early Access
           </Link>
           <Link
             href="/waitlist"
             className="rounded-full bg-ink-900 px-4 py-2 text-sm font-medium text-paper sm:hidden"
-            aria-label="Join the waitlist"
+            aria-label="Reserve Early Access"
           >
-            Join
+            Reserve
           </Link>
         </div>
       </div>

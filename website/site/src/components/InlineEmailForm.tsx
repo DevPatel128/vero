@@ -33,9 +33,18 @@ export function InlineEmailForm() {
           Reserve My Spot
         </button>
       </form>
-      <p className="text-xs text-ink-600 pl-4 sm:pl-5">
-        Takes 10 seconds. No spam. Free for professionals.
-      </p>
+      <div className="flex items-center gap-3 pl-2 sm:pl-3 mt-1">
+        <div className="flex -space-x-2">
+          {["bg-accent", "bg-proof", "bg-trust"].map((c, i) => (
+            <div key={i} className={`h-6 w-6 rounded-full border-2 border-paper ${c} flex items-center justify-center text-[9px] font-bold text-white shadow-sm`}>
+              {['JD', 'SM', 'RK'][i]}
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-ink-600">
+          <span className="font-medium text-ink-900">4,200+</span> professionals joined. <span className="hidden sm:inline">Free forever.</span>
+        </p>
+      </div>
     </div>
   );
 }

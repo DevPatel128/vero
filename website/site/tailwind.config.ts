@@ -60,6 +60,7 @@ const config: Config = {
       boxShadow: {
         card: "0 1px 0 0 rgba(15,15,14,0.04), 0 1px 3px 0 rgba(15,15,14,0.06)",
         lift: "0 10px 30px -10px rgba(15,15,14,0.18)",
+        "premium-hover": "0 20px 40px -15px rgba(15,15,14,0.15)",
       },
       transitionTimingFunction: {
         out: "cubic-bezier(0.16, 1, 0.3, 1)",

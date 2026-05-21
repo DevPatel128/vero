@@ -125,11 +125,11 @@ export function Hero() {
                 <PhoneMockup />
               </div>
 
-              <div className="relative z-10 space-y-4 md:pr-32">
+              <div className="relative z-10 flex snap-x snap-mandatory overflow-x-auto pb-8 pt-4 md:block md:space-y-4 md:overflow-visible md:pb-0 md:pt-0 md:pr-32 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
                 {cards.map((card, i) => (
                   <motion.div
                     key={card.title}
-                    className={i > 0 ? "hidden md:block" : ""}
+                    className="w-[85vw] shrink-0 snap-center pr-4 md:w-auto md:shrink md:pr-0"
                     initial={reduce ? false : { opacity: 0, x: 24, y: 8 }}
                     animate={{ opacity: 1, x: 0, y: 0 }}
                     transition={{

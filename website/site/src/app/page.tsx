@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { Section, Eyebrow, SectionTitle, SectionLead } from "@/components/Section";
 import { LinkButton } from "@/components/Button";
+import { InlineEmailForm } from "@/components/InlineEmailForm";
 import { site } from "@/lib/site";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -46,13 +47,6 @@ const howItWorks = [
   { step: "2", title: "Do the work", body: "No bidding war. No race to the bottom. Just a clear scope, a fair rate, and a person on the other side who needs help." },
   { step: "3", title: "Both sides sign", body: "Professional confirms completion. Client confirms completion. Both signatures are required." },
   { step: "4", title: "A record is minted", body: "Chained to the records that came before. Public if you want. Private if you do not. Owned by you forever." },
-];
-
-const features = [
-  { title: "Records that cannot be edited", body: "Each record is signed by both parties and chained by hash to the one before it. Nobody, not even us, can change it after the fact." },
-  { title: "Escrow you can see", body: "Client funds the work up front. We hold it. Professional delivers. The release is on the record. 5% fee, well below the market." },
-  { title: "A trust graph, not a star rating", body: "Your standing is built from many real signals - completed work, repeat clients, dispute history, punctuality - not one gameable number." },
-  { title: "Portable identity", body: "Every record is exportable. The credentials you build on Vero can be read by other products that speak the same protocol." },
 ];
 
 const personas = [
@@ -163,32 +157,40 @@ export default function HomePage() {
         </Parallax>
       </Section>
 
-      {/* Features - TiltCard hover */}
-      <Section>
-        <Reveal>
-          <Eyebrow>What is different</Eyebrow>
-        </Reveal>
-        <h2 className="max-w-3xl font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
-          <WordReveal text="Trust is in the substrate, not the marketing." />
-        </h2>
-        <Reveal delay={0.2}>
-          <SectionLead>
-            Vero is engineered so the platform cannot quietly help, harm, or rewrite a
-            professional&apos;s history. The rules are the same for everyone, including us.
-          </SectionLead>
-        </Reveal>
+      {/* Trust & Escrow Visual */}
+      <Section tone="warm" className="!py-24">
+        <div className="text-center md:mx-auto md:max-w-3xl">
+          <Reveal>
+            <Eyebrow>Escrow Guarantee</Eyebrow>
+          </Reveal>
+          <h2 className="mt-4 font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
+            <WordReveal text="Safe money. No chasing invoices." />
+          </h2>
+          <Reveal delay={0.2}>
+            <SectionLead className="mx-auto mt-4">
+              When a job starts, the client funds it up front. We hold it safely in escrow. When you finish, both sides sign, and the money drops. We take a flat 5% fee.
+            </SectionLead>
+          </Reveal>
+        </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {features.map((f, i) => (
-            <ScaleIn key={f.title} delay={i * 0.08} from={0.94}>
-              <TiltCard className="h-full">
-                <div className="h-full rounded-2xl border border-ink-100 bg-paper p-8 transition-shadow duration-300 hover:shadow-lift">
-                  <h3 className="font-display text-2xl font-medium tracking-tightish text-ink-900">
-                    {f.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-relaxed text-ink-600">{f.body}</p>
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          {[
+            { step: "1", title: "Client Funds Upfront", body: "The budget is locked in escrow before you lift a finger. You know the money is real." },
+            { step: "2", title: "You Do The Work", body: "Deliver exactly what was agreed upon. No scope creep without a signed addendum." },
+            { step: "3", title: "Sign & Release", body: "Both parties sign the ledger confirming completion. Funds are released instantly." },
+          ].map((item, i) => (
+            <ScaleIn key={item.step} delay={i * 0.15} from={0.9}>
+              <div className="flex h-full flex-col items-center rounded-3xl border border-ink-100 bg-paper p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-premium-hover">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-trust text-xl font-bold text-paper shadow-md">
+                  {item.step}
                 </div>
-              </TiltCard>
+                <h3 className="mt-6 font-display text-xl font-medium tracking-tight text-ink-900">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-600">
+                  {item.body}
+                </p>
+              </div>
             </ScaleIn>
           ))}
         </div>
@@ -335,18 +337,14 @@ export default function HomePage() {
             </h2>
             <BlurIn delay={0.3}>
               <p className="mt-5 max-w-xl text-lg text-ink-300">
-                Join the waitlist. You will get a personal page with your queue position
-                and a referral link.
+                Stop applying. Start proving. Reserve your spot for the first 5,000 users.
               </p>
             </BlurIn>
           </div>
-          <BlurIn delay={0.2} className="md:col-span-5 flex flex-col gap-3 md:items-end">
-            <LinkButton href="/waitlist?as=professional" size="lg">
-              Join as a professional
-            </LinkButton>
-            <LinkButton href="/waitlist?as=business" variant="secondary" size="lg">
-              Join as a business
-            </LinkButton>
+          <BlurIn delay={0.2} className="md:col-span-5 flex flex-col justify-center">
+            <div className="rounded-3xl bg-white/5 p-6 backdrop-blur-md">
+              <InlineEmailForm />
+            </div>
           </BlurIn>
         </div>
       </Section>
