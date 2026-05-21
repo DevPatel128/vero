@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
  * TrustGraph
  *
  * A small network of nodes (people, businesses) connected by signed work.
- * Renders calmly — no aggressive pulse, just gentle propagation.
+ * Renders calmly - no aggressive pulse, just gentle propagation.
  */
 export function TrustGraph({ className }: { className?: string }) {
   const reduce = useReducedMotion() ?? false;
@@ -41,7 +41,7 @@ export function TrustGraph({ className }: { className?: string }) {
         viewBox="0 0 560 340"
         className="h-auto w-full"
         role="img"
-        aria-label="A trust graph — workers and businesses connected by signed records"
+        aria-label="A trust graph - professionals and businesses connected by signed records"
       >
         {edges.map(([a, b], i) => (
           <motion.line
@@ -100,7 +100,7 @@ export function TrustGraph({ className }: { className?: string }) {
             fill="#5b5b56"
             fontFamily="ui-sans-serif, system-ui"
           >
-            Worker
+            Professional
           </text>
           <circle cx="92" r="6" fill="#fafaf7" stroke="#dcdcd4" />
           <text

@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 /**
- * PathDraw — animate any single <path d="..." /> drawing in on view.
+ * PathDraw - animate any single <path d="..." /> drawing in on view.
  * Pass viewBox + d directly. Stroke and width customizable.
  */
 export function PathDraw({

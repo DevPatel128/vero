@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 /**
- * CategoryCubes — isometric stack of category tiles. Each tile slides in.
+ * CategoryCubes - isometric stack of category tiles. Each tile slides in.
  */
 export function CategoryCubes({ className }: { className?: string }) {
   const reduce = useReducedMotion() ?? false;

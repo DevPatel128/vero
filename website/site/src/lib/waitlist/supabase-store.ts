@@ -157,10 +157,10 @@ export const supabaseStore: WaitlistStore = {
       .from("waitlist")
       .select("*", { count: "exact", head: true });
 
-    const { count: workers } = await db
+    const { count: professionals } = await db
       .from("waitlist")
       .select("*", { count: "exact", head: true })
-      .eq("role", "worker");
+      .eq("role", "professional");
 
     const { count: businesses } = await db
       .from("waitlist")
@@ -169,7 +169,7 @@ export const supabaseStore: WaitlistStore = {
 
     return {
       total: total ?? 0,
-      workers: workers ?? 0,
+      professionals: professionals ?? 0,
       businesses: businesses ?? 0,
     };
   },

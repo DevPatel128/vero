@@ -57,7 +57,7 @@ export default function Page() {
         We use privacy-light, aggregate analytics for the marketing site to
         understand page-level performance. No personal identifiers, no
         cross-site tracking, no advertising IDs. We honour the Global Privacy
-        Control (GPC) header — if your browser sends it, we suppress analytics
+        Control (GPC) header - if your browser sends it, we suppress analytics
         for your session.
       </p>
 

@@ -66,7 +66,7 @@ export function SectionLead({
   return (
     <p
       className={cn(
-        "mt-5 max-w-2xl text-lg leading-relaxed text-ink-600",
+        "mt-2 max-w-2xl text-lg leading-relaxed text-ink-600",
         className,
       )}
     >

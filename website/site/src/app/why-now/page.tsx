@@ -18,7 +18,7 @@ const shifts = [
   {
     year: "Now",
     title: "Verified identity, in India, in minutes",
-    body: "India's digital identity stack — Aadhaar-linked verification, DigiLocker, e-sign — is now mature enough to make per-worker verification fast, lawful, and low-friction. The tooling that used to take a quarter to build is available off the shelf.",
+    body: "India's digital identity stack - Aadhaar-linked verification, DigiLocker, e-sign - is now mature enough to make per-professional verification fast, lawful, and low-friction. The tooling that used to take a quarter to build is available off the shelf.",
   },
   {
     year: "Now",
@@ -28,7 +28,7 @@ const shifts = [
   {
     year: "Soon",
     title: "Portable credentials across the stack",
-    body: "Verifiable Credentials and signed records are moving from research to deployment. The work you do on Vero is designed to be readable by the next decade of work apps — not trapped behind a login.",
+    body: "Verifiable Credentials and signed records are moving from research to deployment. The work you do on Vero is designed to be readable by the next decade of work apps - not trapped behind a login.",
   },
 ];
 

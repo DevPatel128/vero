@@ -4,7 +4,7 @@ export const site = {
   protocol: "ALVED",
   tagline: "Proof of work, not posts about work.",
   description:
-    "Vero turns each job you complete into a verified record, signed by you and the person who hired you. Bengaluru-first. Launching 2027 — exact date to be announced.",
+    "Vero turns each job you complete into a verified record, signed by you and the person who hired you. Bengaluru-first. Launching 2027 - exact date to be announced.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://vero.app",
   launchCity: "Bengaluru",
   launchWindow: "2027",
@@ -40,7 +40,7 @@ export const nav = {
   primary: [
     { label: "How it works", href: "/how-it-works" },
     { label: "Features", href: "/features" },
-    { label: "For workers", href: "/for-workers" },
+    { label: "For professionals", href: "/for-professionals" },
     { label: "For businesses", href: "/for-businesses" },
     { label: "Pricing", href: "/pricing" },
     { label: "Trust", href: "/trust" },

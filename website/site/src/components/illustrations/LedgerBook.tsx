@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 /**
- * LedgerBook — an open book with signed pages turning. Editorial, calm.
+ * LedgerBook - an open book with signed pages turning. Editorial, calm.
  */
 export function LedgerBook({ className }: { className?: string }) {
   const reduce = useReducedMotion() ?? false;
@@ -93,7 +93,7 @@ export function LedgerBook({ className }: { className?: string }) {
           ))}
         </motion.g>
 
-        {/* Right page — current open record with signatures */}
+        {/* Right page - current open record with signatures */}
         <motion.g
           initial={reduce ? false : { opacity: 0, rotateY: -25 }}
           whileInView={{ opacity: 1, rotateY: 0 }}

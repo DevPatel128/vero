@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 /**
- * HashRibbon — long horizontal ribbon of hash IDs that shifts on hover
+ * HashRibbon - long horizontal ribbon of hash IDs that shifts on hover
  * and slowly drifts. Reads like the chain header of a ledger.
  */
 export function HashRibbon({

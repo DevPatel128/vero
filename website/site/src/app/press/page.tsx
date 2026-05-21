@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Press",
   description:
-    "Press kit for Vero — boilerplate, founder bios, logo lockups, screenshots. Press contact: press@vero.app.",
+    "Press kit for Vero - boilerplate, founder bios, logo lockups, screenshots. Press contact: press@vero.app.",
   alternates: { canonical: "/press" },
 };
 
@@ -34,7 +34,7 @@ export default function Page() {
           </div>
           <div className="md:col-span-8 prose-vero">
             <p>
-              Vero is a verified proof-of-work identity platform, opening in Bengaluru in 2027 (exact date to be announced — follow our socials). Each job a worker completes becomes a signed, chained record on their profile — jointly signed by the worker and the person who hired them, tamper-evident, exportable, and portable. Workers join free. Vero is a product by VROE Labs.
+              Vero is a verified proof-of-work identity platform, opening in Bengaluru in 2027 (exact date to be announced - follow our socials). Each job a professional completes becomes a signed, chained record on their profile - jointly signed by the professional and the person who hired them, tamper-evident, exportable, and portable. Professionals join free. Vero is a product by VROE Labs.
             </p>
           </div>
         </div>
@@ -78,10 +78,10 @@ export default function Page() {
               <strong className="text-ink-900">Headquarters:</strong> Bengaluru, India
             </li>
             <li>
-              <strong className="text-ink-900">Launch:</strong> 2027, Bengaluru — exact date to be announced (follow our socials) — Whitefield, HSR Layout, Koramangala, Sarjapur, Electronic City
+              <strong className="text-ink-900">Launch:</strong> 2027, Bengaluru - exact date to be announced (follow our socials) - Whitefield, HSR Layout, Koramangala, Sarjapur, Electronic City
             </li>
             <li>
-              <strong className="text-ink-900">Pricing:</strong> Workers free. Businesses from ₹2,499/mo. Flat 5% on escrowed paid work.
+              <strong className="text-ink-900">Pricing:</strong> Professionals free. Businesses from ₹2,499/mo. Flat 5% on escrowed paid work.
             </li>
           </ul>
         </div>

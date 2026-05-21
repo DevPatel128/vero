@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const posture = [
   {
     h: "Records are signed and chained",
-    b: "Every record carries two cryptographic signatures and references the record that came before it on the same worker. Tampering is detectable. The platform cannot quietly rewrite history.",
+    b: "Every record carries two cryptographic signatures and references the record that came before it on the same professional. Tampering is detectable. The platform cannot quietly rewrite history.",
   },
   {
     h: "Data is encrypted in transit and at rest",
@@ -21,7 +21,7 @@ const posture = [
   },
   {
     h: "Identity verified, biometrics not stored",
-    b: "Workers verify their identity using government-supported digital documents. We retain the verification result. We do not retain the underlying scans or biometric data.",
+    b: "Professionals verify their identity using government-supported digital documents. We retain the verification result. We do not retain the underlying scans or biometric data.",
   },
   {
     h: "No card data on our servers",
@@ -29,11 +29,11 @@ const posture = [
   },
   {
     h: "Audit log",
-    b: "Every trust-affecting action — sign, dispute outcome, account suspension — is recorded in an append-only log. Internal operators cannot edit history.",
+    b: "Every trust-affecting action - sign, dispute outcome, account suspension - is recorded in an append-only log. Internal operators cannot edit history.",
   },
   {
     h: "Compliance with India's DPDP Act 2023",
-    b: "Lawful basis. Consent recorded. Withdrawal of consent honoured. Data principal rights — access, correction, erasure, grievance — all supported. Grievance Officer details on the relevant legal page.",
+    b: "Lawful basis. Consent recorded. Withdrawal of consent honoured. Data principal rights - access, correction, erasure, grievance - all supported. Grievance Officer details on the relevant legal page.",
   },
 ];
 

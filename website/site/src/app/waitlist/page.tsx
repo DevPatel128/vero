@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Join the waitlist",
   description:
-    "Reserve your spot. Bengaluru opens in 2027 — exact date to be announced. Workers join free. Founding-member perks for the first 1,000.",
+    "Reserve your spot. Bengaluru opens in 2027 - exact date to be announced. Professionals join free. Founding-member perks for the first 1,000.",
   alternates: { canonical: "/waitlist" },
 };
 
@@ -22,7 +22,7 @@ const perks = [
   },
   {
     h: "Pioneer wall",
-    b: "Top referrers get an invitation to the Pioneer wall — public, opt-in only.",
+    b: "Top referrers get an invitation to the Pioneer wall - public, opt-in only.",
   },
   {
     h: "Early access at launch",

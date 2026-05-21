@@ -34,9 +34,9 @@ export default function Page() {
               What you will see
             </h2>
             <ul className="mt-4 space-y-2 text-base text-ink-700">
-              <li>The deck — thesis, market, why now, why us.</li>
+              <li>The deck - thesis, market, why now, why us.</li>
               <li>A walkthrough of the product in its current form.</li>
-              <li>Traction details — waitlist composition, pilot conversations.</li>
+              <li>Traction details - waitlist composition, pilot conversations.</li>
               <li>The path from Vero to the broader {site.parent} stack.</li>
               <li>Use of funds + 18-month plan.</li>
             </ul>

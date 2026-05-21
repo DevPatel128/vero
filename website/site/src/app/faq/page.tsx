@@ -5,7 +5,7 @@ import { LinkButton } from "@/components/Button";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Common questions about Vero — what it is, who pays, how records work, when it launches, and where it operates.",
+    "Common questions about Vero - what it is, who pays, how records work, when it launches, and where it operates.",
   alternates: { canonical: "/faq" },
 };
 
@@ -23,16 +23,16 @@ const groups = [
       },
       {
         q: "Is it a freelance bidding marketplace?",
-        a: "No. There is no race-to-the-bottom bidding. Roles are posted with a clear scope and a fair rate. Matching is filtered by neighbourhood, category, and a worker's verified standing.",
+        a: "No. There is no race-to-the-bottom bidding. Roles are posted with a clear scope and a fair rate. Matching is filtered by neighbourhood, category, and a professional's verified standing.",
       },
     ],
   },
   {
-    section: "Workers",
+    section: "Professionals",
     items: [
       {
-        q: "Do workers pay anything?",
-        a: "No. Workers do not pay to use Vero, to create records, to keep records, or to export them. Workers are free, always.",
+        q: "Do professionals pay anything?",
+        a: "No. Professionals do not pay to use Vero, to create records, to keep records, or to export them. Professionals are free, always.",
       },
       {
         q: "What does my record look like?",
@@ -40,7 +40,7 @@ const groups = [
       },
       {
         q: "Is my record public?",
-        a: "It depends on the visibility flag you choose per record — public, shared, or private. Private records still count toward your standing on the platform; they are not visible publicly.",
+        a: "It depends on the visibility flag you choose per record - public, shared, or private. Private records still count toward your standing on the platform; they are not visible publicly.",
       },
       {
         q: "Can I take my record elsewhere?",
@@ -69,8 +69,8 @@ const groups = [
     section: "Trust + safety",
     items: [
       {
-        q: "How do I know a worker is real?",
-        a: "Workers verify their identity using government-supported digital documents before earning. Every record they hold is signed by a real client. Repeat-offender accounts are removed from the trust graph.",
+        q: "How do I know a professional is real?",
+        a: "Professionals verify their identity using government-supported digital documents before earning. Every record they hold is signed by a real client. Repeat-offender accounts are removed from the trust graph.",
       },
       {
         q: "What if there is a dispute?",
@@ -78,7 +78,7 @@ const groups = [
       },
       {
         q: "Can records be deleted?",
-        a: "A worker can revoke a record's public visibility but cannot edit the underlying record. The chain remains intact. Erasure under DPDP / GDPR is honoured by anonymising the personal fields while preserving counterparty verifiability.",
+        a: "A professional can revoke a record's public visibility but cannot edit the underlying record. The chain remains intact. Erasure under DPDP / GDPR is honoured by anonymising the personal fields while preserving counterparty verifiability.",
       },
     ],
   },
@@ -87,11 +87,11 @@ const groups = [
     items: [
       {
         q: "When does Vero open?",
-        a: "We are opening in Bengaluru in 2027. The exact date is to be announced — follow our socials for the call. Five neighbourhoods to start — Whitefield, HSR Layout, Koramangala, Sarjapur, Electronic City.",
+        a: "We are opening in Bengaluru in 2027. The exact date is to be announced - follow our socials for the call. Five neighbourhoods to start - Whitefield, HSR Layout, Koramangala, Sarjapur, Electronic City.",
       },
       {
         q: "Will Vero expand beyond Bengaluru?",
-        a: "Yes — once the trust model proves itself locally. We will not expand on a schedule. We will expand when we can verify and support the next city well.",
+        a: "Yes - once the trust model proves itself locally. We will not expand on a schedule. We will expand when we can verify and support the next city well.",
       },
       {
         q: "How do I join early?",

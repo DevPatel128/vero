@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
  * EcosystemConstellation
  *
  * The single hint image for the VROE Labs ecosystem. Shows three orbiting
- * surfaces — Vero (work), RIE (discipline), Trove (value) — connected by the
+ * surfaces - Vero (work), RIE (discipline), Trove (value) - connected by the
  * shared ALVED protocol ring. Intentionally light on words; meant to *suggest*
  * the ecosystem rather than announce features.
  */
@@ -80,7 +80,7 @@ export function EcosystemConstellation({
           />
         ))}
 
-        {/* ALVED ring — animated rotation */}
+        {/* ALVED ring - animated rotation */}
         <motion.g
           animate={reduce ? undefined : { rotate: 360 }}
           transition={{ duration: 60, ease: "linear", repeat: Infinity }}
@@ -118,7 +118,7 @@ export function EcosystemConstellation({
           <path d="M 109 410 Q 300 300 300 80" />
         </g>
 
-        {/* VERO — top, ink (the live one) */}
+        {/* VERO - top, ink (the live one) */}
         <motion.g
           initial={reduce ? false : { opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -167,7 +167,7 @@ export function EcosystemConstellation({
           )}
         </motion.g>
 
-        {/* RIE — bottom-right */}
+        {/* RIE - bottom-right */}
         <motion.g
           initial={reduce ? false : { opacity: 0, x: 14, y: 14 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
@@ -215,7 +215,7 @@ export function EcosystemConstellation({
           )}
         </motion.g>
 
-        {/* TROVE — bottom-left */}
+        {/* TROVE - bottom-left */}
         <motion.g
           initial={reduce ? false : { opacity: 0, x: -14, y: 14 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
@@ -263,7 +263,7 @@ export function EcosystemConstellation({
           )}
         </motion.g>
 
-        {/* Center mark — quiet ALVED node, no announcement */}
+        {/* Center mark - quiet ALVED node, no announcement */}
         <g>
           <circle
             cx="300"

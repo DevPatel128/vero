@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 /**
- * AnnouncementCalendar — calendar leaf flipping over 2026 to reveal 2027 with
+ * AnnouncementCalendar - calendar leaf flipping over 2026 to reveal 2027 with
  * a "TBA · check our socials" stamp. Used when communicating the launch shift.
  */
 export function AnnouncementCalendar({ className }: { className?: string }) {
@@ -38,7 +38,7 @@ export function AnnouncementCalendar({ className }: { className?: string }) {
           LAUNCH
         </text>
 
-        {/* The flipping page — 2026 → 2027 */}
+        {/* The flipping page - 2026 → 2027 */}
         <motion.g
           initial={reduce ? false : { rotateX: 0, y: 0 }}
           whileInView={{ rotateX: -180, y: -8 }}

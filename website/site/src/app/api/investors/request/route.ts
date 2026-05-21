@@ -34,30 +34,30 @@ export async function POST(req: Request) {
     const data = parsed.data;
 
     if (data.company && data.company.length > 0) {
-      // Honeypot — silent accept
+      // Honeypot - silent accept
       return NextResponse.json({ ok: true }, { status: 200 });
     }
 
     const inbox = process.env.INVESTOR_INBOX || site.contact.investors;
     const body = [
-      `Investor materials request — ${site.name}`,
+      `Investor materials request - ${site.name}`,
       ``,
       `Name: ${data.name}`,
       `Email: ${data.email}`,
       `Firm: ${data.firm}`,
-      `Role: ${data.role || "—"}`,
-      `Stage: ${data.stage || "—"}`,
+      `Role: ${data.role || "-"}`,
+      `Stage: ${data.stage || "-"}`,
       `NDA agreed: yes`,
       ``,
       `Thesis / interest:`,
-      data.thesis || "—",
+      data.thesis || "-",
     ].join("\n");
 
     await sendEmail(inbox, `[Investor] ${data.name} · ${data.firm}`, body);
     await sendEmail(
       data.email,
       `We received your request`,
-      `Thank you for your interest in ${site.name}.\n\nWe respond to serious requests within five business days. If you do not hear from us, please reply to this email or write directly to ${site.contact.investors}.\n\n— ${site.parent}`,
+      `Thank you for your interest in ${site.name}.\n\nWe respond to serious requests within five business days. If you do not hear from us, please reply to this email or write directly to ${site.contact.investors}.\n\n- ${site.parent}`,
     );
 
     return NextResponse.json({ ok: true }, { status: 201 });

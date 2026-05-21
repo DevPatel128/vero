@@ -62,7 +62,7 @@ export default function Page() {
         </li>
         <li>To keep the service secure and prevent abuse.</li>
         <li>
-          To comply with applicable law — primarily India’s{" "}
+          To comply with applicable law - primarily India’s{" "}
           <strong>Digital Personal Data Protection Act 2023 (DPDP)</strong>.
         </li>
       </ul>

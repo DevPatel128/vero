@@ -31,7 +31,7 @@ const cards = [
     date: "May 2026",
     signers: [
       { initials: "PI", role: "Client" },
-      { initials: "RM", role: "Worker" },
+      { initials: "RM", role: "Professional" },
     ],
   },
   {
@@ -42,7 +42,7 @@ const cards = [
     date: "April 2026",
     signers: [
       { initials: "BC", role: "Client" },
-      { initials: "JD", role: "Worker" },
+      { initials: "JD", role: "Professional" },
     ],
     metric: { value: "₹4,800", label: "Released from escrow" },
   },
@@ -77,7 +77,7 @@ export function Hero() {
               <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
             </motion.a>
 
-            <h1 className="mt-6 font-display text-5xl font-medium leading-[1.05] tracking-tighter text-ink-900 md:text-7xl">
+            <h1 className="mt-4 font-display text-5xl font-medium leading-[1.05] tracking-tighter text-ink-900 md:text-7xl">
               {["Proof", " ", "of", " ", "work."].map((word, i) => (
                 <motion.span
                   key={i}
@@ -104,7 +104,7 @@ export function Hero() {
               initial={reduce ? false : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.85, ease: easeOut }}
-              className="mt-7 max-w-xl text-lg leading-relaxed text-ink-600"
+              className="mt-4 max-w-xl text-lg leading-relaxed text-ink-600"
             >
               {site.name} turns every job you complete into a verified record,
               signed by you and the person who hired you. Tamper-evident.
@@ -117,8 +117,8 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 1.0, ease: easeOut }}
               className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
-              <LinkButton href="/waitlist?as=worker" size="lg">
-                Join as a worker
+              <LinkButton href="/waitlist?as=professional" size="lg">
+                Join as a professional
               </LinkButton>
               <LinkButton href="/waitlist?as=business" variant="secondary" size="lg">
                 Hire on Vero
@@ -131,14 +131,14 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="mt-6 text-xs text-ink-500"
             >
-              Workers join free. Always. No credit card.
+              Professionals join free. Always. No credit card.
             </motion.p>
           </div>
 
           <div className="relative lg:col-span-5">
             <div className="absolute -inset-x-8 -top-8 -bottom-12 -z-10 rounded-[2.5rem] bg-gradient-to-br from-paper-warm via-paper to-paper opacity-80" />
 
-            {/* Phone mockup behind, cards floating in front — like a layered editorial composition */}
+            {/* Phone mockup behind, cards floating in front - like a layered editorial composition */}
             <div className="relative">
               <div className="pointer-events-none absolute -right-6 top-4 hidden md:block">
                 <PhoneMockup />

@@ -6,16 +6,16 @@ import { useRouter, useSearchParams } from "next/navigation";
 type FieldErrors = Partial<Record<string, string[]>>;
 
 export function WaitlistForm({
-  defaultRole = "worker",
+  defaultRole = "professional",
 }: {
-  defaultRole?: "worker" | "business";
+  defaultRole?: "professional" | "business";
 }) {
   const router = useRouter();
   const sp = useSearchParams();
   const refFromUrl = sp.get("ref") || "";
-  const roleFromUrl = (sp.get("as") as "worker" | "business" | null) || defaultRole;
+  const roleFromUrl = (sp.get("as") as "professional" | "business" | null) || defaultRole;
 
-  const [role, setRole] = useState<"worker" | "business">(roleFromUrl);
+  const [role, setRole] = useState<"professional" | "business">(roleFromUrl);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [topError, setTopError] = useState<string | null>(null);
@@ -56,7 +56,7 @@ export function WaitlistForm({
         return;
       }
 
-      // Honeypot or unknown — treat as silent success
+      // Honeypot or unknown - treat as silent success
       router.push("/waitlist/thanks");
     } catch {
       setTopError("Network error. Try again.");
@@ -71,7 +71,7 @@ export function WaitlistForm({
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-6">
-      {/* Honeypot — hidden from humans */}
+      {/* Honeypot - hidden from humans */}
       <div className="absolute -left-[10000px] h-px w-px overflow-hidden">
         <label htmlFor="website">Website (leave blank)</label>
         <input
@@ -87,7 +87,7 @@ export function WaitlistForm({
       <fieldset>
         <legend className={labelCls}>I am joining as</legend>
         <div className="mt-3 grid grid-cols-2 gap-2 rounded-full bg-paper-warm p-1">
-          {(["worker", "business"] as const).map((r) => (
+          {(["professional", "business"] as const).map((r) => (
             <button
               key={r}
               type="button"
@@ -99,7 +99,7 @@ export function WaitlistForm({
               }`}
               aria-pressed={role === r}
             >
-              {r === "worker" ? "Worker" : "Business"}
+              {r === "professional" ? "Professional" : "Business"}
             </button>
           ))}
         </div>
@@ -170,7 +170,7 @@ export function WaitlistForm({
 
       <div>
         <label htmlFor="useCase" className={labelCls}>
-          {role === "worker"
+          {role === "professional"
             ? "What kind of work would you take on first?"
             : "What kind of role would you hire for first?"}{" "}
           <span className="text-ink-400">(optional)</span>
@@ -181,7 +181,7 @@ export function WaitlistForm({
           rows={3}
           className={inputCls}
           placeholder={
-            role === "worker"
+            role === "professional"
               ? "Apprenticeships, café shifts, design briefs…"
               : "Café shifts, delivery, repair, design work…"
           }
@@ -236,7 +236,7 @@ export function WaitlistForm({
       </button>
 
       <p className="text-center text-xs text-ink-500">
-        We send one confirmation email immediately. No spam. Workers are
+        We send one confirmation email immediately. No spam. Professionals are
         always free.
       </p>
     </form>

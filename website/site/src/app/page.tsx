@@ -21,7 +21,7 @@ import { BengaluruMap } from "@/components/illustrations/BengaluruMap";
 import { HashRibbon } from "@/components/illustrations/HashRibbon";
 
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.tagline}`,
+  title: `${site.name} - ${site.tagline}`,
   description: site.description,
   alternates: { canonical: "/" },
 };
@@ -44,19 +44,19 @@ const problems = [
 const howItWorks = [
   { step: "1", title: "Apply or get matched", body: "Small, real, local work. Apprenticeships, gigs, repair calls, café shifts, design briefs. Bengaluru-first." },
   { step: "2", title: "Do the work", body: "No bidding war. No race to the bottom. Just a clear scope, a fair rate, and a person on the other side who needs help." },
-  { step: "3", title: "Both sides sign", body: "Worker confirms completion. Client confirms completion. Both signatures are required." },
+  { step: "3", title: "Both sides sign", body: "Professional confirms completion. Client confirms completion. Both signatures are required." },
   { step: "4", title: "A record is minted", body: "Chained to the records that came before. Public if you want. Private if you do not. Owned by you forever." },
 ];
 
 const features = [
   { title: "Records that cannot be edited", body: "Each record is signed by both parties and chained by hash to the one before it. Nobody, not even us, can change it after the fact." },
-  { title: "Escrow you can see", body: "Client funds the work up front. We hold it. Worker delivers. The release is on the record. 5% fee, well below the market." },
-  { title: "A trust graph, not a star rating", body: "Your standing is built from many real signals — completed work, repeat clients, dispute history, punctuality — not one gameable number." },
+  { title: "Escrow you can see", body: "Client funds the work up front. We hold it. Professional delivers. The release is on the record. 5% fee, well below the market." },
+  { title: "A trust graph, not a star rating", body: "Your standing is built from many real signals - completed work, repeat clients, dispute history, punctuality - not one gameable number." },
   { title: "Portable identity", body: "Every record is exportable. The credentials you build on Vero can be read by other products that speak the same protocol." },
 ];
 
 const personas = [
-  { tag: "For workers", title: "Build a record nobody can take away.", body: "Students. Switchers. Skilled hands without a portfolio. Begin with small work. Stack verified completions. Carry your record forward.", href: "/for-workers" },
+  { tag: "For professionals", title: "Build a record nobody can take away.", body: "Students. Switchers. Skilled hands without a portfolio. Begin with small work. Stack verified completions. Carry your record forward.", href: "/for-professionals" },
   { tag: "For businesses", title: "Hire from a pool whose history is already proof.", body: "Cafés. Households. Studios. SMBs. Stop screening unverified candidates. See who has actually shown up before.", href: "/for-businesses" },
 ];
 
@@ -65,12 +65,12 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Hash ribbon — bridges hero into content */}
+      {/* Hash ribbon - bridges hero into content */}
       <div className="bg-paper-warm/40 py-6">
         <HashRibbon />
       </div>
 
-      {/* Problem strip — FlipIn cards */}
+      {/* Problem strip - FlipIn cards */}
       <Section tone="warm" className="!py-20">
         <BlurIn>
           <Eyebrow>The problem</Eyebrow>
@@ -99,7 +99,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* How it works — MaskReveal heading, then signature diagram, then steps */}
+      {/* How it works - MaskReveal heading, then signature diagram, then steps */}
       <Section id="how-it-works">
         <MaskReveal from="left">
           <Eyebrow>How a record is made</Eyebrow>
@@ -145,7 +145,7 @@ export default function HomePage() {
         </Reveal>
       </Section>
 
-      {/* Chained records — Parallax inside, MaskReveal title */}
+      {/* Chained records - Parallax inside, MaskReveal title */}
       <Section tone="warm" className="!py-20">
         <MaskReveal from="right">
           <Eyebrow>Chained, not edited</Eyebrow>
@@ -163,7 +163,7 @@ export default function HomePage() {
         </Parallax>
       </Section>
 
-      {/* Features — TiltCard hover */}
+      {/* Features - TiltCard hover */}
       <Section>
         <Reveal>
           <Eyebrow>What is different</Eyebrow>
@@ -174,7 +174,7 @@ export default function HomePage() {
         <Reveal delay={0.2}>
           <SectionLead>
             Vero is engineered so the platform cannot quietly help, harm, or rewrite a
-            worker&apos;s history. The rules are the same for everyone, including us.
+            professional&apos;s history. The rules are the same for everyone, including us.
           </SectionLead>
         </Reveal>
 
@@ -218,7 +218,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Personas — Spotlight cards */}
+      {/* Personas - Spotlight cards */}
       <Section>
         <Reveal>
           <Eyebrow>Built for both sides</Eyebrow>
@@ -262,7 +262,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Location — Bengaluru map */}
+      {/* Location - Bengaluru map */}
       <Section tone="warm">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
@@ -271,13 +271,13 @@ export default function HomePage() {
             </Reveal>
             <h2 className="font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
               <WordReveal
-                text={`${site.launchCity}, first. ${site.launchWindow} — TBA.`}
+                text={`${site.launchCity}, first. ${site.launchWindow} - TBA.`}
               />
             </h2>
             <BlurIn delay={0.3}>
               <SectionLead>
                 Trust is local before it is global. Five neighbourhoods. Exact launch
-                date to be announced — follow our socials for the call.
+                date to be announced - follow our socials for the call.
               </SectionLead>
             </BlurIn>
           </div>
@@ -302,11 +302,11 @@ export default function HomePage() {
           stagger={0.06}
         >
           {[
-            { q: "Is Vero free for workers?", a: "Yes. Always. We do not charge workers to create or carry their records." },
-            { q: "Who pays Vero?", a: "Businesses pay a small SaaS subscription based on roles and volume. There is a flat 5% escrow fee on paid work — below the 25% common in the market." },
+            { q: "Is Vero free for professionals?", a: "Yes. Always. We do not charge professionals to create or carry their records." },
+            { q: "Who pays Vero?", a: "Businesses pay a small SaaS subscription based on roles and volume. There is a flat 5% escrow fee on paid work - below the 25% common in the market." },
             { q: "Is my record private?", a: "Each record carries a visibility flag. Public, shared, or private. Private records still count toward your standing but do not appear on your public profile." },
             { q: "Can I take my Vero record with me?", a: "Yes. Every record is exportable as a portable, signed document. You own it." },
-            { q: "When does Vero open?", a: "Bengaluru in 2027. Exact date to be announced — follow our socials for the call." },
+            { q: "When does Vero open?", a: "Bengaluru in 2027. Exact date to be announced - follow our socials for the call." },
           ].map((item) => (
             <StaggerItem key={item.q} className="grid gap-4 py-7 md:grid-cols-12">
               <dt className="md:col-span-4 font-display text-lg font-medium tracking-tightish text-ink-900">
@@ -341,8 +341,8 @@ export default function HomePage() {
             </BlurIn>
           </div>
           <BlurIn delay={0.2} className="md:col-span-5 flex flex-col gap-3 md:items-end">
-            <LinkButton href="/waitlist?as=worker" size="lg">
-              Join as a worker
+            <LinkButton href="/waitlist?as=professional" size="lg">
+              Join as a professional
             </LinkButton>
             <LinkButton href="/waitlist?as=business" variant="secondary" size="lg">
               Join as a business

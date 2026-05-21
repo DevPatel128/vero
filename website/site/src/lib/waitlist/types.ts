@@ -1,4 +1,4 @@
-export type WaitlistRole = "worker" | "business";
+export type WaitlistRole = "professional" | "business";
 
 export type WaitlistEntry = {
   id: string;
@@ -18,7 +18,7 @@ export type WaitlistEntry = {
 
 export type WaitlistStats = {
   total: number;
-  workers: number;
+  professionals: number;
   businesses: number;
 };
 

@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Reach Vero — general, press, support, security, grievance, investors. We reply.",
+    "Reach Vero - general, press, support, security, grievance, investors. We reply.",
   alternates: { canonical: "/contact" },
 };
 

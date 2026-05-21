@@ -147,7 +147,7 @@ export default async function Page({
                 <li>You will get a confirmation email at {entry.email}.</li>
                 <li>
                   We will send a short note every couple of weeks until launch
-                  — what we built, what is next.
+                  - what we built, what is next.
                 </li>
                 <li>
                   Closer to {site.launchWindow}, you will get an invitation in

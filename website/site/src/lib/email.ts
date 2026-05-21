@@ -4,7 +4,7 @@
  */
 export async function sendEmail(to: string, subject: string, body: string) {
   if (process.env.RESEND_API_KEY) {
-    // Placeholder for real integration — kept minimal to avoid leaking infra.
+    // Placeholder for real integration - kept minimal to avoid leaking infra.
     try {
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",

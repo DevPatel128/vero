@@ -18,34 +18,34 @@ ${site.description}
 - Launch areas: ${site.launchAreas.join(", ")}
 
 ## What ${site.name} is
-${site.name} is a verified proof-of-work identity platform. Every job a worker completes becomes a signed, chained record on their profile, jointly signed by the worker and the person who hired them. Records are tamper-evident, exportable, and owned by the worker.
+${site.name} is a verified proof-of-work identity platform. Every job a professional completes becomes a signed, chained record on their profile, jointly signed by the professional and the person who hired them. Records are tamper-evident, exportable, and owned by the professional.
 
 ## Who it is for
-- Workers: students, switchers, skilled hands without portfolios, creators, freelancers.
+- Professionals: students, switchers, skilled hands without portfolios, creators, freelancers.
 - Businesses: cafés, households, studios, SMBs hiring with proof rather than guesswork.
 
 ## Pricing
-- Workers: free, always.
+- Professionals: free, always.
 - Businesses: starts at free for occasional hires. Recommended plan ₹2,499 / month. Custom plans for studios.
 - Escrow: flat 5% on paid work, well below the gig-platform standard.
 
 ## Trust + security
-- Each record is signed by both worker and client (two-party signing) and chained by hash to the previous record on the same worker. Tampering is detectable.
+- Each record is signed by both professional and client (two-party signing) and chained by hash to the previous record on the same professional. Tampering is detectable.
 - Identity verified using government-supported Indian digital documents. Biometric scans are not retained.
 - TLS 1.3, encryption at rest, append-only audit log.
 - Compliant with India's Digital Personal Data Protection Act 2023.
 
 ## Long-term ecosystem
 ${site.name} is the first product under ${site.parent}. Two more are in development:
-- RIE — verified proof of discipline (training, learning, habit).
-- Trove — verified proof of value (what you keep, hold, build).
+- RIE - verified proof of discipline (training, learning, habit).
+- Trove - verified proof of value (what you keep, hold, build).
 All three write to the same open ${site.protocol} protocol so credentials can be carried across products.
 
 ## Key URLs
 - Home: ${site.url}/
 - How it works: ${site.url}/how-it-works
 - Features: ${site.url}/features
-- For workers: ${site.url}/for-workers
+- For professionals: ${site.url}/for-professionals
 - For businesses: ${site.url}/for-businesses
 - Pricing: ${site.url}/pricing
 - Trust: ${site.url}/trust

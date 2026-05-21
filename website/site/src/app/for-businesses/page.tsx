@@ -16,13 +16,13 @@ import { CategoryCubes } from "@/components/illustrations/CategoryCubes";
 export const metadata: Metadata = {
   title: "For businesses",
   description:
-    "Hire from a pool whose history is already proof. Cafés, households, studios, SMBs. Verified workers, escrow, dispute paths — all on Vero.",
+    "Hire from a pool whose history is already proof. Cafés, households, studios, SMBs. Verified professionals, escrow, dispute paths - all on Vero.",
   alternates: { canonical: "/for-businesses" },
 };
 
 const reasons = [
-  { title: "Stop screening unverified candidates", body: "Every worker on Vero has a record of completions, signed by real clients. You see what happened, not what was claimed." },
-  { title: "5% escrow. Flat. Visible.", body: "Fund the work up front. Hold safely. Release on completion. The fee is below the market — and we do not change it by category, city, or contract size." },
+  { title: "Stop screening unverified candidates", body: "Every professional on Vero has a record of completions, signed by real clients. You see what happened, not what was claimed." },
+  { title: "5% escrow. Flat. Visible.", body: "Fund the work up front. Hold safely. Release on completion. The fee is below the market - and we do not change it by category, city, or contract size." },
   { title: "A trust graph, not a star bait", body: "Repeat clients, dispute history, on-time rate, category-specific standing. Multiple real signals, weighted. Not one gameable number." },
   { title: "Disputes resolved on record", body: "If something goes wrong, evidence is collected, a small review team responds quickly, and the outcome is recorded on both sides." },
 ];
@@ -34,7 +34,7 @@ const plans = [
     tag: "For one-off hires",
     bullets: [
       "Post up to 3 roles a month",
-      "Worker verification included",
+      "Professional verification included",
       "5% escrow on paid work",
       "Standard dispute path",
     ],
@@ -46,7 +46,7 @@ const plans = [
     highlight: true,
     bullets: [
       "Unlimited roles",
-      "Repeat-worker invites",
+      "Repeat-professional invites",
       "Priority dispute response",
       "Business verification mark",
       "5% escrow on paid work",
@@ -82,7 +82,7 @@ export default function Page() {
         <BlurIn delay={0.6}>
           <SectionLead>
             Cafés. Households. Studios. SMBs. If you have spent any hour of any week
-            screening unverified candidates from a generic gig app — Vero is the
+            screening unverified candidates from a generic gig app - Vero is the
             alternative.
           </SectionLead>
         </BlurIn>
@@ -103,12 +103,12 @@ export default function Page() {
               <Eyebrow>The pool you hire from</Eyebrow>
             </BlurIn>
             <h2 className="font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
-              <WordReveal text="A network of verified workers and verified businesses." />
+              <WordReveal text="A network of verified professionals and verified businesses." />
             </h2>
             <BlurIn delay={0.4}>
               <SectionLead>
                 Every node in the graph is verified. Every edge is a signed record. You
-                are not hiring strangers — you are hiring people whose history is
+                are not hiring strangers - you are hiring people whose history is
                 already legible.
               </SectionLead>
             </BlurIn>

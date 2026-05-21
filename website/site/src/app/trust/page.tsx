@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 
 const principles = [
   { h: "Both sides sign", b: "Every record carries two signatures. Neither side can sign alone. The platform never signs on either side's behalf." },
-  { h: "Chained, not editable", b: "Each record links by hash to the one before it for the same worker. Reordering, deleting, and rewriting are all detectable." },
-  { h: "A graph, not a rating", b: "Show-up rate, repeat-booking ratio, dispute history, counterparty quality, on-time rate, category strength — multiple signals, never one gameable number." },
-  { h: "Escrow on paid work", b: "The client funds the job up front. We hold it. Release is on the record. The worker can see the money is real." },
+  { h: "Chained, not editable", b: "Each record links by hash to the one before it for the same professional. Reordering, deleting, and rewriting are all detectable." },
+  { h: "A graph, not a rating", b: "Show-up rate, repeat-booking ratio, dispute history, counterparty quality, on-time rate, category strength - multiple signals, never one gameable number." },
+  { h: "Escrow on paid work", b: "The client funds the job up front. We hold it. Release is on the record. The professional can see the money is real." },
   { h: "Documented dispute path", b: "Evidence collected. Small review team responds quickly. Outcome recorded on both sides. No silent resolutions." },
   { h: "Repeat-offender cut-off", b: "Accounts proven to abuse the system lose access and are removed from the trust graph. Patterns are tracked across the network." },
 ];
@@ -84,7 +84,7 @@ export default function Page() {
             </Reveal>
             <Reveal delay={0.1}>
               <SectionLead>
-                Standing on Vero is not a number. It is a position in a graph — the
+                Standing on Vero is not a number. It is a position in a graph - the
                 clients you have worked with, the work they signed for, the patterns
                 that emerge over time.
               </SectionLead>
@@ -110,7 +110,7 @@ export default function Page() {
           </div>
           <Reveal delay={0.1} className="md:col-span-7 prose-vero space-y-5">
             <p>
-              We will not silently edit a record. We will not change a worker&apos;s
+              We will not silently edit a record. We will not change a professional&apos;s
               standing without an audit entry. We will not promote profiles for reasons
               the user cannot see. We will not sell your data, today or ever. We will
               not pre-tick consent boxes.

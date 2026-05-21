@@ -14,10 +14,10 @@ import { IDBadge } from "@/components/illustrations/IDBadge";
 import { RecordChain } from "@/components/illustrations/RecordChain";
 
 export const metadata: Metadata = {
-  title: "For workers",
+  title: "For professionals",
   description:
-    "Vero is free for workers. Always. Build a record of real, verified work. Students, switchers, skilled hands without a portfolio — start small, grow forward.",
-  alternates: { canonical: "/for-workers" },
+    "Vero is free for professionals. Always. Build a record of real, verified work. Students, switchers, skilled hands without a portfolio - start small, grow forward.",
+  alternates: { canonical: "/for-professionals" },
 };
 
 const pains = [
@@ -30,7 +30,7 @@ const wins = [
   { title: "Begin small, signed, and real", body: "Apprenticeships and short gigs that fit your life today. Each one signed by you and the person who hired you." },
   { title: "Carry your record forward", body: "Every record is exportable. The credentials you build on Vero can be read by other platforms that speak the same protocol." },
   { title: "Your standing is explained", body: "Show-up rate. Repeat clients. Dispute history. No black-box number. You can see exactly why you are where you are." },
-  { title: "Privacy is yours to choose", body: "Each record carries a visibility flag — public, shared, or private. Private records still count toward your standing." },
+  { title: "Privacy is yours to choose", body: "Each record carries a visibility flag - public, shared, or private. Private records still count toward your standing." },
 ];
 
 const audiences = [
@@ -47,20 +47,20 @@ export default function Page() {
         <div className="grid items-center gap-14 md:grid-cols-12">
           <div className="md:col-span-7">
             <MaskReveal from="left">
-              <Eyebrow>For workers</Eyebrow>
+              <Eyebrow>For professionals</Eyebrow>
             </MaskReveal>
             <h1 className="font-display text-4xl font-medium leading-[1.05] tracking-tighter text-ink-900 md:text-6xl">
               <LetterSplit text="A record of real work, owned by you." stagger={0.02} />
             </h1>
             <BlurIn delay={0.6}>
               <SectionLead>
-                Vero is free for workers. Always. We do not charge you to create your
+                Vero is free for professionals. Always. We do not charge you to create your
                 record, to keep it, or to take it elsewhere.
               </SectionLead>
             </BlurIn>
             <BlurIn delay={0.8} className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <LinkButton href="/waitlist?as=worker" size="lg">
-                Join as a worker
+              <LinkButton href="/waitlist?as=professional" size="lg">
+                Join as a professional
               </LinkButton>
               <LinkButton href="/how-it-works" variant="secondary" size="lg">
                 How it works
@@ -200,15 +200,15 @@ export default function Page() {
             </h2>
             <BlurIn delay={0.3}>
               <p className="mt-5 max-w-xl text-ink-300">
-                Join the workers&apos; waitlist. You will be one of the first to do
-                real, signed work in Bengaluru when we open in 2027 — exact date to be
+                Join the professionals&apos; waitlist. You will be one of the first to do
+                real, signed work in Bengaluru when we open in 2027 - exact date to be
                 announced.
               </p>
             </BlurIn>
           </div>
           <BlurIn delay={0.2} className="md:col-span-4 flex md:justify-end">
-            <LinkButton href="/waitlist?as=worker" size="lg">
-              Join as a worker
+            <LinkButton href="/waitlist?as=professional" size="lg">
+              Join as a professional
             </LinkButton>
           </BlurIn>
         </div>
