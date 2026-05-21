@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { OrganizationJsonLd } from "@/components/JsonLd";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
+import { Providers } from "@/components/Providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -68,14 +69,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <body>
-        <a href="#main" className="skip-link">
-          Skip to content
-        </a>
-        <OrganizationJsonLd />
-        <ScrollProgress />
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
+        <Providers>
+          <a href="#main" className="skip-link">
+            Skip to content
+          </a>
+          <OrganizationJsonLd />
+          <ScrollProgress />
+          <Header />
+          <main id="main">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

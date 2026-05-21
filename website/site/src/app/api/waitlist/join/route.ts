@@ -3,11 +3,33 @@ import { waitlist, effectivePosition, tierFor, tierLabel } from "@/lib/waitlist"
 import { joinSchema } from "@/lib/waitlist/schema";
 import { sendEmail } from "@/lib/email";
 import { site } from "@/lib/site";
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
+
+let ratelimit: Ratelimit | null = null;
+if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+  ratelimit = new Ratelimit({
+    redis: Redis.fromEnv(),
+    limiter: Ratelimit.slidingWindow(5, "60 s"),
+    analytics: true,
+  });
+}
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
+    if (ratelimit) {
+      const ip = req.headers.get("x-forwarded-for") ?? "127.0.0.1";
+      const { success } = await ratelimit.limit(`waitlist_${ip}`);
+      if (!success) {
+        return NextResponse.json(
+          { error: "rate_limit_exceeded", message: "Too many requests. Please try again later." },
+          { status: 429 }
+        );
+      }
+    }
+
     const ct = req.headers.get("content-type") || "";
     let raw: Record<string, unknown> = {};
 
