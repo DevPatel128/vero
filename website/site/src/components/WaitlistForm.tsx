@@ -14,6 +14,7 @@ export function WaitlistForm({
   const sp = useSearchParams();
   const refFromUrl = sp.get("ref") || "";
   const roleFromUrl = (sp.get("as") as "professional" | "business" | null) || defaultRole;
+  const emailFromUrl = sp.get("email") || "";
 
   const [role, setRole] = useState<"professional" | "business">(roleFromUrl);
   const [submitting, setSubmitting] = useState(false);
@@ -83,27 +84,21 @@ export function WaitlistForm({
         />
       </div>
 
-      {/* Role toggle */}
-      <fieldset>
-        <legend className={labelCls}>I am joining as</legend>
-        <div className="mt-3 grid grid-cols-2 gap-2 rounded-full bg-paper-warm p-1">
-          {(["professional", "business"] as const).map((r) => (
-            <button
-              key={r}
-              type="button"
-              onClick={() => setRole(r)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                role === r
-                  ? "bg-ink-900 text-paper shadow-card"
-                  : "text-ink-600 hover:text-ink-900"
-              }`}
-              aria-pressed={role === r}
-            >
-              {r === "professional" ? "Professional" : "Business"}
-            </button>
-          ))}
-        </div>
-      </fieldset>
+      {/* Role dropdown */}
+      <div>
+        <label htmlFor="role-select" className={labelCls}>
+          I am joining as
+        </label>
+        <select
+          id="role-select"
+          value={role}
+          onChange={(e) => setRole(e.target.value as "professional" | "business")}
+          className={inputCls}
+        >
+          <option value="professional">A Professional</option>
+          <option value="business">A Business</option>
+        </select>
+      </div>
 
       <div>
         <label htmlFor="email" className={labelCls}>
@@ -116,6 +111,7 @@ export function WaitlistForm({
           inputMode="email"
           autoComplete="email"
           required
+          defaultValue={emailFromUrl}
           placeholder="you@example.com"
           className={inputCls}
           aria-describedby={errors.email ? "email-error" : undefined}
@@ -232,7 +228,7 @@ export function WaitlistForm({
         disabled={submitting}
         className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink-900 px-6 py-3.5 text-base font-medium text-paper transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent disabled:opacity-60"
       >
-        {submitting ? "Joining…" : `Join the waitlist as a ${role}`}
+        {submitting ? "Reserving…" : "Reserve Early Access"}
       </button>
 
       <p className="text-center text-xs text-ink-500">

@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { LinkButton } from "./Button";
 import { Container } from "./Container";
 import { RecordCard } from "./RecordCard";
 import { PhoneMockup } from "./illustrations/PhoneMockup";
 import { AmbientBackdrop } from "./illustrations/AmbientBackdrop";
+import { InlineEmailForm } from "./InlineEmailForm";
 import { site } from "@/lib/site";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
@@ -52,7 +52,7 @@ export function Hero() {
   const reduce = useReducedMotion() ?? false;
 
   return (
-    <section className="relative overflow-hidden pt-8 md:pt-12">
+    <section className="relative overflow-hidden pt-8 md:pt-12 pb-24">
       <AmbientBackdrop />
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-12">
@@ -64,39 +64,36 @@ export function Hero() {
               initial={reduce ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: easeOut }}
-              className="group inline-flex items-center gap-2 rounded-full border border-ink-100 bg-paper/80 px-3 py-1 text-xs text-ink-600 backdrop-blur transition-colors hover:border-ink-200 hover:text-ink-900"
+              className="group inline-flex items-center gap-2 rounded-full border border-ink-100 bg-paper/80 px-3 py-1 text-xs text-ink-700 backdrop-blur transition-colors hover:border-ink-200 hover:text-ink-900"
             >
               <span className="relative inline-flex h-1.5 w-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-caution opacity-60" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-caution" />
               </span>
-              {site.launchCity} · {site.launchWindow} · TBA
-              <span className="text-ink-400 transition-colors group-hover:text-accent">
+              {site.launchCity} Early Access · Launching {site.launchWindow}
+              <span className="text-ink-500 transition-colors group-hover:text-accent">
                 · follow our socials
               </span>
               <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
             </motion.a>
 
             <h1 className="mt-4 font-display text-5xl font-medium leading-[1.05] tracking-tighter text-ink-900 md:text-7xl">
-              {["Proof", " ", "of", " ", "work."].map((word, i) => (
-                <motion.span
-                  key={i}
-                  initial={reduce ? false : { opacity: 0, y: 22 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.08 * i, ease: easeOut }}
-                  className="inline-block"
-                >
-                  {word === " " ? " " : word}
-                </motion.span>
-              ))}
+              <motion.span
+                initial={reduce ? false : { opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.08, ease: easeOut }}
+                className="inline-block"
+              >
+                The resume is dead.
+              </motion.span>
               <br />
               <motion.span
                 initial={reduce ? false : { opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.6, ease: easeOut }}
-                className="inline-block text-ink-500"
+                className="inline-block text-ink-700"
               >
-                Not posts about work.
+                Your verified work is your new portfolio.
               </motion.span>
             </h1>
 
@@ -104,41 +101,25 @@ export function Hero() {
               initial={reduce ? false : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.85, ease: easeOut }}
-              className="mt-4 max-w-xl text-lg leading-relaxed text-ink-600"
+              className="mt-4 max-w-xl text-lg leading-relaxed text-ink-700"
             >
-              {site.name} turns every job you complete into a verified record,
-              signed by you and the person who hired you. Tamper-evident.
-              Portable. Yours.
+              {site.name} turns every job you finish into an un-fakeable record,
+              signed by your client. No bidding wars. No fake reviews. Just
+              proof of what you can do.
             </motion.p>
 
             <motion.div
               initial={reduce ? false : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.0, ease: easeOut }}
-              className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
-              <LinkButton href="/waitlist?as=professional" size="lg">
-                Join as a professional
-              </LinkButton>
-              <LinkButton href="/waitlist?as=business" variant="secondary" size="lg">
-                Hire on Vero
-              </LinkButton>
+              <InlineEmailForm />
             </motion.div>
-
-            <motion.p
-              initial={reduce ? false : { opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              className="mt-6 text-xs text-ink-500"
-            >
-              Professionals join free. Always. No credit card.
-            </motion.p>
           </div>
 
           <div className="relative lg:col-span-5">
             <div className="absolute -inset-x-8 -top-8 -bottom-12 -z-10 rounded-[2.5rem] bg-gradient-to-br from-paper-warm via-paper to-paper opacity-80" />
 
-            {/* Phone mockup behind, cards floating in front - like a layered editorial composition */}
             <div className="relative">
               <div className="pointer-events-none absolute -right-6 top-4 hidden md:block">
                 <PhoneMockup />
@@ -148,6 +129,7 @@ export function Hero() {
                 {cards.map((card, i) => (
                   <motion.div
                     key={card.title}
+                    className={i > 0 ? "hidden md:block" : ""}
                     initial={reduce ? false : { opacity: 0, x: 24, y: 8 }}
                     animate={{ opacity: 1, x: 0, y: 0 }}
                     transition={{
@@ -168,4 +150,3 @@ export function Hero() {
     </section>
   );
 }
-

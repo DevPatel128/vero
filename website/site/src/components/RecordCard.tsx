@@ -26,7 +26,7 @@ export function RecordCard({
       aria-label={`Verified record: ${title}`}
     >
       <header className="flex items-center justify-between">
-        <span className="rounded-full bg-paper-warm px-2.5 py-0.5 text-[10.5px] font-medium uppercase tracking-[0.16em] text-ink-500">
+        <span className="rounded-full bg-paper-warm px-2.5 py-0.5 text-[10.5px] font-medium uppercase tracking-[0.16em] text-ink-700">
           {category}
         </span>
         <span
@@ -56,7 +56,7 @@ export function RecordCard({
         {title}
       </h3>
 
-      <div className="mt-4 flex items-center justify-between text-xs text-ink-500">
+      <div className="mt-4 flex items-center justify-between text-xs text-ink-700">
         <span>{verifier}</span>
         <time>{date}</time>
       </div>
@@ -66,7 +66,7 @@ export function RecordCard({
           <p className="text-2xl font-medium tracking-tight text-ink-900">
             {metric.value}
           </p>
-          <p className="text-xs text-ink-500">{metric.label}</p>
+          <p className="text-xs text-ink-700">{metric.label}</p>
         </div>
       )}
 
@@ -82,7 +82,7 @@ export function RecordCard({
             </span>
           ))}
         </div>
-        <span className="font-mono text-[10px] text-ink-400">
+        <span className="font-mono text-[10px] text-ink-600">
           signed · chained
         </span>
       </footer>
