@@ -1,6 +1,8 @@
-# Documentation — Context Pack
+# Documentation — Context Packs
 
-00-20 files covering strategy → implementation for all products.
+This repo now has two context-pack surfaces:
+- `context-pack/` — the existing Vero-oriented 00-20 pack
+- `unified-context-pack/` — the new umbrella pack for Vero, RIE, Trove, shared systems, website, pricing, logs, and governance
 
 **Load by task type:**
 - **Website copy:** 00, 01, 02, 14, 10
@@ -34,3 +36,11 @@
 - `20-ai-agent-rules.md` — Claude Code instructions
 
 **How to use:** Paste relevant files into Claude Code before starting a task. Stable context for multiple AI agents.
+
+**When to use the unified pack:**
+- investor review
+- pricing and revenue planning
+- cross-product governance
+- country-specific pricing
+- theme lock and brand consistency
+- AI edit logging and documentation policy

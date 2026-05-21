@@ -1,9 +1,11 @@
 import { fileStore } from "./file-store";
+import { supabaseStore } from "./supabase-store";
 import type { WaitlistEntry, WaitlistStore } from "./types";
 
-// Single shared store. File-backed for dev + low-volume prod.
-// Swap to a Supabase / Postgres impl by adding another module + env switch.
-export const waitlist: WaitlistStore = fileStore;
+// Production: Supabase (serverless-safe). Dev: file-backed JSON.
+const storeMode = process.env.WAITLIST_STORE ?? "file";
+export const waitlist: WaitlistStore =
+  storeMode === "supabase" ? supabaseStore : fileStore;
 
 /**
  * Position math:

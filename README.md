@@ -23,7 +23,7 @@ cd website              # Next.js site
 
 - **Non-technical?** Read `/content/GUIDE.md`
 - **Technical?** Start with `/INDEX.md`
-- **Documentation?** `/docs/` (context pack 00-20)
+- **Documentation?** `/docs/` (existing Vero pack + unified umbrella pack)
 - **Shared code?** `/shared/` (crypto, types, ALVED protocol)
 
 ## Key Files
@@ -32,8 +32,9 @@ cd website              # Next.js site
 |------|---------|
 | `/INDEX.md` | Technical overview |
 | `/content/GUIDE.md` | Non-tech product guide |
-| `/docs/README.md` | How to load context pack |
-| `/docs/context-pack/` | 00-20 strategy → implementation |
+| `/docs/README.md` | How to load the context packs |
+| `/docs/context-pack/` | Existing Vero 00-20 pack |
+| `/docs/unified-context-pack/` | New umbrella pack for all products |
 | `/shared/README.md` | Cross-product libs |
 
 ## Principles

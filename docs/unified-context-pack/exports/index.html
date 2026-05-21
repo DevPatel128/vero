@@ -1,0 +1,1383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VROE Labs Unified Context Pack</title>
+    <meta
+      name="description"
+      content="A visual local preview of the VROE Labs unified context pack for Vero, RIE, Trove, shared systems, logs, and the website."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f1e9;
+        --bg-elevated: rgba(255, 255, 255, 0.64);
+        --bg-strong: #ffffff;
+        --text: #171717;
+        --muted: #5c5c5c;
+        --line: rgba(23, 23, 23, 0.1);
+        --accent: #0f5b46;
+        --accent-2: #b46c2d;
+        --accent-soft: rgba(15, 91, 70, 0.09);
+        --shadow: 0 24px 80px rgba(23, 23, 23, 0.12);
+        --radius-xl: 28px;
+        --radius-lg: 20px;
+        --radius-md: 16px;
+        --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-serif: Georgia, "Times New Roman", serif;
+      }
+
+      :root[data-mode="investor"] {
+        --accent: #0f5b46;
+        --accent-2: #b46c2d;
+      }
+      :root[data-mode="customer"] {
+        --accent: #5b3d91;
+        --accent-2: #c45f4f;
+      }
+      :root[data-mode="tech"] {
+        --accent: #1357a5;
+        --accent-2: #0f5b46;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body[data-ready="false"] .reveal,
+      body[data-ready="false"] .mode-panel,
+      body[data-ready="false"] .card,
+      body[data-ready="false"] .stat,
+      body[data-ready="false"] .section {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(15, 91, 70, 0.08), transparent 24%),
+          radial-gradient(circle at top right, rgba(180, 108, 45, 0.10), transparent 20%),
+          linear-gradient(180deg, #fbf8f3 0%, var(--bg) 100%);
+      }
+
+      a { color: inherit; text-decoration: none; }
+      button {
+        font: inherit;
+      }
+      .skiplink {
+        position: absolute;
+        left: -999px;
+        top: 12px;
+        padding: 10px 14px;
+        background: white;
+        color: var(--text);
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        z-index: 10;
+      }
+      .skiplink:focus {
+        left: 12px;
+      }
+      .topnav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(251, 248, 243, 0.88);
+        backdrop-filter: blur(16px);
+      }
+      .topnav-inner {
+        width: min(1240px, 100%);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .topnav-brand {
+        display: grid;
+        gap: 2px;
+      }
+      .topnav-brand strong {
+        font-size: 15px;
+        letter-spacing: -0.02em;
+      }
+      .topnav-brand span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .topnav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .topnav-links a {
+        padding: 9px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.78);
+        font-size: 13px;
+        color: var(--muted);
+        transition: 160ms ease;
+      }
+      .topnav-links a:hover {
+        color: var(--text);
+        border-color: var(--accent);
+        transform: translateY(-1px);
+      }
+      .topnav-cta {
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(15, 91, 70, 0.16);
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: 0 12px 28px rgba(15, 91, 70, 0.18);
+      }
+      .shell {
+        display: grid;
+        grid-template-columns: 300px minmax(0, 1fr);
+        min-height: 100vh;
+      }
+      .sidebar {
+        position: sticky;
+        top: 0;
+        align-self: start;
+        height: 100vh;
+        padding: 34px 24px;
+        border-right: 1px solid var(--line);
+        background: rgba(251, 248, 243, 0.72);
+        backdrop-filter: blur(16px);
+      }
+      .brand {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      h1, h2, h3, p { margin: 0; }
+      h1 {
+        font-family: var(--font-serif);
+        font-size: 32px;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+      .lede {
+        color: var(--muted);
+        line-height: 1.72;
+        font-size: 14.5px;
+      }
+      .nav {
+        display: grid;
+        gap: 10px;
+        margin-top: 24px;
+      }
+      .nav a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 11px 14px;
+        border-radius: 14px;
+        background: transparent;
+        color: var(--muted);
+        border: 1px solid transparent;
+        transition: 160ms ease;
+      }
+      .nav a:hover {
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--text);
+        border-color: var(--line);
+        transform: translateX(2px);
+      }
+      .nav small { color: var(--muted); }
+      .sidebar-note {
+        margin-top: 28px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid var(--line);
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: 13px;
+      }
+
+      .main {
+        padding: 34px;
+        display: grid;
+        gap: 28px;
+      }
+      .modebar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .modebar button {
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.72);
+        color: var(--muted);
+        padding: 10px 14px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: 180ms ease;
+      }
+      .modebar button[aria-pressed="true"] {
+        color: white;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        border-color: transparent;
+        box-shadow: 0 12px 30px rgba(15,91,70,0.2);
+      }
+      .modebar button:hover { transform: translateY(-1px); }
+      .landing-flow {
+        display: grid;
+        gap: 16px;
+      }
+      .landing-flow .section-title {
+        margin-bottom: 0;
+      }
+      .landing-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .landing-card {
+        display: grid;
+        gap: 12px;
+        padding: 18px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.7);
+        transition: 180ms ease;
+      }
+      .landing-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 34px rgba(23, 23, 23, 0.08);
+      }
+      .landing-card h4 {
+        margin: 0;
+        font-size: 18px;
+      }
+      .landing-card p {
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 14px;
+      }
+      .landing-card .linkrow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .landing-card a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: white;
+        font-size: 13px;
+        transition: 160ms ease;
+      }
+      .landing-card a:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateY(-1px);
+      }
+      .hero,
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: calc(var(--radius-xl) + 2px);
+        background: var(--bg-elevated);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 18px 64px rgba(23, 23, 23, 0.09);
+      }
+      .hero {
+        padding: 42px;
+        display: grid;
+        gap: 28px;
+        overflow: hidden;
+        position: relative;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -80px -80px auto;
+        width: 260px;
+        height: 260px;
+        background: radial-gradient(circle, rgba(15, 91, 70, 0.22), transparent 64%);
+        pointer-events: none;
+        filter: blur(6px);
+        animation: float 10s ease-in-out infinite;
+      }
+      .hero-top {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: start;
+      }
+      .hero h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(44px, 5vw, 74px);
+        line-height: 0.94;
+        letter-spacing: -0.05em;
+        max-width: 11ch;
+      }
+      .hero-copy {
+        max-width: 68ch;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.8;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .hero-actions a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 15px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.78);
+        font-size: 13px;
+        font-weight: 600;
+        transition: 160ms ease;
+      }
+      .hero-actions a.primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+        border-color: transparent;
+      }
+      .hero-actions a:hover {
+        transform: translateY(-1px);
+        border-color: var(--accent);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 18px;
+      }
+      .hero-card {
+        padding: 22px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.72);
+        border: 1px solid var(--line);
+      }
+      .hero-card h3 {
+        font-family: var(--font-serif);
+        font-size: 19px;
+        margin-bottom: 10px;
+      }
+      .hero-card p {
+        color: var(--muted);
+        font-size: 14.5px;
+        line-height: 1.7;
+      }
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .pill {
+        padding: 10px 13px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid var(--line);
+        font-size: 13px;
+        color: var(--text);
+      }
+      .stack {
+        display: grid;
+        gap: 14px;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .stat {
+        padding: 22px;
+        border-radius: var(--radius-lg);
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid var(--line);
+      }
+      .stat strong {
+        display: block;
+        font-size: 28px;
+        letter-spacing: -0.04em;
+        margin-bottom: 6px;
+      }
+      .stat span {
+        color: var(--muted);
+        font-size: 13.5px;
+        line-height: 1.6;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .section {
+        padding: 30px;
+      }
+      .section h3 {
+        font-family: var(--font-serif);
+        font-size: 26px;
+        margin-bottom: 14px;
+      }
+      .section p,
+      .section li {
+        color: var(--muted);
+        line-height: 1.75;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .card {
+        padding: 22px;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid var(--line);
+        min-height: 180px;
+      }
+      .card h4 {
+        font-size: 17px;
+        margin-bottom: 10px;
+      }
+      .card p {
+        font-size: 14.5px;
+        line-height: 1.68;
+      }
+      .chart {
+        padding: 22px;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid var(--line);
+      }
+      .chart-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: baseline;
+        margin-bottom: 12px;
+      }
+      .chart-header h4 {
+        font-size: 16px;
+        margin: 0;
+      }
+      .chart-header span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .bar-chart {
+        display: grid;
+        gap: 14px;
+      }
+      .bar-row {
+        display: grid;
+        grid-template-columns: 122px minmax(0, 1fr) 54px;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+      }
+      .bar-track {
+        height: 12px;
+        border-radius: 999px;
+        background: rgba(23, 23, 23, 0.08);
+        overflow: hidden;
+      }
+      .bar-fill {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        width: 0;
+        transition: width 1100ms cubic-bezier(.2,.8,.2,1);
+      }
+      .donut-wrap {
+        display: grid;
+        grid-template-columns: 188px 1fr;
+        gap: 22px;
+        align-items: center;
+      }
+      .donut {
+        width: 188px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: conic-gradient(var(--accent) 0 54%, rgba(23,23,23,0.08) 54% 74%, var(--accent-2) 74% 100%);
+        position: relative;
+        margin-inline: auto;
+        box-shadow: inset 0 0 0 22px rgba(255,255,255,0.56);
+      }
+      .donut::after {
+        content: "";
+        position: absolute;
+        inset: 26px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.95);
+        border: 1px solid var(--line);
+      }
+      .donut-label {
+        position: absolute;
+        inset: 50% auto auto 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        text-align: center;
+        font-weight: 700;
+        font-size: 22px;
+        letter-spacing: -0.03em;
+      }
+      .microchart {
+        display: grid;
+        gap: 14px;
+      }
+      .microchart .row {
+        display: grid;
+        gap: 6px;
+      }
+      .microchart .label {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 13px;
+      }
+      .spark {
+        height: 52px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.7);
+        border: 1px solid var(--line);
+        position: relative;
+        overflow: hidden;
+      }
+      .spark svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .mode-panel {
+        display: none;
+      }
+      .mode-panel.is-active {
+        display: grid;
+        animation: rise 380ms ease;
+      }
+      .filelist {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .file {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid var(--line);
+        font-size: 14px;
+      }
+      .file code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        color: var(--accent);
+        font-size: 12px;
+      }
+      .timeline {
+        display: grid;
+        gap: 12px;
+      }
+      .step {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+      }
+      .dot {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: var(--accent-soft);
+        color: var(--accent);
+        border: 1px solid rgba(15, 91, 70, 0.14);
+        font-weight: 700;
+      }
+      .step p { font-size: 14px; }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(15, 91, 70, 0.08);
+        color: var(--accent);
+        border: 1px solid rgba(15, 91, 70, 0.14);
+        font-size: 13px;
+      }
+      .footer {
+        padding: 24px 4px 10px;
+        color: var(--muted);
+        font-size: 13.5px;
+        line-height: 1.7;
+      }
+      .section-title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 12px;
+      }
+      .section-title small { color: var(--muted); }
+
+      .section.reveal,
+      .hero.reveal,
+      .panel.reveal,
+      .stat.reveal,
+      .card.reveal,
+      .chart.reveal,
+      .hero-card.reveal {
+        transition: opacity 700ms ease, transform 700ms ease, box-shadow 300ms ease;
+      }
+      .is-visible {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+        50% { transform: translate3d(-6px, -12px, 0) scale(1.03); }
+      }
+
+      @media (max-width: 1180px) {
+        .topnav {
+          position: relative;
+        }
+        .shell { grid-template-columns: 1fr; }
+        .sidebar {
+          position: relative;
+          height: auto;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+        .stats,
+        .cards,
+        .grid-2,
+        .filelist,
+        .hero-grid,
+        .donut-wrap {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 760px) {
+        .main { padding: 16px; gap: 18px; }
+        .hero { padding: 22px; gap: 20px; }
+        .hero-top,
+        .stats,
+        .cards,
+        .landing-grid,
+        .grid-2,
+        .filelist,
+        .hero-grid,
+        .donut-wrap,
+        .bar-row {
+          grid-template-columns: 1fr;
+        }
+        .hero h2 { max-width: none; }
+        .bar-row { gap: 6px; }
+      }
+    </style>
+  </head>
+  <body data-ready="false">
+    <a class="skiplink" href="#overview">Skip to content</a>
+    <header class="topnav" aria-label="Primary navigation">
+      <div class="topnav-inner">
+        <div class="topnav-brand">
+          <strong>VROE Labs Unified Context Pack</strong>
+          <span>single-file preview for investors, users, companies, and AI agents</span>
+        </div>
+        <nav class="topnav-links" aria-label="Quick sections">
+          <a href="#overview">Overview</a>
+          <a href="#landing-flow">Audience flow</a>
+          <a href="#website">Website</a>
+          <a href="#future-scopes">Future scopes</a>
+          <a href="#workflow">How to use</a>
+        </nav>
+        <a class="topnav-cta" href="#landing-flow">Start here</a>
+      </div>
+    </header>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="eyebrow">VROE Labs</div>
+          <h1>Unified Context Pack</h1>
+          <p class="lede">
+            A visual, local-first map of the documentation system for Vero, RIE,
+            Trove, the website, shared systems, logs, and prompts.
+          </p>
+        </div>
+
+        <nav class="nav" aria-label="Pack sections">
+          <a href="#overview"><span>Overview</span><small>00</small></a>
+          <a href="#landing-flow"><span>Landing flow</span><small>site path</small></a>
+          <a href="#structure"><span>Structure</span><small>map</small></a>
+          <a href="#products"><span>Products</span><small>Vero / RIE / Trove</small></a>
+          <a href="#shared"><span>Shared</span><small>ALVED / crypto</small></a>
+          <a href="#website"><span>Website</span><small>public surface</small></a>
+          <a href="#enterprise"><span>Enterprise</span><small>company buyers</small></a>
+          <a href="#future-scopes"><span>Future scopes</span><small>research / roadmap</small></a>
+          <a href="#governance"><span>Governance</span><small>logs / prompts</small></a>
+          <a href="#workflow"><span>Workflow</span><small>how to use</small></a>
+        </nav>
+
+        <div class="sidebar-note">
+          Markdown remains the source of truth. This HTML file is the visual preview
+          layer for localhost browsing and explanation.
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="hero panel reveal" id="overview">
+          <div class="hero-top">
+            <div>
+              <div class="eyebrow">Local preview</div>
+              <h2>See the whole context pack in one visual map.</h2>
+            </div>
+            <div class="badge">Core theme preview</div>
+          </div>
+          <p class="hero-copy">
+            This page is designed to be opened on localhost as a single HTML entry
+            point. It mirrors the pack's core theme, keeps the system easy to explain,
+            and helps you move through the structure without opening many markdown files.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="primary" href="#landing-flow">Explore the site</a>
+            <a href="#market">Investor view</a>
+            <a href="#customers">User view</a>
+            <a href="#enterprise">Company view</a>
+          </div>
+          <div class="modebar" role="tablist" aria-label="Audience modes">
+            <button type="button" role="tab" aria-pressed="true" data-mode="investor">Investor lens</button>
+            <button type="button" role="tab" aria-pressed="false" data-mode="customer">User / customer lens</button>
+            <button type="button" role="tab" aria-pressed="false" data-mode="tech">Tech lens</button>
+            <button type="button" role="tab" aria-pressed="false" data-mode="company">Company lens</button>
+          </div>
+          <div class="pills">
+            <span class="pill">Founders</span>
+            <span class="pill">Investors</span>
+            <span class="pill">Developers</span>
+            <span class="pill">AI agents</span>
+          </div>
+          <div class="hero-grid">
+            <div class="hero-card reveal mode-panel is-active" data-panel="investor">
+              <h3>What investors should see</h3>
+              <p>
+                The company is a family of proof-based products with one trust layer,
+                one documentation system, and one governance rulebook. Pricing, revenue,
+                and rollout are explicit, which makes the business easier to understand.
+              </p>
+            </div>
+            <div class="hero-card reveal mode-panel" data-panel="customer">
+              <h3>What customers should feel</h3>
+              <p>
+                Each product makes a clear promise: Vero turns work into verified proof,
+                RIE turns discipline into something visible, and Trove keeps important
+                records trustworthy and portable.
+              </p>
+            </div>
+            <div class="hero-card reveal mode-panel" data-panel="tech">
+              <h3>What technologists should understand</h3>
+              <p>
+                The stack is documentation-first: shared rules, product packs, logs,
+                HTML preview, and a controlled change policy. The pack exists to reduce
+                drift, not to add complexity.
+              </p>
+            </div>
+            <div class="hero-card reveal mode-panel" data-panel="company">
+              <h3>What companies should understand</h3>
+              <p>
+                The products are enterprise-readable, procurement-friendly, and built to
+                align with team workflows, compliance needs, and long-term operating use.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal landing-flow" id="landing-flow">
+          <div class="section-title">
+            <h3>Landing flow</h3>
+            <small>one file, many audience views</small>
+          </div>
+          <div class="landing-grid">
+            <div class="landing-card reveal">
+              <h4>Investors</h4>
+              <p>See pricing, revenue, moat, future scopes, and the research budget behind the plan.</p>
+              <div class="linkrow">
+                <a href="#market">Open investor section</a>
+              </div>
+            </div>
+            <div class="landing-card reveal">
+              <h4>Users</h4>
+              <p>See the plain-language product story, trust model, and the customer journey.</p>
+              <div class="linkrow">
+                <a href="#customers">Open user section</a>
+              </div>
+            </div>
+            <div class="landing-card reveal">
+              <h4>Companies</h4>
+              <p>See how the system fits enterprise buyers, security reviews, and rollout plans.</p>
+              <div class="linkrow">
+                <a href="#enterprise">Open company section</a>
+              </div>
+            </div>
+            <div class="landing-card reveal">
+              <h4>Future scope</h4>
+              <p>See the 25% research reserve and how the roadmap stays disciplined over time.</p>
+              <div class="linkrow">
+                <a href="#future-scopes">Open future-scope section</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="structure">
+          <div class="section-title">
+            <h3>Pack structure</h3>
+            <small>source truth + export layer + logs</small>
+          </div>
+          <div class="stats">
+            <div class="stat reveal"><strong>1</strong><span>Root index that explains the pack and who it serves.</span></div>
+            <div class="stat reveal"><strong>3</strong><span>Product folders for Vero, RIE, and Trove.</span></div>
+            <div class="stat reveal"><strong>3</strong><span>Shared, website, and logs layers for cross-product control.</span></div>
+            <div class="stat reveal"><strong>1</strong><span>Standalone HTML preview for local visual navigation.</span></div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="products">
+          <div class="section-title">
+            <h3>Product packs</h3>
+            <small>25 files each</small>
+          </div>
+          <div class="cards">
+            <div class="card reveal">
+              <h4>Vero</h4>
+              <p>
+                Proof-of-work identity. Covers overview, philosophy, brand, theme,
+                pricing, country pricing, revenue, trust, career, growth, onboarding,
+                design, security, performance, copywriting, roadmap, database, API,
+                admin, deployment, agent rules, logs, launch, operations, and compliance.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h4>RIE</h4>
+              <p>
+                Proof-of-discipline. Covers the same deep structure, adapted to fitness,
+                content, and gaming discipline, with region-aware pricing and trust rules.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h4>Trove</h4>
+              <p>
+                Proof-of-provenance. Covers privacy-sensitive record keeping, durable
+                trust, exportability, and careful monetization.
+              </p>
+            </div>
+          </div>
+          <div class="filelist" aria-label="Product file map examples">
+            <div class="file"><span>00-overview.md</span><code>what / who / why now</code></div>
+            <div class="file"><span>04-pricing.md</span><code>pricing posture</code></div>
+            <div class="file"><span>05-country-pricing.md</span><code>hybrid local pricing</code></div>
+            <div class="file"><span>06-revenue.md</span><code>who pays and why</code></div>
+            <div class="file"><span>03-theme.md</span><code>theme lock</code></div>
+            <div class="file"><span>20-ai-agent-rules.md</span><code>load / edit / refuse</code></div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="shared">
+          <div class="section-title">
+            <h3>Shared system</h3>
+            <small>one trust layer</small>
+          </div>
+          <div class="grid-2">
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>Economics shape</h4>
+                <span>illustrative product emphasis</span>
+              </div>
+              <div class="donut-wrap">
+                <div class="donut" aria-label="Illustrative product economics chart">
+                  <div class="donut-label">54 / 20 / 26</div>
+                </div>
+                <div class="microchart">
+                  <div class="row">
+                    <div class="label"><span>Trust-led SaaS</span><span>54%</span></div>
+                    <div class="spark"><svg viewBox="0 0 100 16" preserveAspectRatio="none"><path d="M0 12 L20 12 L38 10 L52 8 L70 5 L84 4 L100 3" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent)"></path></svg></div>
+                  </div>
+                  <div class="row">
+                    <div class="label"><span>Transaction / escrow</span><span>20%</span></div>
+                    <div class="spark"><svg viewBox="0 0 100 16" preserveAspectRatio="none"><path d="M0 12 L24 11 L45 10 L62 8 L78 7 L90 5 L100 4" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent-2)"></path></svg></div>
+                  </div>
+                  <div class="row">
+                    <div class="label"><span>Enterprise / custom</span><span>26%</span></div>
+                    <div class="spark"><svg viewBox="0 0 100 16" preserveAspectRatio="none"><path d="M0 13 L22 12 L42 11 L60 9 L75 8 L90 6 L100 5" fill="none" stroke="currentColor" stroke-width="2" style="color: #545454"></path></svg></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p>
+                Shared docs define ALVED, crypto posture, the design system, compliance,
+                and deployment standards once so products do not drift apart.
+              </p>
+              <div class="filelist">
+                <div class="file"><span>00-alved.md</span><code>shared trust protocol</code></div>
+                <div class="file"><span>01-crypto.md</span><code>approved primitives</code></div>
+                <div class="file"><span>02-design-system.md</span><code>family tokens</code></div>
+                <div class="file"><span>03-compliance.md</span><code>region rules</code></div>
+                <div class="file"><span>04-deployment.md</span><code>release standards</code></div>
+              </div>
+            </div>
+            <div>
+              <p>
+                The visual preview borrows the same restraint the pack asks for: calm
+                surfaces, strong hierarchy, obvious navigation, and a premium but plain
+                reading experience.
+              </p>
+              <div class="pills">
+                <span class="pill">shared tokens</span>
+                <span class="pill">ALVED</span>
+                <span class="pill">crypto</span>
+                <span class="pill">compliance</span>
+                <span class="pill">deployment</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="website">
+          <div class="section-title">
+            <h3>Website layer</h3>
+            <small>public narrative</small>
+          </div>
+          <div class="cards">
+            <div class="card reveal">
+              <h4>Overview</h4>
+              <p>Company story, product family, and why the systems belong together.</p>
+            </div>
+            <div class="card reveal">
+              <h4>Pricing pages</h4>
+              <p>Public pricing that matches the product docs and country pricing rules.</p>
+            </div>
+            <div class="card reveal">
+              <h4>Investor pages</h4>
+              <p>Market, moat, revenue, and fit, presented in a concise, credible form.</p>
+            </div>
+            <div class="card reveal">
+              <h4>Future-scopes pages</h4>
+              <p>Where the product is going next, what stays stable, and why research is funded.</p>
+            </div>
+          </div>
+        </section>
+        <section class="panel section reveal" id="pages">
+          <div class="section-title">
+            <h3>Audience gallery</h3>
+            <small>different jobs, one document</small>
+          </div>
+          <div class="cards">
+            <div class="card reveal">
+              <h4>Home</h4>
+              <p>High-level story, long-term vision, and the calm first impression for all audiences.</p>
+            </div>
+            <div class="card reveal">
+              <h4>Investor view</h4>
+              <p>Market size, revenue model, moat, and why the family fits together.</p>
+            </div>
+            <div class="card reveal">
+              <h4>User view</h4>
+              <p>Clear explanation of what the products do and why they matter in daily use.</p>
+            </div>
+            <div class="card reveal">
+              <h4>Company view</h4>
+              <p>Architecture, shared systems, compliance, and how the pack stays coherent.</p>
+            </div>
+            <div class="card reveal">
+              <h4>Tech view</h4>
+              <p>Architecture, shared systems, logs, and how the pack stays coherent.</p>
+            </div>
+            <div class="card reveal">
+              <h4>Privacy</h4>
+              <p>Region-aware policies, data handling, and how user rights are respected.</p>
+            </div>
+            <div class="card reveal">
+              <h4>NDA</h4>
+              <p>Non-disclosure terms for sensitive discussions, partnerships, and review work.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="future-scopes">
+          <div class="section-title">
+            <h3>Future scopes</h3>
+            <small>research reserve + roadmap direction</small>
+          </div>
+          <div class="grid-2">
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>Research budget</h4>
+                <span>25% reserved for discovery</span>
+              </div>
+              <p style="margin-bottom: 12px; color: var(--muted); line-height: 1.75;">
+                A fixed portion of the operating budget is reserved for product research,
+                validation, customer learning, competitive scanning, and AI-assisted context
+                maintenance. This keeps the pack current instead of stale.
+              </p>
+              <div class="bar-chart">
+                <div class="bar-row"><span>Research & discovery</span><div class="bar-track"><div class="bar-fill" data-value="25%" style="width: 0%"></div></div><span>reserved</span></div>
+                <div class="bar-row"><span>Core execution</span><div class="bar-track"><div class="bar-fill" data-value="75%" style="width: 0%"></div></div><span>delivery</span></div>
+              </div>
+            </div>
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>Alignment goal</h4>
+                <span>investors, users, companies, AI</span>
+              </div>
+              <div class="timeline">
+                <div class="step"><div class="dot">1</div><p><strong>Investors:</strong> see disciplined research spend and an intentional roadmap.</p></div>
+                <div class="step"><div class="dot">2</div><p><strong>Users:</strong> see the product improve without losing clarity or trust.</p></div>
+                <div class="step"><div class="dot">3</div><p><strong>Companies:</strong> see a stable platform with space for enterprise needs.</p></div>
+                <div class="step"><div class="dot">4</div><p><strong>AI agents:</strong> know where to look for next-step scope before editing.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" style="margin-top: 18px;">
+            <div class="card reveal">
+              <h4>What stays fixed</h4>
+              <p>Trust, theme lock, pricing guardrails, compliance, and the pack structure remain stable.</p>
+            </div>
+            <div class="card reveal">
+              <h4>What can evolve</h4>
+              <p>New products, deeper enterprise features, region-specific pages, and better AI guidance.</p>
+            </div>
+            <div class="card reveal">
+              <h4>Why it matters</h4>
+              <p>This makes the company easier to sell because the roadmap is disciplined, not random.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="market">
+          <div class="section-title">
+            <h3>Market lens</h3>
+            <small>how the opportunity is framed</small>
+          </div>
+          <div class="grid-2">
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>Rollout path</h4>
+                <span>local first, then expand</span>
+              </div>
+              <div class="bar-chart">
+                <div class="bar-row"><span>Bengaluru</span><div class="bar-track"><div class="bar-fill" data-value="100%" style="width: 0%"></div></div><span>pilot</span></div>
+                <div class="bar-row"><span>Nearby zones</span><div class="bar-track"><div class="bar-fill" data-value="72%" style="width: 0%"></div></div><span>dense</span></div>
+                <div class="bar-row"><span>Other cities</span><div class="bar-track"><div class="bar-fill" data-value="36%" style="width: 0%"></div></div><span>later</span></div>
+              </div>
+            </div>
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>Revenue model</h4>
+                <span>who pays and why</span>
+              </div>
+              <div class="bar-chart">
+                <div class="bar-row"><span>Workers</span><div class="bar-track"><div class="bar-fill" data-value="8%" style="width: 0%"></div></div><span>free</span></div>
+                <div class="bar-row"><span>Businesses</span><div class="bar-track"><div class="bar-fill" data-value="74%" style="width: 0%"></div></div><span>saaS</span></div>
+                <div class="bar-row"><span>Escrow</span><div class="bar-track"><div class="bar-fill" data-value="60%" style="width: 0%"></div></div><span>usage</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="governance">
+          <div class="section-title">
+            <h3>Governance and logs</h3>
+            <small>change control</small>
+          </div>
+          <div class="timeline">
+            <div class="step">
+              <div class="dot">1</div>
+              <p>AI or human changes a repo file.</p>
+            </div>
+            <div class="step">
+              <div class="dot">2</div>
+              <p>The relevant context-pack file is updated in the same change set whenever feasible.</p>
+            </div>
+            <div class="step">
+              <div class="dot">3</div>
+              <p>If that is not possible, the change is logged immediately and followed up.</p>
+            </div>
+            <div class="step">
+              <div class="dot">4</div>
+              <p>Logs capture agent, time, files changed, summary, reason, section, and verification status.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="privacy-nda">
+          <div class="section-title">
+            <h3>Privacy and NDA</h3>
+            <small>the legal surface</small>
+          </div>
+          <div class="grid-2">
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>Privacy posture</h4>
+                <span>region-aware by design</span>
+              </div>
+              <div class="timeline">
+                <div class="step"><div class="dot">1</div><p>Privacy pages vary by region where law requires it.</p></div>
+                <div class="step"><div class="dot">2</div><p>Data handling is explained plainly, not hidden in legal noise.</p></div>
+                <div class="step"><div class="dot">3</div><p>Deletion, access, and consent flows map back to the product docs.</p></div>
+              </div>
+            </div>
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>NDA use</h4>
+                <span>for sensitive conversations</span>
+              </div>
+              <p style="margin-bottom: 12px; color: var(--muted); line-height: 1.75;">
+                The pack now has a dedicated NDA page in the website/legal layer so
+                sensitive partner, investor, and review conversations can be handled
+                in a formal, documented way.
+              </p>
+              <div class="filelist" style="grid-template-columns: 1fr;">
+                <div class="file"><span>Non-disclosure agreement</span><code>website/06-nda.md</code></div>
+                <div class="file"><span>Privacy</span><code>region-specific pages</code></div>
+                <div class="file"><span>Compliance</span><code>law-aligned controls</code></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="customers">
+          <div class="section-title">
+            <h3>Idea and model</h3>
+            <small>for customers and users</small>
+          </div>
+          <div class="grid-2">
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>How the products help</h4>
+                <span>plain-language model</span>
+              </div>
+              <div class="timeline">
+                <div class="step"><div class="dot">V</div><p><strong>Vero:</strong> turn completed work into verified identity and trust.</p></div>
+                <div class="step"><div class="dot">R</div><p><strong>RIE:</strong> turn discipline into proof that can be shared and tracked.</p></div>
+                <div class="step"><div class="dot">T</div><p><strong>Trove:</strong> keep valuable records secure, portable, and trustworthy.</p></div>
+              </div>
+            </div>
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>Customer journey</h4>
+                <span>why people stay</span>
+              </div>
+              <div class="bar-chart">
+                <div class="bar-row"><span>See value</span><div class="bar-track"><div class="bar-fill" data-value="92%" style="width: 0%"></div></div><span>fast</span></div>
+                <div class="bar-row"><span>Use once</span><div class="bar-track"><div class="bar-fill" data-value="72%" style="width: 0%"></div></div><span>clear</span></div>
+                <div class="bar-row"><span>Return / share</span><div class="bar-track"><div class="bar-fill" data-value="58%" style="width: 0%"></div></div><span>sticky</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="enterprise">
+          <div class="section-title">
+            <h3>Enterprise landing</h3>
+            <small>for companies and procurement</small>
+          </div>
+          <div class="grid-2">
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>Why companies buy</h4>
+                <span>operational fit</span>
+              </div>
+              <div class="timeline">
+                <div class="step"><div class="dot">1</div><p>Clear business case with pricing and revenue rules already documented.</p></div>
+                <div class="step"><div class="dot">2</div><p>Theme, compliance, and change control stay consistent across the family.</p></div>
+                <div class="step"><div class="dot">3</div><p>Research budget keeps future planning visible instead of improvised.</p></div>
+              </div>
+            </div>
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>Decision path</h4>
+                <span>buying flow</span>
+              </div>
+              <div class="bar-chart">
+                <div class="bar-row"><span>Review</span><div class="bar-track"><div class="bar-fill" data-value="86%" style="width: 0%"></div></div><span>simple</span></div>
+                <div class="bar-row"><span>Security</span><div class="bar-track"><div class="bar-fill" data-value="78%" style="width: 0%"></div></div><span>ready</span></div>
+                <div class="bar-row"><span>Rollout</span><div class="bar-track"><div class="bar-fill" data-value="68%" style="width: 0%"></div></div><span>clear</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="cards" style="margin-top: 18px;">
+            <div class="card reveal">
+              <h4>Procurement-safe</h4>
+              <p>The pack documents pricing, compliance, legal surfaces, and control points in one place.</p>
+            </div>
+            <div class="card reveal">
+              <h4>Team-friendly</h4>
+              <p>The audience paths help different stakeholders open the right story without confusion.</p>
+            </div>
+            <div class="card reveal">
+              <h4>Expansion-ready</h4>
+              <p>Future scopes and research reserve make the roadmap credible without overpromising.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="tech">
+          <div class="section-title">
+            <h3>Tech lens</h3>
+            <small>for builders and technologists</small>
+          </div>
+          <div class="grid-2">
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>System layers</h4>
+                <span>what talks to what</span>
+              </div>
+              <div class="timeline">
+                <div class="step"><div class="dot">1</div><p><strong>Docs:</strong> context pack, prompts, logs, and HTML preview.</p></div>
+                <div class="step"><div class="dot">2</div><p><strong>Shared:</strong> ALVED, crypto, design, compliance, and deployment.</p></div>
+                <div class="step"><div class="dot">3</div><p><strong>Products:</strong> Vero, RIE, and Trove each carry their own pack.</p></div>
+              </div>
+            </div>
+            <div class="chart reveal">
+              <div class="chart-header">
+                <h4>What the preview teaches</h4>
+                <span>browser-facing explanation</span>
+              </div>
+              <div class="filelist" style="grid-template-columns: 1fr;">
+                <div class="file"><span>Theme</span><code>shared visual rules</code></div>
+                <div class="file"><span>Pricing</span><code>country-aware + guarded</code></div>
+                <div class="file"><span>Governance</span><code>logs + change policy</code></div>
+                <div class="file"><span>Usage</span><code>investor / user / tech modes</code></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel section reveal" id="workflow">
+          <div class="section-title">
+            <h3>How to use it</h3>
+            <small>founder → investor → builder → company</small>
+          </div>
+          <div class="grid-2">
+            <div>
+              <p>
+                Read the root README first, then use the landing flow to jump to the
+                investor, user, company, and future-scope sections. The HTML preview is
+                now a single self-contained explanation of the whole system.
+              </p>
+            </div>
+            <div>
+              <p>
+                When the raw idea changes, research first, then add the missing materials,
+                then update logs and this single export file if the structure itself changes.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div class="footer">
+          Open this file on localhost as a static page. It is intentionally self-contained
+          so the context pack can be shown visually without a separate app.
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const root = document.documentElement;
+      const body = document.body;
+      const modeButtons = document.querySelectorAll(".modebar button");
+      const modePanels = document.querySelectorAll(".mode-panel");
+      const jumpButtons = document.querySelectorAll("[data-jump]");
+      const revealItems = document.querySelectorAll(".reveal");
+
+      function setMode(mode) {
+        root.dataset.mode = mode;
+        modeButtons.forEach((button) => {
+          const active = button.dataset.mode === mode;
+          button.setAttribute("aria-pressed", String(active));
+        });
+        modePanels.forEach((panel) => {
+          panel.classList.toggle("is-active", panel.dataset.panel === mode);
+        });
+      }
+
+      function jumpToSection(mode, selector) {
+        setMode(mode);
+        const target = document.querySelector(selector);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      modeButtons.forEach((button) => {
+        button.addEventListener("click", () => setMode(button.dataset.mode));
+      });
+
+      jumpButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          const targetMode = button.dataset.jump;
+          const targetSelector = button.getAttribute("href");
+          if (targetMode && targetSelector) {
+            jumpToSection(targetMode, targetSelector);
+          }
+        });
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              if (entry.target.classList.contains("chart") || entry.target.classList.contains("panel") || entry.target.classList.contains("section")) {
+                entry.target.querySelectorAll(".bar-fill[data-value]").forEach((bar, index) => {
+                  window.setTimeout(() => {
+                    bar.style.width = bar.dataset.value;
+                  }, index * 90);
+                });
+              }
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16 }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+
+      window.addEventListener("load", () => {
+        body.dataset.ready = "true";
+        setMode("investor");
+      });
+    </script>
+  </body>
+</html>
