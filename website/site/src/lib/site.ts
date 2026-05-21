@@ -38,9 +38,9 @@ export const site = {
 
 export const nav = {
   primary: [
-    { label: "How it works", href: "/how-it-works" },
-    { label: "Use Cases", href: "/#use-cases" },
-    { label: "Pricing", href: "/pricing" },
+    { label: "Product", href: "/how-it-works" },
+    { label: "Professionals", href: "/for-professionals" },
+    { label: "Businesses", href: "/for-businesses" },
     { label: "Trust", href: "/trust" },
   ],
   footer: {

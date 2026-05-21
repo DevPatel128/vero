@@ -21,7 +21,7 @@ export function ScaleIn({
       initial={reduce ? false : { opacity: 0, scale: from }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.8, delay, ease: [0.32, 0.72, 0, 1] }}
     >
       {children}
     </motion.div>

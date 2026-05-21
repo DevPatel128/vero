@@ -3,6 +3,7 @@ import { Section, Eyebrow, SectionLead } from "@/components/Section";
 import { LinkButton } from "@/components/Button";
 import { LetterSplit, WordReveal } from "@/components/motion/LetterSplit";
 import { MaskReveal } from "@/components/motion/MaskReveal";
+import { Reveal } from "@/components/motion/Reveal";
 import { BlurIn } from "@/components/motion/BlurIn";
 import { FlipIn } from "@/components/motion/FlipIn";
 import { ScaleIn } from "@/components/motion/ScaleIn";
@@ -10,6 +11,7 @@ import { TiltCard } from "@/components/motion/TiltCard";
 import { Spotlight } from "@/components/motion/Spotlight";
 import { Parallax } from "@/components/motion/Parallax";
 import { TrustGraph } from "@/components/illustrations/TrustGraph";
+import { GlassEscrowVault } from "@/components/illustrations/GlassEscrowVault";
 import { EscrowFlow } from "@/components/illustrations/EscrowFlow";
 import { CategoryCubes } from "@/components/illustrations/CategoryCubes";
 
@@ -141,16 +143,47 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section tone="warm">
-        <BlurIn>
-          <Eyebrow>Escrow, shown</Eyebrow>
-        </BlurIn>
-        <h2 className="max-w-3xl font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
-          <WordReveal text="Funded, held, released. Visible at every step." />
-        </h2>
-        <MaskReveal delay={0.3} from="down" className="mt-12">
-          <EscrowFlow className="mx-auto max-w-4xl" />
-        </MaskReveal>
+      {/* Escrow Guarantee visual */}
+      <Section tone="warm" className="!py-24">
+        <div className="text-center md:mx-auto md:max-w-3xl">
+          <Reveal>
+            <Eyebrow>Escrow Guarantee</Eyebrow>
+          </Reveal>
+          <h2 className="mt-4 font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
+            <WordReveal text="Safe money. No chasing invoices." />
+          </h2>
+          <Reveal delay={0.2}>
+            <SectionLead className="mx-auto mt-4">
+              When a job starts, the client funds it up front. We hold it safely in escrow. When you finish, both sides sign, and the money drops. We take a flat 5% fee.
+            </SectionLead>
+          </Reveal>
+        </div>
+
+        <div className="my-16">
+          <GlassEscrowVault />
+        </div>
+
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          {[
+            { step: "1", title: "Client Funds Upfront", body: "The budget is locked in escrow before you lift a finger. You know the money is real." },
+            { step: "2", title: "You Do The Work", body: "Deliver exactly what was agreed upon. No scope creep without a signed addendum." },
+            { step: "3", title: "Sign & Release", body: "Both parties sign the ledger confirming completion. Funds are released instantly." },
+          ].map((item, i) => (
+            <ScaleIn key={item.step} delay={i * 0.15} from={0.9}>
+              <div className="flex h-full flex-col items-center rounded-3xl border border-ink-100 bg-paper p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-premium-hover">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-trust text-xl font-bold text-paper shadow-md">
+                  {item.step}
+                </div>
+                <h3 className="mt-6 font-display text-xl font-medium tracking-tight text-ink-900">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-600">
+                  {item.body}
+                </p>
+              </div>
+            </ScaleIn>
+          ))}
+        </div>
       </Section>
 
       <Section>

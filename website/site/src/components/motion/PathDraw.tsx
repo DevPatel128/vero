@@ -36,7 +36,7 @@ export function PathDraw({
         initial={reduce ? false : { pathLength: 0, opacity: 0 }}
         whileInView={{ pathLength: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration, delay, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration, delay, ease: [0.32, 0.72, 0, 1] }}
       />
     </svg>
   );

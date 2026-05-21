@@ -12,6 +12,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -29,8 +30,13 @@ body {
 }
 
 ::selection {
-  background: theme("colors.accent.glow");
-  color: white;
+  background: theme("colors.accent.soft");
+  color: theme("colors.paper.DEFAULT");
+}
+
+::-moz-selection {
+  background: theme("colors.accent.soft");
+  color: theme("colors.paper.DEFAULT");
 }
 
 /* Reduce motion */
@@ -44,11 +50,12 @@ body {
   }
 }
 
-/* Focus rings — visible on keyboard */
+/* Focus rings — sleek & premium */
 :focus-visible {
-  outline: 2px solid theme("colors.accent.DEFAULT");
-  outline-offset: 3px;
-  border-radius: 4px;
+  outline: none;
+  box-shadow: theme("boxShadow.apple-focus");
+  border-radius: 6px;
+  transition: box-shadow 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 /* Print stylesheet */

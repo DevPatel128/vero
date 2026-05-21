@@ -47,8 +47,11 @@ const config: Config = {
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       letterSpacing: {
-        tightish: "-0.015em",
+        tightest: "-0.035em",
         tighter: "-0.025em",
+        tightish: "-0.015em",
+        normal: "0em",
+        wide: "0.025em",
       },
       maxWidth: {
         content: "1120px",
@@ -56,14 +59,19 @@ const config: Config = {
       },
       borderRadius: {
         xl2: "1.25rem",
+        xl3: "1.5rem",
+        xl4: "2rem",
       },
       boxShadow: {
-        card: "0 1px 0 0 rgba(15,15,14,0.04), 0 1px 3px 0 rgba(15,15,14,0.06)",
-        lift: "0 10px 30px -10px rgba(15,15,14,0.18)",
-        "premium-hover": "0 20px 40px -15px rgba(15,15,14,0.15)",
+        card: "0 1px 2px rgba(15,15,14,0.04), 0 4px 12px rgba(15,15,14,0.03)",
+        lift: "0 4px 12px rgba(15,15,14,0.05), 0 12px 32px -4px rgba(15,15,14,0.12)",
+        "premium-hover": "0 8px 24px -4px rgba(15,15,14,0.08), 0 24px 48px -12px rgba(15,15,14,0.18)",
+        "apple-focus": "0 0 0 4px rgba(31,58,46,0.15)",
       },
       transitionTimingFunction: {
         out: "cubic-bezier(0.16, 1, 0.3, 1)",
+        "apple-ease": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+        "spring": "cubic-bezier(0.32, 0.72, 0, 1)",
       },
     },
   },

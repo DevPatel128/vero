@@ -3,6 +3,7 @@ import { Section, Eyebrow, SectionLead } from "@/components/Section";
 import { LinkButton } from "@/components/Button";
 import { LetterSplit, WordReveal } from "@/components/motion/LetterSplit";
 import { MaskReveal } from "@/components/motion/MaskReveal";
+import { Reveal } from "@/components/motion/Reveal";
 import { BlurIn } from "@/components/motion/BlurIn";
 import { FlipIn } from "@/components/motion/FlipIn";
 import { ScaleIn } from "@/components/motion/ScaleIn";
@@ -12,6 +13,7 @@ import { Parallax } from "@/components/motion/Parallax";
 import { PhoneMockup } from "@/components/illustrations/PhoneMockup";
 import { IDBadge } from "@/components/illustrations/IDBadge";
 import { RecordChain } from "@/components/illustrations/RecordChain";
+import { StandingDial } from "@/components/illustrations/StandingDial";
 
 export const metadata: Metadata = {
   title: "For professionals",
@@ -159,6 +161,29 @@ export default function Page() {
         <Parallax range={30} className="mt-10 overflow-hidden">
           <RecordChain />
         </Parallax>
+      </Section>
+
+      <Section>
+        <div className="grid items-center gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Reveal>
+              <Eyebrow>Standing, not stars</Eyebrow>
+            </Reveal>
+            <h2 className="font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
+              <WordReveal text="Six dimensions. No gameable number." />
+            </h2>
+            <BlurIn delay={0.3}>
+              <SectionLead>
+                Show-up rate. On-time rate. Repeat clients. Dispute-free record.
+                Category strength. Peer quality. Each is visible and explainable on your
+                dashboard.
+              </SectionLead>
+            </BlurIn>
+          </div>
+          <ScaleIn delay={0.2} className="md:col-span-7" from={0.85}>
+            <StandingDial />
+          </ScaleIn>
+        </div>
       </Section>
 
       <Section tone="warm">

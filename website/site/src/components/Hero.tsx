@@ -8,7 +8,7 @@ import { AmbientBackdrop } from "./illustrations/AmbientBackdrop";
 import { InlineEmailForm } from "./InlineEmailForm";
 import { site } from "@/lib/site";
 
-const easeOut = [0.16, 1, 0.3, 1] as const;
+const appleEase = [0.32, 0.72, 0, 1] as const;
 
 const cards = [
   {
@@ -63,7 +63,7 @@ export function Hero() {
               rel="noopener noreferrer"
               initial={reduce ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: easeOut }}
+              transition={{ duration: 0.6, ease: appleEase }}
               className="group inline-flex items-center gap-2 rounded-full border border-ink-100 bg-paper/80 px-3 py-1 text-xs text-ink-700 backdrop-blur transition-colors hover:border-ink-200 hover:text-ink-900"
             >
               <span className="relative inline-flex h-1.5 w-1.5">
@@ -77,11 +77,11 @@ export function Hero() {
               <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
             </motion.a>
 
-            <h1 className="mt-4 font-display text-5xl font-medium leading-[1.05] tracking-tighter text-ink-900 md:text-7xl">
+            <h1 className="mt-4 font-display text-5xl font-medium leading-[1.05] tracking-tightest text-ink-900 md:text-7xl">
               <motion.span
                 initial={reduce ? false : { opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.08, ease: easeOut }}
+                transition={{ duration: 0.7, delay: 0.08, ease: appleEase }}
                 className="inline-block"
               >
                 The resume is dead.
@@ -90,7 +90,7 @@ export function Hero() {
               <motion.span
                 initial={reduce ? false : { opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.6, ease: easeOut }}
+                transition={{ duration: 0.7, delay: 0.6, ease: appleEase }}
                 className="inline-block text-ink-700"
               >
                 Your verified work is your new portfolio.
@@ -100,7 +100,7 @@ export function Hero() {
             <motion.p
               initial={reduce ? false : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.85, ease: easeOut }}
+              transition={{ duration: 0.7, delay: 0.85, ease: appleEase }}
               className="mt-4 max-w-xl text-lg leading-relaxed text-ink-700"
             >
               {site.name} turns every job you finish into an un-fakeable record,
@@ -111,7 +111,7 @@ export function Hero() {
             <motion.div
               initial={reduce ? false : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 1.0, ease: easeOut }}
+              transition={{ duration: 0.7, delay: 1.0, ease: appleEase }}
             >
               <InlineEmailForm />
             </motion.div>
@@ -135,7 +135,7 @@ export function Hero() {
                     transition={{
                       duration: 0.8,
                       delay: 0.5 + i * 0.12,
-                      ease: easeOut,
+                      ease: appleEase,
                     }}
                     whileHover={reduce ? undefined : { y: -4 }}
                   >
