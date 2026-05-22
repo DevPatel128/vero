@@ -17,7 +17,7 @@ export function InlineEmailForm() {
 
   return (
     <div className="mt-9 flex flex-col gap-3">
-      <form onSubmit={handleSubmit} className="flex w-full max-w-md flex-col sm:flex-row gap-3">
+      <form onSubmit={handleSubmit} className="waitlist-row w-full max-w-md">
         <input
           type="email"
           required

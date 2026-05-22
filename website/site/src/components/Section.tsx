@@ -18,7 +18,6 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "py-20 md:py-28",
         tone === "warm" && "bg-paper-warm",
         tone === "ink" && "bg-ink-950 text-paper",
         className,

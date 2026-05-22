@@ -43,12 +43,12 @@ export default function HomePage() {
       <Hero />
 
       {/* Hash ribbon - bridges hero into content */}
-      <div className="bg-paper-warm/40 py-6">
+      <div className="bg-paper-warm/40" style={{ paddingBlock: 'var(--space-5)' }}>
         <HashRibbon />
       </div>
 
       {/* Resume vs Record Visual Storytelling Hook */}
-      <Section className="!py-20 overflow-hidden">
+      <Section className="overflow-hidden section-stack">
         <div className="mb-16 text-center md:mx-auto md:max-w-3xl">
           <Reveal>
             <Eyebrow>The Old Way vs. Vero</Eyebrow>
@@ -113,7 +113,7 @@ export default function HomePage() {
       </Section>
 
       {/* Chained records - Parallax inside, MaskReveal title */}
-      <Section tone="warm" className="!py-20">
+      <Section tone="warm" className="section-stack">
         <MaskReveal from="right">
           <Eyebrow>Chained, not edited</Eyebrow>
         </MaskReveal>
@@ -202,25 +202,25 @@ export default function HomePage() {
 
 
       {/* Final CTA */}
-      <Section tone="ink">
-        <div className="grid items-center gap-10 md:grid-cols-12">
-          <div className="md:col-span-7">
-            <h2 className="font-display text-4xl font-medium tracking-tighter md:text-5xl">
+      <section className="bg-ink-950 text-paper">
+        <div className="final-cta">
+          <div className="final-cta-copy">
+            <h2>
               <WordReveal text="Your work, signed and saved." />
             </h2>
             <BlurIn delay={0.3}>
-              <p className="mt-5 max-w-xl text-lg text-ink-300">
+              <p className="mt-5 text-lg text-ink-300">
                 Stop applying. Start proving. Reserve your spot for the first 5,000 users.
               </p>
             </BlurIn>
           </div>
-          <BlurIn delay={0.2} className="md:col-span-5 flex flex-col justify-center">
-            <div className="rounded-3xl bg-white/5 p-6 backdrop-blur-md">
+          <BlurIn delay={0.2} className="flex flex-col justify-center">
+            <div className="waitlist-card">
               <InlineEmailForm />
             </div>
           </BlurIn>
         </div>
-      </Section>
+      </section>
     </>
   );
 }

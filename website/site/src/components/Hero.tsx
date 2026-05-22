@@ -52,7 +52,7 @@ export function Hero() {
   const reduce = useReducedMotion() ?? false;
 
   return (
-    <section className="relative overflow-hidden pt-8 md:pt-12 pb-24">
+    <section className="hero">
       <AmbientBackdrop />
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-12">
@@ -121,7 +121,8 @@ export function Hero() {
             <div className="absolute -inset-x-8 -top-8 -bottom-12 -z-10 rounded-[2.5rem] bg-gradient-to-br from-paper-warm via-paper to-paper opacity-80" />
 
             <div className="relative">
-              <div className="pointer-events-none absolute -right-6 top-4 hidden md:block">
+              <div className="phone-glow hidden md:block" />
+              <div className="phone-wrapper hidden md:block">
                 <PhoneMockup />
               </div>
 
