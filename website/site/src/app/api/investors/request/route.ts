@@ -3,7 +3,7 @@ import { z } from "zod";
 import { sendEmail } from "@/lib/email";
 import { site } from "@/lib/site";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 const schema = z.object({
   name: z.string().trim().min(2).max(120),
