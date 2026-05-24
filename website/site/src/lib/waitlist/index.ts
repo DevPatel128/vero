@@ -1,9 +1,10 @@
 import { fileStore } from "./file-store";
+import { upstashStore } from "./upstash-store";
 import type { WaitlistEntry, WaitlistStore } from "./types";
 
-// Single shared store. File-backed for dev + low-volume prod.
-// Swap to a Supabase / Postgres impl by adding another module + env switch.
-export const waitlist: WaitlistStore = fileStore;
+// Upstash Redis in prod (UPSTASH_REDIS_REST_URL set), file-backed in dev.
+export const waitlist: WaitlistStore =
+  process.env.UPSTASH_REDIS_REST_URL ? upstashStore : fileStore;
 
 /**
  * Position math:
