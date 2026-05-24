@@ -15,9 +15,9 @@ const ctas = [
 ];
 
 const proofPoints = [
-  { tag: "01", text: "Both sides sign every record." },
-  { tag: "02", text: "Records chain by hash. History cannot be edited." },
-  { tag: "03", text: "Standing compounds across briefs, not stars." },
+  { tag: "01", text: "Both sides sign every job. Neither can do it alone." },
+  { tag: "02", text: "Records are permanent. Nothing can be quietly edited." },
+  { tag: "03", text: "Your history is yours — not locked to any platform." },
 ];
 
 export function Hero() {
@@ -87,10 +87,10 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.45, ease }}
               className="mt-7 max-w-[42ch] text-lead leading-relaxed text-ink-1"
             >
-              VERO Freelance is a verified proof-of-work network for ambitious operators
-              and the clients who need to hire them. Identity is earned through real
-              engagements, signed on both sides, and chained on a record nobody owns
-              alone.
+              Millions of talented people in India lose work every year because they
+              cannot prove what they have done. Businesses make bad hires because
+              resumes lie. Vero fixes both sides of that problem — with verified,
+              permanent work records that neither side can fake.
             </motion.p>
 
             {/* CTAs — magnetic, varied weight; primary first */}
