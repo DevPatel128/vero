@@ -21,4 +21,3 @@ Make trust visible, understandable, and hard to fake.
 - Hidden trust scores
 - Overly abstract credibility language
 - Trust systems that users cannot explain back
-

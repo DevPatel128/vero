@@ -61,4 +61,3 @@ When done, your output should be:
 4. A note in `seo/sitemap-entries.yaml` updating priority / changefreq.
 5. A line in `seo/llms.txt.fragment` if the page contains new factual information.
 6. A summary handoff (≤ 5 bullets) listing every file you touched and what's left for the engineer.
-

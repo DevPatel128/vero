@@ -20,4 +20,3 @@ Describe how a user grows through Vero over time.
 - Career progress as vanity badges only
 - Growth that is not connected to real work
 - A progression system that feels like a game instead of a tool
-

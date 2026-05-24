@@ -21,4 +21,3 @@ Describe how Vero acquires users, activates them, and earns repeat use without d
 - Growth at the cost of trust
 - Viral loops that create fake behavior
 - SEO that overpromises the product
-

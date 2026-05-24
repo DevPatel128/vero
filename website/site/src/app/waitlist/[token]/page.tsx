@@ -23,7 +23,7 @@ export default async function Page({
   const position = effectivePosition(entry);
   const tier = tierLabel(tierFor(entry.position));
   const refUrl = `${site.url}/waitlist?ref=${entry.referralCode}`;
-  const shareText = `I just joined the ${site.name} waitlist. Proof of work, not posts about work. Bengaluru opens ${site.launchWindow}.`;
+  const shareText = `I joined the ${site.name} waitlist. Proof of work, not posts about work. Bengaluru opens ${site.launchWindow}.`;
   const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     shareText,
   )}&url=${encodeURIComponent(refUrl)}`;
@@ -147,7 +147,7 @@ export default async function Page({
                 <li>You will get a confirmation email at {entry.email}.</li>
                 <li>
                   We will send a short note every couple of weeks until launch
-                  - what we built, what is next.
+                  — what we built, what is next.
                 </li>
                 <li>
                   Closer to {site.launchWindow}, you will get an invitation in
@@ -225,4 +225,3 @@ export default async function Page({
     </div>
   );
 }
-

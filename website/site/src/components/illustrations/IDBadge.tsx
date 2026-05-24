@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 /**
- * IDBadge - verified ID badge with a flipping back panel showing
+ * IDBadge — verified ID badge with a flipping back panel showing
  * the categories the verifier covers. Calm flip motion.
  */
 export function IDBadge({ className }: { className?: string }) {
@@ -139,4 +139,3 @@ export function IDBadge({ className }: { className?: string }) {
     </div>
   );
 }
-

@@ -22,4 +22,3 @@ Define the main data structures and how they relate.
 - Silent schema sprawl
 - Storing data without an owner
 - Tables that do not map to product behavior
-

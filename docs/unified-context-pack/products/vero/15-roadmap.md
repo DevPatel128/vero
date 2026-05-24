@@ -18,4 +18,3 @@ Each new phase should preserve trust and clarity before scale.
 - Overexpanding too early
 - Roadmap claims that outpace product readiness
 - Feature lists that ignore operational capacity
-

@@ -19,14 +19,14 @@ const steps = [
   {
     n: "01",
     title: "Apply or get matched",
-    body: "Professionals browse small, real, local work - apprenticeships, gigs, repair calls, shifts. Businesses post a brief or request a specific verified professional. No bidding war.",
-    detail: "Matches are filtered by neighbourhood, category, time window, and what is genuinely in scope for a professional’s standing today.",
+    body: "Workers browse small, real, local work — apprenticeships, gigs, repair calls, shifts. Businesses post a brief or request a specific verified worker. No bidding war.",
+    detail: "Matches are filtered by neighbourhood, category, time window, and what is genuinely in scope for a worker’s standing today.",
   },
   {
     n: "02",
     title: "Scope is agreed in writing",
     body: "Before work starts, both sides agree on what counts as completion. That clarity is what makes the later signature meaningful.",
-    detail: "Escrow on paid work is funded at this point. The professional can see the money is real. The client knows it is held safely.",
+    detail: "Escrow on paid work is funded at this point. The worker can see the money is real. The client knows it is held safely.",
   },
   {
     n: "03",
@@ -37,14 +37,14 @@ const steps = [
   {
     n: "04",
     title: "Both parties sign",
-    body: "Professional confirms completion. Client confirms completion. Both signatures are required. Neither side can sign alone.",
+    body: "Worker confirms completion. Client confirms completion. Both signatures are required. Neither side can sign alone.",
     detail: "Each signature is cryptographic and tied to the verified identity on each account. The platform does not sign on anyone’s behalf.",
   },
   {
     n: "05",
     title: "The record is minted",
-    body: "A small, signed document is created. It links to the record before it for that professional. It cannot be edited after the fact.",
-    detail: "The professional chooses whether the record is public, shared, or private. The record is exportable and portable. It is theirs.",
+    body: "A small, signed document is created. It links to the record before it for that worker. It cannot be edited after the fact.",
+    detail: "The worker chooses whether the record is public, shared, or private. The record is exportable and portable. It is theirs.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function Page() {
             <Reveal delay={0.1}>
               <SectionLead>
                 Five steps. Two signatures. One record. Vero is built so the platform
-                cannot quietly help or harm any professional&apos;s history - the rules are the
+                cannot quietly help or harm any worker&apos;s history — the rules are the
                 same for everyone, including us.
               </SectionLead>
             </Reveal>
@@ -121,7 +121,7 @@ export default function Page() {
           <Eyebrow>Escrow flow</Eyebrow>
         </Reveal>
         <Reveal delay={0.05}>
-          <SectionTitle>Funded. Held. Released - on the record.</SectionTitle>
+          <SectionTitle>Funded. Held. Released — on the record.</SectionTitle>
         </Reveal>
         <Reveal delay={0.15} className="mt-12">
           <EscrowFlow className="mx-auto max-w-4xl" />
@@ -149,7 +149,7 @@ export default function Page() {
               category="Apprenticeship"
               title="Three days assisting a stylist in HSR"
               verifier="Verified by Lila T., owner"
-              date="May 2026"
+              date="Example"
               signers={[
                 { initials: "LT", role: "Verifier" },
                 { initials: "AS", role: "Subject" },
@@ -162,10 +162,10 @@ export default function Page() {
               category="Repair"
               title="Tap replacement · Koramangala · 2BHK"
               verifier="Verified by Mr. Bhat"
-              date="May 2026"
+              date="Example"
               signers={[
                 { initials: "RB", role: "Client" },
-                { initials: "VK", role: "Professional" },
+                { initials: "VK", role: "Worker" },
               ]}
               metric={{ value: "₹650", label: "Released from escrow" }}
             />
@@ -175,10 +175,10 @@ export default function Page() {
               category="Design"
               title="Menu refresh for Electronic City bakery"
               verifier="Verified by Bake & Co."
-              date="May 2026"
+              date="Example"
               signers={[
                 { initials: "BC", role: "Client" },
-                { initials: "PD", role: "Professional" },
+                { initials: "PD", role: "Worker" },
               ]}
             />
           </StaggerItem>
@@ -195,7 +195,7 @@ export default function Page() {
             </Reveal>
             <Reveal delay={0.05}>
               <p className="mt-5 max-w-xl text-ink-300">
-                We open in Bengaluru in 2027 - exact date to be announced. Join the
+                We open in Bengaluru in 2027 — exact date to be announced. Join the
                 waitlist and you will get your queue position and a personal referral
                 link.
               </p>
@@ -211,4 +211,3 @@ export default function Page() {
     </>
   );
 }
-

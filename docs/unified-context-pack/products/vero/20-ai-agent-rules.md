@@ -15,4 +15,3 @@ Any AI agent touching Vero files must load the relevant product context before e
 - Guess at legal or pricing details
 - Change the theme without documentation
 - Hide source-of-truth mismatches
-

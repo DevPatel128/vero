@@ -5,7 +5,7 @@ import { LinkButton } from "@/components/Button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Vero is built by VROE Labs to repair the link between work and credibility. We are starting in Bengaluru in 2027 - exact date to be announced.",
+    "Vero is built by VROE Labs to repair the link between work and credibility. We are starting in Bengaluru in 2027 — exact date to be announced.",
   alternates: { canonical: "/about" },
 };
 
@@ -24,7 +24,7 @@ const values = [
   },
   {
     h: "People before metrics",
-    b: "We will not optimise our way into a product that is good for the dashboard and bad for the professional.",
+    b: "We will not optimise our way into a product that is good for the dashboard and bad for the worker.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function Page() {
               In most parts of the labour market, the people who get the next opportunity are the people who can prove the last one. Beginners cannot. The skilled cannot, if their work has lived in homes, kitchens, workshops, or on hard drives. And the people who do the hiring are forced to gamble on claims.
             </p>
             <p>
-              Vero is a small intervention in that loop. Each completed job becomes a signed, chained record. Professionals carry their record forward. Businesses hire from a pool whose history is already proof.
+              Vero is a small intervention in that loop. Each completed job becomes a signed, chained record. Workers carry their record forward. Businesses hire from a pool whose history is already proof.
             </p>
             <p>
               We are not a job board. We are not a freelance bidding pit. We are a trust infrastructure for the people who already do good work and have no easy way to show it.
@@ -117,4 +117,3 @@ export default function Page() {
     </>
   );
 }
-

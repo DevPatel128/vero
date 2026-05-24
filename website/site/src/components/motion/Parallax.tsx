@@ -27,4 +27,3 @@ export function Parallax({
     </motion.div>
   );
 }
-

@@ -20,4 +20,3 @@ Keep written language consistent, trustworthy, and easy to understand.
 - Hype language
 - Empty startup buzzwords
 - Overly poetic lines that hide meaning
-

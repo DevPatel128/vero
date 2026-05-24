@@ -28,4 +28,3 @@ The revenue model should support trust infrastructure, verification operations, 
 - Monetization that weakens adoption
 - Revenue ideas without a clear buyer
 - Treating every add-on like a core revenue stream
-

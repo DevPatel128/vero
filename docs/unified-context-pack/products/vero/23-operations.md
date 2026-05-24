@@ -19,4 +19,3 @@ If the product can fail in the real world, the operating model must describe wha
 - No owner for edge cases
 - A support path that cannot resolve disputes
 - Operations treated as invisible
-

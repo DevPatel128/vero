@@ -17,4 +17,3 @@ Launch should feel focused, real, and local before it feels broad.
 - Global-sounding launch language
 - A launch narrative without geographic focus
 - Promising more categories than can be supported
-

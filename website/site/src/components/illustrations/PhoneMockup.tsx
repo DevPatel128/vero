@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 /**
  * PhoneMockup
  *
- * A hand-drawn-feeling mobile mockup of the Vero app - a record card on a
+ * A hand-drawn-feeling mobile mockup of the Vero app — a record card on a
  * trust-shell home screen. Pure SVG so it scales and stays sharp.
  */
 export function PhoneMockup({
@@ -21,8 +21,8 @@ export function PhoneMockup({
   return (
     <div className={cn("relative", className)}>
       <motion.div
-        initial={reduce ? false : { opacity: 0, y: 12, rotate: 12 }}
-        whileInView={{ opacity: 1, y: 0, rotate: 8 }}
+        initial={reduce ? false : { opacity: 0, y: 12, rotate: -2 }}
+        whileInView={{ opacity: 1, y: 0, rotate: -1.5 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         className="relative"
@@ -104,7 +104,7 @@ export function PhoneMockup({
             Your records
           </text>
 
-          {/* Record card 1 - animated draw */}
+          {/* Record card 1 — animated draw */}
           <motion.g
             initial={reduce ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -264,7 +264,7 @@ export function PhoneMockup({
               fill="#878780"
               fontFamily="ui-sans-serif, system-ui"
             >
-              ₹650 released · May 2026
+              Escrow released · example
             </text>
             <text
               x="40"
@@ -337,4 +337,3 @@ export function PhoneMockup({
     </div>
   );
 }
-

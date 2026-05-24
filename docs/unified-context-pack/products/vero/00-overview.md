@@ -24,4 +24,3 @@ Real work should create real credibility.
 - Treating Vero like a generic gig app
 - Making the product feel global before it feels local
 - Hiding the trust system behind marketing language
-

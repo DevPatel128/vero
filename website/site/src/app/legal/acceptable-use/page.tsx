@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Acceptable use",
   description:
-    "What is and is not acceptable on Vero - for the pre-launch website and the product at launch.",
+    "What is and is not acceptable on Vero — for the pre-launch website and the product at launch.",
   alternates: { canonical: "/legal/acceptable-use" },
 };
 
@@ -40,7 +40,7 @@ export default function Page() {
         </li>
         <li>
           Probe security in a way that affects production users. We welcome
-          responsible disclosure - see the{" "}
+          responsible disclosure — see the{" "}
           <a href="/legal/responsible-disclosure">responsible disclosure</a>{" "}
           page.
         </li>
@@ -71,4 +71,3 @@ export default function Page() {
     </>
   );
 }
-

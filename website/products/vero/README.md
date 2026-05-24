@@ -97,4 +97,3 @@ Every page touching identity, payments, employment, or money goes through [`/doc
 ## Engineering handoff
 
 When a copy file is approved, the engineering owner of `/apps/marketing` pulls it into `apps/marketing/src/app/vero/<route>/page.tsx`. The build process imports the Markdown directly — copy is never duplicated.
-

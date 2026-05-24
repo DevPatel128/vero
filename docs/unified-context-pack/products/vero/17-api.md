@@ -18,4 +18,3 @@ The API should be easy to reason about and hard to misuse.
 - Unversioned behavior changes
 - Undocumented webhook flows
 - Error responses that do not help recovery
-

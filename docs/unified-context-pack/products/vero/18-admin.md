@@ -18,4 +18,3 @@ Admin capability should exist to reduce risk and handle edge cases without under
 - Admin tools that can silently rewrite trust
 - Support flows without audit trails
 - Overpowered internal shortcuts
-
