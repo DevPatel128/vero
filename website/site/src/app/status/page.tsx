@@ -10,7 +10,7 @@ import { MaskReveal } from "@/components/motion/MaskReveal";
 export const metadata: Metadata = {
   title: "Status",
   description:
-    "Vero is pre-launch. Our public launch target is 2027 in Bengaluru - exact date to be announced. Follow our socials for the call.",
+    "Vero is pre-launch. Our public launch target is 2027 in Bengaluru — exact date to be announced. Follow our socials for the call.",
   alternates: { canonical: "/status" },
 };
 
@@ -117,4 +117,3 @@ export default function Page() {
     </>
   );
 }
-

@@ -17,7 +17,7 @@ export function SignatureFlow({ className }: { className?: string }) {
         viewBox="0 0 720 280"
         className="h-auto w-full"
         role="img"
-        aria-label="Both professional and client sign. Neither can sign alone."
+        aria-label="Both worker and client sign. Neither can sign alone."
       >
         <defs>
           <linearGradient id="sigArrow" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -26,7 +26,7 @@ export function SignatureFlow({ className }: { className?: string }) {
           </linearGradient>
         </defs>
 
-        {/* Professional */}
+        {/* Worker */}
         <motion.g
           initial={reduce ? false : { opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -222,4 +222,3 @@ export function SignatureFlow({ className }: { className?: string }) {
     </div>
   );
 }
-

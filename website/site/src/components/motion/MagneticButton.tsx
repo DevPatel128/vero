@@ -51,4 +51,3 @@ export function MagneticLink({
     </motion.span>
   );
 }
-

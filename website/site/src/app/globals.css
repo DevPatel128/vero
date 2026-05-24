@@ -2,91 +2,171 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   VERO — Design tokens
+   Color in OKLCH. Never #000 / #fff.
+   Dark = default (cinematic graphite). Light = sophisticated paper.
+   ============================================================ */
+
 :root {
-  --font-display: "Fraunces", "Georgia", serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-  --space-8: 64px;
-  --space-9: 96px;
-  --space-10: 140px;
+  /* Default = dark scene */
+  --surface-0: oklch(0.142 0.006 240);
+  --surface-1: oklch(0.176 0.007 240);
+  --surface-2: oklch(0.212 0.007 240);
+  --surface-3: oklch(0.252 0.008 240);
+  --surface-inverse: oklch(0.96 0.004 95);
+
+  --ink-0: oklch(0.965 0.004 95);
+  --ink-1: oklch(0.78 0.005 240);
+  --ink-2: oklch(0.56 0.005 240);
+  --ink-3: oklch(0.38 0.006 240);
+  --ink-inverse: oklch(0.16 0.006 240);
+
+  --line: oklch(0.32 0.006 240 / 0.6);
+  --line-strong: oklch(0.42 0.006 240 / 0.85);
+  --line-faint: oklch(0.32 0.006 240 / 0.32);
+
+  --accent: oklch(0.81 0.07 92);
+  --accent-glow: oklch(0.87 0.1 92);
+  --accent-ink: oklch(0.2 0.05 92);
+
+  --signal: oklch(0.74 0.085 200);
+  --signal-soft: oklch(0.6 0.06 200 / 0.18);
+
+  --caution: oklch(0.76 0.12 60);
+
+  --grid-stroke: oklch(0.4 0.005 240 / 0.085);
+
+  --shadow-page-tint:
+    radial-gradient(900px 600px at 15% -10%, oklch(0.32 0.04 92 / 0.06), transparent 60%),
+    radial-gradient(900px 700px at 88% 4%, oklch(0.32 0.05 200 / 0.05), transparent 60%);
 }
+
+.light {
+  --surface-0: oklch(0.985 0.003 92);
+  --surface-1: oklch(0.962 0.004 92);
+  --surface-2: oklch(0.93 0.005 92);
+  --surface-3: oklch(0.89 0.006 92);
+  --surface-inverse: oklch(0.18 0.007 240);
+
+  --ink-0: oklch(0.18 0.007 240);
+  --ink-1: oklch(0.32 0.007 240);
+  --ink-2: oklch(0.5 0.007 240);
+  --ink-3: oklch(0.7 0.006 240);
+  --ink-inverse: oklch(0.96 0.004 95);
+
+  --line: oklch(0.7 0.006 240 / 0.45);
+  --line-strong: oklch(0.5 0.006 240 / 0.7);
+  --line-faint: oklch(0.7 0.006 240 / 0.22);
+
+  --accent: oklch(0.5 0.075 92);
+  --accent-glow: oklch(0.62 0.09 92);
+  --accent-ink: oklch(0.98 0.005 92);
+
+  --signal: oklch(0.46 0.09 200);
+  --signal-soft: oklch(0.6 0.06 200 / 0.14);
+
+  --caution: oklch(0.6 0.12 60);
+
+  --grid-stroke: oklch(0.4 0.005 240 / 0.07);
+
+  --shadow-page-tint:
+    radial-gradient(900px 600px at 15% -10%, oklch(0.6 0.04 92 / 0.08), transparent 60%),
+    radial-gradient(900px 700px at 88% 4%, oklch(0.6 0.05 200 / 0.05), transparent 60%);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
 
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
+  color-scheme: dark;
+  background: var(--surface-0);
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+html.light {
+  color-scheme: light;
 }
 
 body {
-  background: theme("colors.paper.DEFAULT");
-  color: theme("colors.ink.900");
+  background: var(--surface-0);
+  color: var(--ink-0);
   font-family: var(--font-sans);
+  min-width: 320px;
+  font-feature-settings: "ss01" on, "ss02" on, "cv11" on;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: var(--shadow-page-tint);
 }
 
 ::selection {
-  background: theme("colors.accent.soft");
-  color: theme("colors.paper.DEFAULT");
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
-::-moz-selection {
-  background: theme("colors.accent.soft");
-  color: theme("colors.paper.DEFAULT");
+/* ============================================================
+   Typography utility classes
+   Used sparingly — Tailwind size classes handle most cases.
+   ============================================================ */
+
+.font-editorial {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-feature-settings: "ss01" on;
 }
 
-/* Reduce motion */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+/* ============================================================
+   Focus
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--accent-glow);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Motion accessibility
+   ============================================================ */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
 }
 
-/* Focus rings - sleek & premium */
-:focus-visible {
-  outline: none;
-  box-shadow: theme("boxShadow.apple-focus");
-  border-radius: 6px;
-  transition: box-shadow 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
+/* ============================================================
+   Skip link
+   ============================================================ */
 
-/* Print stylesheet */
-@media print {
-  nav,
-  footer,
-  .no-print {
-    display: none !important;
-  }
-  body {
-    background: white;
-    color: black;
-  }
-  a::after {
-    content: " (" attr(href) ")";
-    font-size: 0.85em;
-    color: #555;
-  }
-}
-
-/* Skip link */
 .skip-link {
   position: absolute;
   left: -10000px;
@@ -104,152 +184,143 @@ body {
   height: auto;
   z-index: 100;
   padding: 0.75rem 1rem;
-  background: theme("colors.ink.900");
-  color: white;
-  border-radius: 0.5rem;
+  background: var(--surface-2);
+  color: var(--ink-0);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
 }
 
-/* Prose tweaks */
-.prose-vero p {
+/* ============================================================
+   Hairline grid (for ambient texture)
+   ============================================================ */
+
+.hairline-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-stroke) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-stroke) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 30%, transparent 80%);
+}
+
+.hairline-grid-fine {
+  background-image:
+    linear-gradient(to right, var(--grid-stroke) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-stroke) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: -1px -1px;
+}
+
+/* ============================================================
+   Glass — used sparingly. Hero & verification only.
+   ============================================================ */
+
+.glass {
+  background: oklch(from var(--surface-1) l c h / 0.62);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid var(--line);
+}
+
+/* ============================================================
+   Magnetic CTA
+   ============================================================ */
+
+.btn-magnetic {
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 240ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-magnetic:hover {
+  transform: translateY(-1px);
+}
+.btn-magnetic:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   Inline signature glyph
+   ============================================================ */
+
+.sig-glyph {
+  display: inline-grid;
+  place-items: center;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 999px;
+  border: 1px solid var(--accent-glow);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.55em;
+  font-weight: 500;
+  letter-spacing: 0;
+  vertical-align: -0.18em;
+}
+
+/* ============================================================
+   Print
+   ============================================================ */
+
+@media print {
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* ============================================================
+   Prose — used on long-form pages
+   ============================================================ */
+
+.prose-vero {
+  max-width: 68ch;
+  color: var(--ink-1);
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: theme("colors.ink.700");
+}
+
+.prose-vero p {
+  margin-top: 1.1em;
 }
 
 .prose-vero h2 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.025em;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.953rem;
+  letter-spacing: -0.018em;
+  color: var(--ink-0);
+  margin-top: 2.6em;
+  margin-bottom: 0.6em;
 }
 
-/* Subtle paper grain */
-.grain {
-  position: relative;
-}
-.grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(
-    rgba(15, 15, 14, 0.025) 1px,
-    transparent 1px
-  );
-  background-size: 3px 3px;
-  mix-blend-mode: multiply;
-  opacity: 0.6;
+.prose-vero h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.5625rem;
+  letter-spacing: -0.014em;
+  color: var(--ink-0);
+  margin-top: 1.8em;
+  margin-bottom: 0.4em;
 }
 
-/* 
- * ----------------------------------------------------
- * Layout & Spacing System
- * ----------------------------------------------------
- */
-
-section {
-  padding-block: var(--space-10);
+.prose-vero a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-glow);
 }
 
-.container-tight {
-  width: min(1280px, calc(100% - 64px));
-  margin-inline: auto;
+.prose-vero blockquote {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--ink-0);
+  border-left: 1px solid var(--accent-glow);
+  padding-left: 1.2em;
+  margin: 1.8em 0;
 }
-
-.section-stack > * + * {
-  margin-top: var(--space-6);
-}
-
-/* 
- * ----------------------------------------------------
- * Hero Section
- * ----------------------------------------------------
- */
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
-
-.phone-wrapper {
-  position: absolute;
-  right: -4%;
-  top: 52%;
-  transform: translateY(-50%) scale(1.18);
-  width: min(42vw, 620px);
-  z-index: 1;
-  opacity: 1;
-  filter:
-    drop-shadow(0 40px 80px rgba(0,0,0,0.18))
-    drop-shadow(0 8px 24px rgba(0,0,0,0.12));
-}
-
-.phone-glow {
-  position: absolute;
-  right: 10%;
-  top: 50%;
-  width: 700px;
-  height: 700px;
-  transform: translateY(-50%);
-  background: radial-gradient(
-    circle,
-    rgba(12, 86, 58, 0.08),
-    transparent 70%
-  );
-  pointer-events: none;
-}
-
-/* 
- * ----------------------------------------------------
- * Final CTA Section
- * ----------------------------------------------------
- */
-
-.final-cta {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 96px;
-  padding: 140px 0;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.final-cta-copy {
-  max-width: 620px;
-}
-
-.final-cta-copy h2 {
-  font-size: clamp(40px, 4vw, 64px);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-}
-
-.waitlist-card {
-  width: 100%;
-  max-width: 520px;
-  padding: 32px;
-  border-radius: 32px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(20px);
-}
-
-.waitlist-row {
-  display: flex;
-  gap: 14px;
-}
-
-@media (max-width: 960px) {
-  .final-cta {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .waitlist-row {
-    flex-direction: column;
-  }
-}
-

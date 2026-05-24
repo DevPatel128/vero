@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Refund policy",
   description:
-    "Vero's refund policy. Professionals pay nothing. Businesses get a clear refund window on subscriptions.",
+    "Vero's refund policy. Workers pay nothing. Businesses get a clear refund window on subscriptions.",
   alternates: { canonical: "/legal/refund" },
 };
 
@@ -24,10 +24,10 @@ export default function Page() {
         anyone pays anything.
       </p>
 
-      <h2>Professionals</h2>
+      <h2>Workers</h2>
       <p>
-        Professionals do not pay {site.name} anything. There is therefore nothing to
-        refund. If you ever see a {site.name} fee appear on a professional statement,
+        Workers do not pay {site.name} anything. There is therefore nothing to
+        refund. If you ever see a {site.name} fee appear on a worker statement,
         write to <a href={`mailto:${site.contact.support}`}>{site.contact.support}</a>{" "}
         immediately.
       </p>
@@ -56,7 +56,7 @@ export default function Page() {
       <p>
         The 5% escrow fee applies only when paid work has been delivered and
         the client has released the funds. If a job is cancelled before the
-        professional has been engaged, no escrow fee is taken. If a dispute results
+        worker has been engaged, no escrow fee is taken. If a dispute results
         in the client being refunded, the escrow fee is refunded with it.
       </p>
 
@@ -83,4 +83,3 @@ export default function Page() {
     </>
   );
 }
-

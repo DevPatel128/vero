@@ -99,4 +99,3 @@ The `sendEmail` helper logs to console in dev (no provider needed). Set `RESEND_
 3. Add per-page OG images via `next/og`.
 4. Hook up real analytics (PostHog or Plausible) — privacy-light.
 5. Lighthouse pass + axe-playwright when CI is added.
-

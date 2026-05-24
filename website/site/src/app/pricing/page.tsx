@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import { Section, Eyebrow, SectionTitle, SectionLead } from "@/components/Section";
 import { LinkButton } from "@/components/Button";
+import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Professionals join free. Always. Businesses pay a simple SaaS subscription. Escrow on paid work is a flat 5% - well below the market.",
+    "Workers join free. Businesses pay a clear subscription. Escrow on paid work carries a flat 5% platform fee.",
   alternates: { canonical: "/pricing" },
 };
 
 const plans = [
   {
-    name: "Professional",
+    name: "Worker",
     price: "Free",
     sub: "Always free. No credit card.",
     bullets: [
@@ -21,7 +22,7 @@ const plans = [
       "Trust standing across categories",
       "Dispute support included",
     ],
-    cta: { label: "Join as a professional", href: "/waitlist?as=professional" },
+    cta: { label: "Join as a worker", href: "/waitlist?as=worker" },
   },
   {
     name: "Business",
@@ -31,7 +32,7 @@ const plans = [
     highlight: true,
     bullets: [
       "Unlimited roles",
-      "Repeat-professional invites",
+      "Repeat-worker invites",
       "Priority dispute response",
       "Verified business mark",
       "Standard 5% escrow on paid work",
@@ -54,22 +55,22 @@ const plans = [
 ];
 
 const comparison = [
-  { row: "Professional fee", vero: "Free", others: "Often free, but withheld earnings" },
-  { row: "Platform commission", vero: "5% escrow on paid work", others: "20–30% typical" },
+  { row: "Worker fee", vero: "Free", others: "Often free, but withheld earnings" },
+  { row: "Platform commission", vero: "5% escrow on paid work", others: "Often materially higher" },
   { row: "Identity verification", vero: "Included", others: "Often paid add-on" },
-  { row: "Portable record", vero: "Yes - exportable, signed, yours", others: "Typically locked in-platform" },
+  { row: "Portable record", vero: "Yes — exportable, signed, yours", others: "Typically locked in-platform" },
   { row: "Trust signal", vero: "Multi-signal trust graph", others: "Single star rating" },
   { row: "Dispute path", vero: "Documented, on record", others: "Opaque or absent" },
 ];
 
 const faqs = [
   {
-    q: "Do professionals pay anything to use Vero?",
-    a: "No. We do not charge professionals. Not a subscription, not a per-record fee, not a withdrawal fee. The platform is free to use, and your record is free to keep, forever.",
+    q: "Do workers pay anything to use Vero?",
+    a: "No. We do not charge workers. Not a subscription, not a per-record fee, not a withdrawal fee. The platform is free to use, and your record is free to keep, forever.",
   },
   {
     q: "What is the 5% escrow fee for?",
-    a: "It funds the escrow infrastructure, the dispute team, the identity verification step, and basic fraud cover. It is below the 20–30% common in the gig market.",
+    a: "It funds escrow infrastructure, dispute operations, identity verification, and basic fraud cover. It is flat rather than category-dependent.",
   },
   {
     q: "What about taxes?",
@@ -77,24 +78,24 @@ const faqs = [
   },
   {
     q: "Can I cancel a business plan any time?",
-    a: "Yes. Monthly plans cancel monthly. Annual plans are refunded pro-rata in the first 30 days. Your verified records and standing remain.",
+    a: "Yes. Monthly plans cancel monthly. Your verified records and signed history remain available according to the product terms.",
   },
   {
     q: "What if I post a role and nobody takes it?",
-    a: "There is no failure cost. The role simply expires. Your subscription is for access and verification, not for guaranteed hires.",
+    a: "There is no failure cost. The role expires. Your subscription is for access and verification, not for guaranteed hires.",
   },
 ];
 
 export default function Page() {
   return (
     <>
+      <FaqJsonLd items={faqs} />
       <Section className="!pt-24 !pb-12">
         <Eyebrow>Pricing</Eyebrow>
-        <SectionTitle>
-          Free for professionals. Below-market for businesses.
-        </SectionTitle>
+        <SectionTitle>Free for workers. Clear for businesses.</SectionTitle>
         <SectionLead>
-          We monetise the side that benefits most from verification: businesses hiring with confidence. Professionals never pay.
+          We charge the side that benefits most from verification: businesses hiring
+          with confidence. Workers never pay.
         </SectionLead>
       </Section>
 
@@ -232,4 +233,3 @@ export default function Page() {
     </>
   );
 }
-

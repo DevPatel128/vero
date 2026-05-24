@@ -1,4 +1,4 @@
-export type WaitlistRole = "professional" | "business";
+export type WaitlistRole = "worker" | "business";
 
 export type WaitlistEntry = {
   id: string;
@@ -18,7 +18,7 @@ export type WaitlistEntry = {
 
 export type WaitlistStats = {
   total: number;
-  professionals: number;
+  workers: number;
   businesses: number;
 };
 
@@ -38,4 +38,3 @@ export interface WaitlistStore {
   findByCode(code: string): Promise<WaitlistEntry | null>;
   stats(): Promise<WaitlistStats>;
 }
-

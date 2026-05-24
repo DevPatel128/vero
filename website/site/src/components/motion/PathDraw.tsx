@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 /**
- * PathDraw - animate any single <path d="..." /> drawing in on view.
+ * PathDraw — animate any single <path d="..." /> drawing in on view.
  * Pass viewBox + d directly. Stroke and width customizable.
  */
 export function PathDraw({
@@ -36,9 +36,8 @@ export function PathDraw({
         initial={reduce ? false : { pathLength: 0, opacity: 0 }}
         whileInView={{ pathLength: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration, delay, ease: [0.32, 0.72, 0, 1] }}
+        transition={{ duration, delay, ease: [0.16, 1, 0.3, 1] }}
       />
     </svg>
   );
 }
-

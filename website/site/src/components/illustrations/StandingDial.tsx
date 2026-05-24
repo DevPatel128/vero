@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 /**
- * StandingDial - multi-spoke dial (not stars). Each spoke is a different
+ * StandingDial — multi-spoke dial (not stars). Each spoke is a different
  * trust signal: completion, on-time, repeat, dispute-free, category, peers.
  */
 export function StandingDial({ className }: { className?: string }) {
@@ -140,4 +140,3 @@ export function StandingDial({ className }: { className?: string }) {
     </div>
   );
 }
-

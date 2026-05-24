@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 
 /**
- * BengaluruMap - abstract neighbourhood map with five pinned launch areas.
+ * BengaluruMap — abstract neighbourhood map with five pinned launch areas.
  */
 export function BengaluruMap({ className }: { className?: string }) {
   const reduce = useReducedMotion() ?? false;
@@ -114,4 +114,3 @@ export function BengaluruMap({ className }: { className?: string }) {
     </div>
   );
 }
-

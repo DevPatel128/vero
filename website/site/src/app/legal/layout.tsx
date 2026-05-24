@@ -15,6 +15,7 @@ const legalNav = [
   { label: "Accessibility", href: "/legal/accessibility" },
   { label: "Grievance officer", href: "/legal/grievance" },
   { label: "Responsible disclosure", href: "/legal/responsible-disclosure" },
+  { label: "Sub-processors", href: "/legal/sub-processors" },
 ];
 
 export default function LegalLayout({
@@ -50,4 +51,3 @@ export default function LegalLayout({
     </div>
   );
 }
-

@@ -16,7 +16,7 @@ import { IDBadge } from "@/components/illustrations/IDBadge";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Vero features: signed records, trust graph, escrow, dispute resolution, portable identity. Built so the platform cannot quietly bend a professional's history.",
+    "Vero features: signed records, trust graph, escrow, dispute resolution, portable identity. Built so the platform cannot quietly bend a worker's history.",
   alternates: { canonical: "/features" },
 };
 
@@ -34,9 +34,9 @@ const categories: {
     blurb: "Signed, chained, and portable. The substance of the platform.",
     illustration: "chain",
     items: [
-      { title: "Two-party signing", body: "Professional and client both sign. Neither can sign alone. The platform never signs for either." },
-      { title: "Chained history", body: "Each record references the one before it for the same professional. Reordering is detectable." },
-      { title: "Visibility flags", body: "Public, shared, or private. Professionals choose per record. Privacy is the default for sensitive categories." },
+      { title: "Two-party signing", body: "Worker and client both sign. Neither can sign alone. The platform never signs for either." },
+      { title: "Chained history", body: "Each record references the one before it for the same worker. Reordering is detectable." },
+      { title: "Visibility flags", body: "Public, shared, or private. Workers choose per record. Privacy is the default for sensitive categories." },
       { title: "Portable export", body: "Every record is exportable in a portable, signed format. The credentials you build can be read by other products that speak the same protocol." },
     ],
   },
@@ -47,7 +47,7 @@ const categories: {
     items: [
       { title: "Completion reliability", body: "Show-up rate, on-time rate, dispute rate, and repeat-booking ratio. Each is visible and explainable." },
       { title: "Counterparty quality", body: "Working with verified, well-rated clients lifts your standing. Working with fraudulent accounts cannot." },
-      { title: "Category strength", body: "Standing is held per category. A kitchen assistant builds kitchen credibility - not generic stars." },
+      { title: "Category strength", body: "Standing is held per category. A kitchen assistant builds kitchen credibility — not generic stars." },
       { title: "Transparent reasons", body: "Any change to your standing is explained on your dashboard. No black boxes." },
     ],
   },
@@ -56,7 +56,7 @@ const categories: {
     blurb: "Escrow you can see. Disputes with a clear path. Coverage where it matters.",
     illustration: "escrow",
     items: [
-      { title: "Funded escrow on paid work", body: "The client funds the job up front. We hold it. The professional can see the money is real before showing up." },
+      { title: "Funded escrow on paid work", body: "The client funds the job up front. We hold it. The worker can see the money is real before showing up." },
       { title: "Flat 5% fee", body: "Well below the market. We do not take a hidden cut, and we do not change the rate by category or city." },
       { title: "Dispute path", body: "If something goes wrong, evidence is collected, a small review team responds quickly, and resolutions are recorded." },
       { title: "Repeat-offender cut-off", body: "Accounts proven to abuse the system are cut off and removed from the trust graph. The pattern is detectable." },
@@ -68,7 +68,7 @@ const categories: {
     illustration: "id",
     items: [
       { title: "Phone verification", body: "Required for every account. Quick. No new password to remember." },
-      { title: "ID verification for paid work", body: "Professionals verify their ID before earning. We use government-supported digital documents - quick to do, hard to fake." },
+      { title: "ID verification for paid work", body: "Workers verify their ID before earning. We use government-supported digital documents — quick to do, hard to fake." },
       { title: "Business verification", body: "Businesses verify their entity. We display the verification mark on profiles and on every record they sign." },
       { title: "No biometric data stored", body: "We do not retain biometric data. Verification results are stored, the underlying scans are not." },
     ],
@@ -83,7 +83,7 @@ function Illustration({ kind }: { kind: IllKind }) {
 }
 
 const motionStrategies = [
-  // category 0 - Records
+  // category 0 — Records
   {
     illoWrap: (c: React.ReactNode) => (
       <Parallax range={30}>{c}</Parallax>
@@ -92,7 +92,7 @@ const motionStrategies = [
       <ScaleIn delay={i * 0.07}>{c}</ScaleIn>
     ),
   },
-  // category 1 - Standing
+  // category 1 — Standing
   {
     illoWrap: (c: React.ReactNode) => <ScaleIn from={0.85}>{c}</ScaleIn>,
     itemWrap: (i: number, c: React.ReactNode) => (
@@ -101,7 +101,7 @@ const motionStrategies = [
       </FlipIn>
     ),
   },
-  // category 2 - Money + safety
+  // category 2 — Money + safety
   {
     illoWrap: (c: React.ReactNode) => (
       <MaskReveal from="left">{c}</MaskReveal>
@@ -110,7 +110,7 @@ const motionStrategies = [
       <BlurIn delay={i * 0.07}>{c}</BlurIn>
     ),
   },
-  // category 3 - Verification
+  // category 3 — Verification
   {
     illoWrap: (c: React.ReactNode) => (
       <MaskReveal from="right">{c}</MaskReveal>
@@ -203,4 +203,3 @@ export default function Page() {
     </>
   );
 }
-

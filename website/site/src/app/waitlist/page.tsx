@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Join the waitlist",
   description:
-    "Reserve your spot. Bengaluru opens in 2027 - exact date to be announced. Professionals join free. Founding-member perks for the first 1,000.",
+    "Reserve your spot. Bengaluru is coming soon. Workers join free. Founding-member perks for the first 1,000.",
   alternates: { canonical: "/waitlist" },
 };
 
@@ -22,7 +22,7 @@ const perks = [
   },
   {
     h: "Pioneer wall",
-    b: "Top referrers get an invitation to the Pioneer wall - public, opt-in only.",
+    b: "Top referrers get an invitation to the Pioneer wall — public, opt-in only.",
   },
   {
     h: "Early access at launch",
@@ -43,7 +43,7 @@ export default function Page() {
               Your record begins with one signature.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-600">
-              {site.name} opens in {site.launchCity} in {site.launchWindow}. Join
+              {site.name} is coming soon to {site.launchCity}. Join
               the waitlist and you will get a personal page with your queue
               position, a referral link, and your founding-member tier.
             </p>
@@ -95,4 +95,3 @@ export default function Page() {
     </div>
   );
 }
-

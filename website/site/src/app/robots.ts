@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/waitlist/", "/investors"],
+        disallow: ["/api/", "/waitlist/"],
       },
       // Allow major AI crawlers explicitly so the marketing copy is discoverable
       { userAgent: "GPTBot", allow: "/" },
@@ -27,4 +27,3 @@ export default function robots(): MetadataRoute.Robots {
     host: site.url,
   };
 }
-

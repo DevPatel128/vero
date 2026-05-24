@@ -39,7 +39,7 @@ export function CountUp({
       mv.set(to);
       return;
     }
-    const controls = animate(mv, to, { duration, ease: [0.32, 0.72, 0, 1] });
+    const controls = animate(mv, to, { duration, ease: [0.16, 1, 0.3, 1] });
     return controls.stop;
   }, [inView, to, duration, mv, reduce]);
 
@@ -58,4 +58,3 @@ export function CountUp({
     </span>
   );
 }
-

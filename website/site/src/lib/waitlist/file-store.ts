@@ -128,9 +128,8 @@ export const fileStore: WaitlistStore = {
 
   async stats(): Promise<WaitlistStats> {
     const shape = await readAll();
-    const professionals = shape.entries.filter((e) => e.role === "professional").length;
+    const workers = shape.entries.filter((e) => e.role === "worker").length;
     const businesses = shape.entries.filter((e) => e.role === "business").length;
-    return { total: shape.entries.length, professionals, businesses };
+    return { total: shape.entries.length, workers, businesses };
   },
 };
-

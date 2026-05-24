@@ -1,23 +1,24 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "ghost" | "inverse";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 ease-[var(--apple-ease)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed";
+  "btn-magnetic inline-flex items-center justify-center gap-2 rounded-pill font-medium transition-colors duration-micro ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-0 focus-visible:ring-accent-glow disabled:opacity-50 disabled:cursor-not-allowed";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-ink-900 text-paper hover:bg-accent hover:shadow-premium-hover hover:-translate-y-0.5",
+  primary: "bg-accent text-accent-ink hover:shadow-glow",
   secondary:
-    "bg-paper text-ink-900 ring-1 ring-inset ring-ink-200 hover:ring-ink-300 hover:bg-ink-50 hover:-translate-y-0.5 hover:shadow-lift",
-  ghost: "text-ink-700 hover:text-ink-900 hover:bg-ink-100/50",
+    "border border-line bg-surface-1/50 text-ink-1 hover:border-line-strong hover:text-ink-0 hover:bg-surface-2/70",
+  ghost: "text-ink-1 hover:text-ink-0",
+  inverse: "bg-surface-inverse text-ink-inverse hover:opacity-90",
 };
 
 const sizes: Record<Size, string> = {
-  sm: "px-3.5 py-1.5 text-xs",
-  md: "px-5 py-2.5 text-sm",
-  lg: "px-6 py-3 text-base",
+  sm: "h-9 px-4 text-caption",
+  md: "h-11 px-5 text-sm",
+  lg: "h-12 px-6 text-sm",
 };
 
 type ButtonProps = {
@@ -35,10 +36,7 @@ export function Button({
   ...rest
 }: ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
-    <button
-      className={cn(base, variants[variant], sizes[size], className)}
-      {...rest}
-    >
+    <button className={cn(base, variants[variant], sizes[size], className)} {...rest}>
       {children}
     </button>
   );
@@ -65,12 +63,8 @@ export function LinkButton({
     );
   }
   return (
-    <Link
-      href={href}
-      className={cn(base, variants[variant], sizes[size], className)}
-    >
+    <Link href={href} className={cn(base, variants[variant], sizes[size], className)}>
       {children}
     </Link>
   );
 }
-

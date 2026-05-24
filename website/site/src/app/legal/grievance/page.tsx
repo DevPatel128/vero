@@ -26,7 +26,7 @@ export default function Page() {
 
       <div className="not-prose mt-8 rounded-2xl border border-ink-200 bg-paper-warm p-7">
         <p className="text-xs font-medium uppercase tracking-[0.22em] text-accent">
-          Grievance officer - India
+          Grievance officer — India
         </p>
         <dl className="mt-5 grid gap-3 text-sm">
           <div className="grid grid-cols-3 gap-3">
@@ -86,4 +86,3 @@ export default function Page() {
     </>
   );
 }
-

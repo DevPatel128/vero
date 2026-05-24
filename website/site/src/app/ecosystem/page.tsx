@@ -9,7 +9,7 @@ import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 export const metadata: Metadata = {
   title: "The ecosystem",
   description:
-    "Vero is the first surface of a longer thesis at VROE Labs. Two more products are being built on the same shared protocol - quietly, in the background.",
+    "Vero is the first surface of a longer thesis at VROE Labs. Two more products are being built on the same shared protocol — quietly, in the background.",
   alternates: { canonical: "/ecosystem" },
 };
 
@@ -50,7 +50,7 @@ export default function Page() {
         </Reveal>
       </Section>
 
-      {/* THE HINT - the image does the talking */}
+      {/* THE HINT — the image does the talking */}
       <Section tone="warm" className="!py-16">
         <Reveal>
           <Eyebrow>What is being built</Eyebrow>
@@ -97,7 +97,7 @@ export default function Page() {
         </Stagger>
       </Section>
 
-      {/* Quiet protocol note - ALVED folded in, not announced */}
+      {/* Quiet protocol note — ALVED folded in, not announced */}
       <Section tone="warm">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
@@ -122,7 +122,7 @@ export default function Page() {
             </p>
             <p>
               {site.parent} maintains the reference implementation. The specification is
-              meant to outlive any single product - including ours. Other companies will
+              meant to outlive any single product — including ours. Other companies will
               be able to read records, issue records, and verify chains without asking
               our permission.
             </p>
@@ -150,12 +150,12 @@ export default function Page() {
             </p>
             <p>
               We are sharing the shape, not the features. The shape is what makes Vero
-              worth building first - it is the same shape the rest of the family will
+              worth building first — it is the same shape the rest of the family will
               use. The protocol is one. The products will be three.
             </p>
             <p>
               If you join Vero now, the credentials you build will be readable by the
-              products that come next - without re-onboarding, without re-verifying, and
+              products that come next — without re-onboarding, without re-verifying, and
               without surrendering ownership of your record to any one company.
             </p>
             <p>That is the bet. That is what {site.parent} is building.</p>
@@ -182,4 +182,3 @@ export default function Page() {
     </>
   );
 }
-

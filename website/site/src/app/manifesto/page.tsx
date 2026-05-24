@@ -5,7 +5,7 @@ import { LinkButton } from "@/components/Button";
 export const metadata: Metadata = {
   title: "Manifesto",
   description:
-    "LinkedIn shows claims. Vero shows proof. A short manifesto on why we are building a verified record system for real work - and why we are beginning small.",
+    "LinkedIn shows claims. Vero shows proof. A short manifesto on why we are building a verified record system for real work — and why we are beginning small.",
   alternates: { canonical: "/manifesto" },
 };
 
@@ -25,7 +25,7 @@ export default function Page() {
 
         <section className="mt-12 space-y-6 text-base leading-relaxed text-ink-700">
           <p>
-            We have built an internet where it is easier to publish a title than to earn one. Profiles fill with self-descriptions. Endorsements arrive from strangers. Anyone can author the story of who they are. The result is that we have grown collectively suspicious of all of it, and the people who lose most are the ones with the least social cover - students, switchers, skilled hands without portfolios, anyone who needs the first opportunity to make the second one possible.
+            We have built an internet where it is easier to publish a title than to earn one. Profiles fill with self-descriptions. Endorsements arrive from strangers. Anyone can author the story of who they are. The result is that we have grown collectively suspicious of all of it, and the people who lose most are the ones with the least social cover — students, switchers, skilled hands without portfolios, anyone who needs the first opportunity to make the second one possible.
           </p>
           <p>
             The truth is small and stubborn. Reputation is not a slogan. It is a record. It is the cumulative trace of things you actually did, with people who actually watched you do them, kept over time, hard to fake. Reputation is what you carry forward. Posts are not it.
@@ -40,10 +40,10 @@ export default function Page() {
             A record, not a rating.
           </h2>
           <p>
-            We do not give people a number on a scale. We give them a sequence of signed completions. Each one carries a date, a category, a verifier, and two signatures. Each one is chained to the one before it. The platform cannot quietly help one professional or quietly harm another - the rules are the same for everyone, including us.
+            We do not give people a number on a scale. We give them a sequence of signed completions. Each one carries a date, a category, a verifier, and two signatures. Each one is chained to the one before it. The platform cannot quietly help one worker or quietly harm another — the rules are the same for everyone, including us.
           </p>
           <p>
-            If a record looks too good, it is more easily checked. If a record is real, it stands.
+            If a record looks too good, it can be checked. If a record is real, it stands.
           </p>
         </section>
 
@@ -61,7 +61,7 @@ export default function Page() {
             Trust is local before it is global.
           </h2>
           <p>
-            We are launching in Bengaluru. Five neighbourhoods. 2027 - exact date to be announced, follow our socials for the call. We are not pretending otherwise. A platform that promises everything to everyone usually serves no one. We will earn the right to expand by working with the professionals and businesses in front of us, in person, in this city, until the trust model proves itself.
+            We are launching in Bengaluru. Five neighbourhoods. 2027 — exact date to be announced, follow our socials for the call. We are not pretending otherwise. A platform that promises everything to everyone usually serves no one. We will earn the right to expand by working with the workers and businesses in front of us, in person, in this city, until the trust model proves itself.
           </p>
         </section>
 
@@ -70,10 +70,10 @@ export default function Page() {
             What we promise.
           </h2>
           <ul className="list-disc space-y-2 pl-6">
-            <li>Professionals will never pay to use Vero.</li>
+            <li>Workers will never pay to use Vero.</li>
             <li>No record will ever be silently edited.</li>
             <li>You can take your record with you, in a portable, signed format.</li>
-            <li>The platform fee will stay where it is - well below the market.</li>
+            <li>The platform fee will stay where it is — well below the market.</li>
             <li>If we cannot keep these promises, we will say so before we break them.</li>
           </ul>
         </section>
@@ -93,4 +93,3 @@ export default function Page() {
     </article>
   );
 }
-
