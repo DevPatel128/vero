@@ -1,30 +1,262 @@
 import type { Metadata } from "next";
-import { Section, Eyebrow, SectionLead } from "@/components/Section";
+import { Section, Eyebrow, SectionHeadline, SectionLead } from "@/components/Section";
 import { LinkButton } from "@/components/Button";
-import { LetterSplit, WordReveal } from "@/components/motion/LetterSplit";
-import { MaskReveal } from "@/components/motion/MaskReveal";
-import { BlurIn } from "@/components/motion/BlurIn";
-import { FlipIn } from "@/components/motion/FlipIn";
-import { ScaleIn } from "@/components/motion/ScaleIn";
-import { TiltCard } from "@/components/motion/TiltCard";
-import { Spotlight } from "@/components/motion/Spotlight";
-import { Parallax } from "@/components/motion/Parallax";
 import { TrustGraph } from "@/components/illustrations/TrustGraph";
 import { EscrowFlow } from "@/components/illustrations/EscrowFlow";
 import { CategoryCubes } from "@/components/illustrations/CategoryCubes";
+import { Reveal } from "@/components/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 export const metadata: Metadata = {
-  title: "For businesses",
+  title: "For businesses — Vero",
   description:
-    "Hire from a pool whose history is already proof. Cafés, households, studios, SMBs. Verified workers, escrow, dispute paths — all on Vero.",
+    "Hire from people whose history is already verified. Cafés, households, studios, SMBs, and solo clients — Vero is the alternative to unverified gig apps.",
   alternates: { canonical: "/for-businesses" },
 };
 
+export default function ForBusinessesPage() {
+  return (
+    <>
+      {/* Hero */}
+      <Section className="!pt-24 !pb-16">
+        <div className="grid items-center gap-14 md:grid-cols-12">
+          <div className="md:col-span-8">
+            <Reveal>
+              <Eyebrow>For businesses</Eyebrow>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <SectionHeadline className="mt-3">
+                Hire from people whose history is already proof.
+              </SectionHeadline>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <SectionLead>
+                Every worker on Vero has a verified record of completed jobs, signed
+                by real clients. You see what actually happened — before the first
+                phone call.
+              </SectionLead>
+            </Reveal>
+            <Reveal delay={0.2} className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <LinkButton href="/waitlist?as=business" size="lg">
+                Join as a business
+              </LinkButton>
+              <LinkButton href="#pricing" variant="secondary" size="lg">
+                See pricing
+              </LinkButton>
+            </Reveal>
+          </div>
+          <div className="md:col-span-4 hidden md:flex md:justify-end">
+            <TrustGraph />
+          </div>
+        </div>
+      </Section>
+
+      {/* Who this is for — three types */}
+      <Section tone="raised" rule="bottom">
+        <Reveal>
+          <Eyebrow>Who this is for</Eyebrow>
+          <SectionHeadline className="mt-3">
+            Small team or solo. You deserve the same protection.
+          </SectionHeadline>
+          <SectionLead>
+            Vero is not just for big companies with HR departments. It is built for
+            the people who make one bad hire and feel it for months.
+          </SectionLead>
+        </Reveal>
+
+        <Stagger as="ul" className="mt-12 grid gap-5 md:grid-cols-3" stagger={0.07}>
+          {clientTypes.map((ct) => (
+            <StaggerItem
+              as="li"
+              key={ct.label}
+              className="border border-line-faint p-7 transition-colors hover:border-line"
+            >
+              <span className="font-mono text-micro text-accent">{ct.label}</span>
+              <h3 className="mt-4 font-display text-h5 font-medium leading-snug tracking-tightish text-ink-0">
+                {ct.title}
+              </h3>
+              <p className="mt-3 text-body text-ink-1">{ct.body}</p>
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </Section>
+
+      {/* Why move to Vero */}
+      <Section tone="base" rule="bottom">
+        <Reveal>
+          <Eyebrow>Why Vero</Eyebrow>
+          <SectionHeadline className="mt-3">
+            Four things that change when the pool is verified.
+          </SectionHeadline>
+        </Reveal>
+
+        <Stagger as="ul" className="mt-12 grid gap-6 md:grid-cols-2" stagger={0.07}>
+          {reasons.map((r) => (
+            <StaggerItem
+              as="li"
+              key={r.title}
+              className="border border-line-faint p-7 transition-colors hover:border-line"
+            >
+              <h3 className="font-display text-h5 font-medium leading-snug tracking-tightish text-ink-0">
+                {r.title}
+              </h3>
+              <p className="mt-3 text-body text-ink-1">{r.body}</p>
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </Section>
+
+      {/* Escrow — how money works */}
+      <Section tone="raised" rule="bottom">
+        <Reveal>
+          <Eyebrow>How money works</Eyebrow>
+          <SectionHeadline className="mt-3">
+            Funded before the job starts. Released when both sides confirm it is done.
+          </SectionHeadline>
+          <SectionLead>
+            Escrow protects both sides. The worker knows the money is real. You know
+            it is safe until the job is confirmed complete. No surprises.
+          </SectionLead>
+        </Reveal>
+        <div className="mt-12">
+          <EscrowFlow className="mx-auto max-w-4xl" />
+        </div>
+      </Section>
+
+      {/* Categories */}
+      <Section tone="base" rule="bottom">
+        <Reveal>
+          <Eyebrow>What you can hire for</Eyebrow>
+          <SectionHeadline className="mt-3">Ten categories at launch.</SectionHeadline>
+          <SectionLead>
+            We are starting with the categories where verified records make the
+            biggest difference — and adding more as the trust model proves itself.
+          </SectionLead>
+        </Reveal>
+        <div className="mt-12">
+          <CategoryCubes />
+        </div>
+      </Section>
+
+      {/* Pricing */}
+      <Section id="pricing" tone="raised" rule="bottom">
+        <Reveal>
+          <Eyebrow>Plans</Eyebrow>
+          <SectionHeadline className="mt-3">Simple. Transparent. India-priced.</SectionHeadline>
+        </Reveal>
+
+        <Stagger as="ul" className="mt-12 grid gap-6 md:grid-cols-3" stagger={0.1}>
+          {plans.map((p) => (
+            <StaggerItem
+              as="li"
+              key={p.name}
+              className={`flex flex-col border p-7 ${
+                p.highlight
+                  ? "border-accent bg-surface-inverse text-ink-inverse"
+                  : "border-line-faint bg-surface-1/50"
+              }`}
+            >
+              {p.highlight && (
+                <span className="mb-4 self-start rounded-pill bg-accent px-3 py-1 font-mono text-micro text-accent-ink">
+                  Recommended
+                </span>
+              )}
+              <h3 className={`font-display text-h4 font-medium tracking-tightish ${p.highlight ? "text-ink-inverse" : "text-ink-0"}`}>
+                {p.name}
+              </h3>
+              <p className={`mt-1 font-mono text-caption ${p.highlight ? "text-ink-inverse/60" : "text-ink-3"}`}>{p.tag}</p>
+              <p className={`mt-5 font-display text-h2 font-medium ${p.highlight ? "text-ink-inverse" : "text-ink-0"}`}>{p.price}</p>
+              <ul className={`mt-6 flex-1 space-y-3 text-body ${p.highlight ? "text-ink-inverse/80" : "text-ink-1"}`}>
+                {p.bullets.map((b) => (
+                  <li key={b} className="flex gap-3">
+                    <span className="text-accent" aria-hidden>✓</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <LinkButton
+                  href="/waitlist?as=business"
+                  size="md"
+                  variant={p.highlight ? "primary" : "secondary"}
+                >
+                  {p.highlight ? "Join the waitlist" : `Choose ${p.name}`}
+                </LinkButton>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
+
+        <Reveal delay={0.3}>
+          <p className="mt-6 text-caption text-ink-3">
+            Prices shown are pre-tax. GST applies for Indian customers. Plan details may change before public launch.
+          </p>
+        </Reveal>
+      </Section>
+
+      {/* CTA */}
+      <Section tone="inverse">
+        <div className="grid items-center gap-10 md:grid-cols-12">
+          <div className="md:col-span-8">
+            <Reveal>
+              <h2 className="font-display text-balance text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.06] tracking-tighter text-ink-inverse">
+                Hire with proof, not guesswork.
+              </h2>
+              <p className="mt-4 max-w-[50ch] text-lead text-ink-inverse/75">
+                Join the businesses waitlist. We open in Bengaluru in 2027 — first
+                cohort accepted by hand.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={0.1} className="md:col-span-4 flex md:justify-end">
+            <LinkButton href="/waitlist?as=business" variant="inverse" size="lg">
+              Join the businesses waitlist
+            </LinkButton>
+          </Reveal>
+        </div>
+      </Section>
+    </>
+  );
+}
+
+const clientTypes = [
+  {
+    label: "SMBs",
+    anchor: "smb",
+    title: "Growing teams that hire regularly.",
+    body: "Studios, agencies, repair shops, clinics, retail stores. You hire often enough that one bad pick costs real money and time. Vero gives you a pool where every worker has a track record.",
+  },
+  {
+    label: "Solo clients",
+    anchor: "solo",
+    title: "One job. One person. Done right.",
+    body: "You need a plumber, a designer, a weekend photographer. You do not want to guess. Hire from people whose past clients have already signed off on the work.",
+  },
+  {
+    label: "Cafés & households",
+    anchor: "local",
+    title: "Local work deserves verified people.",
+    body: "Baristas, cooks, household helpers, event staff. Vero treats small local work as seriously as a corporate contract — because the people doing it deserve that too.",
+  },
+];
+
 const reasons = [
-  { title: "Stop screening unverified candidates", body: "Every worker on Vero has a record of completions, signed by real clients. You see what happened, not what was claimed." },
-  { title: "5% escrow. Flat. Visible.", body: "Fund the work up front. Hold safely. Release on completion. The fee is below the market — and we do not change it by category, city, or contract size." },
-  { title: "A trust graph, not a star bait", body: "Repeat clients, dispute history, on-time rate, category-specific standing. Multiple real signals, weighted. Not one gameable number." },
-  { title: "Disputes resolved on record", body: "If something goes wrong, evidence is collected, a small review team responds quickly, and the outcome is recorded on both sides." },
+  {
+    title: "See verified history, not a star rating.",
+    body: "A 4.8 star rating tells you the last client was satisfied. A verified record tells you how many jobs were completed, what they involved, and whether any disputes were raised.",
+  },
+  {
+    title: "Escrow protects you from day one.",
+    body: "Funds are committed before work starts and released only when both sides confirm completion. The platform fee is 5% — flat, visible, and below the market.",
+  },
+  {
+    title: "Disputes are handled fairly and on record.",
+    body: "If something goes wrong, there is a clear three-step path — direct, mediated, then reviewed. Every step is logged. Nothing gets buried.",
+  },
+  {
+    title: "Rehire the people who worked out.",
+    body: "Invite workers you have used before directly. Build a small verified network of people you trust — without starting from scratch every time.",
+  },
 ];
 
 const plans = [
@@ -32,6 +264,7 @@ const plans = [
     name: "Starter",
     price: "Free",
     tag: "For one-off hires",
+    highlight: false,
     bullets: [
       "Post up to 3 roles a month",
       "Worker verification included",
@@ -42,7 +275,7 @@ const plans = [
   {
     name: "Business",
     price: "₹2,499 / mo",
-    tag: "Recommended",
+    tag: "Recommended for SMBs",
     highlight: true,
     bullets: [
       "Unlimited roles",
@@ -56,220 +289,13 @@ const plans = [
     name: "Studio",
     price: "Custom",
     tag: "For higher volume",
+    highlight: false,
     bullets: [
       "Multiple branches / locations",
-      "Roles + scheduling integration",
+      "Roles and scheduling integration",
       "Workforce-wide analytics",
       "Dedicated success contact",
       "Custom escrow terms",
     ],
   },
 ];
-
-export default function Page() {
-  return (
-    <>
-      <Section className="!pt-24 !pb-12">
-        <MaskReveal from="left">
-          <Eyebrow>For businesses</Eyebrow>
-        </MaskReveal>
-        <h1 className="max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-tighter text-ink-900 md:text-6xl">
-          <LetterSplit
-            text="Hire from people whose history is already proof."
-            stagger={0.018}
-          />
-        </h1>
-        <BlurIn delay={0.6}>
-          <SectionLead>
-            Cafés. Households. Studios. SMBs. If you have spent any hour of any week
-            screening unverified candidates from a generic gig app — Vero is the
-            alternative.
-          </SectionLead>
-        </BlurIn>
-        <BlurIn delay={0.75} className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <LinkButton href="/waitlist?as=business" size="lg">
-            Join as a business
-          </LinkButton>
-          <LinkButton href="/pricing" variant="secondary" size="lg">
-            See pricing
-          </LinkButton>
-        </BlurIn>
-      </Section>
-
-      <Section tone="warm">
-        <div className="grid items-center gap-12 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <BlurIn>
-              <Eyebrow>The pool you hire from</Eyebrow>
-            </BlurIn>
-            <h2 className="font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
-              <WordReveal text="A network of verified workers and verified businesses." />
-            </h2>
-            <BlurIn delay={0.4}>
-              <SectionLead>
-                Every node in the graph is verified. Every edge is a signed record. You
-                are not hiring strangers — you are hiring people whose history is
-                already legible.
-              </SectionLead>
-            </BlurIn>
-          </div>
-          <Parallax range={30} className="md:col-span-7">
-            <TrustGraph />
-          </Parallax>
-        </div>
-      </Section>
-
-      <Section>
-        <MaskReveal from="right">
-          <Eyebrow>Why move to Vero</Eyebrow>
-        </MaskReveal>
-        <h2 className="max-w-3xl font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
-          <WordReveal text="Four reasons SMBs switch." />
-        </h2>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {reasons.map((r, i) => (
-            <FlipIn key={r.title} delay={i * 0.1} axis={i % 2 === 0 ? "x" : "y"}>
-              <div className="h-full rounded-2xl border border-ink-100 bg-paper p-7 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift">
-                <h3 className="font-display text-xl font-medium tracking-tightish text-ink-900">
-                  {r.title}
-                </h3>
-                <p className="mt-3 text-base leading-relaxed text-ink-600">{r.body}</p>
-              </div>
-            </FlipIn>
-          ))}
-        </div>
-      </Section>
-
-      <Section tone="warm">
-        <BlurIn>
-          <Eyebrow>Escrow, shown</Eyebrow>
-        </BlurIn>
-        <h2 className="max-w-3xl font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
-          <WordReveal text="Funded, held, released. Visible at every step." />
-        </h2>
-        <MaskReveal delay={0.3} from="down" className="mt-12">
-          <EscrowFlow className="mx-auto max-w-4xl" />
-        </MaskReveal>
-      </Section>
-
-      <Section>
-        <BlurIn>
-          <Eyebrow>Categories at launch</Eyebrow>
-        </BlurIn>
-        <h2 className="max-w-3xl font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
-          <WordReveal text="The work we are opening first." />
-        </h2>
-        <BlurIn delay={0.3}>
-          <SectionLead>
-            We are launching with the categories where verified records have the most
-            value. We will add more as the trust model proves itself.
-          </SectionLead>
-        </BlurIn>
-        <ScaleIn delay={0.2} className="mt-12" from={0.92}>
-          <CategoryCubes />
-        </ScaleIn>
-      </Section>
-
-      <Section tone="warm">
-        <BlurIn>
-          <Eyebrow>Plans</Eyebrow>
-        </BlurIn>
-        <h2 className="max-w-3xl font-display text-3xl font-medium tracking-tighter text-ink-900 md:text-5xl">
-          <WordReveal text="Simple, transparent, India-priced." />
-        </h2>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {plans.map((p, i) => (
-            <ScaleIn key={p.name} delay={i * 0.12} from={0.9}>
-              <TiltCard className="h-full" intensity={p.highlight ? 9 : 5}>
-                <Spotlight
-                  className={`relative h-full overflow-hidden rounded-2xl border ${
-                    p.highlight
-                      ? "border-accent bg-ink-950 text-paper shadow-lift"
-                      : "border-ink-100 bg-paper"
-                  }`}
-                  size={p.highlight ? 460 : 320}
-                  color={p.highlight ? "rgba(61,122,93,0.32)" : "rgba(61,122,93,0.18)"}
-                >
-                  <div className="relative flex h-full flex-col p-7">
-                    {p.highlight && (
-                      <span className="absolute -top-3 right-6 rounded-full bg-accent-glow px-3 py-0.5 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-950">
-                        {p.tag}
-                      </span>
-                    )}
-                    <h3
-                      className={`font-display text-2xl font-medium tracking-tightish ${
-                        p.highlight ? "text-paper" : "text-ink-900"
-                      }`}
-                    >
-                      {p.name}
-                    </h3>
-                    <p
-                      className={`mt-1 text-xs uppercase tracking-[0.16em] ${
-                        p.highlight ? "text-accent-glow" : "text-ink-500"
-                      }`}
-                    >
-                      {p.tag}
-                    </p>
-                    <p
-                      className={`mt-6 font-display text-3xl ${
-                        p.highlight ? "text-paper" : "text-ink-900"
-                      }`}
-                    >
-                      {p.price}
-                    </p>
-                    <ul
-                      className={`mt-6 space-y-3 text-sm ${
-                        p.highlight ? "text-ink-200" : "text-ink-700"
-                      }`}
-                    >
-                      {p.bullets.map((b) => (
-                        <li key={b} className="flex gap-2">
-                          <span aria-hidden className="text-accent-glow">
-                            ✓
-                          </span>
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-auto pt-8">
-                      <LinkButton
-                        href="/waitlist?as=business"
-                        size="md"
-                        variant={p.highlight ? "primary" : "secondary"}
-                      >
-                        {p.highlight ? "Join the waitlist" : "Choose " + p.name}
-                      </LinkButton>
-                    </div>
-                  </div>
-                </Spotlight>
-              </TiltCard>
-            </ScaleIn>
-          ))}
-        </div>
-        <BlurIn delay={0.4}>
-          <p className="mt-6 text-xs text-ink-500">
-            Prices shown are pre-tax. GST applies for Indian customers. Plan details
-            may change before public launch.
-          </p>
-        </BlurIn>
-      </Section>
-
-      <Section tone="ink">
-        <div className="grid items-center gap-10 md:grid-cols-12">
-          <div className="md:col-span-7">
-            <h2 className="font-display text-3xl font-medium tracking-tighter md:text-5xl">
-              <WordReveal text="Hire with proof, not guesswork." />
-            </h2>
-          </div>
-          <BlurIn delay={0.2} className="md:col-span-5 flex md:justify-end">
-            <LinkButton href="/waitlist?as=business" size="lg">
-              Join the businesses waitlist
-            </LinkButton>
-          </BlurIn>
-        </div>
-      </Section>
-    </>
-  );
-}
