@@ -1,7 +1,6 @@
-# Environment variables
-.env
-.env.local
-.env.*.local
+# Environment variables (only placeholder examples are committed)
+.env*
+!.env.example
 
 # Dependencies
 node_modules/
@@ -34,3 +33,9 @@ coverage/
 # Temporary
 tmp/
 temp/
+
+# Local agent worktrees (large, machine-specific)
+.claude/worktrees/
+
+# Local backups
+_backup*
