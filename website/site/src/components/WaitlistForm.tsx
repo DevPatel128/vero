@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { takePrefillEmail } from "@/lib/prefill-email";
 
 type FieldErrors = Partial<Record<string, string[]>>;
 
@@ -16,12 +17,22 @@ export function WaitlistForm({
   const asParam = sp.get("as");
   const roleFromUrl =
     asParam === "worker" || asParam === "business" ? asParam : defaultRole;
-  const emailFromUrl = sp.get("email") || "";
+  const emailInputRef = useRef<HTMLInputElement>(null);
 
   const [role, setRole] = useState<"worker" | "business">(roleFromUrl);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [topError, setTopError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Filled from sessionStorage (see InlineEmailForm), not the URL, so an
+    // email address never sits in browser history, a referrer header or a
+    // server access log. Uncontrolled input: set imperatively after mount
+    // rather than via defaultValue, which server and client must render
+    // identically to avoid a hydration mismatch.
+    const email = takePrefillEmail();
+    if (email && emailInputRef.current) emailInputRef.current.value = email;
+  }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -113,6 +124,7 @@ export function WaitlistForm({
           Email <span className="text-accent">*</span>
         </label>
         <input
+          ref={emailInputRef}
           id="email"
           name="email"
           type="email"
@@ -120,7 +132,6 @@ export function WaitlistForm({
           autoComplete="email"
           required
           placeholder="you@example.com"
-          defaultValue={emailFromUrl}
           className={inputCls}
           aria-describedby={errors.email ? "email-error" : undefined}
         />

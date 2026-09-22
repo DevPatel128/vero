@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { setPrefillEmail } from "@/lib/prefill-email";
 
 export function InlineEmailForm() {
   const [email, setEmail] = useState("");
@@ -11,7 +12,8 @@ export function InlineEmailForm() {
     e.preventDefault();
     if (!email) return;
 
-    router.push(`/waitlist?as=worker&email=${encodeURIComponent(email)}`);
+    setPrefillEmail(email);
+    router.push(`/waitlist?as=worker`);
   };
 
   return (
