@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Section, Eyebrow, SectionTitle, SectionLead } from "@/components/Section";
-import { LinkButton } from "@/components/Button";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {

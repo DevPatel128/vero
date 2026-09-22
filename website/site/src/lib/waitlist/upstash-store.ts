@@ -1,10 +1,5 @@
 import { Redis } from "@upstash/redis";
-import type {
-  WaitlistEntry,
-  WaitlistRole,
-  WaitlistStats,
-  WaitlistStore,
-} from "./types";
+import type { WaitlistEntry, WaitlistStats, WaitlistStore } from "./types";
 
 function getClient(): Redis {
   return Redis.fromEnv();

@@ -11,6 +11,8 @@ import { cn } from "@/lib/cn";
  */
 export function PhoneMockup({
   className,
+  // Reserved for a future feed/verify illustration; only "record" is drawn today.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   variant = "record",
 }: {
   className?: string;

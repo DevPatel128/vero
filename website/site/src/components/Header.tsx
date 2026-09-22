@@ -10,19 +10,18 @@ import { Logo } from "./Logo";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  // Starts "dark" to match the server render (no access to localStorage or
+  // matchMedia there), then corrects itself from the client-only effect
+  // below. Reading real theme in the initializer would make the client's
+  // first render diverge from the server's and cause a hydration mismatch.
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const saved = (typeof window !== "undefined" && window.localStorage.getItem("vero-theme")) as
-      | "dark"
-      | "light"
-      | null;
+    const saved = window.localStorage.getItem("vero-theme") as "dark" | "light" | null;
     const initial: "dark" | "light" =
-      saved ??
-      (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: light)").matches
-        ? "light"
-        : "dark");
+      saved ?? (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- client-only theme resolution; see comment above
     setTheme(initial);
     document.documentElement.classList.toggle("light", initial === "light");
   }, []);

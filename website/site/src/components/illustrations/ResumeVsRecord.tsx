@@ -37,7 +37,7 @@ export function ResumeVsRecord() {
         </div>
 
         <div className="mt-12 text-sm text-ink-400">
-          "I definitely did all of this work."
+          &ldquo;I definitely did all of this work.&rdquo;
         </div>
       </motion.div>
 

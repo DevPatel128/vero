@@ -1,12 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 import crypto from "crypto";
-import type {
-  WaitlistEntry,
-  WaitlistRole,
-  WaitlistStats,
-  WaitlistStore,
-} from "./types";
+import type { WaitlistEntry, WaitlistStats, WaitlistStore } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const DATA_FILE = path.join(DATA_DIR, "waitlist.json");

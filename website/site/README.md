@@ -1,18 +1,15 @@
 # Vero — pre-launch website
 
-> The marketing + waitlist + investor surface for **Vero** (a VROE Labs product).
-> Pre-launch. Public-safe. Hides all internal stack + infra details.
+> The marketing and waitlist surface for **Vero** (a VROE Labs product). Pre-launch.
 
-This is a fresh Next.js app inside `Website/site/`. It reads its philosophy from the
-context pack at `/Vero/vero/docs/context-pack/` (00 overview, 01 philosophy, 02 brand,
-14 copywriting tone, 15 roadmap) and the `/Vero/Website/CLAUDE.md` agent contract.
+This is a Next.js 16 app. It is the code that Vercel builds and deploys; nothing outside `website/site/` affects the live site. Product context and brand rules live in the repo root documentation system: start at [`00_START_HERE/README.md`](../../00_START_HERE/README.md), and see [`website/CLAUDE.md`](../CLAUDE.md) for the copy contract for this folder.
 
 ## Quick start
 
 ```sh
-cd "Vero/Website/site"
-npm install
-cp .env.example .env.local   # edit if you want to wire email + investor inbox
+cd website/site
+npm ci
+cp .env.example .env.local   # fill in what you need; see below
 npm run dev
 # open http://localhost:3000
 ```
@@ -24,78 +21,45 @@ npm run build
 npm run start
 ```
 
-## What this site is
+Checks:
 
-A grand pre-launch surface that does six jobs:
-
-1. **Explainer** — 8-second understanding of what Vero is.
-2. **Marketing + SEO + AEO + LLMO** — discoverable on Google, Perplexity, ChatGPT, Claude, Gemini.
-3. **Waitlist machine** — file-backed referral queue, founding-member tiers, share cards.
-4. **Storytelling** — manifesto, about, why-now, build philosophy.
-5. **Investor surface (gated)** — discreet footer link → request form. No public deck.
-6. **Ecosystem hint** — single `/ecosystem` page introducing VROE Labs + RIE + Trove + ALVED protocol.
+```sh
+npm run typecheck
+npm run lint
+npm test        # Playwright, starts its own dev server
+```
 
 ## Routes (high level)
 
-- `/` — home (hero + problem + how it works + features + personas + FAQ + final CTA)
-- `/how-it-works` — five-step explainer + record card examples
-- `/features` — record / standing / money + safety / verification
-- `/for-workers`, `/for-businesses` — persona-specific pages
-- `/pricing` — plans + comparison table + pricing FAQ
-- `/about`, `/manifesto`, `/why-now` — story surfaces
-- `/trust`, `/security` — trust posture + public-safe security statement
-- `/faq` — FAQPage JSON-LD
-- `/press`, `/contact`, `/status`
-- `/ecosystem` — VROE Labs umbrella + ALVED protocol (RIE + Trove hinted, vision-led)
-- `/investors` — gated (noindex). Deck behind email request form.
-- `/waitlist` — sign-up form, role toggle, honeypot, consent checkbox
-- `/waitlist/[token]` — personal page (position, tier, referral link, share cards)
-- `/legal/*` — privacy, terms, cookies, refund, acceptable use, accessibility, grievance officer, responsible disclosure
-- System: `/robots.txt`, `/sitemap.xml`, `/llms.txt`, `/manifest.webmanifest`, `/.well-known/security.txt`
-- `/api/waitlist/join`, `/api/waitlist/stats`, `/api/investors/request`
-
-## What is intentionally **not** disclosed publicly
-
-Per the founder direction:
-
-- No naming of internal vendors (DB, hosting, KMS, email provider, etc.)
-- No internal architecture diagrams
-- No employee org chart
-- No real-time metrics on the marketing surface
-- No mention of MSG91 / Razorpay / DigiLocker outside the security page (and even there only when context is right)
-
-The `/security` page is the only marketing surface that uses generic, public-safe descriptions of crypto + identity verification, without naming specific vendors.
+- `/` — home
+- `/how-it-works`, `/features`, `/for-workers`, `/for-professionals`, `/for-businesses` — explainer and persona pages
+- `/pricing`, `/about`, `/manifesto`, `/why-now`, `/trust`, `/security`, `/faq`, `/press`, `/contact`, `/status`
+- `/investors` — gated, noindex. Deck behind an email request form, not public.
+- `/waitlist`, `/waitlist/[token]`, `/waitlist/thanks`
+- `/legal/*` — privacy, terms, cookies, refund, acceptable use, accessibility, grievance officer, responsible disclosure, sub-processors, security
+- System routes: `/robots.txt`, `/sitemap.xml`, `/llms.txt`, `/manifest.webmanifest`, `/.well-known/security.txt`
+- API: `/api/waitlist/join`, `/api/waitlist/stats`, `/api/investors/request`
 
 ## Waitlist storage
 
-Default: **file-backed JSON** at `data/waitlist.json` (gitignored).
-
-This is intentional. The waitlist is a single dependency interface (`WaitlistStore`) so it can be swapped for Supabase / Postgres later by writing one new module. The contract is in `src/lib/waitlist/types.ts`.
-
-For production, set `WAITLIST_STORE=supabase` + the Supabase env vars, and add the corresponding `supabase-store.ts` implementation.
+`src/lib/waitlist/index.ts` picks the store: **Upstash Redis** (`src/lib/waitlist/upstash-store.ts`) when `UPSTASH_REDIS_REST_URL` is set, otherwise a **local JSON file** at `data/waitlist.json` (`src/lib/waitlist/file-store.ts`, gitignored, for local dev only — it does not work on Vercel's read-only filesystem). Production must always have both `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` set. The store contract is `WaitlistStore` in `src/lib/waitlist/types.ts`; a new backend is one new module plus a line in `index.ts`.
 
 ## Email
 
-The `sendEmail` helper logs to console in dev (no provider needed). Set `RESEND_API_KEY` in `.env.local` to enable real sending.
+`src/lib/email.ts` calls the Resend API when `RESEND_API_KEY` is set, and otherwise logs to the console. No other provider is wired in.
 
 ## Design tokens
 
-- Type: Fraunces (display) + Inter (sans).
-- Palette: warm paper / deep ink / accent green. Trust-first, calm-premium.
-- Components: bespoke (no third-party UI lib). Buttons, cards, sections, hero, record cards.
-- Motion: subtle. Honours `prefers-reduced-motion`.
+Type: Geist Sans (headings and body), Geist Mono (hashes, IDs, timestamps), Spectral italic (pull-quotes only). Palette: OKLCH graphite neutrals with one champagne accent and a verification-cyan signal color, defined in `src/app/globals.css` and `tailwind.config.ts`. Full rules: [`04_DESIGN/DESIGN-SYSTEM.md`](../../04_DESIGN/DESIGN-SYSTEM.md).
 
-## Build status
+## Observability
 
-```
-✓ Compiled successfully
-✓ 35 routes generated
-```
+There is no error-tracking or analytics provider wired into this app today.
 
-## Where to take this next
+## Environment variables
 
-1. Wire a real email provider via `RESEND_API_KEY`.
-2. Move waitlist to Supabase by adding `src/lib/waitlist/supabase-store.ts` + flipping the export in `src/lib/waitlist/index.ts`.
-3. Add per-page OG images via `next/og`.
-4. Hook up real analytics (PostHog or Plausible) — privacy-light.
-5. Lighthouse pass + axe-playwright when CI is added.
+See `.env.example` for the full list with comments. Never commit `.env.local` or any real credential; only `.env.example` (placeholders) is tracked.
+
+## Security headers
+
+Defined once, in `next.config.ts`. `vercel.json` does not duplicate them.
