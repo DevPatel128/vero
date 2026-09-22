@@ -4,11 +4,16 @@ import { joinSchema } from "@/lib/waitlist/schema";
 import { sendEmail } from "@/lib/email";
 import { site } from "@/lib/site";
 import { clientIp, joinLimiter, withinLimit } from "@/lib/ratelimit";
+import { isSameOrigin } from "@/lib/same-origin";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
+    if (!isSameOrigin(req)) {
+      return NextResponse.json({ error: "invalid_origin" }, { status: 403 });
+    }
+
     if (!(await withinLimit(joinLimiter, clientIp(req)))) {
       return NextResponse.json(
         { error: "rate_limited" },

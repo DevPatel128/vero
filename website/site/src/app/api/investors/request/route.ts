@@ -3,6 +3,7 @@ import { z } from "zod";
 import { sendEmail } from "@/lib/email";
 import { site } from "@/lib/site";
 import { clientIp, investorIpLimiter, withinLimit } from "@/lib/ratelimit";
+import { isSameOrigin } from "@/lib/same-origin";
 
 export const runtime = "edge";
 
@@ -21,6 +22,10 @@ const schema = z.object({
 
 export async function POST(req: Request) {
   try {
+    if (!isSameOrigin(req)) {
+      return NextResponse.json({ error: "invalid_origin" }, { status: 403 });
+    }
+
     if (!(await withinLimit(investorIpLimiter, clientIp(req)))) {
       return NextResponse.json(
         { error: "rate_limited" },
