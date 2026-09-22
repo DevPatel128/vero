@@ -13,7 +13,24 @@ const K = {
   byEmail: (email: string) => `wl:email:${email}`,
   byToken: (token: string) => `wl:token:${token}`,
   byCode: (code: string) => `wl:code:${code}`,
+  referrals: (id: string) => `wl:referrals:${id}`,
 } as const;
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * The referral count used to live only on the entry blob, updated with a
+ * get-then-set that raced under concurrent referrals (two referrers
+ * finishing at once could overwrite each other's increment). Referrals now
+ * increment a standalone counter key instead. An entry written before this
+ * change has no counter key yet, so its blob value is the fallback.
+ */
+async function withReferralCount(redis: Redis, entry: WaitlistEntry): Promise<WaitlistEntry> {
+  const count = await redis.get<number>(K.referrals(entry.id));
+  return count === null ? entry : { ...entry, referralCount: count };
+}
 
 function randomHex(bytes: number): string {
   const arr = new Uint8Array(bytes);
@@ -52,14 +69,6 @@ export const upstashStore: WaitlistStore = {
     const email = normEmail(input.email);
     const emailKey = K.byEmail(email);
 
-    const existingId = await redis.get<string>(emailKey);
-    if (existingId) {
-      const existing = await redis.get<WaitlistEntry>(K.entry(existingId));
-      if (existing) return { entry: existing, created: false };
-    }
-
-    const position = await redis.incr(K.counter);
-
     const entry: WaitlistEntry = {
       id: makeId(),
       email,
@@ -70,15 +79,40 @@ export const upstashStore: WaitlistStore = {
       source: input.source?.trim() || null,
       referredBy: input.referredBy || null,
       referralCode: makeCode(),
-      position,
+      position: 0, // set below, only if this request wins the email claim
       referralCount: 0,
       joinedAt: new Date().toISOString(),
       token: makeToken(),
     };
 
+    // Atomically claim the email first. SET ... NX is the compare-and-set
+    // this needs: if two requests race for the same email, only one can
+    // write this key, so only one can go on to create an entry. The
+    // previous version checked "does this email exist" and created the
+    // entry as two separate steps, so two concurrent submissions for the
+    // same email could both pass the check and both create an entry (one
+    // orphaned, one double-counted in the role totals).
+    const claimed = await redis.set(emailKey, entry.id, { nx: true });
+
+    if (claimed !== "OK") {
+      // Someone else holds this email. Their write can still be landing,
+      // so give it a moment before reading, and retry a couple of times.
+      for (let attempt = 0; attempt < 3; attempt++) {
+        await sleep(50 * (attempt + 1));
+        const existingId = await redis.get<string>(emailKey);
+        if (existingId) {
+          const existing = await redis.get<WaitlistEntry>(K.entry(existingId));
+          if (existing) return { entry: await withReferralCount(redis, existing), created: false };
+        }
+      }
+      throw new Error("waitlist: email claimed but entry not found after retries");
+    }
+
+    // Won the claim: this is the only request that will create this entry.
+    entry.position = await redis.incr(K.counter);
+
     const pipeline = redis.pipeline();
     pipeline.set(K.entry(entry.id), entry);
-    pipeline.set(emailKey, entry.id);
     pipeline.set(K.byToken(entry.token), entry.id);
     pipeline.set(K.byCode(entry.referralCode), entry.id);
     if (entry.role === "worker") {
@@ -91,11 +125,9 @@ export const upstashStore: WaitlistStore = {
     if (input.referredBy) {
       const referrerId = await redis.get<string>(K.byCode(input.referredBy));
       if (referrerId) {
-        const referrer = await redis.get<WaitlistEntry>(K.entry(referrerId));
-        if (referrer) {
-          const updated = { ...referrer, referralCount: (referrer.referralCount ?? 0) + 1 };
-          await redis.set(K.entry(referrerId), updated);
-        }
+        // Atomic increment, not a read-modify-write of the entry blob, so
+        // two referrals landing at once can no longer clobber each other.
+        await redis.incr(K.referrals(referrerId));
       }
     }
 
@@ -106,21 +138,24 @@ export const upstashStore: WaitlistStore = {
     const redis = getClient();
     const id = await redis.get<string>(K.byToken(token));
     if (!id) return null;
-    return redis.get<WaitlistEntry>(K.entry(id));
+    const entry = await redis.get<WaitlistEntry>(K.entry(id));
+    return entry ? withReferralCount(redis, entry) : null;
   },
 
   async findByEmail(email) {
     const redis = getClient();
     const id = await redis.get<string>(K.byEmail(normEmail(email)));
     if (!id) return null;
-    return redis.get<WaitlistEntry>(K.entry(id));
+    const entry = await redis.get<WaitlistEntry>(K.entry(id));
+    return entry ? withReferralCount(redis, entry) : null;
   },
 
   async findByCode(code) {
     const redis = getClient();
     const id = await redis.get<string>(K.byCode(code));
     if (!id) return null;
-    return redis.get<WaitlistEntry>(K.entry(id));
+    const entry = await redis.get<WaitlistEntry>(K.entry(id));
+    return entry ? withReferralCount(redis, entry) : null;
   },
 
   async stats(): Promise<WaitlistStats> {
