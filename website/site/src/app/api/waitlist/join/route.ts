@@ -84,15 +84,24 @@ export async function POST(req: Request) {
       );
     }
 
+    // The token is a secret credential (it alone unlocks the personal
+    // waitlist page with the entrant's name, email and referral code), so
+    // it is returned only to the request that just created the entry. A
+    // repeat submission of someone else's email must not hand back their
+    // token, or knowing an email would be enough to read their record.
+    if (!created) {
+      return NextResponse.json({ ok: true, created: false }, { status: 200 });
+    }
+
     return NextResponse.json(
       {
         ok: true,
-        created,
+        created: true,
         token: entry.token,
         position: effectivePosition(entry),
         tier: tierLabel(tierFor(entry.position)),
       },
-      { status: created ? 201 : 200 },
+      { status: 201 },
     );
   } catch (err) {
     console.error("waitlist.join error", err);
