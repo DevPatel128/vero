@@ -44,13 +44,26 @@ const staticRoutes: { path: string; priority: number; changefreq: MetadataRoute.
   { path: "/legal/grievance", priority: 0.5, changefreq: "yearly" },
   { path: "/legal/responsible-disclosure", priority: 0.5, changefreq: "yearly" },
   { path: "/legal/sub-processors", priority: 0.4, changefreq: "yearly" },
+  { path: "/product", priority: 0.85, changefreq: "monthly" },
+  { path: "/waitlist", priority: 0.7, changefreq: "monthly" },
+  // /investors and /legal/security are deliberately not listed:
+  // /investors carries robots noindex (a discreet, gated page), and
+  // /legal/security only redirects to /legal/responsible-disclosure, which
+  // is already listed — a sitemap should not point at a redirect.
 ];
 
+// Computed once per server instance rather than on every request: a
+// lastModified timestamp that changes on every single sitemap.xml fetch
+// carries no information for a crawler (everything always looks freshly
+// changed) and can encourage needless re-crawling. This repo does not yet
+// track a real per-page last-modified date, so a fixed build-time value is
+// the honest middle ground until it does.
+const BUILD_TIME = new Date();
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   return staticRoutes.map((r) => ({
     url: `${site.url}${r.path}`,
-    lastModified: now,
+    lastModified: BUILD_TIME,
     changeFrequency: r.changefreq,
     priority: r.priority,
   }));

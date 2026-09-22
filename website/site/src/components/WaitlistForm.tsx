@@ -85,8 +85,8 @@ export function WaitlistForm({
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-6">
-      {/* Honeypot — hidden from humans */}
-      <div className="absolute -left-[10000px] h-px w-px overflow-hidden">
+      {/* Honeypot — hidden from humans, and from assistive tech too */}
+      <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor="website">Website (leave blank)</label>
         <input
           id="website"

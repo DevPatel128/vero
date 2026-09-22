@@ -123,19 +123,18 @@ export const nav = {
     ],
     audiences: [
       { label: "For operators", href: "/#apply" },
-      { label: "For businesses", href: "/businesses" },
+      { label: "For businesses", href: "/for-businesses" },
       { label: "For investors", href: "/investors" },
     ],
     company: [
       { label: "Manifesto", href: "/manifesto" },
-      { label: "Research", href: "/research" },
       { label: "About VROE Labs", href: "/about" },
       { label: "Press", href: "/press" },
       { label: "Contact", href: "/contact" },
     ],
     trust: [
       { label: "Security posture", href: "/security" },
-      { label: "Compliance", href: "/compliance" },
+      { label: "Compliance", href: "/legal/privacy/in" },
       { label: "Status", href: "/status" },
       { label: "Responsible disclosure", href: "/legal/responsible-disclosure" },
     ],
