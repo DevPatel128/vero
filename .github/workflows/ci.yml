@@ -1,0 +1,102 @@
+name: CI
+
+on:
+  pull_request:
+    paths:
+      - "website/site/**"
+      - ".github/workflows/ci.yml"
+  push:
+    branches: [main]
+    paths:
+      - "website/site/**"
+      - ".github/workflows/ci.yml"
+
+# One run per branch/PR at a time; a new push cancels the one in flight.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Default: no permissions. Jobs opt in to only what they use.
+permissions: {}
+
+defaults:
+  run:
+    working-directory: website/site
+
+jobs:
+  build-and-test:
+    name: Typecheck, lint, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      # actions/checkout v4, resolved 2026-09-22
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      # actions/setup-node v4, resolved 2026-09-22
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version-file: website/site/.nvmrc
+          cache: npm
+          cache-dependency-path: website/site/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4, resolved 2026-09-22
+        with:
+          name: playwright-report
+          path: website/site/playwright-report/
+          retention-days: 14
+
+  audit:
+    name: npm audit (production dependencies)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version-file: website/site/.nvmrc
+          cache: npm
+          cache-dependency-path: website/site/package-lock.json
+      - run: npm ci
+      # Non-blocking for now: flags high/critical production-dependency
+      # advisories without failing the build. Revisit once the pending
+      # Dependabot bumps in this PR have merged and the baseline is clean.
+      - run: npm audit --omit=dev --audit-level=high
+        continue-on-error: true
+
+  gitleaks:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      # gitleaks-action v2, resolved 2026-09-22
+      - uses: gitleaks/gitleaks-action@dcedce43c6f43de0b836d1fe38946645c9c638dc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
