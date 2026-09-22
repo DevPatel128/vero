@@ -2,9 +2,21 @@ import { fileStore } from "./file-store";
 import { upstashStore } from "./upstash-store";
 import type { WaitlistEntry, WaitlistStore } from "./types";
 
-// Upstash Redis in prod (UPSTASH_REDIS_REST_URL set), file-backed in dev.
-export const waitlist: WaitlistStore =
-  process.env.UPSTASH_REDIS_REST_URL ? upstashStore : fileStore;
+const hasUpstash = Boolean(
+  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN,
+);
+
+// On Vercel the file store cannot work (read-only filesystem), so a missing
+// or partial Upstash config must fail at startup, not silently fall back to
+// a store that will error on every request.
+if (process.env.VERCEL && !hasUpstash) {
+  throw new Error(
+    "UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN must both be set in this environment.",
+  );
+}
+
+// Upstash Redis when configured (required in prod), file-backed in local dev.
+export const waitlist: WaitlistStore = hasUpstash ? upstashStore : fileStore;
 
 /**
  * Position math:

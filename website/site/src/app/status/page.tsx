@@ -6,6 +6,7 @@ import { AnnouncementCalendar } from "@/components/illustrations/AnnouncementCal
 import { BlurIn } from "@/components/motion/BlurIn";
 import { WordReveal } from "@/components/motion/LetterSplit";
 import { MaskReveal } from "@/components/motion/MaskReveal";
+import { WaitlistStatusBadge } from "@/components/WaitlistStatusBadge";
 
 export const metadata: Metadata = {
   title: "Status",
@@ -35,15 +36,7 @@ export default function Page() {
             </BlurIn>
 
             <BlurIn delay={0.3} className="mt-10 grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-ink-100 bg-paper p-6">
-                <span className="inline-flex items-center gap-2 text-xs font-medium text-trust">
-                  <span className="h-2 w-2 rounded-full bg-trust" />
-                  Waitlist: Operational
-                </span>
-                <p className="mt-3 text-sm text-ink-600">
-                  Sign-ups are flowing. Confirmation emails are delivering.
-                </p>
-              </div>
+              <WaitlistStatusBadge />
               <div className="rounded-2xl border border-ink-100 bg-paper p-6">
                 <span className="inline-flex items-center gap-2 text-xs font-medium text-caution">
                   <span className="h-2 w-2 rounded-full bg-caution" />

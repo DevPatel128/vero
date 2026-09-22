@@ -136,4 +136,15 @@ export const upstashStore: WaitlistStore = {
       businesses: businesses ?? 0,
     };
   },
+
+  async health() {
+    try {
+      const redis = getClient();
+      // A cheap, always-present key. Reachability only; the value is not used.
+      await redis.get(K.counter);
+      return true;
+    } catch {
+      return false;
+    }
+  },
 };

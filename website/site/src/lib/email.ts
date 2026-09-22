@@ -1,10 +1,10 @@
 /**
  * Email send abstraction.
- * In dev, logs to console. In prod, swap to Resend/Postmark by env var.
+ * With RESEND_API_KEY set, sends through Resend. Otherwise logs to console
+ * for local development only — see the production guard below.
  */
 export async function sendEmail(to: string, subject: string, body: string) {
   if (process.env.RESEND_API_KEY) {
-    // Placeholder for real integration — kept minimal to avoid leaking infra.
     try {
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -20,14 +20,25 @@ export async function sendEmail(to: string, subject: string, body: string) {
         }),
       });
       if (!res.ok) {
-        console.warn("Email send failed", res.status, await res.text());
+        // Status only. The response body can echo request content or
+        // provider-internal detail and must not reach logs.
+        console.warn("Email send failed", res.status);
       }
-    } catch (err) {
-      console.warn("Email send error", err);
+    } catch {
+      console.warn("Email send error");
     }
     return;
   }
-  // Dev fallback
+
+  if (process.env.NODE_ENV === "production") {
+    // No provider configured in production: fail loudly, but never write
+    // the recipient, subject or body (the body can carry a personal
+    // waitlist token URL) to logs.
+    console.error("Email not sent: RESEND_API_KEY is not set in production.");
+    return;
+  }
+
+  // Local dev fallback only.
   console.log("\n[email]", { to, subject });
   console.log(body, "\n");
 }

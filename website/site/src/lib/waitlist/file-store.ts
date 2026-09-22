@@ -127,4 +127,13 @@ export const fileStore: WaitlistStore = {
     const businesses = shape.entries.filter((e) => e.role === "business").length;
     return { total: shape.entries.length, workers, businesses };
   },
+
+  async health() {
+    try {
+      await ensureFile();
+      return true;
+    } catch {
+      return false;
+    }
+  },
 };
