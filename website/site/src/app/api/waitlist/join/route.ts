@@ -3,11 +3,19 @@ import { waitlist, effectivePosition, tierFor, tierLabel } from "@/lib/waitlist"
 import { joinSchema } from "@/lib/waitlist/schema";
 import { sendEmail } from "@/lib/email";
 import { site } from "@/lib/site";
+import { clientIp, joinLimiter, withinLimit } from "@/lib/ratelimit";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
+    if (!(await withinLimit(joinLimiter, clientIp(req)))) {
+      return NextResponse.json(
+        { error: "rate_limited" },
+        { status: 429, headers: { "Retry-After": "600" } },
+      );
+    }
+
     const ct = req.headers.get("content-type") || "";
     let raw: Record<string, unknown> = {};
 

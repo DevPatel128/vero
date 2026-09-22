@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { sendEmail } from "@/lib/email";
 import { site } from "@/lib/site";
+import { clientIp, investorIpLimiter, withinLimit } from "@/lib/ratelimit";
 
 export const runtime = "edge";
 
@@ -20,6 +21,13 @@ const schema = z.object({
 
 export async function POST(req: Request) {
   try {
+    if (!(await withinLimit(investorIpLimiter, clientIp(req)))) {
+      return NextResponse.json(
+        { error: "rate_limited" },
+        { status: 429, headers: { "Retry-After": "3600" } },
+      );
+    }
+
     const fd = await req.formData();
     const raw: Record<string, unknown> = {};
     fd.forEach((v, k) => (raw[k] = typeof v === "string" ? v : ""));
