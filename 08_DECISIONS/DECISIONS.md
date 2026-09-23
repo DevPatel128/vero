@@ -5,7 +5,19 @@
 
 A permanent record of important product and engineering decisions.
 
-## Decision record
+## Index
+
+| Date | Decision | Area | Status |
+|---|---|---|---|
+| 2026-09-22 | [Adopt The Framework and the numbered documentation system](ENGINEERING/2026-09-adopt-framework.md) | Engineering | Proposed |
+| 2026-09-22 | [Stay on Vercel and Upstash; defer Cloudflare and Supabase](ENGINEERING/2026-09-stay-on-vercel-upstash.md) | Engineering | Proposed |
+| 2026-09-22 | [Remove Sentry and PostHog from website/site](ENGINEERING/2026-09-remove-sentry-posthog.md) | Engineering | Proposed |
+| 2026-09-22 | [@rie/crypto vs. direct libraries — unresolved, scoped to the archived app](ENGINEERING/2026-09-crypto-rie-vs-direct-libs.md) | Engineering | Proposed |
+| 2026-09-22 | [Open contradictions found while adopting the framework](PRODUCT/2026-09-open-contradictions.md) | Product | Proposed |
+
+New entries use the template below and add a row here. Never delete a row; move it to `09_ARCHIVE/OLD-DECISIONS/` and note the supersession if a decision is later reversed.
+
+## Template
 
 ### [DATE] — [Decision title]
 
