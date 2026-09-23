@@ -11,7 +11,7 @@ This is one file covering several small, independent contradictions surfaced whi
 
 ## 1. Roadmap phase numbering
 
-**Conflict:** the archived root `CLAUDE.md` §19 numbers Phase 1 = pre-launch website, Phase 2 = Bengaluru pilot. `Documents/13. VERO Roadmap.md` numbers Phase 0 = pre-launch, Phase 1 = pilot — every phase after is off by one between the two documents. `Context/03` and `Context/08` (already flagged superseded) use a third numbering built around a "Verified Student Identity" phase 1 that contradicts the worker/business marketplace framing everywhere else.
+**Conflict:** the archived root `CLAUDE.md` §19 numbers Phase 1 = pre-launch website, Phase 2 = Bengaluru pilot. `Documents/13. VERO Roadmap — Where We Are Going.md` numbers Phase 0 = pre-launch, Phase 1 = pilot — every phase after is off by one between the two documents. `Context/03` and `Context/08` (already flagged superseded) use a third numbering built around a "Verified Student Identity" phase 1 that contradicts the worker/business marketplace framing everywhere else.
 
 **Why it matters:** `02_PRODUCT/PRODUCT.md`'s "Product lifecycle" section needs one canonical numbering.
 
