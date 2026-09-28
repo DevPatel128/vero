@@ -1,7 +1,7 @@
 # Product Framework — Summary
 
-> Status: Review · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-21
-> Source: The Framework. (imported unchanged apart from this header)
+> Status: Review · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-28
+> Source: Wolf v3 framework (imported unchanged apart from this header; supersedes the v2 framework this file described before — same lifecycle, now with an `09_AUDIT` stage after every consequential action)
 
 ## Purpose
 
@@ -63,6 +63,9 @@ A simple system for turning an idea into a researched, documented, securely engi
                                                      │
                                                      ▼
                                                  DECISIONS
+                                                     │
+                                                     ▼
+                                                   AUDIT
 ```
 
 ## What each file does
@@ -84,6 +87,8 @@ A simple system for turning an idea into a researched, documented, securely engi
 | `RESEARCH_AGENT.md` | Produce decision-grade research |
 | `REVIEW_AGENT.md` | Try to break the work |
 | `UPDATE_AGENT.md` | Keep documentation synchronized |
+| `09_AUDIT/README.md` | Reconstruct what actually happened and who authorized it |
+| `08_DECISIONS/DECISION-RULES.md` | How a decision gets made and recorded |
 
 ## Universal change framework
 
