@@ -1,7 +1,7 @@
-# Data: Supabase
+# Data
 
-> Status: Review · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-21
-> Source: The Framework. (imported unchanged apart from this header)
+> Status: Review · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-28
+> Source: The Framework. (imported unchanged apart from this header); merged from `DATA/SUPABASE-AND-DATA.md` and `DATA/VERO-SCHEMA.md` (appended below) into a single flat file when this repo adopted the Wolf v3 layout, content unchanged
 > Split from `ENGINEERING.md`: section 5. Section numbers are unchanged so old references still resolve.
 
 ## 5. Supabase and data

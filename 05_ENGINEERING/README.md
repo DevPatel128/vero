@@ -1,28 +1,35 @@
 # Engineering
 
-> Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-21
+> Status: Draft · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-28
+> Source: adapted for the Wolf v3 layout (flat, no subfolders); supersedes the v2 subfolder index this file held before
 
 **Purpose:** build secure, simple, reliable, observable, fast and cheap software. This is the source of truth for how software is built here.
-**Belongs here:** the engineering framework, architecture, security, data, CI/CD, reliability, performance, cost, developer setup, AI agent contracts.
-**Does not belong here:** product scope (`02_PRODUCT`), visual rules (`04_DESIGN`), live-incident steps (`06_OPERATIONS`), decisions (`08_DECISIONS`).
+**Belongs here:** the engineering framework, architecture, security, identity, data, networking, CI/CD, delivery, reliability, performance, cost, quality, developer experience, AI-in-product.
+**Does not belong here:** product scope (`02_PRODUCT`), visual rules (`04_DESIGN`), live-incident steps (`06_OPERATIONS`), decisions (`08_DECISIONS`), legal/compliance (`07_BUSINESS/LEGAL-COMPLIANCE.md`).
 
-The original `ENGINEERING.md` was split without rewording. Section numbers are unchanged. Use this table to resolve any reference such as "ENGINEERING.md §16".
+Wolf keeps this folder flat — no subfolders. The original v2 `ENGINEERING-FOUNDATION.md` split (by section number) is preserved inside each file's header; section numbers are unchanged so an old "ENGINEERING.md §16" reference still resolves.
 
-| Old section | Topic | File |
-|---|---|---|
-| Preamble, §1, §21 | Decision framework, principles, quality gate | `FOUNDATION/ENGINEERING-FOUNDATION.md` |
-| §2, §6-§12, §19 | Repository security, authentication, authorization, RLS, least privilege, auditability, CIA, data minimization, incident response | `SECURITY/SECURITY.md` |
-| §3 | Architecture | `ARCHITECTURE/ARCHITECTURE.md` |
-| §4 | Cloudflare | `INFRASTRUCTURE/CLOUDFLARE.md` |
-| §5 | Supabase and data | `DATA/SUPABASE-AND-DATA.md` |
-| §13 | Performance | `PERFORMANCE/PERFORMANCE.md` |
-| §14 | Cost optimization | `COST/COST-OPTIMIZATION.md` |
-| §15 | Testing | `DEVELOPMENT/TESTING.md` |
-| §16, §20 | Deployment, production approval | `CI-CD/DEPLOYMENT.md` |
-| §17, §18 | Observability, failure and recovery | `RELIABILITY/OBSERVABILITY-AND-RECOVERY.md` |
-| n/a | AI operating rules, agent contracts, product creation system | `AI/` |
-| n/a | How to run, test and ship this repo | `DEVELOPER-EXPERIENCE/` |
+| File | Topic |
+|---|---|
+| `ENGINEERING.md` | Decision framework, principles, quality gate |
+| `ARCHITECTURE.md` | Architecture |
+| `ARCHITECTURE-REVIEW.md` | Architecture review checklist |
+| `SECURITY.md` | Repository security, authentication, authorization, least privilege, auditability, CIA, data minimization, incident response |
+| `SECURITY-ASSURANCE.md` | Security requirement → control → evidence → residual-risk chain |
+| `THREAT-MODEL.md` | STRIDE + agentic threats, applied to `website/site` |
+| `IDENTITY.md` | Identity, authentication, authorization |
+| `NETWORKING.md` | Infrastructure / networking (Cloudflare) |
+| `DATA.md` | Data platform, schema |
+| `COST.md` | Cost optimization |
+| `QUALITY.md` | Testing |
+| `PERFORMANCE.md` | Performance |
+| `SRE.md` | SLI/SLO/error budget, observability and recovery |
+| `CI-CD.md` | Continuous integration and delivery pipeline |
+| `DELIVERY.md` | Software delivery metrics (DORA) |
+| `DEPLOYMENT.md` | Deployment and production approval |
+| `DEVELOPER-EXPERIENCE.md` | Local setup, scripts, code ownership |
+| `AI.md` | AI systems inside the product (not the AI building the product — see `00_START_HERE/AI_OPERATING_RULES.md` for that) |
 
-Vero-specific facts (current stack, endpoints, limits, known gaps) are recorded next to the generic rule in the same folder, in a file named `VERO-*.md`. The generic rule stays unchanged.
+Vero-specific facts (current stack, endpoints, limits, known gaps) are recorded inline in each file's "Applied in this repo" section rather than in a separate `VERO-*.md`, since Wolf's flat layout has no subfolder to hold a paired file in.
 
-**Source-of-truth rule:** the framework files here define the standard. Vero files describe how this repo meets it. If they disagree, open an entry in `08_DECISIONS/ENGINEERING/`. Do not silently edit the standard.
+**Source-of-truth rule:** the framework text in each file defines the standard. The "Applied in this repo" sections describe how this repo meets it. If they disagree, open an entry in `08_DECISIONS/ENGINEERING/`. Do not silently edit the standard.

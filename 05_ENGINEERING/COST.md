@@ -1,7 +1,7 @@
-# Cost optimization
+# Cost
 
-> Status: Review · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-21
-> Source: The Framework. (imported unchanged apart from this header)
+> Status: Review · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-28
+> Source: The Framework. (imported unchanged apart from this header); renamed from `COST/COST-OPTIMIZATION.md` to `COST.md` when this repo adopted the Wolf v3 layout, content unchanged
 > Split from `ENGINEERING.md`: section 14. Section numbers are unchanged so old references still resolve.
 
 ## 14. Cost optimization

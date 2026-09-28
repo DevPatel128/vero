@@ -1,7 +1,7 @@
-# Infrastructure: Cloudflare
+# Networking (Cloudflare / infrastructure)
 
-> Status: Review · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-21
-> Source: The Framework. (imported unchanged apart from this header)
+> Status: Review · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-28
+> Source: The Framework. (imported unchanged apart from this header); renamed from `INFRASTRUCTURE/CLOUDFLARE.md` to `NETWORKING.md` when this repo adopted the Wolf v3 layout, content unchanged
 > Split from `ENGINEERING.md`: section 4. Section numbers are unchanged so old references still resolve.
 
 ## 4. Cloudflare

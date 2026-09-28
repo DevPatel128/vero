@@ -1,11 +1,12 @@
-# Vero: DPDP Act 2023 compliance status
+# Legal / Compliance: DPDP Act 2023 status
 
-> Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-23
+> Status: Draft · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-28
 > Sources: Documents/15; website/site/src/app/legal/* (verified against live code, 2026-09-22); 03_RESEARCH/RESEARCH.md R-008
+> Moved from `05_ENGINEERING/SECURITY/VERO-COMPLIANCE-DPDP.md` to `07_BUSINESS/LEGAL-COMPLIANCE.md` when this repo adopted the Wolf v3 layout (Wolf places compliance under BUSINESS, not ENGINEERING), content unchanged
 
 ## Rule
 
-This file records what the repo says about DPDP compliance and what is actually implemented. It does not constitute legal advice or a compliance sign-off — DPDP Act 2023 interpretation needs human/legal review, per `05_ENGINEERING/AI/AI_OPERATING_RULES.md` ("the AI is not the final authority for ... legal approval").
+This file records what the repo says about DPDP compliance and what is actually implemented. It does not constitute legal advice or a compliance sign-off — DPDP Act 2023 interpretation needs human/legal review, per `00_START_HERE/AI_OPERATING_RULES.md` ("the AI is not the final authority for ... legal approval").
 
 ## What the DPDP Act requires (as described in this repo's own sources, not independently re-verified against the statute's text)
 
