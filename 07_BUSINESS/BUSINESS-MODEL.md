@@ -1,7 +1,7 @@
 # Business Model
 
 > Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-23
-> Sources: Documents/8, 14; 09_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §25; website/site pricing page
+> Sources: Documents/8, 14; 10_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §25; website/site pricing page
 
 ## Core principle
 

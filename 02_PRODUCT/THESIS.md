@@ -1,7 +1,7 @@
 # Thesis
 
 > Status: Draft · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-23
-> Sources: Documents/1, 2, 7, 9, 14; 09_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §4; 03_RESEARCH/RESEARCH.md
+> Sources: Documents/1, 2, 7, 9, 14; 10_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §4; 03_RESEARCH/RESEARCH.md
 
 ## Core belief
 

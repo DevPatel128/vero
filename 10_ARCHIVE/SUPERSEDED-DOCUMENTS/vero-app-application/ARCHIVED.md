@@ -11,4 +11,4 @@ Rules:
 - Do not treat anything here as current truth or an approved decision.
 - `CLAUDE.archived.md` and `AGENTS.archived.md` are the old agent contracts. They are renamed so agents do not load them.
 - `package.json`, `package-lock.json`, `eslint.config.mjs` and `.gitignore` carry an `.archived` suffix so dependency tooling ignores this folder.
-- To revive it: move it out of `09_ARCHIVE/`, drop the `.archived` suffixes, and open a proposal in `08_DECISIONS/` first. It uses `@node-rs/argon2` and `jose` directly; the older `@rie/crypto` rule conflicts with that (see `08_DECISIONS/ENGINEERING/`).
+- To revive it: move it out of `10_ARCHIVE/`, drop the `.archived` suffixes, and open a proposal in `08_DECISIONS/` first. It uses `@node-rs/argon2` and `jose` directly; the older `@rie/crypto` rule conflicts with that (see `08_DECISIONS/ENGINEERING/`).

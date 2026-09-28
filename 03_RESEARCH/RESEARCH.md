@@ -34,7 +34,7 @@ Claim label key: `FACT` (verifiable, sourced), `EVIDENCE` (supports a claim, not
 | R-011 | Phase 1 target: 3,000 workers, 600 businesses, 1,000+ signed records by month 6 | `Documents/13`, `Documents/14` | Internal projection | 2026-05 | Planning target, not a measurement | N/A — `PROJECTION` | Conflicts with `Documents/6`'s 200+ records / 50+ businesses target for the same phase — see contradiction item 2 |
 | R-012 | SOM: 30,000+ workers, 5,000+ businesses, ₹50-100 Cr annual escrow volume in 24 months | `Documents/14` | Internal projection | 2026-05 | Planning target | N/A — `PROJECTION` | None internal, but downstream of unverified R-001 to R-004 |
 | R-013 | Waitlist and marketing site are live in production | `website/site` (this repo, Vercel deployment) | Primary (direct observation) | 2026-09 | Confirmed via Vercel connector and live HTTP checks during this PR's audit | High — `FACT` | None |
-| R-014 | The product application (auth, bookings, escrow, dispute flows) is not deployed | This repo (`09_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/`) | Primary (direct observation) | 2026-09 | Confirmed: no git history before this PR, not referenced by any deployment config, explicitly archived in this PR | High — `FACT` | None |
+| R-014 | The product application (auth, bookings, escrow, dispute flows) is not deployed | This repo (`10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/`) | Primary (direct observation) | 2026-09 | Confirmed: no git history before this PR, not referenced by any deployment config, explicitly archived in this PR | High — `FACT` | None |
 
 ## Required research areas
 
@@ -69,7 +69,7 @@ Status as of 2026-09-23:
 
 ### What we know
 
-The marketing site and waitlist are real, live, and technically sound apart from the operational gaps fixed elsewhere in this PR (see `05_ENGINEERING/CI-CD/`, `06_OPERATIONS/`). The product mechanism (dual-signature records, escrow, tiered dispute resolution) is coherently specified. The core application is not built in production.
+The marketing site and waitlist are real, live, and technically sound apart from the operational gaps fixed elsewhere in this PR (see `05_ENGINEERING/`, `06_OPERATIONS/`). The product mechanism (dual-signature records, escrow, tiered dispute resolution) is coherently specified. The core application is not built in production.
 
 ### What we believe
 

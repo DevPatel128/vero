@@ -10,7 +10,7 @@ Keep `website/site` deployed on Vercel with Upstash Redis as the waitlist store.
 
 **Why should we make this change?**
 
-`05_ENGINEERING/INFRASTRUCTURE/CLOUDFLARE.md` and `05_ENGINEERING/DATA/SUPABASE-AND-DATA.md` (carried over unedited from `The Framework.`) name Cloudflare and Supabase as the default infrastructure and data platform. The site as built, deployed, and working today uses Vercel and Upstash. `01_PRINCIPLES/PRINCIPLES.md` rule 21 says to prefer the lowest-cost solution that meets requirements; `05_ENGINEERING/FOUNDATION` repeats the same rule for architecture.
+`05_ENGINEERING/NETWORKING.md` and `05_ENGINEERING/DATA.md` (carried over unedited from `The Framework.`) name Cloudflare and Supabase as the default infrastructure and data platform. The site as built, deployed, and working today uses Vercel and Upstash. `01_PRINCIPLES/PRINCIPLES.md` rule 21 says to prefer the lowest-cost solution that meets requirements; `05_ENGINEERING` repeats the same rule for architecture.
 
 **Impact**
 
@@ -46,7 +46,7 @@ The framework's infrastructure sections are written as defaults for a new build,
 
 **Consequences**
 
-`05_ENGINEERING/INFRASTRUCTURE/CLOUDFLARE.md` and `05_ENGINEERING/DATA/SUPABASE-AND-DATA.md` stay as-is (they are generic rules, not Vero-specific facts) but should not be read as describing what `website/site` runs on; this decision is the authoritative note on that.
+`05_ENGINEERING/NETWORKING.md` and `05_ENGINEERING/DATA.md` stay as-is (they are generic rules, not Vero-specific facts) but should not be read as describing what `website/site` runs on; this decision is the authoritative note on that.
 
 **Revisit condition**
 

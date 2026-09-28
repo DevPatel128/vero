@@ -42,7 +42,7 @@ Trivial: removing genuinely dead code with a documented privacy claim it already
 
 **Reason**
 
-Per `05_ENGINEERING/FOUNDATION/ENGINEERING-FOUNDATION.md`'s "smallest practical architecture" principle and `01_PRINCIPLES/PRINCIPLES.md` rule 3 ("simplicity is a product requirement"), unused code that looks active is a liability, not a neutral placeholder.
+Per `05_ENGINEERING/ENGINEERING.md`'s "smallest practical architecture" principle and `01_PRINCIPLES/PRINCIPLES.md` rule 3 ("simplicity is a product requirement"), unused code that looks active is a liability, not a neutral placeholder.
 
 **Consequences**
 

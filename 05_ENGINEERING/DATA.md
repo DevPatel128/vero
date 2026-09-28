@@ -49,11 +49,11 @@ Do not optimize database design for hypothetical scale before actual requirement
 # Vero: planned data schema
 
 > Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-23
-> Sources: 09_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/migrations/001_initial_schema.sql; 09_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §20
+> Sources: 10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/migrations/001_initial_schema.sql; 10_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §20
 
 ## Status: planned, not deployed
 
-Nothing in this file is live. The production site (`website/site`) stores only waitlist entries in Upstash Redis — see `05_ENGINEERING/DATA/SUPABASE-AND-DATA.md` for the generic rule and `08_DECISIONS/ENGINEERING/2026-09-stay-on-vercel-upstash.md` for why Supabase is not in use today. This schema exists only in the archived, unreviewed `application/` prototype (`09_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/migrations/001_initial_schema.sql`).
+Nothing in this file is live. The production site (`website/site`) stores only waitlist entries in Upstash Redis — see `05_ENGINEERING/DATA.md` for the generic rule and `08_DECISIONS/ENGINEERING/2026-09-stay-on-vercel-upstash.md` for why Supabase is not in use today. This schema exists only in the archived, unreviewed `application/` prototype (`10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/migrations/001_initial_schema.sql`).
 
 ## Tables (20, as implemented in the archived migration)
 
@@ -71,10 +71,10 @@ Nothing in this file is live. The production site (`website/site`) stores only w
 
 ## Compliance-relevant tables
 
-- `user_consents` — DPDP Act Article 5 consent tracking. See `05_ENGINEERING/SECURITY/VERO-COMPLIANCE-DPDP.md`.
+- `user_consents` — DPDP Act Article 5 consent tracking. See `07_BUSINESS/LEGAL-COMPLIANCE.md`.
 - `audit_logs` — permanent, 7-year-minimum retention per the compliance intent in `Documents/15`.
 - `refresh_tokens` — needed for session revocation; relevant to `08_DECISIONS/ENGINEERING/2026-09-crypto-rie-vs-direct-libs.md`'s open question about which crypto/session approach the app should use if revived.
 
 ## Rule
 
-Do not build against this schema without first resolving `08_DECISIONS/ENGINEERING/2026-09-crypto-rie-vs-direct-libs.md` and reviewing the archived app's security posture — it has never been reviewed against `05_ENGINEERING/SECURITY/SECURITY.md`.
+Do not build against this schema without first resolving `08_DECISIONS/ENGINEERING/2026-09-crypto-rie-vs-direct-libs.md` and reviewing the archived app's security posture — it has never been reviewed against `05_ENGINEERING/SECURITY.md`.

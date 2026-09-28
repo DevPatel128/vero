@@ -15,4 +15,4 @@ Security claims must point to verifiable evidence. Material residual risk requir
 
 ## Applied in this repo
 
-The verification/evidence step for this PR is `/security-review`'s findings, reported in the PR body per `05_ENGINEERING/AI/REVIEW_AGENT.md`'s pattern (kept at `00_START_HERE/REVIEW_AGENT.md` under Wolf). No independent OWASP ASVS or SAMM assessment has run against `website/site`; the threat model in `THREAT-MODEL.md` and this PR's fixes are the current assurance evidence. Any residual risk the review surfaces is either fixed before merge or explicitly accepted by Dev Patel in the PR — not silently shipped.
+The verification/evidence step for this PR is `/security-review`'s findings, reported in the PR body per `00_START_HERE/REVIEW_AGENT.md`'s pattern. No independent OWASP ASVS or SAMM assessment has run against `website/site`; the threat model in `THREAT-MODEL.md` and this PR's fixes are the current assurance evidence. Any residual risk the review surfaces is either fixed before merge or explicitly accepted by Dev Patel in the PR — not silently shipped.

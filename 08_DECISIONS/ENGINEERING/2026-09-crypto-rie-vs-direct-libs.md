@@ -6,7 +6,7 @@
 
 **Decision**
 
-No decision yet. This records a real conflict found during the audit so it is not lost, and scopes it: it affects only `09_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/` (archived, not deployed), not `website/site` (the live marketing site has no auth/crypto surface at all).
+No decision yet. This records a real conflict found during the audit so it is not lost, and scopes it: it affects only `10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/` (archived, not deployed), not `website/site` (the live marketing site has no auth/crypto surface at all).
 
 **Why should we make this change?**
 
@@ -18,7 +18,7 @@ None today: `application/` is archived and not deployed, and `website/site` has 
 
 **Evidence**
 
-`09_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework` §12; `09_ARCHIVE/SUPERSEDED-DOCUMENTS/2026-05-root-legacy/SECURITY_IMPLEMENTATION.md`; `09_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/CLAUDE.archived.md`; `09_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/src/lib/crypto/{password,tokens}.ts`.
+`10_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework` §12; `10_ARCHIVE/SUPERSEDED-DOCUMENTS/2026-05-root-legacy/SECURITY_IMPLEMENTATION.md`; `10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/CLAUDE.archived.md`; `10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/src/lib/crypto/{password,tokens}.ts`.
 
 **Alternatives**
 
@@ -26,7 +26,7 @@ None today: `application/` is archived and not deployed, and `website/site` has 
 
 **How**
 
-Not implemented. A human should pick (a), (b), or (c) before `application/` leaves `09_ARCHIVE/`.
+Not implemented. A human should pick (a), (b), or (c) before `application/` leaves `10_ARCHIVE/`.
 
 **Cost**
 
@@ -46,11 +46,11 @@ Not yet decided. Recorded here specifically so a future revival of `application/
 
 **Consequences**
 
-`09_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/ARCHIVED.md` already points here. Reviving that app should read this decision first.
+`10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/ARCHIVED.md` already points here. Reviving that app should read this decision first.
 
 **Revisit condition**
 
-Any decision to move `application/` (or a successor) out of `09_ARCHIVE/` and toward deployment.
+Any decision to move `application/` (or a successor) out of `10_ARCHIVE/` and toward deployment.
 
 **Approved by**
 

@@ -1,7 +1,7 @@
 # Accessibility
 
 > Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-23
-> Sources: Documents/11; website/site/src/app/globals.css (verified 2026-09-22); 05_ENGINEERING/SECURITY/SECURITY.md (CIA framing, not accessibility-specific)
+> Sources: Documents/11; website/site/src/app/globals.css (verified 2026-09-22); 05_ENGINEERING/SECURITY.md (CIA framing, not accessibility-specific)
 
 ## Standard
 
@@ -32,7 +32,7 @@ WCAG AA minimum across the product, AAA where practical on body content (`Docume
 
 ## Process gap
 
-No accessibility check exists in `05_ENGINEERING/CI-CD/DEPLOYMENT.md`'s CI pipeline as of this PR (typecheck, lint, Playwright, build, npm audit, gitleaks — no axe-core or Lighthouse CI step). Adding one is a reasonable follow-up, not done here since it needs its own pass to fix whatever it finds rather than just report it.
+No accessibility check exists in `05_ENGINEERING/DEPLOYMENT.md`'s CI pipeline as of this PR (typecheck, lint, Playwright, build, npm audit, gitleaks — no axe-core or Lighthouse CI step). Adding one is a reasonable follow-up, not done here since it needs its own pass to fix whatever it finds rather than just report it.
 
 ## Rule
 

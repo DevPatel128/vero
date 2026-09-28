@@ -1,7 +1,7 @@
 # Product Experience
 
 > Status: Draft · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-23
-> Sources: Documents/4, 9; 09_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §§7, 16; 04_DESIGN/ (design system, canonical for visual rules — not duplicated here)
+> Sources: Documents/4, 9; 10_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §§7, 16; 04_DESIGN/ (design system, canonical for visual rules — not duplicated here)
 
 ## Experience promise
 

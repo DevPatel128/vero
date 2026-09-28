@@ -5,7 +5,7 @@
 
 ## Scope
 
-This covers `website/site`, the only production system today. There is no other deployed system to plan around (`application/` is archived, unbuilt — see `09_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/ARCHIVED.md`).
+This covers `website/site`, the only production system today. There is no other deployed system to plan around (`application/` is archived, unbuilt — see `10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/ARCHIVED.md`).
 
 ## Failure scenarios and current readiness
 
@@ -19,7 +19,7 @@ This covers `website/site`, the only production system today. There is no other 
 
 ## Principle
 
-Per `05_ENGINEERING/FOUNDATION/ENGINEERING-FOUNDATION.md`'s "lowest justified cost" rule: this repo does not need enterprise-grade disaster recovery for a pre-launch waitlist site. It needs the store to be reliably backed up (not yet true) and someone to notice when it breaks (now true, via `/api/health`). Scale the plan up only when there is real user data and revenue at stake — Phase 1 launch is the natural trigger to revisit this file.
+Per `05_ENGINEERING/ENGINEERING.md`'s "lowest justified cost" rule: this repo does not need enterprise-grade disaster recovery for a pre-launch waitlist site. It needs the store to be reliably backed up (not yet true) and someone to notice when it breaks (now true, via `/api/health`). Scale the plan up only when there is real user data and revenue at stake — Phase 1 launch is the natural trigger to revisit this file.
 
 ## Revisit condition
 

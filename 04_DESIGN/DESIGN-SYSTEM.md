@@ -1,7 +1,7 @@
 # Design System
 
 > Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-23
-> Sources: Documents/11; 09_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §6; website/site/src/app/globals.css, website/site/tailwind.config.ts (verified against the implementation, 2026-09-22)
+> Sources: Documents/11; 10_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §6; website/site/src/app/globals.css, website/site/tailwind.config.ts (verified against the implementation, 2026-09-22)
 
 ## Visual goals
 
@@ -75,7 +75,7 @@ This file describes the token *values* as implemented. `01_PRINCIPLES/PRINCIPLES
 # Responsive
 
 > Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-23
-> Sources: 09_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §§7, 18; website/site/tailwind.config.ts (verified 2026-09-22)
+> Sources: 10_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §§7, 18; website/site/tailwind.config.ts (verified 2026-09-22)
 
 ## Principle
 
@@ -99,4 +99,4 @@ No formal, measured performance budget exists in this repo as of 2026-09-23. `Do
 
 ## Known gap
 
-No Lighthouse CI or bundle-size budget check exists in `05_ENGINEERING/CI-CD/DEPLOYMENT.md`'s pipeline as of this PR. A baseline measurement should be taken before setting an enforced budget, per `05_ENGINEERING/PERFORMANCE/PERFORMANCE.md`'s "measure before optimizing" rule.
+No Lighthouse CI or bundle-size budget check exists in `05_ENGINEERING/DEPLOYMENT.md`'s pipeline as of this PR. A baseline measurement should be taken before setting an enforced budget, per `05_ENGINEERING/PERFORMANCE.md`'s "measure before optimizing" rule.

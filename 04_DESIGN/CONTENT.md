@@ -1,7 +1,7 @@
 # Content and Voice
 
 > Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-23
-> Sources: Documents/11; 09_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §§5, 8; website/CLAUDE.md (copy contract for website/, kept in place — see 00_START_HERE/README.md)
+> Sources: Documents/11; 10_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §§5, 8; website/CLAUDE.md (copy contract for website/, kept in place — see 00_START_HERE/README.md)
 
 ## Brand attributes
 
@@ -55,7 +55,7 @@ Before publishing any line: is it clear? Is it useful? Is it credible? Does it f
 
 ## Claim discipline
 
-Every product claim must map to something actually built or explicitly roadmapped (see `02_PRODUCT/PRODUCT.md`'s "Product lifecycle"), and every legal-sensitive claim (data, payments, employment, health, DPDP compliance) needs a source or explicit human/legal review before publishing — see `05_ENGINEERING/SECURITY/VERO-COMPLIANCE-DPDP.md` and the open SLA contradiction in `08_DECISIONS/PRODUCT/2026-09-open-contradictions.md`. Never invent a value, date, or statistic; write `UNKNOWN` or `TBD` and flag it rather than fabricate one (`01_PRINCIPLES/PRINCIPLES.md` rule 6).
+Every product claim must map to something actually built or explicitly roadmapped (see `02_PRODUCT/PRODUCT.md`'s "Product lifecycle"), and every legal-sensitive claim (data, payments, employment, health, DPDP compliance) needs a source or explicit human/legal review before publishing — see `07_BUSINESS/LEGAL-COMPLIANCE.md` and the open SLA contradiction in `08_DECISIONS/PRODUCT/2026-09-open-contradictions.md`. Never invent a value, date, or statistic; write `UNKNOWN` or `TBD` and flag it rather than fabricate one (`01_PRINCIPLES/PRINCIPLES.md` rule 6).
 
 ## Relationship to website/CLAUDE.md
 

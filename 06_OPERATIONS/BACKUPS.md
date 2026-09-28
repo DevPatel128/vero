@@ -13,7 +13,7 @@ Git, hosted on GitHub (`DevPatel128/vero`, private). Every commit is a recoverab
 
 ## Documentation
 
-This documentation system lives in git alongside the code — the same backup guarantee applies. `09_ARCHIVE/` preserves superseded material rather than deleting it, per `00_START_HERE/Documentation_Organization_System.md`.
+This documentation system lives in git alongside the code — the same backup guarantee applies. `10_ARCHIVE/` preserves superseded material rather than deleting it, per `00_START_HERE/Documentation_Organization_System.md`.
 
 ## Gaps
 

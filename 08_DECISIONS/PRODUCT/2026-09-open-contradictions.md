@@ -5,7 +5,7 @@
 
 **Status:** Proposed for each item below (not resolved; recorded so they are visible and not silently picked one way by whichever document is read next)
 
-This is one file covering several small, independent contradictions surfaced while filling `02_PRODUCT`, `04_DESIGN`, and `07_BUSINESS` from the old source documents. Each needs a human call, not an AI-picked default, per `05_ENGINEERING/AI/AI_OPERATING_RULES.md` ("the AI is not the final authority for product strategy").
+This is one file covering several small, independent contradictions surfaced while filling `02_PRODUCT`, `04_DESIGN`, and `07_BUSINESS` from the old source documents. Each needs a human call, not an AI-picked default, per `00_START_HERE/AI_OPERATING_RULES.md` ("the AI is not the final authority for product strategy").
 
 ---
 
@@ -41,7 +41,7 @@ This is one file covering several small, independent contradictions surfaced whi
 
 **Why it matters:** this is a compliance commitment under DPDP Act 2023, not just marketing copy — the live site's stated number is what the company is actually bound to today.
 
-**Options:** this needs legal review, not an AI default. Flagging for `05_ENGINEERING/SECURITY/VERO-COMPLIANCE-DPDP.md` and human/legal sign-off before any of these pages are edited.
+**Options:** this needs legal review, not an AI default. Flagging for `07_BUSINESS/LEGAL-COMPLIANCE.md` and human/legal sign-off before any of these pages are edited.
 
 ## 5. "For workers" vs. "For professionals"
 
@@ -53,7 +53,7 @@ This is one file covering several small, independent contradictions surfaced whi
 
 ## 6. Verified-student-identity framing (`Context/`)
 
-**Conflict:** `09_ARCHIVE/SUPERSEDED-DOCUMENTS/Context-student-identity-framing/` frames Vero's Phase 1 as "Verified Student Identity" and an AI-powered employability network — at odds with the worker/business, dual-signature, escrow marketplace described everywhere else, and with `website/CLAUDE.md`'s explicit ban on the phrase "AI-powered."
+**Conflict:** `10_ARCHIVE/SUPERSEDED-DOCUMENTS/Context-student-identity-framing/` frames Vero's Phase 1 as "Verified Student Identity" and an AI-powered employability network — at odds with the worker/business, dual-signature, escrow marketplace described everywhere else, and with `website/CLAUDE.md`'s explicit ban on the phrase "AI-powered."
 
 **Decision:** treated as superseded, not current, and archived rather than merged into `02_PRODUCT/PRODUCT.md`. Recorded here in case this framing reflects a real, more recent pivot rather than an abandoned draft — if so, this archiving should be reversed and the current `02_PRODUCT/PRODUCT.md` revised instead.
 

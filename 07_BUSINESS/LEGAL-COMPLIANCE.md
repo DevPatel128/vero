@@ -24,7 +24,7 @@ Per `Documents/15. VERO Privacy and Compliance Summary.md`: consent before proce
 
 - `website/site/src/app/legal/grievance` and `website/shared/CLAUDE.md` state a **15-day** grievance-response SLA.
 - `Documents/15` states **30 days** for the same grievance-response commitment, and also states standard data-rights requests (access, correction, portability) get a response "within 30 days."
-- An untracked draft `/privacy` page found during this PR's audit (archived, never deployed — see `09_ARCHIVE/SUPERSEDED-DOCUMENTS/website-legal-pages-mobile-app/`) stated a 30-day grievance response and a separate 7-day rights-response window, differing from both of the above.
+- An untracked draft `/privacy` page found during this PR's audit (archived, never deployed — see `10_ARCHIVE/SUPERSEDED-DOCUMENTS/website-legal-pages-mobile-app/`) stated a 30-day grievance response and a separate 7-day rights-response window, differing from both of the above.
 
 This is a real compliance commitment, not marketing copy. It needs a human legal decision, then a single edit to whichever live page is wrong — not an AI-picked default.
 

@@ -1,7 +1,7 @@
 # Product
 
 > Status: Draft · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-23
-> Sources: Documents/1-9, Documents/13, 09_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §§2-3, 14, website/site (career-path and pricing pages)
+> Sources: Documents/1-9, Documents/13, 10_ARCHIVE/SUPERSEDED-DOCUMENTS/CLAUDE.md.pre-framework §§2-3, 14, website/site (career-path and pricing pages)
 
 ## Identity
 
@@ -75,9 +75,9 @@ See `07_BUSINESS/METRICS.md` for the full metric set. North star: percentage of 
 
 ## Constraints
 
-- **Technical:** live site (`website/site`) runs on Next.js 16 / Vercel / Upstash Redis; the product application described in `Documents/10` (Supabase, Razorpay, Argon2id/JOSE) is prototyped but archived and not deployed (`09_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/`), so every capability above the waitlist is currently unbuilt in production.
+- **Technical:** live site (`website/site`) runs on Next.js 16 / Vercel / Upstash Redis; the product application described in `Documents/10` (Supabase, Razorpay, Argon2id/JOSE) is prototyped but archived and not deployed (`10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/`), so every capability above the waitlist is currently unbuilt in production.
 - **Financial:** workers free forever; monetization is business subscription plus 5% escrow fee (`07_BUSINESS/BUSINESS-MODEL.md`). No committed funding round documented (see `07_BUSINESS/INVESTOR.md`, funding ask marked `UNKNOWN`).
-- **Legal:** India DPDP Act 2023, Razorpay Payment Aggregator licensing for escrow. See `05_ENGINEERING/SECURITY/VERO-COMPLIANCE-DPDP.md`.
+- **Legal:** India DPDP Act 2023, Razorpay Payment Aggregator licensing for escrow. See `07_BUSINESS/LEGAL-COMPLIANCE.md`.
 - **Operational:** dispute mediation and identity verification require a human operations function; not yet staffed (see `07_BUSINESS/INVESTOR.md` hiring priorities).
 - **Time:** no committed launch date. `website/site` shows conflicting dates in different places (flagged in `08_DECISIONS/PRODUCT/2026-09-open-contradictions.md`).
 

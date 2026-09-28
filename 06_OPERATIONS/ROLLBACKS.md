@@ -1,7 +1,7 @@
 # Rollbacks
 
 > Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-23
-> Sources: Vercel MCP connector (project `vero`, verified 2026-09-21); 05_ENGINEERING/CI-CD/DEPLOYMENT.md
+> Sources: Vercel MCP connector (project `vero`, verified 2026-09-21); 05_ENGINEERING/DEPLOYMENT.md
 
 ## How production deploys
 
