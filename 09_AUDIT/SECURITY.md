@@ -34,3 +34,21 @@ Checked and explicitly ruled out:
 - `/waitlist/[token]` page: 144-bit random token, not brute-forceable; correctly `noindex`; GET-only, no CSRF surface.
 
 This satisfies the plan's step 15 requirement. See the PR body for the same summary.
+
+## Local verification (CI unavailable)
+
+GitHub Actions could not run on PR #15 — "recent account payments have failed or your spending limit needs to be increased" (a GitHub billing issue, unrelated to this PR's content). Every check CI would have run was reproduced locally on a clean install (`rm -rf node_modules .next && npm ci`), against this branch's actual `HEAD`:
+
+| Check | CI job it stands in for | Result |
+|---|---|---|
+| `npm ci` (clean install) | — | 0 vulnerabilities reported during install |
+| `npm run typecheck` | Typecheck, lint, test, build | Clean |
+| `npm run lint` | Typecheck, lint, test, build | Clean |
+| `npm test` (Playwright, 27 tests) | Typecheck, lint, test, build | 27/27 passed |
+| `npm run build` | Typecheck, lint, test, build | Succeeded, route table unchanged |
+| `npm audit --omit=dev` | npm audit (production dependencies) | 0 vulnerabilities |
+| `gitleaks git --log-opts="HEAD"` (v8.21.2, downloaded directly from the gitleaks GitHub releases, not from an unverified source) | Secret scan | 0 leaks — see below |
+
+**Secret scan detail:** a full-history scan restricted to this branch's actual ancestry (47 commits reachable from `HEAD`, matching what a PR checkout with `fetch-depth: 0` would see — verified this excludes commits from unrelated sibling branches, which a broader unscoped local scan incorrectly included at first) found 4 findings, all pre-existing in `main`'s history from commits `e6948c9` and `90748e6` (2026-05-20/21, months before this PR), in files removed from the tree entirely in a later `main` commit (`7365eb7`, "remove non-website products"). Each was manually inspected and confirmed to be a placeholder, not a real secret: an `.env.example` containing the literal string `"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----"`, an `ENCRYPTION_KEY=0123456789abcdef...` sequential-hex example value, and a SwiftUI `Label`'s descriptive text ("Password: PBKDF2-SHA512 (210k iter)") that gitleaks' generic-api-key rule false-positived on. These are recorded by exact fingerprint in `.gitleaksignore` (added this branch) so the CI job can actually pass once GitHub Actions billing is restored, instead of being permanently red on pre-existing false positives unrelated to any PR's content. With that file in place, the scan is clean: 0 leaks.
+
+**Not verified locally** (both require a live preview deploy, not just a local build): the waitlist join flow against a real Upstash instance, and `/api/health`'s 200/503 behavior. Both are already listed as pending in the PR's test plan, blocked on human action #1 (restore Upstash credentials).
