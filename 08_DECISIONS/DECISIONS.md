@@ -1,6 +1,6 @@
 # Decisions
 
-> Status: Review · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-21
+> Status: Review · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-28
 > Source: The Framework. (imported unchanged apart from this header)
 
 A permanent record of important product and engineering decisions.
@@ -14,8 +14,9 @@ A permanent record of important product and engineering decisions.
 | 2026-09-22 | [Remove Sentry and PostHog from website/site](ENGINEERING/2026-09-remove-sentry-posthog.md) | Engineering | Proposed |
 | 2026-09-22 | [@rie/crypto vs. direct libraries — unresolved, scoped to the archived app](ENGINEERING/2026-09-crypto-rie-vs-direct-libs.md) | Engineering | Proposed |
 | 2026-09-22 | [Open contradictions found while adopting the framework](PRODUCT/2026-09-open-contradictions.md) | Product | Proposed |
+| 2026-09-28 | [Adopt the Wolf v3 framework, replacing v2](ENGINEERING/2026-09-adopt-wolf-framework.md) | Engineering | Proposed |
 
-New entries use the template below and add a row here. Never delete a row; move it to `09_ARCHIVE/OLD-DECISIONS/` and note the supersession if a decision is later reversed.
+New entries use the template below and add a row here. Never delete a row; move it to `10_ARCHIVE/OLD-DECISIONS/` and note the supersession if a decision is later reversed.
 
 ## Template
 
