@@ -5,7 +5,6 @@ import { site } from "@/lib/site";
 import { clientIp, investorEmailLimiter, investorIpLimiter, withinLimit } from "@/lib/ratelimit";
 import { isSameOrigin } from "@/lib/same-origin";
 
-export const runtime = "edge";
 
 const schema = z.object({
   name: z.string().trim().min(2).max(120),

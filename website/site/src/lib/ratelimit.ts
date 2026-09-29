@@ -1,52 +1,47 @@
-import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
+import { getDb } from "@/lib/cloudflare";
 
-const hasUpstash = Boolean(
-  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN,
-);
+export type Limiter = { prefix: string; requests: number; windowSeconds: number };
 
 /**
- * Rate limiting is backed by the same Upstash Redis as the waitlist store.
- * With no Redis configured (local dev without Upstash env vars) this
- * returns null and callers must fail open: never let a broken or absent
- * limiter block a legitimate request.
+ * Fixed-window counters in Cloudflare D1. With no D1 binding (local dev and
+ * tests) limiting is skipped. It also fails open on any error: a broken
+ * limiter must never block a legitimate request.
  */
-function makeLimiter(prefix: string, requests: number, window: `${number} ${"s" | "m" | "h"}`) {
-  if (!hasUpstash) return null;
-  return new Ratelimit({
-    redis: Redis.fromEnv(),
-    limiter: Ratelimit.slidingWindow(requests, window),
-    prefix: `rl:${prefix}`,
-    analytics: false,
-  });
-}
+export const joinLimiter: Limiter = { prefix: "join", requests: 5, windowSeconds: 10 * 60 };
+export const investorIpLimiter: Limiter = { prefix: "investor-ip", requests: 3, windowSeconds: 60 * 60 };
+export const investorEmailLimiter: Limiter = { prefix: "investor-email", requests: 2, windowSeconds: 24 * 60 * 60 };
 
-export const joinLimiter = makeLimiter("join", 5, "10 m");
-export const investorIpLimiter = makeLimiter("investor-ip", 3, "60 m");
-export const investorEmailLimiter = makeLimiter("investor-email", 2, "24 h");
-
-/**
- * Returns true if the request may proceed. Fails open (returns true) when
- * no limiter is configured, or when the limiter itself errors, so an
- * Upstash outage degrades to "no rate limiting" rather than blocking every
- * legitimate signup; the error is logged either way.
- */
-export async function withinLimit(
-  limiter: Ratelimit | null,
-  identifier: string,
-): Promise<boolean> {
-  if (!limiter) return true;
+/** Returns true if the request may proceed. */
+export async function withinLimit(limiter: Limiter, identifier: string): Promise<boolean> {
+  const db = getDb();
+  if (!db) return true;
   try {
-    const { success } = await limiter.limit(identifier);
-    return success;
+    const now = Math.floor(Date.now() / 1000);
+    const windowStart = now - (now % limiter.windowSeconds);
+    const row = await db
+      .prepare(
+        `INSERT INTO rate_limits (key, window_start, count) VALUES (?, ?, 1)
+         ON CONFLICT(key, window_start) DO UPDATE SET count = count + 1
+         RETURNING count`,
+      )
+      .bind(`${limiter.prefix}:${identifier}`, windowStart)
+      .first<{ count: number }>();
+
+    // Occasional cleanup of expired windows keeps the table small.
+    if (Math.random() < 0.01) {
+      await db.prepare("DELETE FROM rate_limits WHERE window_start < ?").bind(now - 2 * 24 * 60 * 60).run();
+    }
+    return (row?.count ?? 1) <= limiter.requests;
   } catch (err) {
     console.error("ratelimit error", err);
     return true;
   }
 }
 
-/** Best-effort client IP from Vercel's forwarding headers. */
+/** Best-effort client IP. Cloudflare sets cf-connecting-ip. */
 export function clientIp(req: Request): string {
+  const cf = req.headers.get("cf-connecting-ip");
+  if (cf) return cf.trim();
   const fwd = req.headers.get("x-forwarded-for");
   if (fwd) return fwd.split(",")[0].trim();
   return req.headers.get("x-real-ip") || "unknown";

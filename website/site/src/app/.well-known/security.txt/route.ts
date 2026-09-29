@@ -1,6 +1,5 @@
 import { site } from "@/lib/site";
 
-export const runtime = "edge";
 
 export async function GET() {
   const oneYear = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)

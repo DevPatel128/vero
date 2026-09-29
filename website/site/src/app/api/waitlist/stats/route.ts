@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { waitlist } from "@/lib/waitlist";
 
-export const runtime = "nodejs";
 
 export async function GET() {
   try {

@@ -9,14 +9,9 @@ export const metadata: Metadata = {
 
 const processors = [
   {
-    name: "Vercel Inc.",
-    purpose: "Website hosting and delivery (serverless functions run in the Mumbai region).",
-    data: "Request metadata such as IP address and user agent, and any data submitted through site forms in transit.",
-  },
-  {
-    name: "Upstash, Inc.",
-    purpose: "Managed Redis database that stores waitlist entries and rate-limit counters.",
-    data: "Waitlist sign-ups: email address, name, role, city, optional free-text note, and referral information.",
+    name: "Cloudflare, Inc.",
+    purpose: "Website hosting and delivery (Workers), and the D1 database that stores waitlist entries and rate-limit counters.",
+    data: "Request metadata such as IP address and user agent, and waitlist sign-ups: email address, name, role, city, optional free-text note, and referral information.",
   },
   {
     name: "Resend, Inc.",

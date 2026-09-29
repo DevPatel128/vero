@@ -7,7 +7,7 @@
  * rejected too.
  *
  * Compares against the request's own Host header rather than a hard-coded
- * domain, so this works on every Vercel preview URL as well as production.
+ * domain, so this works on every preview URL as well as production.
  */
 export function isSameOrigin(req: Request): boolean {
   const host = req.headers.get("host");

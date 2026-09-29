@@ -1,5 +1,12 @@
 import type { NextConfig } from "next";
 import path from "path";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+// Local D1 bindings in `next dev` are opt-in (CF_DEV_BINDINGS=1). By default
+// dev and the Playwright suite use the JSON file store.
+if (process.env.CF_DEV_BINDINGS === "1") {
+  initOpenNextCloudflareForDev();
+}
 
 // Report-only: describes the policy this site should be able to run under,
 // but nothing is blocked yet. Reflects what the app actually loads today —
