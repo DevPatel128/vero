@@ -10,15 +10,15 @@
 ## What exists today
 
 - **`GET /api/health`** — checks the waitlist store is reachable. Returns `{ok: true}` (200) or `{ok: false}` (503). No user data. Added in this PR specifically because the incident in `06_OPERATIONS/INCIDENTS.md` went undetected for an unknown period with nothing checking it.
-- **Vercel's own platform logs and deployment status** — available via the dashboard or the Vercel MCP connector; not actively monitored by any alert as of this PR.
-- **Server-side `console.error`/`console.warn`** in the two API routes and the email helper — visible in Vercel's runtime logs, not aggregated or alerted on.
+- **Cloudflare Workers Observability (logs and traces, enabled in `wrangler.jsonc`)** — available in the Cloudflare dashboard; not actively monitored by any alert as of this PR.
+- **Server-side `console.error`/`console.warn`** in the two API routes and the email helper — visible in Workers logs, not aggregated or alerted on.
 
 ## What does not exist
 
 - No uptime monitor or alert on `/api/health`.
 - No error tracking (Sentry or equivalent).
 - No product analytics (PostHog or equivalent) — also consistent with `/legal/cookies`' current claim of no third-party analytics.
-- No log aggregation beyond raw Vercel output.
+- No log aggregation beyond Workers Observability.
 
 ## Logging discipline
 
@@ -26,4 +26,4 @@ Per this PR's reliability fixes: never log a user's email, a waitlist token, or 
 
 ## Recommended next step (not done in this PR)
 
-A free uptime check against `/api/health` (e.g. a scheduled Vercel Cron hitting it, or an external monitor) would close the gap that let the incident in `06_OPERATIONS/INCIDENTS.md` go unnoticed. Deferred here because it is a new piece of infrastructure needing its own decision in `08_DECISIONS/ENGINEERING/`, not a code fix.
+A free uptime check against `/api/health` (e.g. a Cloudflare Cron Trigger or Health Check hitting it, or an external monitor) would close the gap that let the incident in `06_OPERATIONS/INCIDENTS.md` go unnoticed. Deferred here because it is a new piece of infrastructure needing its own decision in `08_DECISIONS/ENGINEERING/`, not a code fix.

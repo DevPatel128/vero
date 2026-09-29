@@ -75,7 +75,7 @@ See `07_BUSINESS/METRICS.md` for the full metric set. North star: percentage of 
 
 ## Constraints
 
-- **Technical:** live site (`website/site`) runs on Next.js 16 / Vercel / Upstash Redis; the product application described in `Documents/10` (Supabase, Razorpay, Argon2id/JOSE) is prototyped but archived and not deployed (`10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/`), so every capability above the waitlist is currently unbuilt in production.
+- **Technical:** live site (`website/site`) runs on Next.js 16 / Cloudflare Workers / Cloudflare D1; the product application described in `Documents/10` (Supabase, Razorpay, Argon2id/JOSE) is prototyped but archived and not deployed (`10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/`), so every capability above the waitlist is currently unbuilt in production.
 - **Financial:** workers free forever; monetization is business subscription plus 5% escrow fee (`07_BUSINESS/BUSINESS-MODEL.md`). No committed funding round documented (see `07_BUSINESS/INVESTOR.md`, funding ask marked `UNKNOWN`).
 - **Legal:** India DPDP Act 2023, Razorpay Payment Aggregator licensing for escrow. See `07_BUSINESS/LEGAL-COMPLIANCE.md`.
 - **Operational:** dispute mediation and identity verification require a human operations function; not yet staffed (see `07_BUSINESS/INVESTOR.md` hiring priorities).

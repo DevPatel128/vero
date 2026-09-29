@@ -1,25 +1,21 @@
 # Rollbacks
 
 > Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-23
-> Sources: Vercel MCP connector (project `vero`, verified 2026-09-21); 05_ENGINEERING/DEPLOYMENT.md
+> Sources: Cloudflare Workers documentation (versions and rollbacks); 05_ENGINEERING/DEPLOYMENT.md
 
 ## How production deploys
 
-Vercel project `vero` is Git-connected to `DevPatel128/vero`. Every push to `main` deploys straight to production; every other branch or PR gets a preview deployment only. Root directory for the build is `website/site`.
+The Cloudflare Worker `vero` is connected to `DevPatel128/vero` through Workers Builds (root directory `website/site`). A push to `main` builds and deploys to production; other branches get preview builds only. Each deploy is a numbered Worker version.
 
 ## Rollback ladder, cheapest first
 
-1. **Vercel Instant Rollback.** One click in the Vercel dashboard (or via the Vercel API/MCP connector) to point production traffic at a previous, already-built deployment. No rebuild, near-instant. Use this first for anything caused by the most recent deploy.
-2. **`git revert` a single commit.** If the branch is structured as small, independently revertable commits (the convention this PR's own history follows), revert just the offending commit and push — CI runs, then a human approves the merge to `main` as usual.
-3. **Revert the merge commit.** Last resort, for when several commits together caused the problem and isolating one revert is not practical.
-
-## Known rollback candidates
-
-As of 2026-09-21, the Vercel deployment history flags two earlier production deployments as rollback candidates (deployments that can be instantly restored): the one before commit `b431071` (the Upstash migration) and the one before that. Check current candidates in the Vercel dashboard before relying on a specific one, since this list changes with every new production deploy.
+1. **Cloudflare version rollback.** `npx wrangler rollback` (from `website/site`), or Workers & Pages, Worker `vero`, Deployments, Rollback in the dashboard. Cloudflare keeps the 100 most recent versions, and the rollback becomes the active deployment immediately with no rebuild. Use this first for anything caused by the most recent deploy.
+2. **`git revert` a single commit.** If the branch is structured as small, independently revertable commits, revert just the offending commit and push. CI runs, then a human approves the merge to `main` as usual.
+3. **Revert the merge commit.** Last resort, for when several commits together caused the problem.
 
 ## What a rollback does not fix
 
-Rolling back the deployment does not fix external-state problems like the Upstash outage recorded in `06_OPERATIONS/INCIDENTS.md` — that requires fixing the Upstash database and Vercel's environment variables directly, regardless of which code revision is live.
+A rollback changes code only. Bindings and data are untouched: the D1 database `vero-waitlist` keeps its current contents, and Cloudflare refuses to roll back to a version whose bindings no longer exist. Problems caused by data or a deleted resource need a fix to that resource (for D1, see `06_OPERATIONS/BACKUPS.md`).
 
 ## Rule
 

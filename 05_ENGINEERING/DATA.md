@@ -53,7 +53,7 @@ Do not optimize database design for hypothetical scale before actual requirement
 
 ## Status: planned, not deployed
 
-Nothing in this file is live. The production site (`website/site`) stores only waitlist entries in Upstash Redis — see `05_ENGINEERING/DATA.md` for the generic rule and `08_DECISIONS/ENGINEERING/2026-09-stay-on-vercel-upstash.md` for why Supabase is not in use today. This schema exists only in the archived, unreviewed `application/` prototype (`10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/migrations/001_initial_schema.sql`).
+Nothing in this file is live. The production site (`website/site`) stores only waitlist entries in Cloudflare D1 — see `05_ENGINEERING/DATA.md` for the generic rule and `08_DECISIONS/ENGINEERING/2026-09-move-to-cloudflare.md` for why Supabase is not in use today. This schema exists only in the archived, unreviewed `application/` prototype (`10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/migrations/001_initial_schema.sql`).
 
 ## Tables (20, as implemented in the archived migration)
 

@@ -16,7 +16,7 @@ Launch is a controlled release, not merely a deployment.
 | Security | This PR's fixes close the known gaps for the current (waitlist-only) surface; Phase 1's payment/escrow surface is unreviewed because it doesn't exist yet |
 | Privacy/terms | Held — draft `/privacy`, `/terms`, `/delete` pages archived, not shipped, pending legal review (`08_DECISIONS/PRODUCT/2026-09-open-contradictions.md` item 4) |
 | Observability | `/api/health` exists; no alerting, no SLO (`05_ENGINEERING/SRE.md`) |
-| Rollback | Ready — Vercel Instant Rollback (`06_OPERATIONS/ROLLBACKS.md`) |
+| Rollback | Ready — Cloudflare Workers version rollback (`06_OPERATIONS/ROLLBACKS.md`) |
 | Payments | Razorpay integration is prototyped in the archived `application/`, not deployed |
 | GTM | `GTM.md` describes the plan; not executed |
 

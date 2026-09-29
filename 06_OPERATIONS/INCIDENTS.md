@@ -1,13 +1,13 @@
 # Incidents
 
 > Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-23
-> Sources: this PR's site audit (2026-09-21/22); Vercel runtime logs (via the Vercel MCP connector)
+> Sources: this PR's site audit (2026-09-21/22); Vercel runtime logs (via the Vercel MCP connector, historical)
 
 ## When something breaks
 
 1. Check `GET /api/health` on the live site — reports whether the waitlist store is reachable, with no user data in the response.
-2. Check Vercel deployment status and runtime logs for `website/site` (project `vero`).
-3. If the last deploy is the cause, use Vercel Instant Rollback — see `06_OPERATIONS/ROLLBACKS.md`.
+2. Check Worker `vero` logs (Cloudflare dashboard, Workers Observability) and `GET /api/health`.
+3. If the last deploy is the cause, roll back the Worker version — see `06_OPERATIONS/ROLLBACKS.md`.
 4. Record the incident below once resolved.
 
 ## Log
@@ -28,7 +28,9 @@
 
 **Not fixed by this PR (human action required):** the Upstash database itself needs to be restored or re-created, and `UPSTASH_REDIS_REST_URL`/`UPSTASH_REDIS_REST_TOKEN` need to be set correctly in Vercel for both Production and Preview environments. Until that happens, `/api/health` will correctly report the store as unreachable.
 
-**Status:** open, pending the human action above.
+**Resolution path (2026-09-29):** the owner's stack no longer includes Vercel or Upstash. The site moves to Cloudflare Workers with a D1 database (`08_DECISIONS/ENGINEERING/2026-09-move-to-cloudflare.md`), so the Upstash database is not being restored. The D1 database starts empty; waitlist data from the Upstash era is lost.
+
+**Status:** open until the Cloudflare deployment is live and `/api/health` returns 200 in production. Then close it with the date and the first real signup as evidence.
 
 ## Rule
 

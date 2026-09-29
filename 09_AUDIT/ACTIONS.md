@@ -19,3 +19,4 @@ High-level action log for this branch, in order. Each row is a group of related 
 | Restructure onto Wolf v3 per direct user instruction | In progress — structural moves and new-file content done; global path-reference fixes and root `CLAUDE.md` router update still pending | `git log` from `62a05cf` onward; this file will be updated once complete |
 | Re-run `/security-review` and a REVIEW_AGENT-style pass on the full branch diff | Pending | `09_AUDIT/REVIEWS.md` |
 | Open one PR against `main`, human merges | Pending | N/A until PR exists |
+| Migrate website/site from Vercel and Upstash to Cloudflare Workers and D1 (2026-09-29) | Code and docs done on `feat/cloudflare-migration`; D1 database `vero-waitlist` created and schema applied via the Cloudflare MCP; Worker not yet connected or deployed (owner action) | Typecheck, lint, 27 tests, OpenNext build, and a local Workers-runtime test of signup, duplicate, referral, stats, 403 and 429 |
