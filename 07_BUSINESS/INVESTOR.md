@@ -21,7 +21,7 @@ Every existing hiring-trust product (resume, gig-platform rating, portfolio) is 
 
 ## Product
 
-What exists today: a live marketing site and waitlist (`website/site`, deployed on Vercel). What is specified but not built: the core application (identity verification, job posting, escrow, dual-signature records, dispute resolution) — prototyped once, archived, and unreviewed (`10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/`). No user has completed a real transaction on VERO as of this writing.
+What exists today: a live marketing site and waitlist (`website/site`, deployed on Cloudflare Workers). What is specified but not built: the core application (identity verification, job posting, escrow, dual-signature records, dispute resolution) — prototyped once, archived, and unreviewed (`10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/`). No user has completed a real transaction on VERO as of this writing.
 
 ## Why now
 

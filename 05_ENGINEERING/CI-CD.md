@@ -13,6 +13,6 @@ Prefer short-lived credentials and immutable build artifacts where practical.
 
 ## Applied in this repo
 
-`.github/workflows/ci.yml` (added this PR, scoped to `website/site/**` changes): `npm ci` → typecheck → lint → Playwright install + test → `next build` → `npm audit --omit=dev` (non-blocking) → gitleaks. All actions are pinned by resolved commit SHA, `permissions: {}` by default (least privilege). `.github/dependabot.yml` groups weekly npm and GitHub Actions bumps. Preview environments and deployment verification are Vercel's (`05_ENGINEERING/DEPLOYMENT.md`), not GitHub Actions — Vercel builds every push to a non-`main` branch as an SSO-protected preview automatically; nothing in this repo's CI duplicates that.
+`.github/workflows/ci.yml` (added this PR, scoped to `website/site/**` changes): `npm ci` → typecheck → lint → Playwright install + test → `next build` → `npm audit --omit=dev` (non-blocking) → gitleaks. All actions are pinned by resolved commit SHA, `permissions: {}` by default (least privilege). `.github/dependabot.yml` groups weekly npm and GitHub Actions bumps. CI also compiles the Cloudflare Workers bundle (`npx opennextjs-cloudflare build`). Deployment is Cloudflare Workers Builds (`05_ENGINEERING/DEPLOYMENT.md`), not GitHub Actions, so no Cloudflare credential is stored in GitHub.
 
 Not yet true: CI is not marked as a required check on `main` (a human action listed in this PR — see the PR body); until then, CI failing does not block a merge.

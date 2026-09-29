@@ -3,7 +3,7 @@
 > Status: Draft · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-28
 > Source: adapted from Wolf v3's `00_START_HERE/README.md`; supersedes the v2 (`The Framework.`) version of this file
 
-VROE Labs builds proof-based products. **Vero** is verified proof-of-work identity and hiring infrastructure. It launches in Bengaluru. Its public site is `website/site` (Next.js on Vercel). This folder tree is the single documentation system for the repo, on the **Wolf v3** layout: 11 numbered areas, `00_START_HERE` through `10_ARCHIVE`. Every concept has one canonical home. Other documents link to it; they do not copy it.
+VROE Labs builds proof-based products. **Vero** is verified proof-of-work identity and hiring infrastructure. It launches in Bengaluru. Its public site is `website/site` (Next.js on Cloudflare Workers). This folder tree is the single documentation system for the repo, on the **Wolf v3** layout: 11 numbered areas, `00_START_HERE` through `10_ARCHIVE`. Every concept has one canonical home. Other documents link to it; they do not copy it.
 
 > I know what I need, so I know exactly where it lives.
 
@@ -79,7 +79,7 @@ Framework documents refer to each other by bare filename. Resolve them here.
 
 | Path | What | Note |
 |---|---|---|
-| `website/site/` | Live marketing site (Next.js 16, Tailwind 3). Deploys to Vercel. | **Do not move or rename.** The Vercel project builds this path. |
+| `website/site/` | Live marketing site (Next.js 16, Tailwind 3). Deploys to Cloudflare Workers. | **Do not move or rename.** The Cloudflare Workers build uses this path as its root directory. |
 | `website/CLAUDE.md`, `website/shared/`, `website/products/vero/` | Copy contracts for site content | Keep in place. |
 | `10_ARCHIVE/SUPERSEDED-DOCUMENTS/vero-app-application/` | Product-app prototype | Archived. Not deployed. |
 

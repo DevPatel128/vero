@@ -11,11 +11,11 @@ This covers `website/site`, the only production system today. There is no other 
 
 | Scenario | Current readiness |
 |---|---|
-| Bad deploy breaks the site | Ready — Vercel Instant Rollback, see `06_OPERATIONS/ROLLBACKS.md` |
-| Waitlist data store becomes unreachable | Detected via `/api/health`, added in this PR. Recovery depends on Upstash support/console access, which is outside this repo's control |
+| Bad deploy breaks the site | Ready — Cloudflare Workers version rollback, see `06_OPERATIONS/ROLLBACKS.md` |
+| Waitlist data store becomes unreachable | Detected via `/api/health`, added in this PR. Recovery depends on Cloudflare D1 (Time Travel restore, see `06_OPERATIONS/BACKUPS.md`) |
 | Waitlist data is lost outright | Not ready — no confirmed backup, see `06_OPERATIONS/BACKUPS.md` |
-| Vercel account/project itself is lost or locked | Not planned for — no documented secondary hosting path |
-| Domain (`vero.work`) becomes unreachable | Not applicable to the current deployment, which serves from a `*.vercel.app` domain; `vero.work` is referenced in code as the canonical URL but is not yet confirmed attached to this Vercel project (see `00_START_HERE/README.md`'s code map and this PR's open human-action items) |
+| Cloudflare account/Worker itself is lost or locked | Not planned for — no documented secondary hosting path |
+| Domain (`vero.work`) becomes unreachable | The site serves from a `*.workers.dev` URL until a custom domain is attached; `vero.work` is the canonical URL in code but is not confirmed attached to the Worker (owner action) |
 
 ## Principle
 

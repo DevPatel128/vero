@@ -1,6 +1,5 @@
 import { site } from "@/lib/site";
 
-export const runtime = "edge";
 
 export async function GET() {
   const body = `# ${site.name}

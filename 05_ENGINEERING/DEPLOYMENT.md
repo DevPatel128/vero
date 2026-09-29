@@ -40,3 +40,7 @@ Human approval is required for consequential changes involving:
 - legal/compliance risk
 - irreversible migrations
 - material cost increases
+
+## Applied in this repo
+
+`website/site` deploys to Cloudflare Workers through Workers Builds connected to `DevPatel128/vero` (root directory `website/site`, build `npm ci && npx opennextjs-cloudflare build`, deploy `npx wrangler deploy`). Runtime configuration is `website/site/wrangler.jsonc`. Production approval stays a human merge to `main`.

@@ -4,10 +4,13 @@ node_modules/
 .env
 *.log
 .DS_Store
-.vercel
 .turbo
 *.tsbuildinfo
 next-env.d.ts
 data/waitlist.json
 playwright-report/
 test-results/
+
+.open-next/
+.wrangler/
+.dev.vars

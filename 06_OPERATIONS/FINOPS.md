@@ -13,4 +13,4 @@ Do not reduce cost blindly; optimize reliability-adjusted value.
 
 ## Applied in this repo
 
-`website/site` runs on Vercel's and Upstash's free tiers today (`08_DECISIONS/ENGINEERING/2026-09-stay-on-vercel-upstash.md`: $0 new spend was part of that decision's justification). No paid usage exists yet, so there is no unit cost or cost-per-outcome to track — this becomes live scope at Phase 1 launch when there is real traffic and, per `06_OPERATIONS/BACKUPS.md`, a likely Upstash plan-tier decision to make (backups may require a paid tier). `05_ENGINEERING/COST.md` is the engineering-side cost-optimization rule this file's tracking would feed.
+`website/site` runs on Cloudflare Workers and D1 (`08_DECISIONS/ENGINEERING/2026-09-move-to-cloudflare.md`); the plan tier in use has not been recorded here. No paid usage exists yet, so there is no unit cost or cost-per-outcome to track — this becomes live scope at Phase 1 launch when there is real traffic and, per `06_OPERATIONS/BACKUPS.md`, a plan-tier decision to make for Workers and D1. `05_ENGINEERING/COST.md` is the engineering-side cost-optimization rule this file's tracking would feed.

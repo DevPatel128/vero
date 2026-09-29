@@ -1,8 +1,8 @@
 # Stay on Vercel and Upstash; defer Cloudflare and Supabase
 
-> Status: Proposed · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-22
+> Status: Proposed · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-29
 
-**Status:** Proposed
+**Status:** Superseded by `2026-09-move-to-cloudflare.md` (2026-09-29). Kept as history; do not read it as current.
 
 **Decision**
 

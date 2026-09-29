@@ -13,7 +13,7 @@ Only sources that actually appear in this repo's documents are listed. No extern
 | S-004 | Fiverr, Upwork, Urban Company commission rates as stated in `Documents/7`, `Documents/8`, `Documents/14` | Model inference (no citation given in source documents) | 2026-05 | `02_PRODUCT/THESIS.md`, `07_BUSINESS/BUSINESS-MODEL.md`, `07_BUSINESS/MARKET.md` |
 | S-005 | India gig-economy/TAM figures ($400B+ by 2030, 90M+ workers, 50M+ SMBs) as stated in `Documents/14` | Model inference (no citation given) | 2026-05 | `07_BUSINESS/MARKET.md`, `07_BUSINESS/INVESTOR.md` |
 | S-006 | `website/site` (this repo's live marketing site and its own code) | Primary (direct observation) | 2026-09-21/22 | All engineering and operations documents |
-| S-007 | Vercel deployment history and project configuration (via the Vercel MCP connector) | Primary (direct observation) | 2026-09-21 | `05_ENGINEERING/`, `06_OPERATIONS/`, `08_DECISIONS/ENGINEERING/2026-09-stay-on-vercel-upstash.md` |
+| S-007 | Vercel deployment history and project configuration (via the Vercel MCP connector; historical, Vercel is no longer used) | Primary (direct observation) | 2026-09-21 | `05_ENGINEERING/`, `06_OPERATIONS/`, `08_DECISIONS/ENGINEERING/2026-09-stay-on-vercel-upstash.md` |
 
 ## Rule
 

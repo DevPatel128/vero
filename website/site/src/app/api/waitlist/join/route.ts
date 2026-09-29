@@ -6,7 +6,6 @@ import { site } from "@/lib/site";
 import { clientIp, joinLimiter, withinLimit } from "@/lib/ratelimit";
 import { isSameOrigin } from "@/lib/same-origin";
 
-export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {

@@ -16,8 +16,8 @@ asset, attacker, entry point, impact, likelihood, control, detection, response, 
 | Asset | Attacker | Entry point | Impact | Control (this PR) | Residual risk |
 |---|---|---|---|---|---|
 | Waitlist email/token | Untrusted web client | `POST /api/waitlist/join` | Token leak / email enumeration on duplicate signup | Fixed: duplicate join no longer returns the token (`fix(security): stop returning the waitlist token on a duplicate join`) | None identified beyond standard web exposure |
-| Waitlist/investor endpoints | Untrusted web client, scripted abuse | Both public `POST` routes | Spam, resource abuse | Origin check + `@upstash/ratelimit` (fail-open) | Rate limiting is fail-open by design (availability over strict enforcement); accepted, not residual-unknown |
-| Waitlist signup count | Concurrent requests | `add()` in `upstash-store.ts` | Duplicate signup / miscounted referrals under race | Atomic `SET ... NX` | None identified |
+| Waitlist/investor endpoints | Untrusted web client, scripted abuse | Both public `POST` routes | Spam, resource abuse | Origin check + D1 fixed-window rate limits (fail-open) | Rate limiting is fail-open by design (availability over strict enforcement); accepted, not residual-unknown |
+| Waitlist signup count | Concurrent requests | `add()` in `d1-store.ts` | Duplicate signup / miscounted referrals under race | `UNIQUE(email)` with `INSERT ... ON CONFLICT DO NOTHING` | None identified |
 | Cross-site POST | Malicious third-party site | Both public `POST` routes | CSRF-equivalent forged submission | Origin==Host check (`same-origin.ts`) | None identified for a store with no session cookie |
 
 No AI agent runs inside the deployed application; the agentic-threat categories above (prompt injection, tool misuse, orchestration compromise) apply to the development-time AI assistant working on this repo, not to `website/site` at runtime, and are addressed by `00_START_HERE/AI_OPERATING_RULES.md` and `09_AUDIT/AI_GOVERNANCE.md` rather than by a runtime control in the product.

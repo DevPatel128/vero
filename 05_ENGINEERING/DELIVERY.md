@@ -12,4 +12,4 @@ Requirement → small change → review → automated checks → deploy → obse
 
 ## Applied in this repo
 
-No DORA metrics are currently measured — there was no CI before this PR, so nothing was instrumented (`05_ENGINEERING/CI-CD.md`). This PR is itself a delivery-system baseline: one branch, one PR, one human review gate, with `typecheck → lint → Playwright → build → npm audit → gitleaks` as the automated-checks step and Vercel Instant Rollback as the time-to-restore path (`06_OPERATIONS/ROLLBACKS.md`). Deployment frequency and change-failure rate have no history to report yet; revisit once `main` has a run of merges to measure.
+No DORA metrics are currently measured — there was no CI before this PR, so nothing was instrumented (`05_ENGINEERING/CI-CD.md`). This PR is itself a delivery-system baseline: one branch, one PR, one human review gate, with `typecheck → lint → Playwright → build → npm audit → gitleaks` as the automated-checks step and Cloudflare Workers version rollback as the time-to-restore path (`06_OPERATIONS/ROLLBACKS.md`). Deployment frequency and change-failure rate have no history to report yet; revisit once `main` has a run of merges to measure.

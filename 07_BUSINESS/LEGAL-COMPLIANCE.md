@@ -24,7 +24,7 @@ Three figures existed across sources (`/legal/grievance` and `website/shared/CLA
 
 ## Live claims corrected
 
-- `/legal/sub-processors` now names the vendors that actually process waitlist data (Vercel, Upstash, Resend). It previously said none were in use.
+- `/legal/sub-processors` now names the vendors that actually process waitlist data (now Cloudflare and Resend; it originally named Vercel and Upstash). It previously said none were in use.
 - `/security` no longer claims hardware-backed KMS, encryption-at-rest specifics, live identity verification, live payments or a live append-only audit log. It now says these are designed for the launch product and not live.
 
 ## What this means for now

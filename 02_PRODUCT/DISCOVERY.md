@@ -24,4 +24,4 @@ Not defined in the source. The assumptions listed in `PRODUCT.md` ("Assumptions"
 
 ## Next discovery step
 
-Per `02_PRODUCT/INTERVIEW.md`, run structured interviews with waitlist signups once the Upstash store is restored and has real data (`06_OPERATIONS/INCIDENTS.md`) — not done in this PR.
+Per `02_PRODUCT/INTERVIEW.md`, run structured interviews with waitlist signups once the Cloudflare D1 waitlist store is live and has real data (`06_OPERATIONS/INCIDENTS.md`) — not done in this PR.
