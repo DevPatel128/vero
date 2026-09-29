@@ -18,23 +18,15 @@ Per `Documents/15. VERO Privacy and Compliance Summary.md`: consent before proce
 - The waitlist join form has a consent checkbox (`WaitlistForm.tsx`, `name="consent"`, required) linking to `/legal/privacy` — this is the one piece of DPDP-relevant UI that is actually live.
 - This PR's security fixes (rate limiting, atomic writes, no PII in the URL query string, reduced PII in server logs — see the `fix(security)` and `fix(reliability)` commits in this PR's history) reduce the waitlist's own data-handling risk, independent of the broader DPDP program.
 
-## Known contradiction — grievance and rights-response SLAs
+## Grievance and rights-response SLAs — resolved to the live site
 
-**CONFLICT**, not resolved here (also recorded in `08_DECISIONS/PRODUCT/2026-09-open-contradictions.md` item 4):
+Three figures existed across sources (`/legal/grievance` and `website/shared/CLAUDE.md`: 15 days; `Documents/15`: 30 days; an archived, never-deployed draft `/privacy` page: 30 days plus a 7-day rights window). Per the tie-break recorded in `08_DECISIONS/PRODUCT/2026-09-open-contradictions.md` (the live site is what users actually see, so documents follow it), **15 days is the canonical grievance-response figure**. The other figures are historical drafts and are not in force. This is a documentation reconciliation, not legal advice; the owner should still have counsel confirm the figure before launch.
 
-- `website/site/src/app/legal/grievance` and `website/shared/CLAUDE.md` state a **15-day** grievance-response SLA.
-- `Documents/15` states **30 days** for the same grievance-response commitment, and also states standard data-rights requests (access, correction, portability) get a response "within 30 days."
-- An untracked draft `/privacy` page found during this PR's audit (archived, never deployed — see `10_ARCHIVE/SUPERSEDED-DOCUMENTS/website-legal-pages-mobile-app/`) stated a 30-day grievance response and a separate 7-day rights-response window, differing from both of the above.
+## Live claims corrected
 
-This is a real compliance commitment, not marketing copy. It needs a human legal decision, then a single edit to whichever live page is wrong — not an AI-picked default.
-
-## Other live claims needing review
-
-Found during this PR's site audit, not resolved here:
-
-- `website/site/src/app/legal/sub-processors` states no production sub-processors are in use, while Vercel, Upstash, and (when configured) Resend already process signup data in production.
-- `website/site/src/app/security` (the marketing trust page) makes claims about hardware-backed KMS and encryption at rest that go beyond what the current waitlist-only implementation actually does.
+- `/legal/sub-processors` now names the vendors that actually process waitlist data (Vercel, Upstash, Resend). It previously said none were in use.
+- `/security` no longer claims hardware-backed KMS, encryption-at-rest specifics, live identity verification, live payments or a live append-only audit log. It now says these are designed for the launch product and not live.
 
 ## What this means for now
 
-Until the contradiction above is resolved and the two claims just above are reviewed, do not cite a specific SLA number or infrastructure claim from this repo in an external DPDP compliance statement — cite the live page the user will actually see, and flag it as pending review if asked.
+Until counsel confirms the figures, do not cite a specific SLA number or infrastructure claim from this repo in an external DPDP compliance statement — cite the live page the user will actually see, and flag it as pending review if asked.

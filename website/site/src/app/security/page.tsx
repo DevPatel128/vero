@@ -13,27 +13,27 @@ export const metadata: Metadata = {
 const posture = [
   {
     h: "Records are signed and chained",
-    b: "Every record carries two cryptographic signatures and references the record that came before it on the same worker. Tampering is detectable. The platform cannot quietly rewrite history.",
+    b: "The launch product is designed so every record carries two signatures and references the record before it on the same worker, making tampering detectable.",
   },
   {
     h: "Data is encrypted in transit and at rest",
-    b: "TLS 1.3 everywhere. Sensitive data is encrypted at rest with industry-standard authenticated encryption. Keys are managed in a hardware-backed key management service, not in code.",
+    b: "All traffic to this site is served over TLS. Encryption at rest and key management for the launch product are being designed; we will publish specifics once they are implemented, not before.",
   },
   {
     h: "Identity verified, biometrics not stored",
-    b: "Workers verify their identity using government-supported digital documents. We retain the verification result. We do not retain the underlying scans or biometric data.",
+    b: "The launch product is designed so that we retain a verification result, not the underlying scans or biometric data. Identity verification is not live yet.",
   },
   {
     h: "No card data on our servers",
-    b: "Payments and escrow are processed by a regulated Indian payment provider. We never touch raw card numbers. PCI scope sits with the provider.",
+    b: "Payments are not live. When they launch, they will be processed by a regulated Indian payment provider and we will not handle raw card numbers.",
   },
   {
     h: "Audit log",
-    b: "Every trust-affecting action — sign, dispute outcome, account suspension — is recorded in an append-only log. Internal operators cannot edit history.",
+    b: "The launch product is designed to record every trust-affecting action (sign, dispute outcome, account suspension) in an append-only log that internal operators cannot edit.",
   },
   {
     h: "Compliance with India's DPDP Act 2023",
-    b: "Lawful basis. Consent recorded. Withdrawal of consent honoured. Data principal rights — access, correction, erasure, grievance — all supported. Grievance Officer details on the relevant legal page.",
+    b: "The waitlist collects consent before storing your details. Access, correction, erasure and grievance requests are handled through the contact details on our legal pages.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function Page() {
         <Eyebrow>Security</Eyebrow>
         <SectionTitle>Security is the substrate, not a feature.</SectionTitle>
         <SectionLead>
-          A short, plain-language statement of the choices we make. We do not list specific vendors or internal architecture publicly. We do publish what every user is entitled to expect.
+          A plain-language statement of the choices we make. Vero is pre-launch: only the waitlist is live today, and items marked as designed describe what the launch product is built to do. The vendors that process waitlist data are listed on our sub-processors page.
         </SectionLead>
       </Section>
 

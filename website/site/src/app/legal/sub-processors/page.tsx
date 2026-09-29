@@ -3,9 +3,27 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Sub-processors",
   description:
-    "Vero sub-processors list. Production vendors will be listed before any user data flows to them.",
+    "The third-party vendors that process data on Vero's behalf today, what they do, and what data they handle.",
   alternates: { canonical: "/legal/sub-processors" },
 };
+
+const processors = [
+  {
+    name: "Vercel Inc.",
+    purpose: "Website hosting and delivery (serverless functions run in the Mumbai region).",
+    data: "Request metadata such as IP address and user agent, and any data submitted through site forms in transit.",
+  },
+  {
+    name: "Upstash, Inc.",
+    purpose: "Managed Redis database that stores waitlist entries and rate-limit counters.",
+    data: "Waitlist sign-ups: email address, name, role, city, optional free-text note, and referral information.",
+  },
+  {
+    name: "Resend, Inc.",
+    purpose: "Transactional email delivery for waitlist confirmations and investor enquiries.",
+    data: "Recipient email address and the message content of the confirmation or reply.",
+  },
+];
 
 export default function Page() {
   return (
@@ -14,12 +32,22 @@ export default function Page() {
         Sub-processors
       </h1>
       <p>
-        Vero is pre-launch. Before production user data flows to any third-party
-        processor, this page will list the vendor name, purpose, country, data
-        categories, and transfer mechanism.
+        Vero is pre-launch. The only personal data we collect today comes from
+        the waitlist and investor enquiry forms. These vendors process it on our
+        behalf.
       </p>
-      <h2>Current status</h2>
-      <p>No production sub-processors are listed for public launch yet.</p>
+      <h2>Current sub-processors</h2>
+      <ul>
+        {processors.map((p) => (
+          <li key={p.name}>
+            <strong>{p.name}</strong>. {p.purpose} <em>Data:</em> {p.data}
+          </li>
+        ))}
+      </ul>
+      <p>
+        Vendor country and cross-border transfer details will be added here once
+        confirmed with each provider.
+      </p>
       <h2>Update commitment</h2>
       <p>
         Material changes will be posted here before they take effect where law or

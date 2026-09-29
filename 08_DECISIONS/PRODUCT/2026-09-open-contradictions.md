@@ -1,11 +1,26 @@
 # Open contradictions found while adopting the framework
 
-> Status: Proposed · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-22
+> Status: Proposed · Owner: Dev Patel · Version: 2 · Last updated: 2026-09-29
 > Source: docs-inventory audit performed for this PR
 
 **Status:** Proposed for each item below (not resolved; recorded so they are visible and not silently picked one way by whichever document is read next)
 
 This is one file covering several small, independent contradictions surfaced while filling `02_PRODUCT`, `04_DESIGN`, and `07_BUSINESS` from the old source documents. Each needs a human call, not an AI-picked default, per `00_START_HERE/AI_OPERATING_RULES.md` ("the AI is not the final authority for product strategy").
+
+---
+
+## Resolution rule applied on 2026-09-29
+
+Ahead of making the repository public, each item below was reconciled using one tie-break: **the live site, and where it is silent the more recent and more detailed source document, is treated as current.** The rejected alternative stays recorded in each item so the disagreement is not erased. Nothing here is legal or financial advice; the owner can reopen any item.
+
+| # | Item | Resolved to | Rejected alternative |
+|---|---|---|---|
+| 1 | Roadmap phase numbering | `Documents/13` (Phase 0 = pre-launch) | Archived `CLAUDE.md` §19 numbering |
+| 2 | Phase 1 targets | `Documents/13`/`14` figures, labelled projections | `Documents/6` (200+ records, 50+ businesses) as a near-term floor |
+| 3 | Pricing tiers | Live site pricing page (Business plan plus custom Studio) | `Documents/8` three-tier structure, marked superseded |
+| 4 | DPDP grievance SLA | 15 days (live `/legal/grievance`) | 30 days (`Documents/15`), 30/7 days (archived draft) |
+| 5 | Workers vs. professionals | Both pages stay: they are different content, not duplicates | Redirect one to the other |
+| 6 | Student-identity framing | Archived as superseded | Merging it into `PRODUCT.md` |
 
 ---
 
