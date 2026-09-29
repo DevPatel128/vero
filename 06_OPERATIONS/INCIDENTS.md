@@ -30,7 +30,7 @@
 
 **Resolution path (2026-09-29):** the owner's stack no longer includes Vercel or Upstash. The site moves to Cloudflare Workers with a D1 database (`08_DECISIONS/ENGINEERING/2026-09-move-to-cloudflare.md`), so the Upstash database is not being restored. The D1 database starts empty; waitlist data from the Upstash era is lost.
 
-**Status:** open until the Cloudflare deployment is live and `/api/health` returns 200 in production. Then close it with the date and the first real signup as evidence.
+**Status:** mitigated 2026-09-29. The Worker `vero` is deployed at https://vero.dvpatel.workers.dev with D1. Verified live: `/api/health` 200, `/api/waitlist/stats` 200, a signup created position 1 in D1 (read back through the Cloudflare API), a duplicate returned no token, and a cross-origin POST returned 403. The test row was deleted. The old Vercel URL still serves the broken Upstash build until the Vercel project is deleted, and the canonical domain (`vero.work`) is not yet attached to the Worker. Close fully when the public URL points at Cloudflare.
 
 ## Rule
 

@@ -12,3 +12,5 @@ Vercel builds this branch as an SSO-protected preview only, per its Git-connecte
 As of 2026-09-29 the branch is pushed as PR #15 and Vercel builds a preview for it. Production (`main`) is unchanged and still affected by the Upstash outage.
 
 2026-09-29: PR #15 merged to `main` and deployed to production on Vercel. The Cloudflare migration (`feat/cloudflare-migration`) replaces that hosting once the Worker is connected in Cloudflare; until then production remains on Vercel with the Upstash outage.
+
+2026-09-29: Worker `vero` deployed to Cloudflare with `npm run deploy` (wrangler, version 90a15eb3), URL https://vero.dvpatel.workers.dev, D1 binding `DB` to `vero-waitlist`. Automatic deploys on push (Workers Builds) are not connected yet, so deploys are manual until then. `RESEND_API_KEY` is not set, so no confirmation emails are sent.
