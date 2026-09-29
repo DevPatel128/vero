@@ -1,56 +1,29 @@
-# CLAUDE.md — Agent Instructions
+# CLAUDE.md — router
 
-For Claude Code / AI agents working in VROE Labs monorepo.
+> Status: Draft · Owner: Dev Patel · Version: 1 · Last updated: 2026-09-28
 
-## Context
+This file is a thin router, not the documentation. Start at [`00_START_HERE/README.md`](00_START_HERE/README.md) for the full navigation; this file exists only so an AI session that auto-loads root `CLAUDE.md` gets pointed there immediately.
 
-Three proof-of-X products:
-- **Vero:** Proof-of-work identity (worker credentials, verification)
-- **RIE:** Proof-of-discipline (fitness, content, gaming proof)
-- **Trove:** Proof-of-provenance (supply chain / data integrity)
+## Go here by task
 
-All share ALVED protocol (trust graph) + @rie/crypto (auth, encryption).
+| Task | Canonical doc |
+|---|---|
+| Understand the product | `02_PRODUCT/PRODUCT.md` |
+| Change site code | `05_ENGINEERING/ENGINEERING.md`, then `website/CLAUDE.md` |
+| Change site copy | `04_DESIGN/CONTENT.md`, then `website/CLAUDE.md` |
+| Something in production broke | `06_OPERATIONS/INCIDENTS.md` |
+| Make a business/investor claim | `03_RESEARCH/RESEARCH.md` first — no source, no claim |
+| Anything involving AI agents | `00_START_HERE/AI_OPERATING_RULES.md` |
+| Record or look up a decision | `08_DECISIONS/DECISIONS.md` |
+| Reconstruct what happened and who approved it | `09_AUDIT/README.md` |
 
-## Key Files to Load
+## Hard rules
 
-By task type (load BEFORE coding):
+- Never fabricate. Unknown is a valid answer — write "Not defined in the source" rather than invent one.
+- Never commit secrets, real credentials, or personal data.
+- Humans decide product, legal, financial, privacy, security-exception and production questions. Merging to `main` deploys to production, so a merge is a production decision an AI does not make.
+- Before creating a document, check whether a canonical one already exists under `00_START_HERE/README.md`'s index. Update it instead of duplicating it.
 
-| Task | Load | Also read |
-|------|------|-----------|
-| **Frontend** | 00, 03, 04, 11, 13 | `/products/vero/README.md` |
-| **Backend** | 00, 04, 05, 16, 17 | `/shared/README.md` |
-| **Security/Auth** | 00, 01, 06, 12 | `/docs/context-pack/12-security-rules.md` |
-| **Brand/Copy** | 00, 01, 02, 14 | `/content/GUIDE.md` |
-| **Roadmap/Scope** | 00, 01, 15 | `/docs/context-pack/15-roadmap.md` |
+## Code root
 
-Location: `/docs/context-pack/[FILE].md`
-
-## Critical Rules
-
-1. **Crypto:** Use `@rie/crypto`. Never DIY JWT, hashing, or encryption.
-2. **ALVED protocol:** All identity/trust logic uses shared protocol. Check `/shared/README.md`.
-3. **India compliance:** DPDP Act 2023 mandatory. Passwords = Argon2id. JWTs = RS256. See `/docs/context-pack/12-security-rules.md`.
-4. **Monorepo:** `/products/vero/` is Turborepo. `/products/rie/` is standalone Express. Link shared packages.
-
-## Products Root
-
-```
-/products/vero/       → Turborepo (apps/, packages/, services/, docs/)
-/products/rie/        → Express API + Expo mobile (apps/, packages/)
-/products/trove/      → Supabase app (src/, tests/)
-```
-
-## First Time?
-
-1. Read `/INDEX.md` (technical) or `/content/GUIDE.md` (non-tech)
-2. Navigate to product: `/products/vero/`, `/products/rie/`, `/products/trove/`
-3. Load context files from `/docs/context-pack/` by task type (see table above)
-4. Check `/shared/README.md` for shared libraries
-
-## Questions?
-
-- **Product scope?** `/docs/context-pack/15-roadmap.md`
-- **Design system?** `/docs/context-pack/11-design-system.md`
-- **API design?** `/docs/context-pack/17-api-architecture.md`
-- **Lost?** Read `/INDEX.md`
-
+`website/site/` is the only deployed code (Next.js 16 on Vercel). Do not move or rename it — the Vercel project builds that exact path. See `00_START_HERE/README.md`'s "Code map" for the rest.

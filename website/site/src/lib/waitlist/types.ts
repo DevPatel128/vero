@@ -37,4 +37,7 @@ export interface WaitlistStore {
   findByEmail(email: string): Promise<WaitlistEntry | null>;
   findByCode(code: string): Promise<WaitlistEntry | null>;
   stats(): Promise<WaitlistStats>;
+
+  /** True if the store can be reached. Never throws. */
+  health(): Promise<boolean>;
 }

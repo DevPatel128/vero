@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   description:
     "Vero is pre-launch. Materials, thesis, and traction are available on request to qualified investors.",
   alternates: { canonical: "/investors" },
+  // Gated: reachable only from a discreet footer link, not meant to be
+  // search-discoverable. The README already documented this intent; the
+  // metadata just didn't carry it.
+  robots: { index: false, follow: false },
 };
 
 export default function Page() {

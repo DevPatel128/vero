@@ -1,0 +1,18 @@
+# Pre-existing false positives from repo history (predate this PR), confirmed
+# by manual review to be placeholder/example values, not real secrets:
+# - .env.example files containing the literal string
+#   a PEM-header placeholder with no key material
+# - an ENCRYPTION_KEY set to a sequential-hex example value
+# - A SwiftUI Label's descriptive text naming a hashing algorithm,
+#   not a credential at all — gitleaks' generic-api-key rule false-positived
+#   on the algorithm name string.
+# See 09_AUDIT/SECURITY.md for the review that confirmed these.
+e6948c946a379e1dc5c53765e3491f71efabbd71:.env.example:private-key:10
+90748e6051c5a9289f042ea4cbfd21a9ae23501e:products/rie/apps/api/.env.example:private-key:27
+90748e6051c5a9289f042ea4cbfd21a9ae23501e:products/rie/apps/api/.env.example:generic-api-key:30
+90748e6051c5a9289f042ea4cbfd21a9ae23501e:products/rie/ios/RIE/Views/ProfileView.swift:generic-api-key:38
+10_ARCHIVE/SUPERSEDED-DOCUMENTS/2026-05-root-legacy/env.example.legacy:private-key:10
+51732f4886e9a39b2771fef6d4b41db148fe2f0a:.gitleaksignore:generic-api-key:6
+51732f4886e9a39b2771fef6d4b41db148fe2f0a:.gitleaksignore:generic-api-key:7
+51732f4886e9a39b2771fef6d4b41db148fe2f0a:09_AUDIT/SECURITY.md:generic-api-key:52
+51732f4886e9a39b2771fef6d4b41db148fe2f0a:09_AUDIT/SECURITY.md:private-key:52

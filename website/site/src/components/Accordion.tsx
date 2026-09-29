@@ -24,6 +24,8 @@ export function Accordion({
   defaultValue,
   className,
   children,
+  // Reserved for a future FAQPage JSON-LD emission; not wired up yet.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   jsonLd = false,
 }: AccordionProps) {
   const [activeItems, setActiveItems] = useState<string[]>(

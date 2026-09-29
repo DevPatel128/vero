@@ -1,0 +1,10 @@
+# Default owner for everything not matched below.
+* @DevPatel128
+
+# Production site and its CI/CD.
+/website/site/ @DevPatel128
+/.github/ @DevPatel128
+
+# Documentation system: principles and decisions need a deliberate review.
+/01_PRINCIPLES/ @DevPatel128
+/08_DECISIONS/ @DevPatel128

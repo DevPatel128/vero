@@ -61,8 +61,8 @@ export function InvestorRequestForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5">
-      {/* Honeypot */}
-      <div className="absolute -left-[10000px] h-px w-px overflow-hidden">
+      {/* Honeypot — hidden from humans, and from assistive tech too */}
+      <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor="company">Company website (leave blank)</label>
         <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />
       </div>

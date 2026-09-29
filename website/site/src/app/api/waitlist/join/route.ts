@@ -3,11 +3,24 @@ import { waitlist, effectivePosition, tierFor, tierLabel } from "@/lib/waitlist"
 import { joinSchema } from "@/lib/waitlist/schema";
 import { sendEmail } from "@/lib/email";
 import { site } from "@/lib/site";
+import { clientIp, joinLimiter, withinLimit } from "@/lib/ratelimit";
+import { isSameOrigin } from "@/lib/same-origin";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
+    if (!isSameOrigin(req)) {
+      return NextResponse.json({ error: "invalid_origin" }, { status: 403 });
+    }
+
+    if (!(await withinLimit(joinLimiter, clientIp(req)))) {
+      return NextResponse.json(
+        { error: "rate_limited" },
+        { status: 429, headers: { "Retry-After": "600" } },
+      );
+    }
+
     const ct = req.headers.get("content-type") || "";
     let raw: Record<string, unknown> = {};
 
@@ -84,15 +97,24 @@ export async function POST(req: Request) {
       );
     }
 
+    // The token is a secret credential (it alone unlocks the personal
+    // waitlist page with the entrant's name, email and referral code), so
+    // it is returned only to the request that just created the entry. A
+    // repeat submission of someone else's email must not hand back their
+    // token, or knowing an email would be enough to read their record.
+    if (!created) {
+      return NextResponse.json({ ok: true, created: false }, { status: 200 });
+    }
+
     return NextResponse.json(
       {
         ok: true,
-        created,
+        created: true,
         token: entry.token,
         position: effectivePosition(entry),
         tier: tierLabel(tierFor(entry.position)),
       },
-      { status: created ? 201 : 200 },
+      { status: 201 },
     );
   } catch (err) {
     console.error("waitlist.join error", err);

@@ -4,8 +4,16 @@ import { waitlist } from "@/lib/waitlist";
 export const runtime = "nodejs";
 
 export async function GET() {
-  const stats = await waitlist.stats();
-  return NextResponse.json(stats, {
-    headers: { "Cache-Control": "public, max-age=60, stale-while-revalidate=300" },
-  });
+  try {
+    const stats = await waitlist.stats();
+    return NextResponse.json(stats, {
+      headers: { "Cache-Control": "public, max-age=60, stale-while-revalidate=300" },
+    });
+  } catch (err) {
+    console.error("waitlist.stats error", err);
+    return NextResponse.json(
+      { error: "store_unavailable" },
+      { status: 503, headers: { "Cache-Control": "no-store" } },
+    );
+  }
 }

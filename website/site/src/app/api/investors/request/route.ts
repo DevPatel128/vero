@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { sendEmail } from "@/lib/email";
 import { site } from "@/lib/site";
+import { clientIp, investorEmailLimiter, investorIpLimiter, withinLimit } from "@/lib/ratelimit";
+import { isSameOrigin } from "@/lib/same-origin";
 
 export const runtime = "edge";
 
@@ -20,6 +22,17 @@ const schema = z.object({
 
 export async function POST(req: Request) {
   try {
+    if (!isSameOrigin(req)) {
+      return NextResponse.json({ error: "invalid_origin" }, { status: 403 });
+    }
+
+    if (!(await withinLimit(investorIpLimiter, clientIp(req)))) {
+      return NextResponse.json(
+        { error: "rate_limited" },
+        { status: 429, headers: { "Retry-After": "3600" } },
+      );
+    }
+
     const fd = await req.formData();
     const raw: Record<string, unknown> = {};
     fd.forEach((v, k) => (raw[k] = typeof v === "string" ? v : ""));
@@ -36,6 +49,17 @@ export async function POST(req: Request) {
     if (data.company && data.company.length > 0) {
       // Honeypot — silent accept
       return NextResponse.json({ ok: true }, { status: 200 });
+    }
+
+    // Separate from the IP limit above: this endpoint sends an email to
+    // whatever address is submitted, with no verification that the
+    // submitter controls it. Without a per-email limit, that address could
+    // be mail-bombed by spreading requests across many IPs.
+    if (!(await withinLimit(investorEmailLimiter, data.email.toLowerCase()))) {
+      return NextResponse.json(
+        { error: "rate_limited" },
+        { status: 429, headers: { "Retry-After": "3600" } },
+      );
     }
 
     const inbox = process.env.INVESTOR_INBOX || site.contact.investors;

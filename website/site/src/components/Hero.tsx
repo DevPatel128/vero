@@ -10,7 +10,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 const ctas = [
   { label: "Apply for early access", href: "/#apply", primary: true },
   { label: "Explore the vision", href: "/manifesto" },
-  { label: "For businesses", href: "/businesses" },
+  { label: "For businesses", href: "/for-businesses" },
   { label: "For investors", href: "/investors" },
 ];
 
@@ -58,40 +58,27 @@ export function Hero() {
               <span className="text-ink-2">{site.cohort}</span>
             </motion.div>
 
-            {/* H1 — two opposed lines, the second carries the brand */}
+            {/* H1 — two opposed lines, the second carries the brand.
+                Rendered plain, not animated: this is the page's LCP
+                element. Framer Motion's initial={opacity:0} is baked into
+                the server HTML, so it was invisible until React hydrated
+                and the animation ran — worse, permanently invisible with
+                JS disabled or failing to load, since there was no
+                no-JS/CSS fallback. */}
             <h1
               id="hero-heading"
               className="mt-7 max-w-[18ch] font-display text-balance text-[clamp(2.75rem,6.4vw+0.5rem,7rem)] font-medium leading-[0.94] tracking-tighter text-ink-0"
             >
-              <motion.span
-                initial={reduce ? false : { opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.05, ease }}
-                className="block text-ink-2"
-              >
-                LinkedIn shows claims.
-              </motion.span>
-              <motion.span
-                initial={reduce ? false : { opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.22, ease }}
-                className="block text-ink-0"
-              >
-                VERO shows proof.
-              </motion.span>
+              <span className="block text-ink-2">LinkedIn shows claims.</span>
+              <span className="block text-ink-0">VERO shows proof.</span>
             </h1>
 
-            <motion.p
-              initial={reduce ? false : { opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.45, ease }}
-              className="mt-7 max-w-[42ch] text-lead leading-relaxed text-ink-1"
-            >
+            <p className="mt-7 max-w-[42ch] text-lead leading-relaxed text-ink-1">
               Millions of talented people in India lose work every year because they
               cannot prove what they have done. Businesses make bad hires because
               resumes lie. Vero fixes both sides of that problem — with verified,
               permanent work records that neither side can fake.
-            </motion.p>
+            </p>
 
             {/* CTAs — magnetic, varied weight; primary first */}
             <motion.div
