@@ -1,5 +1,7 @@
 # CLAUDE.md — `/website/shared` agent contract
 
+> **Read the root [`AGENTS.md`](../../AGENTS.md) first. It wins over this file where they differ.** Product facts, design tokens, tone and banned words live in [`PRODUCT.md`](../../PRODUCT.md). Paths below such as `/apps/...`, `/docs/...`, `/packages/...`, `website/_framework/` and the product context packs come from an earlier monorepo and do not exist in this repo. The live site is `website/site/`; page copy is written there.
+
 Inherits from `/website/CLAUDE.md`. Adds umbrella + legal + protocol behavior.
 
 ## Source of truth

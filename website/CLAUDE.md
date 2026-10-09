@@ -1,8 +1,10 @@
 # CLAUDE.md — Agent Contract for `/website`
 
+> **Read the root [`AGENTS.md`](../AGENTS.md) first. It wins over this file where they differ.** Product facts, design tokens, tone and banned words live in [`PRODUCT.md`](../PRODUCT.md). Paths below such as `/apps/...`, `/docs/...`, `/packages/...`, `website/_framework/` and the product context packs come from an earlier monorepo and do not exist in this repo. The live site is `website/site/`; page copy is written there.
+
 This file is loaded by Claude / Cursor / Gemini / Codex agents when they work inside `/website`. Read it before editing anything.
 
-> If anything below conflicts with `/AGENTS.md`, `/CLAUDE.md`, or the product-specific context pack at `/apps/<product>/docs/context-pack/`, **the more specific file wins**. The chain is: root → product app → product context pack → this file.
+> Order of authority: root `AGENTS.md`, then root `PRODUCT.md`, then this file, then the folder contracts below it.
 
 ---
 
@@ -23,7 +25,7 @@ This folder produces the **marketing surface** for VROE Labs. Your job, as an ag
 3. **Never store binaries here.** Image / video assets go in `/apps/<product>/public/`. This folder is text + structured data only.
 4. **Never touch `/apps/marketing/src/...` from inside this folder.** This folder is the input. Engineer pulls it out.
 5. **Never use the words** _just, simply, easily, effortlessly, revolutionize, disrupt, AI-powered_ unless the context pack explicitly tells you to. They erode trust.
-6. **Comply with every jurisdiction** listed in [`/docs/COMPLIANCE.md`](../docs/COMPLIANCE.md). When in doubt, run the claim past the compliance matrix.
+6. **Comply with every jurisdiction** that applies. Note: no compliance matrix exists in this repo (the old `/docs/COMPLIANCE.md` was never carried over); legal and DPDP claims need owner and counsel review, see [`AGENTS.md`](../AGENTS.md) project rule 4 and [`DECISIONS.md`](../DECISIONS.md).
 7. **Respect product separation.** Vero copy lives in `website/vero/`. Trove copy in `website/trove/`. Never write Vero copy into the Trove folder, even if the products share the ALVED protocol.
 
 ---

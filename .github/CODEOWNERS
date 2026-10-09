@@ -5,6 +5,6 @@
 /website/site/ @DevPatel128
 /.github/ @DevPatel128
 
-# Documentation system: principles and decisions need a deliberate review.
-/01_PRINCIPLES/ @DevPatel128
-/08_DECISIONS/ @DevPatel128
+# Agent rules and decisions need a deliberate review.
+/AGENTS.md @DevPatel128
+/DECISIONS.md @DevPatel128

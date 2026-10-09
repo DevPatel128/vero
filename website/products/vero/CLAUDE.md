@@ -1,5 +1,7 @@
 # CLAUDE.md — `/website/vero` agent contract
 
+> **Read the root [`AGENTS.md`](../../../AGENTS.md) first. It wins over this file where they differ.** Product facts, design tokens, tone and banned words live in [`PRODUCT.md`](../../../PRODUCT.md). Paths below such as `/apps/...`, `/docs/...`, `/packages/...`, `website/_framework/` and the product context packs come from an earlier monorepo and do not exist in this repo. The live site is `website/site/`; page copy is written there.
+
 Inherits from `/website/CLAUDE.md`. Adds Vero-specific behavior.
 
 ## Source of truth
@@ -15,7 +17,7 @@ Before editing **anything** in this folder, read **in this exact order**:
 7. `/apps/vero/docs/context-pack/14-copywriting-tone.md`
 8. The page-specific files for your task (see "File map" in the context pack)
 
-If any of these conflict, **the deepest file wins** (this file > /website > root).
+If any of these conflict, the root `AGENTS.md` wins, then this file, then `/website/CLAUDE.md`.
 
 ## Vero-specific hard rules
 

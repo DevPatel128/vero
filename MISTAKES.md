@@ -1,5 +1,20 @@
 # MISTAKES.md
 An entry stays open until its enforcing check exists and has been seen to fail on the old behavior.
 
+Rows M1 to M12 come from the archived v3 ledgers (`09_AUDIT/ERRORS.md`, `09_AUDIT/SECURITY.md`, `06_OPERATIONS/INCIDENTS.md`). Exact days within 2026-09-21 to 2026-09-29 were not recorded for most errors; "2026-09" marks that.
+
 | ID | Date | What happened | Root cause | Impact | Enforcing check (CI > hard rule > checklist) | Verified |
 |---|---|---|---|---|---|---|
+| M1 | 2026-09-21 | Production waitlist store unreachable (`getaddrinfo ENOTFOUND` on the Upstash host); `/api/waitlist/stats` 500; signups very likely failing | Upstash database deleted, paused or credentials rotated (not conclusively determined); `/status` hard-coded "Operational", and nothing monitored the store | Unknown outage length; all Upstash-era waitlist data lost | `/api/health` checks the real store and `/status` reads it (kit hard rule 11). No alert on `/api/health` yet | Mitigated 2026-09-29: Cloudflare Worker live, health 200, test signup, duplicate without token, cross-origin 403. Open until `vero.work` points at Cloudflare and the old Vercel project is deleted |
+| M2 | 2026-09 | Duplicate waitlist join returned the private token | Response included the token on every path | Email enumeration and record access | Playwright API test asserts no token on duplicate (`tests/api.spec.ts`) | Fixed `c6e7624` |
+| M3 | 2026-09 | No rate limits, no Origin check, non-atomic signup and referral counting, investor auto-reply throttled per IP only, email passed in a URL, no CSP | Site shipped without a security review | Abuse, forged posts, races, mail-bombing, PII in logs | Fixes `c00ec9d`, `7bdc5c6`, `dd7e1b8`, `d7971d3`, `07aae59`, `7a6e2cb` (CSP report-only); allowed and denied path tests | Fixed; CSP not enforced |
+| M4 | 2026-09 | `email.ts` logged recipient and token URL when `RESEND_API_KEY` was unset | Debug logging of PII | Tokens in logs | Hard rule 10 plus logging rule in `RUNBOOK.md` | Fixed; no automated check |
+| M5 | 2026-09 | Hero `<h1>` invisible until hydration (Framer Motion `initial={{opacity:0}}` server-rendered) | Entrance animation on LCP content | Blank hero without JS; LCP harm | Design-token rule in `PRODUCT.md` | Fixed `f9d165b`; no automated check |
+| M6 | 2026-09 | Header hydration mismatch (sun and moon icon) | Lazy `useState` read `window` for theme | Hydration error | Playwright test caught it; theme resolved in a client-only `useEffect` | Fixed |
+| M7 | 2026-09 | Honeypot tests assumed a 200 silent accept | zod `.max(0)` rejects first with 422; the route's honeypot branch is dead code | Wrong tests | Tests assert 422 with a comment | Fixed |
+| M8 | 2026-09 | Referral-code test failed twice | Code renders in a separate span; React inserts `<!-- -->` between adjacent expressions | Flaky assertion | Regex tolerates the comment marker | Fixed |
+| M9 | 2026-09 | Typecheck failed after removing pages; Playwright browser mismatch after an upgrade; local 500s and timeouts | Stale `.next/types`; stale browser binary; stray `next` processes on port 3000 | Lost time, false failures | Checklist: `rm -rf .next`, `npx playwright install chromium --with-deps`, kill stray `next` processes | Process only |
+| M10 | 2026-09 | Commit message with backticks broke the shell | Command substitution | Failed commit | Checklist: write long messages to a file, `git commit -F` | Process only |
+| M11 | 2026-09 | Two wrong citations in new docs (wrong filename for `Documents/13`; a nonexistent `Documents/16`) | Unverified references | Misleading docs | Link check before merge | Fixed before merge |
+| M12 | 2026-09 | Three parallel writing subagents hit the session rate limit | Concurrent dispatch | Lost a day | Checklist: do not fan out content subagents in parallel | Process only |
+| M13 | 2026-09 | GitHub Actions could not run on PR #15 (billing or spending limit) | Account billing state | No CI evidence; checks reproduced locally | Hard rule 1 (never merge on red or skipped CI) | Resolved after the account moved to the free plan; CI passed |

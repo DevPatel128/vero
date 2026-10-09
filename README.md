@@ -2,18 +2,19 @@
 
 **Proof-based hiring infrastructure, built by [VROE Labs](https://github.com/DevPatel128/vero).** Workers build a portable, dual-signed record of real work completed; businesses hire from that record instead of a resume.
 
-> **Status: pre-launch.** Only the marketing site and waitlist are live. The core product (identity verification, job posting, escrow, dual-signature records) is specified but not built. An earlier prototype is kept for reference under [`10_ARCHIVE/`](10_ARCHIVE/) and is not deployed.
+> **Status: pre-launch.** Only the marketing site and waitlist are live. The core product (identity verification, job posting, escrow, dual-signature records) is specified but not built. An earlier, never-deployed prototype and the older documentation layouts remain in git history only.
 
 ## What is in this repository
 
 | Path | What it is | Status |
 |---|---|---|
 | [`website/site/`](website/site/) | The public website and waitlist (Next.js 16, React 19, Tailwind, Cloudflare Workers and D1, Resend) | Live |
-| `00_START_HERE/` … `09_AUDIT/` | Product, research, design, engineering, operations, business and decision documentation, organised by the Wolf v3 framework | Maintained |
-| [`10_ARCHIVE/`](10_ARCHIVE/) | Superseded documents and an unbuilt app prototype, kept for history | Archived |
-| [`Documents/`](Documents/) | Founder-authored product narrative | Reference |
+| [`AGENTS.md`](AGENTS.md) | Rules for anyone (human or AI agent) changing this repo | Maintained |
+| [`PRODUCT.md`](PRODUCT.md), [`SYSTEM.md`](SYSTEM.md), [`RUNBOOK.md`](RUNBOOK.md), [`GROWTH.md`](GROWTH.md) | What Vero is, how the site works, how to operate it, how it will grow | Maintained |
+| [`DECISIONS.md`](DECISIONS.md), [`MISTAKES.md`](MISTAKES.md) | Decision and mistake ledgers | Maintained |
+| [`website/`](website/) | Copy contracts and draft page copy for the site | Reference |
 
-Start with [`00_START_HERE/README.md`](00_START_HERE/README.md) for a map of the documentation.
+The documentation follows the WOLF 1.0.5 kit (one file per concept). Start with [`AGENTS.md`](AGENTS.md), then [`PRODUCT.md`](PRODUCT.md).
 
 ## Run the website locally
 

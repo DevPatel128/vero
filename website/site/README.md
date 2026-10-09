@@ -2,7 +2,7 @@
 
 > The marketing and waitlist surface for **Vero** (a VROE Labs product). Pre-launch.
 
-This is a Next.js 16 app. It is the code that Cloudflare Workers builds and deploys; nothing outside `website/site/` affects the live site. Product context and brand rules live in the repo root documentation system: start at [`00_START_HERE/README.md`](../../00_START_HERE/README.md), and see [`website/CLAUDE.md`](../CLAUDE.md) for the copy contract for this folder.
+This is a Next.js 16 app. It is the code that Cloudflare Workers builds and deploys; nothing outside `website/site/` affects the live site. Product context and brand rules live in the repo root kit docs: start at [`AGENTS.md`](../../AGENTS.md), then [`PRODUCT.md`](../../PRODUCT.md); see [`website/CLAUDE.md`](../CLAUDE.md) for the copy contract for this folder.
 
 ## Quick start
 
@@ -50,7 +50,7 @@ npm test        # Playwright, starts its own dev server
 
 ## Design tokens
 
-Type: Geist Sans (headings and body), Geist Mono (hashes, IDs, timestamps), Spectral italic (pull-quotes only). Palette: OKLCH graphite neutrals with one champagne accent and a verification-cyan signal color, defined in `src/app/globals.css` and `tailwind.config.ts`. Full rules: [`04_DESIGN/DESIGN-SYSTEM.md`](../../04_DESIGN/DESIGN-SYSTEM.md).
+Type: Geist Sans (headings and body), Geist Mono (hashes, IDs, timestamps), Spectral italic (pull-quotes only). Palette: OKLCH graphite neutrals with one champagne accent and a verification-cyan signal color, defined in `src/app/globals.css` and `tailwind.config.ts`. Full rules: [`PRODUCT.md`](../../PRODUCT.md) (Design tokens).
 
 ## Observability
 

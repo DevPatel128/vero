@@ -30,8 +30,8 @@ Add or update tests for behaviour you change, especially the two public POST rou
 
 - Branch from `main`; keep each PR focused.
 - Explain why the change is needed, what it affects, and any cost or risk.
-- Changes to `website/site/`, `.github/`, `01_PRINCIPLES/` or `08_DECISIONS/` need review from the code owner (`.github/CODEOWNERS`).
-- Documentation follows the layout in [`00_START_HERE/DOCUMENTATION_SYSTEM.md`](00_START_HERE/DOCUMENTATION_SYSTEM.md): one canonical home per concept, no unsourced claims.
+- Changes to `website/site/`, `.github/`, `AGENTS.md` or `DECISIONS.md` need review from the code owner (`.github/CODEOWNERS`).
+- Documentation follows the WOLF kit described in [`AGENTS.md`](AGENTS.md): one canonical home per concept, no unsourced claims, and touched docs are updated in the same PR.
 
 ## Security
 
