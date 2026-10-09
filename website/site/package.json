@@ -18,7 +18,7 @@
     "cf-build": "opennextjs-cloudflare build"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.20.6",
+    "@opennextjs/cloudflare": "^1.20.8",
     "motion": "^12.39.0",
     "next": "^16.2.6",
     "react": "^19.2.6",
@@ -32,11 +32,11 @@
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.14.0",
-    "eslint-config-next": "^16.2.6",
+    "eslint-config-next": "^16.3.8",
     "postcss": "^8.5.15",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3",
-    "wrangler": "^4.143.0"
+    "wrangler": "^4.147.0"
   },
   "overrides": {
     "postcss": "^8.5.15",
