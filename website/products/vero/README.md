@@ -4,7 +4,7 @@ Marketing copy + SEO + AEO + LLMO assets for **Vero**, the verified proof-of-wor
 
 > Product brief in one line: **"LinkedIn shows claims. Vero shows proof."**
 
-For the product context (philosophy, brand, architecture, roadmap, security, every system in detail), see [`/apps/vero/docs/context-pack/`](../../apps/vero/docs/context-pack/). This folder is the **outside** of the product. The context pack is the **inside**.
+For the product context (philosophy, brand, architecture, roadmap, security, every system in detail), see the root [`PRODUCT.md`](../../../PRODUCT.md) and [`SYSTEM.md`](../../../SYSTEM.md) (the old `/apps/vero/docs/context-pack/` no longer exists). This folder is the **outside** of the product.
 
 ## Folder map
 
@@ -81,11 +81,11 @@ If you cannot read the line out loud without sounding like a marketing brochure,
 4. _"proof of work app"_ — alved
 5. _"Bengaluru local jobs verified"_ — for-businesses
 
-Full keyword list in [`seo/keywords.md`](seo/keywords.md). Programmatic SEO opportunities (city × neighborhood × category) in [`seo/programmatic.md`](seo/programmatic.md).
+The full keyword list (`seo/keywords.md`) and programmatic SEO plan (`seo/programmatic.md`) were never written. The SEO page log lives in [`GROWTH.md`](../../../GROWTH.md).
 
 ## Compliance check
 
-Every page touching identity, payments, employment, or money goes through [`/docs/COMPLIANCE.md`](../../docs/COMPLIANCE.md) before publish. Vero is India-first, so DPDP Act 2023 is the primary gate.
+Every page touching identity, payments, employment, or money gets owner review before publish (no compliance matrix exists in this repo (the old `/docs/COMPLIANCE.md` was never carried over); legal and DPDP claims need owner and counsel review, see [`AGENTS.md`](../../../AGENTS.md) project rule 4 and [`DECISIONS.md`](../../../DECISIONS.md)). Vero is India-first, so DPDP Act 2023 is the primary gate.
 
 ## How to contribute
 

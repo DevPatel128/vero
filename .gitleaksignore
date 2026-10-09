@@ -6,7 +6,7 @@
 # - A SwiftUI Label's descriptive text naming a hashing algorithm,
 #   not a credential at all — gitleaks' generic-api-key rule false-positived
 #   on the algorithm name string.
-# See 09_AUDIT/SECURITY.md for the review that confirmed these.
+# See 09_AUDIT/SECURITY.md (archived; `git show 76bb242:09_AUDIT/SECURITY.md`) for the review that confirmed these.
 e6948c946a379e1dc5c53765e3491f71efabbd71:.env.example:private-key:10
 90748e6051c5a9289f042ea4cbfd21a9ae23501e:products/rie/apps/api/.env.example:private-key:27
 90748e6051c5a9289f042ea4cbfd21a9ae23501e:products/rie/apps/api/.env.example:generic-api-key:30

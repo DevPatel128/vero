@@ -26,5 +26,5 @@ This is the most regulated part of the marketing surface. Every file here corres
 4. Every change goes through legal review.
 5. The grievance officer's contact details must be current.
 
-See [`/docs/COMPLIANCE.md`](../../../docs/COMPLIANCE.md) for the matrix.
+Note: no compliance matrix exists in this repo (the old `/docs/COMPLIANCE.md` was never carried over); legal and DPDP claims need owner and counsel review, see [`AGENTS.md`](../../../AGENTS.md) project rule 4 and [`DECISIONS.md`](../../../DECISIONS.md).
 

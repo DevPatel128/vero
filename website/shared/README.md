@@ -80,7 +80,7 @@ Shared/legal pages are the **most regulated** surface. Region matrix:
 | China (PIPL)   | `privacy` (if China launch)                               |
 | South Africa (POPIA) | `privacy`                                            |
 
-See [`/docs/COMPLIANCE.md`](../../docs/COMPLIANCE.md) for the full matrix.
+Note: no compliance matrix exists in this repo (the old `/docs/COMPLIANCE.md` was never carried over); legal and DPDP claims need owner and counsel review, see [`AGENTS.md`](../../AGENTS.md) project rule 4 and [`DECISIONS.md`](../../DECISIONS.md).
 
 ## Voice
 
