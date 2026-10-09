@@ -27,3 +27,5 @@ This file is a thin router, not the documentation. Start at [`00_START_HERE/READ
 ## Code root
 
 `website/site/` is the only deployed code (Next.js 16 on Cloudflare Workers). Do not move or rename it — the Cloudflare build uses that exact root directory. See `00_START_HERE/README.md`'s "Code map" for the rest.
+
+Read and follow `AGENTS.md` (WOLF rules).
