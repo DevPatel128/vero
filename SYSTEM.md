@@ -1,10 +1,15 @@
 # SYSTEM.md
 
 ## Shape (live: marketing site and waitlist only)
+```mermaid
+flowchart LR
+  B[Browser] -->|HTTPS| W["Worker vero<br/>Next.js 16 via OpenNext<br/>(website/site)"]
+  W -->|static pages and assets| A[Workers static assets]
+  W -->|binding DB| D[("D1 vero-waitlist<br/>entries, rate_limits")]
+  W -. "fetch, only when RESEND_API_KEY is set" .-> R[Resend email API]
+  R -.-> M[Joiner or investor inbox]
 ```
-browser → Worker "vero" (Next.js 16 via OpenNext, website/site) → D1 "vero-waitlist" (binding DB)
-                                     ↘ Resend (email, only when RESEND_API_KEY is set)
-```
+Not shown because none exists: auth provider, analytics, error tracking, queues, cron, AI services.
 - Code root: `website/site/`. Do not move or rename it; the Cloudflare build uses that path.
 - Store selection (`src/lib/waitlist/index.ts`): D1 (`d1-store.ts`) when the binding exists; otherwise a local JSON file `data/waitlist.json` (`file-store.ts`, gitignored, dev and tests only). In production a missing D1 binding throws.
 - Security headers are defined once in `next.config.ts`: X-Frame-Options DENY, nosniff, strict-origin-when-cross-origin, Permissions-Policy, HSTS, and a report-only CSP (enforcement deferred, no report URI).
@@ -18,6 +23,29 @@ Waitlist data has no `user_id`: it is not user-account data, so the kit's `forUs
 |---|---|---|---|
 | `entries` | id PK, email UNIQUE, name, role (`worker`/`business`), city, use_case, source, referred_by, referral_code UNIQUE, position UNIQUE, referral_count, joined_at, token UNIQUE (144-bit secret for `/waitlist/[token]`) | personal | email, name, role, city, use_case, source, referred_by through the join schema only. Insert uses `ON CONFLICT DO NOTHING`. |
 | `rate_limits` | key, window_start (PK pair), count | internal | no |
+```mermaid
+erDiagram
+  entries {
+    TEXT id PK
+    TEXT email UK
+    TEXT name
+    TEXT role "worker or business"
+    TEXT city
+    TEXT use_case
+    TEXT source
+    TEXT referred_by "referral_code of another entry, not a foreign key"
+    TEXT referral_code UK
+    INTEGER position UK
+    INTEGER referral_count
+    TEXT joined_at
+    TEXT token UK
+  }
+  rate_limits {
+    TEXT key PK "prefix:ip or prefix:email"
+    INTEGER window_start PK
+    INTEGER count
+  }
+```
 Migrations: `website/site/migrations/` (`0001_init.sql`). Planned product schema (20 tables in the archived prototype migration, including `user_consents`, `audit_logs` with 7-year retention, `refresh_tokens`): not deployed.
 
 ## Env vars and secrets (names only)
@@ -38,6 +66,27 @@ Migrations: `website/site/migrations/` (`0001_init.sql`). Planned product schema
 | `GET /api/health` | none | public | none | no-store | yes | 503 `{ok:false}` |
 Also served: `/robots.txt`, `/sitemap.xml`, `/llms.txt`, `/manifest.webmanifest`, `/.well-known/security.txt`.
 
+## Waitlist join flow
+```mermaid
+sequenceDiagram
+  participant B as Browser
+  participant W as Worker (POST /api/waitlist/join)
+  participant D as D1
+  participant R as Resend
+  B->>W: form or JSON post
+  W->>W: Origin or Referer host equals Host, else 403
+  W->>D: rate_limits upsert join:IP (fails open on error)
+  W-->>B: 429 if over 5 per 10 min
+  W->>W: content type check (415), zod joinSchema (422), honeypot (silent 200)
+  W->>D: INSERT entries ON CONFLICT DO NOTHING
+  alt new email
+    W->>R: confirmation email with /waitlist/[token] link (only if key set)
+    W-->>B: 201 with token, position, tier
+  else email already listed
+    W-->>B: 200, created false, no token
+  end
+```
+
 ## Authorization matrix
 | Action | anon | user (own) | admin |
 |---|---|---|---|
@@ -49,7 +98,7 @@ Also served: `/robots.txt`, `/sitemap.xml`, `/llms.txt`, `/manifest.webmanifest`
 | Asset | Actor | Attack path | Mitigation | Residual risk |
 |---|---|---|---|---|
 | Waitlist token and email | web client | duplicate join to read someone's token | duplicate join returns no token (fixed `c6e7624`) | timing difference between create and duplicate paths, judged low |
-| Public POST routes | scripts | spam, resource abuse | D1 fixed-window rate limits | fail open by design; `clientIp()` trusts the first `x-forwarded-for` entry, which a client can spoof |
+| Public POST routes | scripts | spam, resource abuse | D1 fixed-window rate limits | fail open by design; `clientIp()` uses `cf-connecting-ip` and only falls back to the first `x-forwarded-for` entry (client-spoofable) when that header is absent, which on Workers should not happen (UNVERIFIED) |
 | Signup counts | concurrent requests | race on position or referral count | UNIQUE constraints and `ON CONFLICT DO NOTHING` | none identified |
 | Cross-site forms | third-party site | forged POST | Origin equals Host check (`src/lib/same-origin.ts`) | none for a store without session cookies |
 | Investor inbox target | abuser | mail-bomb an address via many IPs | per-email limit | none identified |

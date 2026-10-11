@@ -1,3 +1,5 @@
+WOLF check: <paste the PR body line printed by scripts/wolf-check.sh>
+
 ## What and why
 
 ## Impact and risk
