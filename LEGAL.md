@@ -35,7 +35,6 @@ The built pages load no third-party host: fonts (Geist, Geist Mono, Spectral) co
 | api.resend.com | Resend email API, called server-side from `src/lib/email.ts` only when `RESEND_API_KEY` is set | recipient email, subject, body (waitlist confirmation with personal token URL; investor request details) | Resend terms | no (needed to deliver the requested email) |
 | Cloudflare (Workers, D1) | Hosting and database for the Worker `vero` | every request (IP, user agent); all stored data below | Cloudflare terms | no (hosting) |
 Whether Cloudflare injects Web Analytics or other scripts at the edge is UNKNOWN (dashboard setting, not in code).
-Known legal-check false positive: on the client JS, it reports hosts `тест`, `a@b`, `a#б` and `x`. They are string literals in a bundled URL polyfill feature test (`new URL("https://…")`), matched by the CSS `url(` pattern; nothing is loaded from them. They are not listed above because they are not third parties.
 
 ## Data map
 | Data | Why (feature) | Lawful basis / consent | Retention | Where stored | Shared with |
