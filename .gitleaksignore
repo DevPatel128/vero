@@ -16,3 +16,15 @@ e6948c946a379e1dc5c53765e3491f71efabbd71:.env.example:private-key:10
 51732f4886e9a39b2771fef6d4b41db148fe2f0a:.gitleaksignore:generic-api-key:7
 51732f4886e9a39b2771fef6d4b41db148fe2f0a:09_AUDIT/SECURITY.md:generic-api-key:52
 51732f4886e9a39b2771fef6d4b41db148fe2f0a:09_AUDIT/SECURITY.md:private-key:52
+
+# Current-history fingerprints (re-verified by shape 2026-10-11, values not printed):
+# JWT_PRIVATE_KEY placeholder: PEM BEGIN/END header with "..." and no key material (61 chars)
+ee50c2700bf4bbe486c1aca553dfbbfc5730a3ad:.env.example:private-key:10
+# Same JWT_PRIVATE_KEY placeholder in an earlier commit (no key material)
+2e736c1c7d9f97ccd503737da9ce8687abc1926b:.env.example:private-key:10
+# RIE API example env: JWT_PRIVATE_KEY placeholder, PEM header/footer with "..." only
+2e736c1c7d9f97ccd503737da9ce8687abc1926b:products/rie/apps/api/.env.example:private-key:27
+# RIE API example env: ENCRYPTION_KEY is the repeated 0-9a-f sequence, a documented example value
+2e736c1c7d9f97ccd503737da9ce8687abc1926b:products/rie/apps/api/.env.example:generic-api-key:30
+# SwiftUI Label(title, systemImage:) UI string, not a credential
+2e736c1c7d9f97ccd503737da9ce8687abc1926b:products/rie/ios/RIE/Views/ProfileView.swift:generic-api-key:38
