@@ -9,7 +9,7 @@ Filled from the code in `website/site/` and its production build on 2026-10-11. 
 - **Contact and grievance contact:** Dev Patel, founder — vroelabs@gmail.com (every channel in `src/lib/site.ts`; vroelabs.com has no MX record, checked 2026-10-11)
 - **Status:** building (not yet in testing). Owner wording at the bottom of `/legal/privacy`, `/legal/terms`, `/contact` and in the footer: "Vroe Labs is not yet a registered company. Vero is being built and is not yet in testing. Full legal details will be published before launch."
 - **Licence:** PolyForm Strict 1.0.0 (Vroe Labs licence), `LICENSE`, from 2026-10-11
-- **Jurisdictions served:** UNKNOWN (privacy notices exist for India, EU and US) · **Governing law:** UNKNOWN
+- **Jurisdictions served:** UNKNOWN (privacy notices exist for India, EU and US) · **Governing law:** India; Indian courts (owner decision 2026-10-12; no city named)
 - **Age rule:** terms say "working age in your jurisdiction"; not enforced at signup (no age field)
 - **Paid:** no (pre-launch, no payments in code) · **Refund window:** n/a until paid · **Cancel path:** n/a (no accounts)
 

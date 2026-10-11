@@ -89,7 +89,7 @@ export default function Page() {
       <h2>9. Governing law</h2>
       <p>
         These terms are governed by the laws of India. Disputes will be heard
-        in the courts of Bengaluru, Karnataka.
+        by the courts of India.
       </p>
 
       <h2>10. Changes</h2>

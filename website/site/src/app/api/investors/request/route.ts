@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { sendEmail } from "@/lib/email";
+import { sendEmail, REPLY_TO } from "@/lib/email";
 import { site } from "@/lib/site";
 import { clientIp, investorEmailLimiter, investorIpLimiter, withinLimit } from "@/lib/ratelimit";
 import { isSameOrigin } from "@/lib/same-origin";
@@ -80,7 +80,7 @@ export async function POST(req: Request) {
     await sendEmail(
       data.email,
       `We received your request`,
-      `Thank you for your interest in ${site.name}.\n\nWe respond to serious requests within five business days. If you do not hear from us, please reply to this email or write directly to ${site.contact.investors}.\n\n— ${site.parent}`,
+      `Thank you for your interest in ${site.name}.\n\nWe respond to serious requests within five business days. If you do not hear from us, reply to this email. Replies go to the Vroe Labs inbox at ${REPLY_TO}. You can also write directly to ${site.contact.investors}.\n\n— ${site.parent}`,
     );
 
     return NextResponse.json({ ok: true }, { status: 201 });

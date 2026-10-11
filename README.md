@@ -89,7 +89,7 @@ See [`website/site/.env.example`](website/site/.env.example). Names only:
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | build | Canonical URL, Open Graph, sitemap |
 | `RESEND_API_KEY` | Worker secret | Sends email; unset means no email is sent |
-| `WAITLIST_FROM_EMAIL` | Worker variable | Sender address |
+| `WAITLIST_FROM_EMAIL` | Worker variable | Sender address on the domain verified in Resend. Replies go to vroelabs@gmail.com via Reply-To |
 | `INVESTOR_INBOX` | Worker variable | Where investor requests go |
 | `CF_DEV_BINDINGS` | local only | `1` uses local Cloudflare bindings in `next dev` |
 

@@ -1,4 +1,10 @@
 /**
+ * Replies go to the Vroe Labs inbox. The From address must stay on the
+ * domain verified in Resend, and Resend cannot send From a gmail.com address.
+ */
+export const REPLY_TO = "vroelabs@gmail.com";
+
+/**
  * Email send abstraction.
  * With RESEND_API_KEY set, sends through Resend. Otherwise logs to console
  * for local development only — see the production guard below.
@@ -14,6 +20,7 @@ export async function sendEmail(to: string, subject: string, body: string) {
         },
         body: JSON.stringify({
           from: process.env.WAITLIST_FROM_EMAIL || "hello@vero.app",
+          reply_to: REPLY_TO,
           to: [to],
           subject,
           text: body,
