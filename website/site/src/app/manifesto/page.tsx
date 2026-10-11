@@ -61,7 +61,7 @@ export default function Page() {
             Trust is local before it is global.
           </h2>
           <p>
-            We are launching in Bengaluru. Five neighbourhoods. 2027 — exact date to be announced, follow our socials for the call. We are not pretending otherwise. A platform that promises everything to everyone usually serves no one. We will earn the right to expand by working with the workers and businesses in front of us, in person, in this city, until the trust model proves itself.
+            We are launching in Bengaluru. Five neighbourhoods. No date yet: Vero is being built and is not yet in testing; follow our socials for the call. We are not pretending otherwise. A platform that promises everything to everyone usually serves no one. We will earn the right to expand by working with the workers and businesses in front of us, in person, in this city, until the trust model proves itself.
           </p>
         </section>
 

@@ -18,7 +18,7 @@ export function Footer() {
               {site.shortDescription}
             </p>
             <p className="mt-8 font-mono text-micro text-ink-3">
-              A {site.parent} product · {site.legal.jurisdiction}
+              A {site.parent} product
             </p>
           </div>
 

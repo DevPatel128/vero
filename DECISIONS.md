@@ -23,7 +23,7 @@ None of the 2026-09 decisions was formally marked Approved by the owner; they we
 | 2026-10-11 | All public contact channels use vroelabs@gmail.com; no postal address published; company status line on privacy, terms and contact pages and in the footer | vroelabs.com has no MX record, so its addresses cannot receive mail, and vero.work is not attached to this project, so mail there is not known to reach the owner; Vroe Labs is not yet a registered company | Keep per-purpose @vero.work and @vroelabs.com addresses | One inbox for every channel | `src/lib/site.ts`, `/legal/*`, `/contact`, `Footer.tsx`, `SECURITY.md`, `LEGAL.md` | Owner decision; revisit when a domain mailbox exists |
 
 ## Open questions (not decided)
-- Launch date: "Q3 2026" in `src/lib/site.ts` versus "2027" on `/status`.
+- Launch date: none. Resolved on the site 2026-10-11: all "Q3 2026" and "2027" mentions removed; pages say Vero is being built and not yet in testing, with no date (owner status wording).
 - Formal owner approval of every 2026-09 row above.
 - Code comment in `website/site/next.config.ts` says CSP is "a separate decision (see 08_DECISIONS)"; no CSP enforcement decision was ever recorded. This table is now the home for it.
 

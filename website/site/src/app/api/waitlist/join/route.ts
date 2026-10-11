@@ -89,7 +89,7 @@ export async function POST(req: Request) {
           `Share this URL with friends — each referral moves you up 5 spots:`,
           `${site.url}/waitlist?ref=${entry.referralCode}`,
           ``,
-          `Bengaluru opens in ${site.launchWindow}. We’ll be in touch.`,
+          `${site.name} is being built and is not yet in testing. We’ll be in touch before launch.`,
           ``,
           `— ${site.parent}`,
         ].join("\n"),

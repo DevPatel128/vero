@@ -23,7 +23,7 @@ export default async function Page({
   const position = effectivePosition(entry);
   const tier = tierLabel(tierFor(entry.position));
   const refUrl = `${site.url}/waitlist?ref=${entry.referralCode}`;
-  const shareText = `I joined the ${site.name} waitlist. Proof of work, not posts about work. Bengaluru opens ${site.launchWindow}.`;
+  const shareText = `I joined the ${site.name} waitlist. Proof of work, not posts about work.`;
   const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     shareText,
   )}&url=${encodeURIComponent(refUrl)}`;
@@ -44,8 +44,9 @@ export default async function Page({
               {entry.name ? `Welcome, ${entry.name.split(" ")[0]}.` : "Welcome."}
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-600">
-              You joined as a <strong>{entry.role}</strong>. We will be in
-              touch as {site.launchCity} opens in {site.launchWindow}.
+              You joined as a <strong>{entry.role}</strong>. {site.name} is
+              being built and is not yet in testing. We will be in touch before
+              launch.
             </p>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -146,16 +147,12 @@ export default async function Page({
               <ol className="mt-3 list-decimal space-y-2 pl-6 text-base leading-relaxed text-ink-700">
                 <li>You will get a confirmation email at {entry.email}.</li>
                 <li>
-                  We will send a short note every couple of weeks until launch
-                  — what we built, what is next.
+                  Closer to launch, you will get an invitation in order of
+                  position.
                 </li>
                 <li>
-                  Closer to {site.launchWindow}, you will get an invitation in
-                  order of position.
-                </li>
-                <li>
-                  At any point, one click unsubscribes. We will not lose your
-                  spot for it.
+                  To leave the waitlist, email us. There is no unsubscribe link
+                  yet.
                 </li>
               </ol>
             </section>

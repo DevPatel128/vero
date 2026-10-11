@@ -20,7 +20,7 @@ This folder produces the **marketing surface** for VROE Labs. Your job, as an ag
 
 ## Hard rules
 
-1. **Never overpromise.** If a feature is post-launch, label it `(coming Q3 2026)` or similar. We are pre-launch infrastructure; trust is the product.
+1. **Never overpromise.** If a feature is post-launch, label it `(planned)` or similar; never give a launch date until the owner sets one. We are pre-launch infrastructure; trust is the product.
 2. **Never invent product behavior.** If the brief or context pack doesn't say it, don't ship it. Ask. Use the context pack at `/apps/<product>/docs/context-pack/` as the source of truth for product behavior.
 3. **Never store binaries here.** Image / video assets go in `/apps/<product>/public/`. This folder is text + structured data only.
 4. **Never touch `/apps/marketing/src/...` from inside this folder.** This folder is the input. Engineer pulls it out.

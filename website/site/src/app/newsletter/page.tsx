@@ -25,7 +25,7 @@ export default function Page() {
         <SectionTitle>Build notes without launch theatre.</SectionTitle>
         <SectionLead>
           A restrained update stream for people who want to follow Vero before the
-          Bengaluru pilot opens.
+          Bengaluru pilot opens. No launch date yet.
         </SectionLead>
       </Section>
 
@@ -53,8 +53,9 @@ export default function Page() {
               ))}
             </ul>
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-ink-500">
-              We use the waitlist email list for launch notes and build digests. Every
-              email has an unsubscribe link. No pre-checked boxes. No borrowed lists.
+              We plan to use the waitlist email list for launch notes and build
+              digests; none have been sent yet. To leave the list, email us. No
+              pre-checked boxes. No borrowed lists.
             </p>
           </div>
         </div>

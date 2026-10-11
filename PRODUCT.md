@@ -17,7 +17,7 @@ Vero (written VERO in product copy) is a VROE Labs product. Status on 2026-10-09
 ## Phases (Documents/13 numbering, chosen 2026-09-29)
 Phase 0 pre-launch (current: site and waitlist live). Phase 1 Bengaluru pilot, months 1 to 6 after launch: zones Whitefield, HSR Layout, Koramangala, Sarjapur, Electronic City; six category groups (Creative, Culinary, Family Support, Business Operations, Fitness Coaching, Event Logistics). Phase 2 categories, native app, ambassadors (months 6 to 12). Phase 3 cities: Delhi NCR, Mumbai, Pune, Hyderabad, Chennai, one at a time (months 12 to 24). Phase 4 recruiter and education layer (18 to 30). Phase 5 blockchain-anchored credentials, optional smart-contract escrow (24 to 36). Phase 6 and 7 international and partner ecosystem (year 3+).
 Advancement rule: a phase advances when its scope ships and trust is stable (disputes and fraud low), never on a date. Quality beats expansion. Workers come first. No premature complexity. Brand and trust principles do not change between phases.
-**Launch date: UNKNOWN.** The site says "Q3 2026" in `src/lib/site.ts` and "2027" on `/status`. Unreconciled.
+**Launch date: none set.** Since 2026-10-11 the site says Vero is being built and not yet in testing, with no date (the old "Q3 2026" and "2027" mentions were removed).
 
 ## Pages (live, website mode)
 ### P1 /waitlist and /api/waitlist/join — Done

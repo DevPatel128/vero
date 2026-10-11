@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Section, Eyebrow, SectionHeadline, SectionLead } from "@/components/Section";
 import { LinkButton } from "@/components/Button";
-import { sections as copy } from "@/lib/site";
+import { site, sections as copy } from "@/lib/site";
 import { Reveal } from "@/components/motion/Reveal";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { RecordCard } from "@/components/RecordCard";
@@ -252,8 +252,8 @@ export default function ProductPage() {
                 Your record starts with the first job you sign.
               </h2>
               <p className="mt-5 max-w-[52ch] text-lead text-ink-inverse/75">
-                Join the waitlist. We open in Bengaluru in 2027 — first cohort
-                accepted by hand.
+                Join the waitlist. {site.name} is being built, starting with
+                Bengaluru — first cohort accepted by hand.
               </p>
             </Reveal>
           </div>
