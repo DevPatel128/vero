@@ -201,8 +201,8 @@ export default function Page() {
             <BlurIn delay={0.3}>
               <p className="mt-5 max-w-xl text-ink-300">
                 Join the workers&apos; waitlist. You will be one of the first to do
-                real, signed work in Bengaluru when we open in 2027 — exact date to be
-                announced.
+                real, signed work in Bengaluru when we open. Vero is being built and is
+                not yet in testing; no date yet.
               </p>
             </BlurIn>
           </div>

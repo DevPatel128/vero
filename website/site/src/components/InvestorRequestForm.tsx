@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { site } from "@/lib/site";
 
 export function InvestorRequestForm() {
   const [submitting, setSubmitting] = useState(false);
@@ -169,7 +170,7 @@ export function InvestorRequestForm() {
       </button>
 
       <p className="text-center text-xs text-ink-500">
-        We reply from {`investors@vroelabs.com`}. No automatic download.
+        We reply from {site.contact.investors}. No automatic download.
       </p>
     </form>
   );

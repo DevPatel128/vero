@@ -61,7 +61,7 @@ const groups = [
       },
       {
         q: "Do you handle taxes?",
-        a: "Prices are pre-tax. GST applies for Indian customers. Invoices, escrow receipts, and tax-compliant statements are issued automatically.",
+        a: "Prices are pre-tax. GST applies for Indian customers. Nothing is sold yet; at launch, invoices, escrow receipts and GST statements are planned to be issued automatically.",
       },
     ],
   },
@@ -78,7 +78,7 @@ const groups = [
       },
       {
         q: "Can records be deleted?",
-        a: "A worker can revoke a record's public visibility but cannot edit the underlying record. The chain remains intact. Erasure under DPDP / GDPR is honoured by anonymising the personal fields while preserving counterparty verifiability.",
+        a: "A worker can revoke a record's public visibility but cannot edit the underlying record. The chain remains intact. As designed, erasure requests under DPDP / GDPR will be handled by anonymising the personal fields while preserving counterparty verifiability.",
       },
     ],
   },
@@ -87,7 +87,7 @@ const groups = [
     items: [
       {
         q: "When does Vero open?",
-        a: "We are opening in Bengaluru in 2027. The exact date is to be announced — follow our socials for the call. Five neighbourhoods to start — Whitefield, HSR Layout, Koramangala, Sarjapur, Electronic City.",
+        a: "Vero is being built and is not yet in testing, so there is no launch date yet — follow our socials for the call. Bengaluru comes first, with five neighbourhoods planned — Whitefield, HSR Layout, Koramangala, Sarjapur, Electronic City.",
       },
       {
         q: "Will Vero expand beyond Bengaluru?",

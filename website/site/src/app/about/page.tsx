@@ -5,7 +5,7 @@ import { LinkButton } from "@/components/Button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Vero is built by VROE Labs to repair the link between work and credibility. We are starting in Bengaluru in 2027 — exact date to be announced.",
+    "Vero is built by VROE Labs to repair the link between work and credibility. We are starting in Bengaluru; Vero is being built and is not yet in testing.",
   alternates: { canonical: "/about" },
 };
 

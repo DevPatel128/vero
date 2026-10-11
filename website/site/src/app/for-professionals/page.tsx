@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { site } from "@/lib/site";
 import { Section, Eyebrow, SectionHeadline, SectionLead } from "@/components/Section";
 import { LinkButton } from "@/components/Button";
 import { IDBadge } from "@/components/illustrations/IDBadge";
@@ -187,8 +188,8 @@ export default function ForProfessionalsPage() {
                 Your record starts the first time you sign.
               </h2>
               <p className="mt-4 max-w-[52ch] text-lead text-ink-inverse/75">
-                Join the workers waitlist. First cohort opens in Bengaluru in 2027 —
-                exact date to be announced.
+                Join the workers waitlist. {site.name} is being built and is not
+                yet in testing — no date yet.
               </p>
             </Reveal>
           </div>

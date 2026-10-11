@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Security",
   description:
-    "Vero treats security as the substrate, not a feature. A short public statement of our posture: signed records, encryption-at-rest, no biometric retention, responsible-disclosure path.",
+    "Vero treats security as the substrate, not a feature. A short public statement of our posture: what is live today, what the launch product is designed to do, and the responsible-disclosure path.",
   alternates: { canonical: "/security" },
 };
 
@@ -17,7 +17,7 @@ const posture = [
   },
   {
     h: "Data is encrypted in transit and at rest",
-    b: "All traffic to this site is served over TLS. Encryption at rest and key management for the launch product are being designed; we will publish specifics once they are implemented, not before.",
+    b: "All traffic to this site is served over TLS, and browsers are told to use HTTPS only. Waitlist data sits in Cloudflare D1, which Cloudflare encrypts at rest. Encryption and key management for the launch product are being designed; we will publish specifics once they are implemented, not before.",
   },
   {
     h: "Identity verified, biometrics not stored",
@@ -32,8 +32,8 @@ const posture = [
     b: "The launch product is designed to record every trust-affecting action (sign, dispute outcome, account suspension) in an append-only log that internal operators cannot edit.",
   },
   {
-    h: "Compliance with India's DPDP Act 2023",
-    b: "The waitlist collects consent before storing your details. Access, correction, erasure and grievance requests are handled through the contact details on our legal pages.",
+    h: "India's DPDP Act 2023 and GDPR",
+    b: "Designed with both in mind; not yet audited, and we claim no certification. The waitlist collects consent before storing your details. Access, correction, erasure and grievance requests are handled by email through the contact details on our legal pages.",
   },
 ];
 

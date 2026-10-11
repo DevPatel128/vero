@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/legal/privacy" },
 };
 
-const lastUpdated = "19 May 2026";
+const lastUpdated = "11 October 2026";
 
 export default function Page() {
   return (
@@ -26,7 +26,8 @@ export default function Page() {
 
       <h2>1. Who we are</h2>
       <p>
-        {site.parent}. India. We can be reached at{" "}
+        {site.parent}, India, a trading name of Dev Patel (not yet a
+        registered company). We can be reached at{" "}
         <a href={`mailto:${site.contact.general}`}>{site.contact.general}</a>.
         Our statutory grievance contact for Indian users is on the{" "}
         <a href="/legal/grievance">grievance officer</a> page.
@@ -35,27 +36,46 @@ export default function Page() {
       <h2>2. The data we collect on this website</h2>
       <ul>
         <li>
-          <strong>Waitlist sign-ups.</strong> Email address (required) and the
-          optional fields you fill in (name, city, intended use case, how you
-          heard about us, referral code).
+          <strong>Waitlist sign-ups.</strong> Email address and whether you are
+          joining as a worker or a business (required), and the optional fields
+          you fill in (name, city, intended use case, how you heard about us,
+          referral code). We also store your queue position, your referral
+          code, how many people you referred, when you joined, and a private
+          link token for your personal waitlist page.
         </li>
         <li>
-          <strong>Investor requests.</strong> Name, work email, firm, role, and
-          any short note you provide.
+          <strong>Investor requests.</strong> Name, work email, firm, role,
+          stage, and any short note you provide. This website does not store
+          them: the request is emailed to our inbox, and a confirmation is
+          emailed to you.
         </li>
         <li>
-          <strong>Server logs.</strong> Standard logs (IP, user-agent, timestamp)
-          retained for up to 30 days for security and abuse prevention.
+          <strong>Server logs.</strong> Our host, Cloudflare, records standard
+          request logs (IP address, user agent, time) for security and
+          debugging. They are kept for Cloudflare’s standard log retention
+          period; we do not copy them elsewhere.
         </li>
         <li>
-          <strong>Cookies.</strong> Strictly-necessary cookies only on this
-          pre-launch site (session, CSRF). We do not run advertising trackers.
+          <strong>Rate-limit counters.</strong> To stop abuse, we count form
+          submissions per IP address and, for investor requests, per email
+          address. These counters are deleted automatically about two days
+          after they expire.
+        </li>
+        <li>
+          <strong>Cookies.</strong> This site sets no cookies. Your light or
+          dark theme choice is saved in your browser’s local storage, and an
+          email you type into a short sign-up box is held in session storage
+          only until the full waitlist form reads it. Neither is sent to us. We
+          do not run analytics or advertising trackers. See the{" "}
+          <a href="/legal/cookies">cookie notice</a>.
         </li>
       </ul>
 
       <h2>3. Why we use it</h2>
       <ul>
-        <li>To send your waitlist confirmation and launch updates.</li>
+        <li>
+          To send your waitlist confirmation, and to tell you about launch.
+        </li>
         <li>To move you up the queue when you refer others.</li>
         <li>
           To respond to investor inquiries with appropriate materials.
@@ -72,14 +92,21 @@ export default function Page() {
         Under the DPDP Act, we rely on your <em>consent</em> (the checkbox you
         ticked at sign-up) for waitlist communications, and on{" "}
         <em>legitimate use</em> for security logging. You may withdraw consent
-        at any time using the unsubscribe link or by writing to us.
+        at any time by writing to us. There is no unsubscribe link yet.
       </p>
 
       <h2>5. How long we keep it</h2>
       <ul>
-        <li>Waitlist email: until you unsubscribe or until launch + 1 year.</li>
-        <li>Investor request: 2 years from last contact.</li>
-        <li>Server logs: up to 30 days.</li>
+        <li>
+          Waitlist entry: until you ask us to delete it. There is no automatic
+          deletion yet.
+        </li>
+        <li>
+          Investor request: not stored by this website. The email in our inbox
+          is kept as ordinary correspondence until it is deleted.
+        </li>
+        <li>Rate-limit counters: about two days after their window ends.</li>
+        <li>Server logs: Cloudflare’s standard log retention period.</li>
       </ul>
 
       <h2>6. Your rights</h2>
@@ -87,66 +114,68 @@ export default function Page() {
       <ul>
         <li>Confirm what data we hold about you.</li>
         <li>Correct it if it is wrong.</li>
-        <li>Delete it (we retain anonymised counts only).</li>
+        <li>Delete it.</li>
         <li>Withdraw consent.</li>
         <li>Nominate someone to act on your behalf in the event of incapacity.</li>
       </ul>
       <p>
         Write to <a href={`mailto:${site.contact.general}`}>{site.contact.general}</a>{" "}
-        or to our <a href="/legal/grievance">grievance officer</a>. We respond
-        within 15 days under the DPDP Act.
+        or to our <a href="/legal/grievance">grievance officer</a>. Requests are
+        handled by hand; there is no self-serve tool yet. We respond within 15
+        days under the DPDP Act.
       </p>
 
       <h2>7. Who we share it with</h2>
       <ul>
         <li>
-          <strong>Email delivery provider.</strong> We use a reputable
-          transactional email provider to deliver confirmations and updates.
-          They process the email address on our behalf and do not use it for
-          their own purposes.
+          <strong>Email delivery.</strong> Resend sends the waitlist
+          confirmation and the investor-request emails, when email sending is
+          switched on. It receives the recipient address and the message.
         </li>
         <li>
-          <strong>Hosting + analytics.</strong> Standard infrastructure
-          providers (server hosting, error monitoring). PII is minimised before
-          it reaches these systems.
+          <strong>Hosting and database.</strong> Cloudflare hosts the site and
+          stores waitlist entries and rate-limit counters in its D1 database.
+          We use no analytics or error-monitoring service.
         </li>
         <li>
           We do <strong>not</strong> sell personal data, ever.
         </li>
       </ul>
       <p>
-        A full sub-processor list will be published before public launch and
-        updated within thirty days of any change.
+        The current list is on the{" "}
+        <a href="/legal/sub-processors">sub-processors</a> page.
       </p>
 
       <h2>8. International transfers</h2>
       <p>
-        Some of our infrastructure providers operate outside India. Where
-        cross-border transfers occur, we rely on standard contractual
-        safeguards and the Central Government’s rules under Section 16 of the
-        DPDP Act. We will publish a region-aware notice (e.g., for EU/UK users)
-        before opening any region outside India.
+        Cloudflare and Resend are US companies, so your data may be processed
+        outside India. Supplementary notices for the{" "}
+        <a href="/legal/privacy/eu">EU</a>,{" "}
+        <a href="/legal/privacy/in">India</a> and the{" "}
+        <a href="/legal/privacy/us">US</a> are published.
       </p>
 
       <h2>9. Security</h2>
       <p>
-        We encrypt data in transit (TLS 1.3) and at rest. Access to user data
-        is restricted to a small number of people who need it to do their job.
-        See the <a href="/security">security page</a> for our overall posture.
+        The site is served over HTTPS and tells browsers to use HTTPS only.
+        Waitlist data is stored in Cloudflare D1, which Cloudflare encrypts at
+        rest; access is limited to the {site.parent} Cloudflare account. Forms
+        reject submissions sent from other websites and are rate-limited.
       </p>
 
       <h2>10. Children</h2>
       <p>
-        Vero is not intended for users under 18. The waitlist requires you to
-        be of working age in your jurisdiction. We do not knowingly collect
-        data from children.
+        Vero is not intended for users under 18. Our terms ask that you be of
+        working age in your jurisdiction to join the waitlist; we do not check
+        age at sign-up. We do not knowingly collect data from children. If you
+        think a child has signed up, write to us and we will delete the entry.
       </p>
 
       <h2>11. Changes to this notice</h2>
       <p>
-        We update this notice as we expand or as the law changes. Material
-        updates will be emailed to waitlist subscribers. The date at the top
-        always reflects the current version.
+        We update this notice as we expand or as the law changes. Changes are
+        posted on this page, and the date at the top always reflects the
+        current version.
       </p>
 
       <h2>12. Contact</h2>
@@ -156,6 +185,8 @@ export default function Page() {
         Grievance officer (India): see the{" "}
         <a href="/legal/grievance">grievance officer page</a>.
       </p>
+
+      <p className="mt-10 text-sm text-ink-500">{site.legal.status}</p>
     </>
   );
 }

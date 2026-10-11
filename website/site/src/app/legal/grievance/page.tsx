@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/legal/grievance" },
 };
 
-const lastUpdated = "19 May 2026";
+const lastUpdated = "11 October 2026";
 
 export default function Page() {
   return (
@@ -31,7 +31,7 @@ export default function Page() {
         <dl className="mt-5 grid gap-3 text-sm">
           <div className="grid grid-cols-3 gap-3">
             <dt className="text-ink-500">Name</dt>
-            <dd className="col-span-2 text-ink-900">To be designated before public launch</dd>
+            <dd className="col-span-2 text-ink-900">Dev Patel, founder</dd>
           </div>
           <div className="grid grid-cols-3 gap-3">
             <dt className="text-ink-500">Email</dt>
@@ -47,7 +47,8 @@ export default function Page() {
           <div className="grid grid-cols-3 gap-3">
             <dt className="text-ink-500">Postal address</dt>
             <dd className="col-span-2 text-ink-900">
-              To be published with the public launch address in {site.launchCity}.
+              Not published yet. Full legal details will be published before
+              launch.
             </dd>
           </div>
           <div className="grid grid-cols-3 gap-3">
@@ -64,7 +65,7 @@ export default function Page() {
       <ul>
         <li>Privacy and data-protection grievances under the DPDP Act.</li>
         <li>Content or moderation grievances under the IT Rules 2021.</li>
-        <li>Disagreement with a decision affecting your account or records.</li>
+        <li>Disagreement with a decision affecting your waitlist entry.</li>
       </ul>
 
       <h2>Process</h2>

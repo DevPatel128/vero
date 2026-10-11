@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Join the waitlist",
   description:
-    "Reserve your spot. Bengaluru is coming soon. Workers join free. Founding-member perks for the first 1,000.",
+    "Reserve your spot. Vero is being built, starting with Bengaluru. Workers join free. Founding-member perks for the first 1,000.",
   alternates: { canonical: "/waitlist" },
 };
 
@@ -43,7 +43,7 @@ export default function Page() {
               Your record begins with one signature.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-600">
-              {site.name} is coming soon to {site.launchCity}. Join
+              {site.name} is being built, starting with {site.launchCity}. Join
               the waitlist and you will get a personal page with your queue
               position, a referral link, and your founding-member tier.
             </p>
@@ -83,9 +83,9 @@ export default function Page() {
                   Honest about pre-launch
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-600">
-                  We will not invent numbers. We will not fake urgency. If we
-                  push the launch, we will email you and offer a one-click
-                  unsubscribe.
+                  We will not invent numbers. We will not fake urgency. There is
+                  no launch date yet. You can leave the waitlist at any time by
+                  emailing us.
                 </p>
               </div>
             </div>

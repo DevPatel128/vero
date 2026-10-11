@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "What about taxes?",
-    a: "Prices shown are pre-tax. GST applies for Indian customers. Subscription invoices, escrow receipts, and tax-compliant statements are issued automatically.",
+    a: "Prices shown are pre-tax. GST applies for Indian customers. Nothing is sold yet; at launch, subscription invoices, escrow receipts and GST statements are planned to be issued automatically.",
   },
   {
     q: "Can I cancel a business plan any time?",

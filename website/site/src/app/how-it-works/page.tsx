@@ -195,7 +195,7 @@ export default function Page() {
             </Reveal>
             <Reveal delay={0.05}>
               <p className="mt-5 max-w-xl text-ink-300">
-                We open in Bengaluru in 2027 — exact date to be announced. Join the
+                Vero is being built, starting with Bengaluru; no date yet. Join the
                 waitlist and you will get your queue position and a personal referral
                 link.
               </p>

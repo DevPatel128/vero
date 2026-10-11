@@ -203,8 +203,8 @@ export default function ForBusinessesPage() {
                 Hire with proof, not guesswork.
               </h2>
               <p className="mt-4 max-w-[50ch] text-lead text-ink-inverse/75">
-                Join the businesses waitlist. We open in Bengaluru in 2027 — first
-                cohort accepted by hand.
+                Join the businesses waitlist. Vero is being built, starting with
+                Bengaluru — first cohort accepted by hand.
               </p>
             </Reveal>
           </div>

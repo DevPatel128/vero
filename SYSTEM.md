@@ -53,7 +53,7 @@ Migrations: `website/site/migrations/` (`0001_init.sql`). Planned product schema
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | build variable (inlined at build) | canonical URL, OG, sitemap; code default `https://vero.work` |
 | `RESEND_API_KEY` | Worker secret | sends email; when unset, emails are logged without recipient or token. Not set in production as of 2026-09-29. |
-| `WAITLIST_FROM_EMAIL` | Worker variable | sender address |
+| `WAITLIST_FROM_EMAIL` | Worker variable | sender address on the domain verified in Resend; every email also sets Reply-To vroelabs@gmail.com |
 | `INVESTOR_INBOX` | Worker variable | investor request inbox; falls back to `site.contact.investors` |
 | `CF_DEV_BINDINGS` | local only | `1` uses a local D1 in dev after `npx wrangler d1 migrations apply vero-waitlist --local` |
 

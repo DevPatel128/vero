@@ -13,11 +13,11 @@ ${site.description}
 - Parent: ${site.parent}
 - Protocol: ${site.protocol} (Authentic Ledger of Validated Evolution Data)
 - Headquarters: Bengaluru, India
-- Launch: ${site.launchWindow}, ${site.launchCity}
+- Status: being built, not yet in testing. No launch date set. First city planned: ${site.launchCity}
 - Launch areas: ${site.launchAreas.join(", ")}
 
 ## What ${site.name} is
-${site.name} is a verified proof-of-work identity platform. Every job a worker completes becomes a signed, chained record on their profile, jointly signed by the worker and the person who hired them. Records are tamper-evident, exportable, and owned by the worker.
+${site.name} is a verified proof-of-work identity platform, being built. Only the waitlist is live today. As designed, every job a worker completes becomes a signed, chained record on their profile, jointly signed by the worker and the person who hired them. Records are tamper-evident, exportable, and owned by the worker.
 
 ## Who it is for
 - Workers: students, switchers, skilled hands without portfolios, creators, freelancers.
@@ -29,10 +29,9 @@ ${site.name} is a verified proof-of-work identity platform. Every job a worker c
 - Escrow: flat 5% on paid work, well below the gig-platform standard.
 
 ## Trust + security
-- Each record is signed by both worker and client (two-party signing) and chained by hash to the previous record on the same worker. Tampering is detectable.
-- Identity verified using government-supported Indian digital documents. Biometric scans are not retained.
-- TLS 1.3, encryption at rest, append-only audit log.
-- Compliant with India's Digital Personal Data Protection Act 2023.
+- Designed (not built yet): each record signed by both worker and client and chained by hash to the previous record on the same worker; identity verified with government-supported Indian digital documents, without retaining biometric scans; an append-only audit log.
+- Live today (waitlist site): HTTPS with HSTS, waitlist data encrypted at rest by Cloudflare D1, same-origin checks and rate limits on forms, no cookies or analytics.
+- Designed with India's Digital Personal Data Protection Act 2023 and GDPR in mind; not yet audited. No compliance certification is claimed.
 
 ## Long-term ecosystem
 ${site.name} is the first product under ${site.parent}. Two more are in development:

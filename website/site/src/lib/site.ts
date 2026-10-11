@@ -7,15 +7,18 @@ export const site = {
     "VERO Freelance is a verified proof-of-work freelance and apprenticeship network. Operators build a portable execution record. Clients hire by proof, not presentation.",
   shortDescription: "LinkedIn shows claims. VERO shows proof.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://vero.work",
-  launchStatus: "Pre-launch · early access",
-  cohort: "First cohort opens Q3 2026",
+  launchStatus: "Pre-launch · in development",
+  cohort: "Being built · not yet in testing",
+  // vroelabs.com has no MX record (checked 2026-10-11) and vero.work is not
+  // attached to this project, so every public contact channel goes to the
+  // one inbox the owner reads.
   contact: {
-    general: "hello@vero.work",
-    press: "press@vero.work",
-    investors: "investors@vroelabs.com",
-    security: "security@vero.work",
-    grievance: "grievance@vero.work",
-    support: "support@vero.work",
+    general: "vroelabs@gmail.com",
+    press: "vroelabs@gmail.com",
+    investors: "vroelabs@gmail.com",
+    security: "vroelabs@gmail.com",
+    grievance: "vroelabs@gmail.com",
+    support: "vroelabs@gmail.com",
   },
   social: {
     x: "https://x.com/vroelabs",
@@ -25,11 +28,11 @@ export const site = {
   },
   legal: {
     company: "VROE Labs",
-    jurisdiction: "India · GDPR · DPDP",
+    status:
+      "Vroe Labs is not yet a registered company. Vero is being built and is not yet in testing. Full legal details will be published before launch.",
   },
   // Legacy fields — kept so pre-pivot pages still compile during Phase 1
   launchCity: "Bengaluru",
-  launchWindow: "Q3 2026",
   launchAreas: [
     "Whitefield",
     "HSR Layout",
@@ -134,7 +137,7 @@ export const nav = {
     ],
     trust: [
       { label: "Security posture", href: "/security" },
-      { label: "Compliance", href: "/legal/privacy/in" },
+      { label: "Privacy (India)", href: "/legal/privacy/in" },
       { label: "Status", href: "/status" },
       { label: "Responsible disclosure", href: "/legal/responsible-disclosure" },
     ],
@@ -237,14 +240,14 @@ export const sections = {
     eyebrow: "Trust + Security",
     headline: "Built to protect both sides.",
     items: [
-      "All data encrypted, at rest and in transit",
-      "SOC 2-ready architecture",
-      "India DPDP Act 2023 compliant",
-      "GDPR aligned",
-      "Dispute logs kept independently",
-      "Verification records are permanent",
-      "Escrow through licensed clearing partners",
-      "Responsible-disclosure programme",
+      "HTTPS only, with HSTS",
+      "Waitlist data encrypted at rest by Cloudflare",
+      "Forms accept same-origin posts only",
+      "Rate limits on every form",
+      "No cookies, analytics or ad trackers",
+      "Designed with DPDP and GDPR in mind; not yet audited",
+      "No certifications claimed",
+      "Responsible-disclosure policy",
     ],
   },
 } as const;

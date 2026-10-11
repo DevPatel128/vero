@@ -11,7 +11,7 @@ import { WaitlistStatusBadge } from "@/components/WaitlistStatusBadge";
 export const metadata: Metadata = {
   title: "Status",
   description:
-    "Vero is pre-launch. Our public launch target is 2027 in Bengaluru — exact date to be announced. Follow our socials for the call.",
+    "Vero is pre-launch. Vero is being built and is not yet in testing. No launch date yet; Bengaluru first. Follow our socials for the call.",
   alternates: { canonical: "/status" },
 };
 
@@ -29,9 +29,9 @@ export default function Page() {
             </h1>
             <BlurIn delay={0.2}>
               <SectionLead>
-                We are not yet open to the public. The waitlist is live. The public app
-                opens in {site.launchCity} in {site.launchWindow}. We will announce the
-                exact date through our socials.
+                We are not yet open to the public. The waitlist is live. {site.name} is
+                being built and is not yet in testing. There is no launch date yet; we
+                will announce it through our socials.
               </SectionLead>
             </BlurIn>
 
@@ -43,8 +43,8 @@ export default function Page() {
                   Public app: TBA
                 </span>
                 <p className="mt-3 text-sm text-ink-600">
-                  Opens in {site.launchCity} in {site.launchWindow}. Exact date to be
-                  announced on our socials.
+                  Being built; not yet in testing. {site.launchCity} is the first city
+                  planned. No date set.
                 </p>
               </div>
             </BlurIn>
@@ -63,8 +63,7 @@ export default function Page() {
         </SectionTitle>
         <p className="mt-6 max-w-xl text-base text-ink-600">
           We will not bury the date in a press release. When we set the launch day, we
-          will post it on these accounts first. Then we will email everyone on the
-          waitlist.
+          will post it on these accounts first.
         </p>
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-4">

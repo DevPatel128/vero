@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 
 const channels = [
   { label: "General", value: site.contact.general, note: "Anything not covered below." },
-  { label: "Support", value: site.contact.support, note: "Help with your account or a record." },
+  { label: "Support", value: site.contact.support, note: "Help with your waitlist entry." },
   { label: "Press", value: site.contact.press, note: "Bios, boilerplate, interviews." },
   {
     label: "Security",
     value: site.contact.security,
-    note: "Responsible disclosure. PGP key on the security page.",
+    note: "Responsible disclosure. See the responsible disclosure page.",
   },
   {
     label: "Grievance officer (India)",
@@ -66,7 +66,7 @@ export default function Page() {
             Other ways to reach us
           </h2>
           <p>
-            For investors and partnerships, please use the gated request form linked from the footer. We do not publish a phone line during pre-launch. We will provide a Bengaluru office address before public launch.
+            For investors and partnerships, please use the gated request form linked from the footer. We do not publish a phone line or a postal address during pre-launch. Every channel above reaches the same inbox.
           </p>
           <p>
             Press kit, boilerplate, and bios are on the{" "}
@@ -75,6 +75,7 @@ export default function Page() {
             </a>{" "}
             page.
           </p>
+          <p className="text-sm text-ink-500">{site.legal.status}</p>
         </div>
       </Section>
     </>

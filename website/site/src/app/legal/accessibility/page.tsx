@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/legal/accessibility" },
 };
 
-const lastUpdated = "19 May 2026";
+const lastUpdated = "11 October 2026";
 
 export default function Page() {
   return (
@@ -37,22 +37,22 @@ export default function Page() {
         <li>Keyboard navigation is fully supported. Visible focus rings.</li>
         <li>Skip-to-content link on every page.</li>
         <li>
-          Colour contrast meets WCAG AA for text. Verified marks and statuses
-          carry both a shape and a colour, never colour alone.
+          We aim for WCAG AA colour contrast for text. Verified marks and
+          statuses carry both a shape and a colour, never colour alone.
         </li>
         <li>Forms have associated labels and inline error messages.</li>
         <li>
           Reduced-motion preference is honoured. Animations are minimal and
           functional.
         </li>
-        <li>Mobile layouts work at a 320px viewport with 44×44px tap targets.</li>
+        <li>Layouts are designed for small mobile screens.</li>
       </ul>
 
       <h2>Known limitations (honest)</h2>
       <ul>
         <li>
           The pre-launch site is English-only. Hindi, Kannada, and Tamil
-          translations are planned for the {site.launchWindow} launch.
+          translations are planned for launch.
         </li>
         <li>
           Video assets (when added) will carry captions and a transcript. The
@@ -60,8 +60,9 @@ export default function Page() {
         </li>
         <li>
           We have not yet completed a manual screen-reader sweep on every
-          single page. We are doing it route by route and will list any
-          unresolved issue here as it is found.
+          single page, and colour contrast has not yet been checked with an
+          automated tool. We will list any unresolved issue here as it is
+          found.
         </li>
       </ul>
 

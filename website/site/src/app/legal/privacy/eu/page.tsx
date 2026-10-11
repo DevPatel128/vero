@@ -30,8 +30,9 @@ export default function Page() {
       </p>
       <h2>Transfers</h2>
       <p>
-        Cross-border transfers will use adequacy decisions or Standard Contractual
-        Clauses with supplementary safeguards where required.
+        Cloudflare (hosting and database) and Resend (email delivery) are US
+        companies, so your data may be processed outside the EU or EEA. We have
+        no separate transfer agreement with either provider yet.
       </p>
     </div>
   );
