@@ -9,7 +9,7 @@ Only the current `main` branch (the deployed website in `website/site/`) is supp
 Please report privately and do not open a public issue.
 
 - Use GitHub's **Report a vulnerability** button on the Security tab of this repository, or
-- email **security@vero.work**.
+- email **vroelabs@gmail.com**.
 
 Include the affected URL or file, steps to reproduce, the impact you observed, and any suggested fix. Do not include real personal data, and do not test against other people's data.
 

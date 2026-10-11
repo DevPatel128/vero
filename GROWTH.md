@@ -31,7 +31,7 @@ Status 2026-10-09: nothing below has been executed. No ambassador, partnership, 
 | `/features` | trusted gig platform | UNKNOWN | UNKNOWN | UNKNOWN |
 | ALVED page (no live route) | proof of work app | UNKNOWN | UNKNOWN | UNKNOWN |
 | `/for-businesses` | Bengaluru local jobs verified | UNKNOWN | UNKNOWN | UNKNOWN |
-`/llms.txt`, `/sitemap.xml` and `/robots.txt` are served by the site. No Lighthouse baseline is recorded (targets: Performance 90+ mobile, Accessibility 95+).
+`/legal/*`, `/contact` and the footer changed 2026-10-11 (accuracy fixes and a company-status line; no SEO intent, no schema change). `/llms.txt`, `/sitemap.xml` and `/robots.txt` are served by the site. No Lighthouse baseline is recorded (targets: Performance 90+ mobile, Accessibility 95+).
 
 ## AI citation check (10 fixed buyer questions, monthly)
 1. UNKNOWN: questions not defined yet.

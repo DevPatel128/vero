@@ -4,11 +4,11 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Responsible disclosure",
   description:
-    "Vero welcomes security reports. Email security@vero.app. Two-day acknowledgement. Thirty-day fix target for confirmed issues.",
+    "Vero welcomes security reports. Email vroelabs@gmail.com. Two-day acknowledgement. Thirty-day fix target for confirmed issues.",
   alternates: { canonical: "/legal/responsible-disclosure" },
 };
 
-const lastUpdated = "19 May 2026";
+const lastUpdated = "11 October 2026";
 
 export default function Page() {
   return (
@@ -33,8 +33,8 @@ export default function Page() {
         >
           {site.contact.security}
         </a>
-        . If your report contains sensitive details, please request our PGP key
-        first; we will respond within one business day.
+        . We do not have a PGP key yet, so please describe the issue first and
+        hold back exploit details until we reply.
       </p>
 
       <h2>What we ask</h2>

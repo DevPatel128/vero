@@ -125,7 +125,7 @@ Please report vulnerabilities privately; see [`SECURITY.md`](SECURITY.md). The s
 - Rate limits fail open by design if D1 errors.
 - The Content Security Policy is report-only, not enforced.
 - No uptime monitoring or alerting.
-- Business legal name and address are not yet published (see [`LEGAL.md`](LEGAL.md)).
+- Vroe Labs is not yet a registered company; no postal address is published (see [`LEGAL.md`](LEGAL.md)).
 - Roadmap: phases in [`PRODUCT.md`](PRODUCT.md), starting with a Bengaluru pilot.
 
 ## Contributing
@@ -134,4 +134,4 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## License
 
-No open-source license has been selected. Unless a `LICENSE` file is added, all rights are reserved by the copyright holder.
+Source-available under the Vroe Labs licence (PolyForm Strict 1.0.0): noncommercial use only; no changes, derivative works or redistribution. See [LICENSE](LICENSE).

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/legal/terms" },
 };
 
-const lastUpdated = "19 May 2026";
+const lastUpdated = "11 October 2026";
 
 export default function Page() {
   return (
@@ -20,15 +20,16 @@ export default function Page() {
 
       <p>
         These terms govern your use of this pre-launch website and the {site.name}{" "}
-        waitlist (the “Site”). The Site is operated by {site.parent}.
+        waitlist (the “Site”). The Site is operated by {site.parent}, a
+        trading name of Dev Patel (not yet a registered company).
       </p>
 
       <h2>1. What this is</h2>
       <p>
         The Site is a pre-launch information surface. It allows you to read
         about {site.name}, join the waitlist, and request investor materials.
-        It is not the {site.name} product. The product opens in {site.launchCity} in{" "}
-        {site.launchWindow} and will be governed by its own terms at that time.
+        It is not the {site.name} product. The product is still being built and
+        will be governed by its own terms when it launches.
       </p>
 
       <h2>2. Eligibility</h2>
@@ -50,17 +51,16 @@ export default function Page() {
       <p>
         Your position is real and reflects the order you joined relative to
         others. We do not move positions to favour individuals. The referral
-        system is honest: each genuine new sign-up via your link moves you up a
-        fixed number of spots, capped publicly. Accounts that abuse the
+        system is honest: each new sign-up via your link moves you up five
+        spots, never above position 1. Entries that abuse the
         referral system lose any movement gained.
       </p>
 
       <h2>5. Pre-launch claims</h2>
       <p>
         We are pre-launch. Anything we describe about the product is intended
-        to reflect the version planned for {site.launchWindow}. Specific features,
-        pricing, and timing may change as we build. Material changes will be
-        emailed to waitlist subscribers.
+        to reflect the version planned for launch. Specific features, pricing,
+        and timing may change as we build.
       </p>
 
       <h2>6. Intellectual property</h2>
@@ -82,8 +82,8 @@ export default function Page() {
       <h2>8. Termination</h2>
       <p>
         We can remove a waitlist entry that is fraudulent, abusive, or in
-        breach of these terms. You can unsubscribe at any time using the link
-        in any email we send you.
+        breach of these terms. You can leave the waitlist at any time by writing
+        to us; there is no unsubscribe link yet.
       </p>
 
       <h2>9. Governing law</h2>
@@ -95,14 +95,15 @@ export default function Page() {
       <h2>10. Changes</h2>
       <p>
         We will update these terms when needed. The date at the top always
-        reflects the current version. Material changes will be emailed to
-        waitlist subscribers.
+        reflects the current version.
       </p>
 
       <h2>11. Contact</h2>
       <p>
         Write to <a href={`mailto:${site.contact.general}`}>{site.contact.general}</a>.
       </p>
+
+      <p className="mt-10 text-sm text-ink-500">{site.legal.status}</p>
     </>
   );
 }

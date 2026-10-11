@@ -9,13 +9,16 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://vero.work",
   launchStatus: "Pre-launch · early access",
   cohort: "First cohort opens Q3 2026",
+  // vroelabs.com has no MX record (checked 2026-10-11) and vero.work is not
+  // attached to this project, so every public contact channel goes to the
+  // one inbox the owner reads.
   contact: {
-    general: "hello@vero.work",
-    press: "press@vero.work",
-    investors: "investors@vroelabs.com",
-    security: "security@vero.work",
-    grievance: "grievance@vero.work",
-    support: "support@vero.work",
+    general: "vroelabs@gmail.com",
+    press: "vroelabs@gmail.com",
+    investors: "vroelabs@gmail.com",
+    security: "vroelabs@gmail.com",
+    grievance: "vroelabs@gmail.com",
+    support: "vroelabs@gmail.com",
   },
   social: {
     x: "https://x.com/vroelabs",
@@ -26,6 +29,8 @@ export const site = {
   legal: {
     company: "VROE Labs",
     jurisdiction: "India · GDPR · DPDP",
+    status:
+      "Vroe Labs is not yet a registered company. Vero is being built and is not yet in testing. Full legal details will be published before launch.",
   },
   // Legacy fields — kept so pre-pivot pages still compile during Phase 1
   launchCity: "Bengaluru",

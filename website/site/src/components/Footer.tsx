@@ -33,6 +33,7 @@ export function Footer() {
         <div className="mt-16 grid gap-6 border-t border-line-faint pt-8 lg:grid-cols-12 lg:items-center">
           <p className="font-mono text-micro text-ink-3 lg:col-span-5">
             © {new Date().getFullYear()} {site.parent}. Records belong to the people who earned them.
+            <span className="mt-2 block">{site.legal.status}</span>
           </p>
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-3 text-caption text-ink-2 lg:col-span-7 lg:justify-end">
             <li>

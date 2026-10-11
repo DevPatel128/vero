@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/legal/acceptable-use" },
 };
 
-const lastUpdated = "19 May 2026";
+const lastUpdated = "11 October 2026";
 
 export default function Page() {
   return (
@@ -64,7 +64,7 @@ export default function Page() {
 
       <h2>Consequences</h2>
       <p>
-        Accounts found in breach lose any movement gained from the referral
+        Waitlist entries found in breach lose any movement gained from the referral
         system and may be permanently removed. We may also share information
         with law enforcement where required by law.
       </p>

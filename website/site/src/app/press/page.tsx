@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Press",
   description:
-    "Press kit for Vero — boilerplate, founder bios, logo lockups, screenshots. Press contact: press@vero.app.",
+    "Press kit for Vero — boilerplate, founder bios, logo lockups, screenshots. Press contact: vroelabs@gmail.com.",
   alternates: { canonical: "/press" },
 };
 

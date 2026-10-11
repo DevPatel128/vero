@@ -20,13 +20,15 @@ export default function Page() {
       </p>
       <h2>Categories collected</h2>
       <p>
-        Waitlist email, optional name, optional city, optional use case, referral
-        source, and technical abuse-prevention signals.
+        Waitlist email and role (worker or business); optional name, city, use
+        case, how you heard about us, and referral code; investor request
+        details, which are emailed to us and not stored by the site; and IP
+        address for abuse prevention.
       </p>
       <h2>Your choices</h2>
       <p>
-        You can opt out of launch emails through any unsubscribe link. You can request
-        access or deletion at{" "}
+        There is no unsubscribe link yet. To stop launch emails, or to request
+        access or deletion, write to{" "}
         <a href={`mailto:${site.contact.support}`}>{site.contact.support}</a>.
       </p>
       <h2>Sale or sharing</h2>

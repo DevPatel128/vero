@@ -36,7 +36,7 @@ Advancement rule: a phase advances when its scope ships and trust is stable (dis
 ### P4 /pricing — Done
 - P4.1 Shows Worker: Free. Business: ₹2,499 per month (5% escrow on paid work). Studio: Custom. This live page is the pricing source of truth (decision 2026-09-29).
 ### P5 Content and legal pages — Done
-- Home, how-it-works, features, for-workers, for-professionals (different content, both kept), for-businesses, trust, security, manifesto, why-now, faq, about, press, contact, and `/legal/*` (privacy with EU, IN and US editions, terms, cookies, refund, grievance, responsible disclosure, sub-processors, accessibility, acceptable use, security). Grievance response SLA on the live page: 15 days.
+- Home, how-it-works, features, for-workers, for-professionals (different content, both kept), for-businesses, trust, security, manifesto, why-now, faq, about, press, contact, and `/legal/*` (privacy with EU, IN and US editions, terms, cookies, refund, grievance, responsible disclosure, sub-processors, accessibility, acceptable use, security). Grievance response SLA on the live page: 15 days. Legal pages were corrected to match the code on 2026-10-11 (no cookies, no analytics, no unsubscribe link, no stored investor requests); every contact channel is vroelabs@gmail.com; the privacy, terms and contact pages and the footer carry the company-status line. Legal text edited by AI; owner approval needed.
 
 ## Features (core product — Next, not built)
 ### F1 Identity verification — Next

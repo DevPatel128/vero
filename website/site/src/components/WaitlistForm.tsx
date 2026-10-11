@@ -221,8 +221,8 @@ export function WaitlistForm({
         />
         <span>
           I agree to receive launch updates by email. Vero will use my email
-          only for waitlist and launch communications. I can unsubscribe at any
-          time. See{" "}
+          only for waitlist and launch communications. I can withdraw consent at
+          any time by emailing Vroe Labs. See{" "}
           <a
             href="/legal/privacy"
             className="underline decoration-accent underline-offset-4"

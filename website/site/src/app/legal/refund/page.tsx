@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/legal/refund" },
 };
 
-const lastUpdated = "19 May 2026";
+const lastUpdated = "11 October 2026";
 
 export default function Page() {
   return (
@@ -19,9 +19,9 @@ export default function Page() {
       <p className="mt-2 text-sm text-ink-500">Last updated: {lastUpdated}</p>
 
       <p>
-        This page describes the refund commitments we will operate from launch
-        ({site.launchWindow}). We publish them now so they are visible before
-        anyone pays anything.
+        Nothing is sold on {site.name} yet, and no payments are taken. This page
+        describes the refund commitments we plan to operate from launch. We
+        publish them now so they are visible before anyone pays anything.
       </p>
 
       <h2>Workers</h2>
