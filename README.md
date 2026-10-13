@@ -4,6 +4,8 @@
 
 ## Status
 
+**Offline since 2026-10-13.** All Vero resources were removed from Cloudflare to reduce load; the site runs on localhost for demos. See [`website/site/docs/CLOUDFLARE_DECOMMISSION.md`](website/site/docs/CLOUDFLARE_DECOMMISSION.md) for what happened, why, and how to restore.
+
 **Pre-launch.** Only the marketing site and waitlist are live. The core product (identity verification, job posting, escrow, dual-signature records) is specified in [`PRODUCT.md`](PRODUCT.md) but not built. An earlier, never-deployed prototype and the older documentation layouts remain in git history only. Launch date: not set.
 
 ## What it does
